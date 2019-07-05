@@ -9,6 +9,7 @@
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Class="AL_Zakat_Fund_System.MainWindow"
         mc:Ignorable="d"
         Title="صندوق الزكاة الليبي" 
+        Icon="Images/Logo/34.png"
         Height="600" Width="900" 
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft">
