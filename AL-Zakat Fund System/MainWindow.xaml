@@ -1,12 +1,152 @@
-﻿<Window x:Class="AL_Zakat_Fund_System.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AL_Zakat_Fund_System"
+        xmlns:vm="clr-namespace:AL_Zakat_Fund_System.ViewModel"
+        xmlns:v="clr-namespace:AL_Zakat_Fund_System.Views"
+        xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Class="AL_Zakat_Fund_System.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="صندوق الزكاة الليبي" 
+        Height="600" Width="900" 
+        WindowStartupLocation="CenterScreen"
+        FlowDirection="RightToLeft">
+    <!-- dow pages -->
+    <Window.Resources>
+        <DataTemplate x:Name="page1" DataType="{x:Type vm:UserControl1ViewModel}">
+            <v:UserControl1 DataContext="{Binding}" />
+        </DataTemplate>
+        <DataTemplate x:Name="page2" DataType="{x:Type vm:UserControl2ViewModel}">
+            <v:UserControl2 DataContext="{Binding}" />
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <!-- Div -->
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!-- sidebar user photo and name -->
+        <StackPanel  Grid.Row="0"  Grid.Column="0" Grid.RowSpan="2" >
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF475EDF" Offset="0.39"/>
+                    <GradientStop Color="#FF2F3E93"/>
+                    <GradientStop Color="#FF455CD9" Offset="0.98"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <!-- user photo -->
+            <Border Margin="5 25 5 0" Width="75" Height="75"  CornerRadius="30" >
+                <Border.Background>
+                    <ImageBrush  ImageSource="images/(240)wep.jpg"  Stretch="Fill" />
+                </Border.Background>
+            </Border>
+            <!-- user name -->
+            <TextBlock Margin="5" Text="اسم المستخدم"  TextAlignment="Center" Foreground="#FFEEEEEE"/>
+        </StackPanel>
+
+        <!-- Mueu -->
+        <Menu Grid.Row="0" Grid.Column="1"  FontSize="20" FontFamily="Adobe Arabic" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" >
+            <MenuItem Header="_ملف">
+                <MenuItem Header="_تسجيل الخول" />
+                <MenuItem Header="_تسجيل الخروج" />
+                <MenuItem Header="_إنشاء نسخة احطياطية" />
+                <MenuItem Header="_إستعادة نسخة محفوظة" />
+                <Separator />
+                <MenuItem Header="_خروج" />
+            </MenuItem>
+            <MenuItem Header="_المحتاجين">
+                <MenuItem Header="_فتح ملف لمحتاج" />
+                <MenuItem Header="_عرض بيانات المحتاجين" />
+                <MenuItem Header="_البحث على محتاج" />
+                <MenuItem Header="_تعديل في بيانات محتاج" />
+                <MenuItem Header="إلغاء محتاج" />
+                <MenuItem Header="التقارير" />
+            </MenuItem>
+            <MenuItem Header="_المحاضر">
+                <MenuItem Header="_فتح محضر لمحتاج" />
+                <MenuItem Header="_عرض بيانات المحاضر" />
+                <MenuItem Header="_البحث على محضر" />
+                <MenuItem Header="_تعديل في بيانات محضر" />
+                <MenuItem Header="إلغاء محضر" />
+                <MenuItem Header="التقارير" >
+                    <MenuItem Header=" محضر" />
+                    <MenuItem Header=" محضر" />
+                    <MenuItem Header=" محضر" />
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_المتابعات">
+                <MenuItem Header="تحويل المحتاج إلى المتابعة" />
+                <MenuItem Header="تعديل في بيانات المتابعة" />
+                <MenuItem Header="التقارير" />
+            </MenuItem>
+            <MenuItem Header="_الزكواة">
+                <MenuItem Header="_إضافة زكاة جديدة" />
+                <MenuItem Header="_عرض بيانات الزكواة" />
+                <MenuItem Header="_البحث على زكاة" />
+                <MenuItem Header="_تعديل في بيانات زكاة" />
+                <MenuItem Header="_تحويل الزكواة إلى حساب المصارف" />
+                <MenuItem Header="إلغاء زكاة" />
+                <MenuItem Header="التقارير" />
+            </MenuItem>
+            <MenuItem Header="_المصروفات">
+                <MenuItem Header="_إذن صرف جديدة" />
+                <MenuItem Header="_عرض بيانات المصروفات" />
+                <MenuItem Header="_البحث على إذن صرف" />
+                <MenuItem Header="_تعديل في بيانات إذن صرف" />
+                <MenuItem Header="إلغاء إذن صرف" />
+                <MenuItem Header="التقارير" />
+            </MenuItem>
+            <MenuItem Header="_المتابعات">
+                <MenuItem Header="_إضافة متابعة جديدة" />
+                <MenuItem Header="_عرض بيانات المتابعات" />
+                <MenuItem Header="_البحث على متابعة" />
+                <MenuItem Header="_تعديل في بيانات متابعة" />
+                <MenuItem Header="إلغاء متابعة" />
+                <MenuItem Header="مراجعات" />
+            </MenuItem>
+            <MenuItem Header="_الواجهة" >
+                <MenuItem Header="_الجابي" />
+                <MenuItem Header="_الساعي" />
+                <MenuItem Header="_الموظف" />
+                <MenuItem Header="_المتابع" />
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+
+            <!-- sidebar buttons -->
+            <StackPanel   Grid.Row="1" Grid.Column="0" Opacity="0.8" Grid.ColumnSpan="2" >
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="You know I'm 1..." />
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="You know I'm 2..." />
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="You know I'm 3..." />
+            </StackPanel>
+
+            <!-- pages content -->
+            <UserControl  Grid.Row="1" Grid.Column="2" Content="{Binding}" Background="#fff"/>
+        </Grid>
+
+
     </Grid>
+
 </Window>
