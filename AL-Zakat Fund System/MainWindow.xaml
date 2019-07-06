@@ -63,7 +63,7 @@
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
             <MenuItem Header="_ملف">
-                <MenuItem Header="_تسجيل الخول" />
+                <MenuItem Header="_تسجيل الدخول" />
                 <MenuItem Header="_تسجيل الخروج" />
                 <MenuItem Header="_إنشاء نسخة احطياطية" />
                 <MenuItem Header="_إستعادة نسخة محفوظة" />
@@ -76,7 +76,11 @@
                 <MenuItem Header="_البحث على محتاج" />
                 <MenuItem Header="_تعديل في بيانات محتاج" />
                 <MenuItem Header="إلغاء محتاج" />
-                <MenuItem Header="التقارير" />
+                <MenuItem Header="التقارير" >
+                    <MenuItem Header=" محتاج" />
+                    <MenuItem Header=" محتاج" />
+                    <MenuItem Header=" محتاج" />
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="_المحاضر">
                 <MenuItem Header="_فتح محضر لمحتاج" />
@@ -93,7 +97,11 @@
             <MenuItem Header="_المتابعات">
                 <MenuItem Header="تحويل المحتاج إلى المتابعة" />
                 <MenuItem Header="تعديل في بيانات المتابعة" />
-                <MenuItem Header="التقارير" />
+                <MenuItem Header="التقارير" >
+                    <MenuItem Header=" المتابعة" />
+                    <MenuItem Header=" المتابعة" />
+                    <MenuItem Header=" المتابعة" />
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="_الزكواة">
                 <MenuItem Header="_إضافة زكاة جديدة" />
@@ -102,7 +110,11 @@
                 <MenuItem Header="_تعديل في بيانات زكاة" />
                 <MenuItem Header="_تحويل الزكواة إلى حساب المصارف" />
                 <MenuItem Header="إلغاء زكاة" />
-                <MenuItem Header="التقارير" />
+                <MenuItem Header="التقارير" >
+                    <MenuItem Header=" زكاة" />
+                    <MenuItem Header=" زكاة" />
+                    <MenuItem Header=" زكاة" />
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="_المصروفات">
                 <MenuItem Header="_إذن صرف جديدة" />
