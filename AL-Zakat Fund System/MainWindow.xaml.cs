@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AL_Zakat_Fund_System.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AL_Zakat_Fund_System.ViewModel;
 
 namespace AL_Zakat_Fund_System
 {
@@ -23,6 +25,8 @@ namespace AL_Zakat_Fund_System
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowViewModel();
         }
+
     }
 }

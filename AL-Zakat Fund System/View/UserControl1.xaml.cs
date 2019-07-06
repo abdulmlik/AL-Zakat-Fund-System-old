@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AL_Zakat_Fund_System.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace AL_Zakat_Fund_System.Views
         public UserControl1()
         {
             InitializeComponent();
+            this.DataContext = new UserControl1ViewModel();
         }
     }
 }

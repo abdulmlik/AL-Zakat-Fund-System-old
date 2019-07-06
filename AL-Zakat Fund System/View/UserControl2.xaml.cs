@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using AL_Zakat_Fund_System.ViewModel;
 using System.Windows.Shapes;
 
 namespace AL_Zakat_Fund_System.Views
@@ -23,6 +24,7 @@ namespace AL_Zakat_Fund_System.Views
         public UserControl2()
         {
             InitializeComponent();
+            this.DataContext = new UserControl2ViewModel();
         }
     }
 }

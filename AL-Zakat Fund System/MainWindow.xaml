@@ -13,15 +13,17 @@
         Height="600" Width="900" 
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft">
-    <!-- dow pages -->
+
     <Window.Resources>
-        <DataTemplate x:Name="page1" DataType="{x:Type vm:UserControl1ViewModel}">
-            <v:UserControl1 DataContext="{Binding}" />
-        </DataTemplate>
-        <DataTemplate x:Name="page2" DataType="{x:Type vm:UserControl2ViewModel}">
-            <v:UserControl2 DataContext="{Binding}" />
+        <!-- dow pages -->
+        <DataTemplate x:Key="UserControl1ViewModel" DataType="{x:Type vm:UserControl1ViewModel}">
+            <v:UserControl1 DataContext="{Binding p1}"/>
         </DataTemplate>
 
+        <DataTemplate x:Key="UserControl2ViewModel" DataType="{x:Type vm:UserControl2ViewModel}">
+            <v:UserControl2 DataContext="{Binding p2}"/>
+        </DataTemplate>
+        
     </Window.Resources>
 
     <!-- Div -->
@@ -55,6 +57,11 @@
 
         <!-- Mueu -->
         <Menu Grid.Row="0" Grid.Column="1"  FontSize="20" FontFamily="Adobe Arabic" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" >
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel HorizontalAlignment="Stretch"/>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
             <MenuItem Header="_ملف">
                 <MenuItem Header="_تسجيل الخول" />
                 <MenuItem Header="_تسجيل الخروج" />
@@ -113,7 +120,7 @@
                 <MenuItem Header="إلغاء متابعة" />
                 <MenuItem Header="مراجعات" />
             </MenuItem>
-            <MenuItem Header="_الواجهة" >
+            <MenuItem Header="_الواجهة" HorizontalAlignment="Right" >
                 <MenuItem Header="_الجابي" />
                 <MenuItem Header="_الساعي" />
                 <MenuItem Header="_الموظف" />
@@ -136,18 +143,18 @@
             <!-- sidebar buttons -->
             <StackPanel   Grid.Row="1" Grid.Column="0" Opacity="0.8" Grid.ColumnSpan="2" >
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="You know I'm 1..." />
+                   Content="You know I'm 1..." Command="{Binding click_1}" />
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="You know I'm 2..." />
+                   Content="You know I'm 2..."  Command="{Binding click_2}" />
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="You know I'm 3..." />
             </StackPanel>
-
-            <!-- pages content -->
-            <UserControl  Grid.Row="1" Grid.Column="2" Content="{Binding}" Background="#fff"/>
         </Grid>
 
+        <!-- pages content -->
+        <UserControl Grid.Column="1" Grid.Row="1" Content="{Binding fff}" >
+        </UserControl>
 
     </Grid>
-
+    
 </Window>
