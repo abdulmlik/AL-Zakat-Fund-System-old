@@ -132,7 +132,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="models\flatButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -184,6 +183,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
