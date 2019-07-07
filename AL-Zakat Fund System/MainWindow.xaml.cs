@@ -25,7 +25,7 @@ namespace AL_Zakat_Fund_System
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new MainWindowViewModel();
+            this.DataContext = new MainWindowViewModel(this);
         }
 
     }

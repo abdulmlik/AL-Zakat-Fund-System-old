@@ -15,18 +15,18 @@
         FlowDirection="RightToLeft">
 
     <Window.Resources>
-        <!-- dow pages -->
+        <!-- Download the pages -->
         <DataTemplate x:Key="UserControl1ViewModel" DataType="{x:Type vm:UserControl1ViewModel}">
-            <v:UserControl1 DataContext="{Binding p1}"/>
+            <v:UserControl1 />
         </DataTemplate>
-
         <DataTemplate x:Key="UserControl2ViewModel" DataType="{x:Type vm:UserControl2ViewModel}">
-            <v:UserControl2 DataContext="{Binding p2}"/>
+            <v:UserControl2 />
+            <!--<v:UserControl2 DataContext="{Binding p2}"/> p2 = new UserControl1ViewModel(); -->
         </DataTemplate>
         
     </Window.Resources>
 
-    <!-- Div -->
+    <!-- Divide the page -->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -55,7 +55,7 @@
             <TextBlock Margin="5" Text="اسم المستخدم"  TextAlignment="Center" Foreground="#FFEEEEEE"/>
         </StackPanel>
 
-        <!-- Mueu -->
+        <!-- main Mueu -->
         <Menu Grid.Row="0" Grid.Column="1"  FontSize="20" FontFamily="Adobe Arabic" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" >
             <Menu.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -155,16 +155,16 @@
             <!-- sidebar buttons -->
             <StackPanel   Grid.Row="1" Grid.Column="0" Opacity="0.8" Grid.ColumnSpan="2" >
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="You know I'm 1..." Command="{Binding click_1}" />
+                   Content="You know I'm 1..." Command="{Binding Command1}" />
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="You know I'm 2..."  Command="{Binding click_2}" />
+                   Content="You know I'm 2..."  Command="{Binding Command2}" />
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="You know I'm 3..." />
             </StackPanel>
         </Grid>
 
         <!-- pages content -->
-        <UserControl Grid.Column="1" Grid.Row="1" Content="{Binding fff}" >
+        <UserControl Grid.Column="1" Grid.Row="1" Content="{Binding Page}" >
         </UserControl>
 
     </Grid>

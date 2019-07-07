@@ -12,56 +12,72 @@ namespace AL_Zakat_Fund_System.ViewModel
 {
     class MainWindowViewModel : BindableBase
     {
-        public MainWindowViewModel()
-        {
-            _Page = new UserControl1();
-            
-            click_1 = new DelegateCommand(cPage);
-            click_2 = new DelegateCommand(cPage2);
-        }
 
-        public UserControl1ViewModel p1 = new UserControl1ViewModel();
-        public UserControl2ViewModel p2 = new UserControl2ViewModel();
+        #region name regin
+        #endregion
 
+        #region private Member
 
+        private Window mWindow;
         private object _Page;
-        public object fff
-        {
-            get
-            {
-                return _Page;
-            }
-            set
-            {
-                SetProperty(ref _Page, value);
-                _Page = value;
-            }
-        }
 
-        private object _te;
-        public object te
-        {
-            get
-            {
-                return _te;
-            }
-            set
-            {
-                SetProperty(ref _te, value);
-            }
-        }
+        #endregion
 
-        public DelegateCommand click_1 { get; set; }
-        public DelegateCommand click_2 { get; set; }
+        //private object _te;
+        //public object te
+        //{
+        //    get
+        //    {
+        //        return _te;
+        //    }
+        //    set
+        //    {
+        //        SetProperty(ref _te, value);
+        //    }
+        //}
 
-        private void cPage()
+        #region public properties
+        public object Page
         {
-            fff = new UserControl1();
+            get { return _Page; }
+            set { SetProperty(ref _Page, value); }
         }
-        private void cPage2()
-        {
-            fff = new UserControl2();
-        }
+        #endregion
 
+
+        #region Delegate Command
+        public DelegateCommand Command1 { get; set; }
+        public DelegateCommand Command2 { get; set; }
+        public DelegateCommand Command3 { get; set; }
+        public DelegateCommand Command4 { get; set; }
+        public DelegateCommand Command5 { get; set; }
+
+        #endregion
+
+        #region Execute and CanExecute Functions
+        private void Execute1()
+        {
+            Page = new UserControl1();
+        }
+        private void Execute2()
+        {
+            Page = new UserControl2();
+        }
+        #endregion
+
+        #region Construct
+        /// <summary>
+        /// Default Construct
+        /// </summary>
+        /// <param name="window"></param>
+        public MainWindowViewModel(Window window)
+        {
+            mWindow = window;
+            Page = new UserControl1();
+
+            Command1 = new DelegateCommand(Execute1);
+            Command2 = new DelegateCommand(Execute2);
+        }
+        #endregion
     }
 }
