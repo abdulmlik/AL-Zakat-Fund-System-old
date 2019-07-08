@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using AL_Zakat_Fund_System.ViewModel;
+using AL_Zakat_Fund_System.Models;
 
 namespace AL_Zakat_Fund_System
 {
@@ -24,6 +25,8 @@ namespace AL_Zakat_Fund_System
         {
             InitializeComponent();
             this.DataContext = new loginWindowViewModel(this);
+            DBConnection.OpenConnection();
+            DBConnection.CloseConnection();
         }
     }
 }
