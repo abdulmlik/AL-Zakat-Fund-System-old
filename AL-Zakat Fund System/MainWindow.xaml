@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AL_Zakat_Fund_System"
-        xmlns:vm="clr-namespace:AL_Zakat_Fund_System.ViewModel"
+        xmlns:vm="clr-namespace:AL_Zakat_Fund_System.ViewModels"
         xmlns:v="clr-namespace:AL_Zakat_Fund_System.Views"
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Class="AL_Zakat_Fund_System.MainWindow"
         mc:Ignorable="d"
@@ -16,14 +16,14 @@
 
     <Window.Resources>
         <!-- Download the pages -->
-        <DataTemplate x:Key="UserControl1ViewModel" DataType="{x:Type vm:UserControl1ViewModel}">
-            <v:UserControl1 />
+        <DataTemplate x:Key="OpenAccountPoorViewModel" DataType="{x:Type vm:OpenAccountPoorViewModel}">
+            <v:OpenAccountPoor />
         </DataTemplate>
-        <DataTemplate x:Key="UserControl2ViewModel" DataType="{x:Type vm:UserControl2ViewModel}">
-            <v:UserControl2 />
-            <!--<v:UserControl2 DataContext="{Binding p2}"/> p2 = new UserControl1ViewModel(); -->
+        <DataTemplate x:Key=":OpenRecordPoorViewModel" DataType="{x:Type vm:OpenRecordPoorViewModel}">
+            <v:OpenRecordPoor />
+            <!--<v::OpenRecordPoor DataContext="{Binding p2}"/> p2 = new :OpenRecordPoorViewModel(); -->
         </DataTemplate>
-        
+
     </Window.Resources>
 
     <!-- Divide the page -->
@@ -39,10 +39,14 @@
         <!-- sidebar user photo and name -->
         <StackPanel  Grid.Row="0"  Grid.Column="0" Grid.RowSpan="2" >
             <StackPanel.Background>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="#FF475EDF" Offset="0.39"/>
-                    <GradientStop Color="#FF2F3E93"/>
-                    <GradientStop Color="#FF455CD9" Offset="0.98"/>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0" Opacity="0.9">
+                    <GradientStop Color="#FF7D36BF" Offset="0.478"/>
+                    <GradientStop Color="#FFA256E8" Offset="1"/>
+                    <GradientStop Color="#FF7231AE" Offset="0.217"/>
+                    <GradientStop Color="BlueViolet" Offset="0.024"/>
+                    <GradientStop Color="#FF5E00B4"/>
+                    <GradientStop Color="#FF8640C7" Offset="0.803"/>
+                    <GradientStop Color="#FF9249D5" Offset="0.956"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
             <!-- user photo -->
@@ -63,10 +67,12 @@
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
             <MenuItem Header="_ملف">
-                <MenuItem Header="_تسجيل الدخول" />
                 <MenuItem Header="_تسجيل الخروج" />
+                <Separator />
                 <MenuItem Header="_إنشاء نسخة احطياطية" />
                 <MenuItem Header="_إستعادة نسخة محفوظة" />
+                <Separator />
+                <MenuItem Header="_فحص حالة الاتصال بالخادم" />
                 <Separator />
                 <MenuItem Header="_خروج" />
             </MenuItem>
@@ -76,6 +82,7 @@
                 <MenuItem Header="_البحث على محتاج" />
                 <MenuItem Header="_تعديل في بيانات محتاج" />
                 <MenuItem Header="إلغاء محتاج" />
+                <Separator />
                 <MenuItem Header="التقارير" >
                     <MenuItem Header=" محتاج" />
                     <MenuItem Header=" محتاج" />
@@ -88,6 +95,7 @@
                 <MenuItem Header="_البحث على محضر" />
                 <MenuItem Header="_تعديل في بيانات محضر" />
                 <MenuItem Header="إلغاء محضر" />
+                <Separator />
                 <MenuItem Header="التقارير" >
                     <MenuItem Header=" محضر" />
                     <MenuItem Header=" محضر" />
@@ -97,6 +105,7 @@
             <MenuItem Header="_المتابعات">
                 <MenuItem Header="تحويل المحتاج إلى المتابعة" />
                 <MenuItem Header="تعديل في بيانات المتابعة" />
+                <Separator />
                 <MenuItem Header="التقارير" >
                     <MenuItem Header=" المتابعة" />
                     <MenuItem Header=" المتابعة" />
@@ -108,8 +117,10 @@
                 <MenuItem Header="_عرض بيانات الزكواة" />
                 <MenuItem Header="_البحث على زكاة" />
                 <MenuItem Header="_تعديل في بيانات زكاة" />
-                <MenuItem Header="_تحويل الزكواة إلى حساب المصارف" />
                 <MenuItem Header="إلغاء زكاة" />
+                <Separator />
+                <MenuItem Header="_تحويل الزكواة إلى حساب المصارف" />
+                <Separator />
                 <MenuItem Header="التقارير" >
                     <MenuItem Header=" زكاة" />
                     <MenuItem Header=" زكاة" />
@@ -130,7 +141,14 @@
                 <MenuItem Header="_البحث على متابعة" />
                 <MenuItem Header="_تعديل في بيانات متابعة" />
                 <MenuItem Header="إلغاء متابعة" />
+                <Separator />
                 <MenuItem Header="مراجعات" />
+            </MenuItem>
+            <MenuItem Header="المساعدة">
+                <MenuItem Header="_مساعدة" />
+                <MenuItem Header="_الصفحة الرئيسية" />
+                <Separator />
+                <MenuItem Icon="Images/Logo/34.png" Header="_حول نظام صندوق الزكاة" />
             </MenuItem>
             <MenuItem Header="_الواجهة" HorizontalAlignment="Right" >
                 <MenuItem Header="_الجابي" />
@@ -164,9 +182,9 @@
         </Grid>
 
         <!-- pages content -->
-        <UserControl Grid.Column="1" Grid.Row="1" Content="{Binding Page}" >
-        </UserControl>
+        <UserControl Grid.Column="1" Grid.Row="1" Content="{Binding Page}" />
+
 
     </Grid>
-    
+
 </Window>

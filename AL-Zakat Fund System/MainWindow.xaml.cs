@@ -1,4 +1,4 @@
-﻿using AL_Zakat_Fund_System.Views;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using AL_Zakat_Fund_System.ViewModel;
+using AL_Zakat_Fund_System.Views;
+using AL_Zakat_Fund_System.ViewModels;
+using AL_Zakat_Fund_System.Models;
 
 namespace AL_Zakat_Fund_System
 {
@@ -26,6 +28,7 @@ namespace AL_Zakat_Fund_System
         {
             InitializeComponent();
             this.DataContext = new MainWindowViewModel(this);
+            //MessageBox.Show(emp._Password +" #### "+ EmployeeLogin._UserName);
         }
 
     }

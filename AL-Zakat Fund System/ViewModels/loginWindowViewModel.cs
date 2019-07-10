@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using Prism.Commands;
 using Prism.Mvvm;
 using System.Windows;
+using AL_Zakat_Fund_System.Models;
 
-namespace AL_Zakat_Fund_System.ViewModel
+namespace AL_Zakat_Fund_System.ViewModels
 {
     class loginWindowViewModel : BindableBase
     {
@@ -47,6 +48,8 @@ namespace AL_Zakat_Fund_System.ViewModel
             else
             {
                 MainWindow mainWindow = new MainWindow();
+                //EmployeeLogin._UserName = UserName;
+                //EmployeeLogin._Password = Password;
                 mWindow.Close();
                 mainWindow.ShowDialog();
             }

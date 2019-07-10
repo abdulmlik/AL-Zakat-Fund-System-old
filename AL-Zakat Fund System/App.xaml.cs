@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AL_Zakat_Fund_System.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;

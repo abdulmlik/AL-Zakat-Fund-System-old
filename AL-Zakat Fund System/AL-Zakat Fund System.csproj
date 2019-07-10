@@ -76,16 +76,17 @@
     <Compile Include="loginWindow.xaml.cs">
       <DependentUpon>loginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\EmployeeLogin.cs" />
     <Compile Include="Models\SQLServerConnection.cs" />
-    <Compile Include="ViewModel\loginWindowViewModel.cs" />
-    <Compile Include="ViewModel\MainWindowViewModel.cs" />
-    <Compile Include="ViewModel\UserControl1ViewModel.cs" />
-    <Compile Include="ViewModel\UserControl2ViewModel.cs" />
-    <Compile Include="View\UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
+    <Compile Include="ViewModels\loginWindowViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\OpenAccountPoorViewModel.cs" />
+    <Compile Include="ViewModels\OpenRecordPoorViewModel.cs" />
+    <Compile Include="Views\OpenAccountPoor.xaml.cs">
+      <DependentUpon>OpenAccountPoor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl2.xaml.cs">
-      <DependentUpon>UserControl2.xaml</DependentUpon>
+    <Compile Include="Views\OpenRecordPoor.xaml.cs">
+      <DependentUpon>OpenRecordPoor.xaml</DependentUpon>
     </Compile>
     <Page Include="loginWindow.xaml">
       <SubType>Designer</SubType>
@@ -123,11 +124,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UserControl1.xaml">
+    <Page Include="Views\OpenAccountPoor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UserControl2.xaml">
+    <Page Include="Views\OpenRecordPoor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

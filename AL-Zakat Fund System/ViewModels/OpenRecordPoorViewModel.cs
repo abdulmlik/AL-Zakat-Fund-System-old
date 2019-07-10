@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AL_Zakat_Fund_System.ViewModel
+namespace AL_Zakat_Fund_System.ViewModels
 {
-    class UserControl1ViewModel
+    class OpenRecordPoorViewModel
     {
     }
 }

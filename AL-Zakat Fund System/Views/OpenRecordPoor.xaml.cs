@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AL_Zakat_Fund_System.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,20 +12,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using AL_Zakat_Fund_System.ViewModel;
 using System.Windows.Shapes;
 
 namespace AL_Zakat_Fund_System.Views
 {
     /// <summary>
-    /// Interaction logic for UserControl2.xaml
+    /// Interaction logic for OpenRecordPoor.xaml
     /// </summary>
-    public partial class UserControl2 : UserControl
+    public partial class OpenRecordPoor : UserControl
     {
-        public UserControl2()
+        public OpenRecordPoor()
         {
             InitializeComponent();
-            this.DataContext = new UserControl2ViewModel();
+            this.DataContext = new OpenRecordPoorViewModel();
         }
     }
 }

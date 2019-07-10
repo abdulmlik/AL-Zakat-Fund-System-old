@@ -1,4 +1,4 @@
-﻿using AL_Zakat_Fund_System.ViewModel;
+﻿using AL_Zakat_Fund_System.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,14 +17,14 @@ using System.Windows.Shapes;
 namespace AL_Zakat_Fund_System.Views
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for OpenAccountPoor.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class OpenAccountPoor : UserControl
     {
-        public UserControl1()
+        public OpenAccountPoor()
         {
             InitializeComponent();
-            this.DataContext = new UserControl1ViewModel();
+            this.DataContext = new OpenAccountPoorViewModel();
         }
     }
 }

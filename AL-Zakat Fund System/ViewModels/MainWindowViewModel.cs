@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Prism.Commands;
 using Prism.Mvvm;
-using AL_Zakat_Fund_System.Views;
 using System.Windows;
+using AL_Zakat_Fund_System.Views;
 
-namespace AL_Zakat_Fund_System.ViewModel
+namespace AL_Zakat_Fund_System.ViewModels
 {
     class MainWindowViewModel : BindableBase
     {
@@ -21,20 +21,10 @@ namespace AL_Zakat_Fund_System.ViewModel
         private Window mWindow;
         private object _Page;
 
-        #endregion
+        private OpenAccountPoor PageOAP = new OpenAccountPoor();
+        private OpenRecordPoor PageORP = new OpenRecordPoor();
 
-        //private object _te;
-        //public object te
-        //{
-        //    get
-        //    {
-        //        return _te;
-        //    }
-        //    set
-        //    {
-        //        SetProperty(ref _te, value);
-        //    }
-        //}
+        #endregion
 
         #region public properties
         public object Page
@@ -57,11 +47,11 @@ namespace AL_Zakat_Fund_System.ViewModel
         #region Execute and CanExecute Functions
         private void Execute1()
         {
-            Page = new UserControl1();
+            Page = PageOAP;
         }
         private void Execute2()
         {
-            Page = new UserControl2();
+            Page = PageORP;
         }
         #endregion
 
@@ -73,7 +63,7 @@ namespace AL_Zakat_Fund_System.ViewModel
         public MainWindowViewModel(Window window)
         {
             mWindow = window;
-            Page = new UserControl1();
+            Page = PageOAP;
 
             Command1 = new DelegateCommand(Execute1);
             Command2 = new DelegateCommand(Execute2);
