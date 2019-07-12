@@ -177,7 +177,7 @@
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="You know I'm 2..."  Command="{Binding Command2}" />
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="You know I'm 3..." />
+                   Content="You know I'm 3..." Command="{Binding Command2}" />
             </StackPanel>
         </Grid>
 

@@ -7,6 +7,7 @@ using Prism.Commands;
 using Prism.Mvvm;
 using System.Windows;
 using AL_Zakat_Fund_System.Views;
+using AL_Zakat_Fund_System.Models;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
@@ -33,7 +34,6 @@ namespace AL_Zakat_Fund_System.ViewModels
             set { SetProperty(ref _Page, value); }
         }
         #endregion
-
 
         #region Delegate Command
         public DelegateCommand Command1 { get; set; }
@@ -64,6 +64,8 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             mWindow = window;
             Page = PageOAP;
+
+            MessageBox.Show(EmployeeLogin._UserName + EmployeeLogin._Password);
 
             Command1 = new DelegateCommand(Execute1);
             Command2 = new DelegateCommand(Execute2);

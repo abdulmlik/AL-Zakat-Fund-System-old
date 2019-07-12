@@ -9,24 +9,24 @@ using Prism.Commands;
 
 namespace AL_Zakat_Fund_System.Models
 {
-    class EmployeeLogin : BindableBase
+    static class EmployeeLogin
     {
         #region private Member
-        public string _UserName;
-        public string _Password;
+        public static string _UserName;
+        public static string _Password;
         #endregion
 
-        #region public properties
-        public string UserName
-        {
-            get { return _UserName; }
-            set { SetProperty(ref _UserName, value); }
-        }
-        public string Password
-        {
-            get { return _Password; }
-            set { SetProperty(ref _Password, value); }
-        }
-        #endregion
+        //#region public properties
+        //public static string UserName
+        //{
+        //    get { return _UserName; }
+        //    set { SetProperty(ref _UserName, value); }
+        //}
+        //public static string Password
+        //{
+        //    get { return _Password; }
+        //    set { SetProperty(ref _Password, value); }
+        //}
+        //#endregion
     }
 }

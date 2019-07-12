@@ -48,8 +48,8 @@ namespace AL_Zakat_Fund_System.ViewModels
             else
             {
                 MainWindow mainWindow = new MainWindow();
-                //EmployeeLogin._UserName = UserName;
-                //EmployeeLogin._Password = Password;
+                EmployeeLogin._UserName = UserName;
+                EmployeeLogin._Password = Password;
                 mWindow.Close();
                 mainWindow.ShowDialog();
             }
