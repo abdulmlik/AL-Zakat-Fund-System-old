@@ -13,10 +13,6 @@ namespace AL_Zakat_Fund_System.ViewModels
 {
     class MainWindowViewModel : BindableBase
     {
-
-        #region name regin
-        #endregion
-
         #region private Member
 
         private Window mWindow;
@@ -64,8 +60,6 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             mWindow = window;
             Page = PageOAP;
-
-            MessageBox.Show(EmployeeLogin._UserName + EmployeeLogin._Password);
 
             Command1 = new DelegateCommand(Execute1);
             Command2 = new DelegateCommand(Execute2);

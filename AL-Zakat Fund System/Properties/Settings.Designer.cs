@@ -82,5 +82,51 @@ namespace AL_Zakat_Fund_System.Properties {
                 this["Server"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EmpName {
+            get {
+                return ((string)(this["EmpName"]));
+            }
+            set {
+                this["EmpName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EmPassword {
+            get {
+                return ((string)(this["EmPassword"]));
+            }
+            set {
+                this["EmPassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public int EmpPriv {
+            get {
+                return ((int)(this["EmpPriv"]));
+            }
+            set {
+                this["EmpPriv"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public int Office {
+            get {
+                return ((int)(this["Office"]));
+            }
+            set {
+                this["Office"] = value;
+            }
+        }
     }
 }

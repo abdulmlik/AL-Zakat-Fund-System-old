@@ -7,6 +7,7 @@ using Prism.Commands;
 using Prism.Mvvm;
 using System.Windows;
 using AL_Zakat_Fund_System.Models;
+using System.Configuration;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
@@ -48,8 +49,9 @@ namespace AL_Zakat_Fund_System.ViewModels
             else
             {
                 MainWindow mainWindow = new MainWindow();
-                EmployeeLogin._UserName = UserName;
-                EmployeeLogin._Password = Password;
+                @Properties.Settings.Default.EmpName = UserName;
+                @Properties.Settings.Default.EmPassword = Password;
+                @Properties.Settings.Default.EmpPriv = 1;
                 mWindow.Close();
                 mainWindow.ShowDialog();
             }

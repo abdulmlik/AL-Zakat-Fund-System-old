@@ -9,8 +9,6 @@
     <Application.Resources>
         <ResourceDictionary>
 
-            <m:EmployeeLogin x:Key="EmployeeLogin" />
-
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/Buttons.xaml"/>
                 <ResourceDictionary Source="Styles/Colors.xaml"/>

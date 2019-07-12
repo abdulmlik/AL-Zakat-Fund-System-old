@@ -45,10 +45,6 @@
                             <Setter Property="Background" Value="#FFeeeeee" TargetName="Bd"/>
                             <Setter Property="Opacity" TargetName="Bd" Value=".8"/>
                         </Trigger>
-                        <Trigger Property="IsChecked" Value="True" >
-                            <Setter TargetName="Bd" Property="BorderBrush" Value="Transparent" />
-                            <Setter Property="Background" Value="#FF0000ff" TargetName="Bd"/>
-                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

@@ -17,5 +17,17 @@
     <Setting Name="Server" Type="System.String" Scope="User">
       <Value Profile="(Default)">ABDULMALIK-PC\ABDULMLIK</Value>
     </Setting>
+    <Setting Name="EmpName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="EmPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="EmpPriv" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Office" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>
