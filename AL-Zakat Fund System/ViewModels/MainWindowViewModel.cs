@@ -38,9 +38,24 @@ namespace AL_Zakat_Fund_System.ViewModels
         public DelegateCommand Command4 { get; set; }
         public DelegateCommand Command5 { get; set; }
 
+        public DelegateCommand LogoutCommand { get; set; }
         #endregion
 
         #region Execute and CanExecute Functions
+
+        #region functions file meun
+        private void LogOut()
+        {
+            loginWindow LWindow = new loginWindow();
+            @Properties.Settings.Default.EmpName = "";
+            @Properties.Settings.Default.EmPassword = "";
+            @Properties.Settings.Default.EmpPriv = 0;
+            mWindow.Close();
+            LWindow.ShowDialog();
+        }
+        #endregion
+
+        #region functions change content of pages
         private void Execute1()
         {
             Page = PageOAP;
@@ -49,6 +64,8 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             Page = PageORP;
         }
+        #endregion
+
         #endregion
 
         #region Construct
@@ -63,6 +80,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
             Command1 = new DelegateCommand(Execute1);
             Command2 = new DelegateCommand(Execute2);
+            LogoutCommand = new DelegateCommand(LogOut);
         }
         #endregion
     }

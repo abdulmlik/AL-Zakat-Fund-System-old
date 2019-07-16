@@ -40,7 +40,20 @@ namespace AL_Zakat_Fund_System.Models
 
             return conString;
         }
-#endregion
+
+        /// <summary>
+        /// clear Member
+        /// </summary>
+        private static void Clear()
+        {
+            sql = "";
+            con = new SqlConnection();
+            cmd = new SqlCommand("", con);
+            rd = null;
+            dt = null;
+            da = null;
+        }
+        #endregion
 
         #region public Member
         public static string sql;
@@ -55,7 +68,7 @@ namespace AL_Zakat_Fund_System.Models
         /// <summary>
         /// Open Connection
         /// </summary>
-        public static void OpenConnection()
+        public static bool OpenConnection()
         {
             try
             {
@@ -70,7 +83,9 @@ namespace AL_Zakat_Fund_System.Models
                 MessageBox.Show("فشل النظام في تكوين اتصال" + Environment.NewLine +
                                 "وصف : " + ex.Message.ToString(), "", MessageBoxButton.OK, MessageBoxImage.Error,
                                 MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                return false;
             }
+            return true;
         }//end open connection
 
         /// <summary>
@@ -91,8 +106,12 @@ namespace AL_Zakat_Fund_System.Models
                                 "وصف : " + ex.Message.ToString(), "", MessageBoxButton.OK, MessageBoxImage.Error,
                                 MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
             }
+            finally
+            {
+                Clear();   
+            }
         }//end Close connection
-        #endregion
+        #endregion   
 
     }// end class
 
