@@ -9,7 +9,7 @@ using Prism.Commands;
 
 namespace AL_Zakat_Fund_System.Models
 {
-    class EmployeeLogin : BindableBase
+    class Employee : BindableBase
     {
         #region private Member
         private string _UserName;

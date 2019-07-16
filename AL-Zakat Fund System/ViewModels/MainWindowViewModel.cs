@@ -39,6 +39,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         public DelegateCommand Command5 { get; set; }
 
         public DelegateCommand LogoutCommand { get; set; }
+        public DelegateCommand ContactStatusCommand { get; set; }
         #endregion
 
         #region Execute and CanExecute Functions
@@ -52,6 +53,15 @@ namespace AL_Zakat_Fund_System.ViewModels
             @Properties.Settings.Default.EmpPriv = 0;
             mWindow.Close();
             LWindow.ShowDialog();
+        }
+        private void ContactStatus()
+        {
+            if(DBConnection.OpenConnection())
+            {
+                MessageBox.Show("لا يوجد مشاكل في الاتصال بالخادم", "", MessageBoxButton.OK, MessageBoxImage.None,
+                                MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+            }
+
         }
         #endregion
 
@@ -81,6 +91,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             Command1 = new DelegateCommand(Execute1);
             Command2 = new DelegateCommand(Execute2);
             LogoutCommand = new DelegateCommand(LogOut);
+            ContactStatusCommand = new DelegateCommand(ContactStatus);
         }
         #endregion
     }

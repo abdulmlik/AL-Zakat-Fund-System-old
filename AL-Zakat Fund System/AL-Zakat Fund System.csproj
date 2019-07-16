@@ -76,7 +76,7 @@
     <Compile Include="loginWindow.xaml.cs">
       <DependentUpon>loginWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmployeeLogin.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\SQLServerConnection.cs" />
     <Compile Include="ViewModels\loginWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />

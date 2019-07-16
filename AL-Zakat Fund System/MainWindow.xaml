@@ -72,7 +72,7 @@
                 <MenuItem Header="_إنشاء نسخة احطياطية" />
                 <MenuItem Header="_إستعادة نسخة محفوظة" />
                 <Separator />
-                <MenuItem Header="_فحص حالة الاتصال بالخادم" />
+                <MenuItem Header="_فحص حالة الاتصال بالخادم" Command="{Binding ContactStatusCommand}" />
                 <Separator />
                 <MenuItem Header="_خروج" />
             </MenuItem>
