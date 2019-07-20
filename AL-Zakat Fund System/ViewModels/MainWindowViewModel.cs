@@ -60,6 +60,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             {
                 MessageBox.Show("لا يوجد مشاكل في الاتصال بالخادم", "", MessageBoxButton.OK, MessageBoxImage.None,
                                 MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                DBConnection.CloseConnection();
             }
 
         }

@@ -7,9 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <StackPanel Background="Aqua">
-
-            <TextBox></TextBox>
+        
+        <StackPanel>
+                
         </StackPanel>
     </Grid>
 </UserControl>

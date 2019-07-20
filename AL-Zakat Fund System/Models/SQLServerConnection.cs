@@ -49,9 +49,9 @@ namespace AL_Zakat_Fund_System.Models
             sql = "";
             con = new SqlConnection();
             cmd = new SqlCommand("", con);
-            rd = null;
-            dt = null;
-            da = null;
+            rd  = null;
+            dt  = null;
+            da  = null;
         }
         #endregion
 

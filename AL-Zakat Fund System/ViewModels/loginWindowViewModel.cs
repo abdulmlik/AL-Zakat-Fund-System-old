@@ -43,6 +43,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region Execute and CanExecute Functions
+
         #region login function
         private void loginExecute()
         {
@@ -110,6 +111,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             return IsEnabled;
         }
         #endregion
+
         #endregion
 
         #region Construct
