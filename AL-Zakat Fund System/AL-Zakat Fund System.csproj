@@ -78,6 +78,7 @@
     </Compile>
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Indigent.cs" />
+    <Compile Include="Models\Record.cs" />
     <Compile Include="Models\SQLServerConnection.cs" />
     <Compile Include="Models\Zakat.cs" />
     <Compile Include="ViewModels\loginWindowViewModel.cs" />
