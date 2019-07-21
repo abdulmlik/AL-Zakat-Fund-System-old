@@ -20,6 +20,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         private OpenAccountPoor PageOAP = new OpenAccountPoor();
         private OpenRecordPoor PageORP = new OpenRecordPoor();
+        private AddNewZakat PageANZ = new AddNewZakat();
 
         #endregion
 
@@ -87,7 +88,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         public MainWindowViewModel(Window window)
         {
             mWindow = window;
-            Page = PageOAP;
+            Page = PageANZ;
 
             Command1 = new DelegateCommand(Execute1);
             Command2 = new DelegateCommand(Execute2);

@@ -9,5 +9,15 @@
         <Setter Property="Margin" Value="0 6" />
     </Style>
 
+    <Style TargetType="{x:Type TextBlock}" x:Key="smallText" BasedOn="{StaticResource BaseTextBlockStyle}">
+        <Setter Property="Foreground" Value="{StaticResource ForegroundGrayBrush}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
 
+    <Style TargetType="{x:Type TextBlock}" x:Key="filedText" BasedOn="{StaticResource BaseTextBlockStyle}">
+        <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Margin" Value="0 6" />
+    </Style>
 </ResourceDictionary>

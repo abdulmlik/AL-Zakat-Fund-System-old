@@ -20,6 +20,7 @@
     <Color x:Key="ForegroundDark">#bdbdbd</Color>
     <SolidColorBrush x:Key="ForegroundDarkBrush" Color="{StaticResource ForegroundDark}" />
 
-    
+    <Color x:Key="ForegroundGray">#808080</Color>
+    <SolidColorBrush x:Key="ForegroundGrayBrush" Color="{StaticResource ForegroundGray}" />
 
 </ResourceDictionary>

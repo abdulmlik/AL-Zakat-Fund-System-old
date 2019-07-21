@@ -83,10 +83,14 @@
     <Compile Include="Models\Record.cs" />
     <Compile Include="Models\SQLServerConnection.cs" />
     <Compile Include="Models\Zakat.cs" />
+    <Compile Include="ViewModels\AddNewZakatViewModel.cs" />
     <Compile Include="ViewModels\loginWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\OpenAccountPoorViewModel.cs" />
     <Compile Include="ViewModels\OpenRecordPoorViewModel.cs" />
+    <Compile Include="Views\AddNewZakat.xaml.cs">
+      <DependentUpon>AddNewZakat.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\OpenAccountPoor.xaml.cs">
       <DependentUpon>OpenAccountPoor.xaml</DependentUpon>
     </Compile>
@@ -128,6 +132,10 @@
     <Page Include="Styles\Windows.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AddNewZakat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\OpenAccountPoor.xaml">
       <SubType>Designer</SubType>
