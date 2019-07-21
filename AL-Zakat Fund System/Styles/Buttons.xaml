@@ -56,7 +56,106 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
 
+    <Style x:Key="viewButtonStyle" TargetType="Control">
+        <Setter Property="Padding" Value="6"/>
+        <Setter Property="Margin" Value="0 20 0 0"/>
+        <Setter Property="Width" Value="120" />
+        <Setter Property="FontFamily" Value="Adobe Arabic"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="MinHeight" Value="25"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
 
+    <Style TargetType="TextBox" x:Key="Textbox4">
+        <Setter Property="Padding" Value="7"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="MinWidth" Value="250"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="border" CornerRadius="10"
+                            BorderBrush="#808080"
+                            BorderThickness="1"
+                            Background="#fff"
+                            >
+
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                        Focusable="false"
+                                        HorizontalScrollBarVisibility="Hidden"
+                                        VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- -->
+    <Style TargetType="TextBox" x:Key="smallTextbox">
+        <Setter Property="Padding" Value="7"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="MinWidth" Value="150"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="border" CornerRadius="10"
+                            BorderBrush="#808080"
+                            BorderThickness="1"
+                            Background="#fff"
+                            >
+
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                        Focusable="false"
+                                        HorizontalScrollBarVisibility="Hidden"
+                                        VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- -->
+    <Style TargetType="ComboBox" x:Key="ComboBox1">
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="MinWidth" Value="150"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        
+    </Style>
+
+    <!-- -->
+    <Style TargetType="DatePicker" x:Key="datePicker">
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Background" Value="#fff"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="MinHeight" Value="15"/> 
+        <Setter Property="MinWidth" Value="150"/>
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="Language" Value="AR"/>
+        <Setter Property="FirstDayOfWeek" Value="Saturday" />
+        <Setter Property="SelectedDateFormat" Value="Short" />
+    </Style>
+
+    <!--  -->
     <Style TargetType="TextBox" x:Key="Textbox">
         <Setter Property="Padding" Value="7"/>
         <Setter Property="Margin" Value="5"/>

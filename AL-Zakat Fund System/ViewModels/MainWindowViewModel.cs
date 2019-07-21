@@ -33,11 +33,11 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region Delegate Command
-        public DelegateCommand Command1 { get; set; }
-        public DelegateCommand Command2 { get; set; }
-        public DelegateCommand Command3 { get; set; }
-        public DelegateCommand Command4 { get; set; }
-        public DelegateCommand Command5 { get; set; }
+        public DelegateCommand PageOpenAccountPoorCommand { get; set; }
+        public DelegateCommand PageOpenRecordPoorCommand { get; set; }
+        public DelegateCommand PageAddNewZakatCommand { get; set; }
+        public DelegateCommand PageCommand { get; set; }
+        public DelegateCommand PageCommand5 { get; set; }
 
         public DelegateCommand LogoutCommand { get; set; }
         public DelegateCommand ContactStatusCommand { get; set; }
@@ -68,13 +68,17 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region functions change content of pages
-        private void Execute1()
+        private void PageOpenAccountPoorExecute()
         {
             Page = PageOAP;
         }
-        private void Execute2()
+        private void PageOpenRecordPoorExecute()
         {
             Page = PageORP;
+        }
+        private void PageAddNewZakatExecute()
+        {
+            Page = PageANZ;
         }
         #endregion
 
@@ -90,8 +94,9 @@ namespace AL_Zakat_Fund_System.ViewModels
             mWindow = window;
             Page = PageANZ;
 
-            Command1 = new DelegateCommand(Execute1);
-            Command2 = new DelegateCommand(Execute2);
+            PageOpenAccountPoorCommand = new DelegateCommand(PageOpenAccountPoorExecute);
+            PageOpenRecordPoorCommand = new DelegateCommand(PageOpenRecordPoorExecute);
+            PageAddNewZakatCommand = new DelegateCommand(PageAddNewZakatExecute);
             LogoutCommand = new DelegateCommand(LogOut);
             ContactStatusCommand = new DelegateCommand(ContactStatus);
         }

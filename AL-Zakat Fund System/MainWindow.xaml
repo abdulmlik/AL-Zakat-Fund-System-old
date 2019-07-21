@@ -10,7 +10,8 @@
         mc:Ignorable="d"
         Title="صندوق الزكاة الليبي" 
         Icon="Images/Logo/34.png"
-        Height="600" Width="900" 
+        Height="600" Width="950" 
+        MinHeight="600" MinWidth="920"
         WindowStartupLocation="CenterScreen"
         FontFamily="Adobe Arabic"
         FontSize="20"
@@ -25,7 +26,9 @@
             <v:OpenRecordPoor />
             <!--<v::OpenRecordPoor DataContext="{Binding p2}"/> p2 = new :OpenRecordPoorViewModel(); -->
         </DataTemplate>
-
+        <DataTemplate x:Key="AddNewZakatViewModel" DataType="{x:Type vm:AddNewZakatViewModel}">
+            <v:AddNewZakat />
+        </DataTemplate>
     </Window.Resources>
 
     <!-- Divide the page -->
@@ -175,11 +178,11 @@
             <!-- sidebar buttons -->
             <StackPanel   Grid.Row="1" Grid.Column="0" Opacity="0.8" Grid.ColumnSpan="2" >
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="فتح ملف لمحتاج" Command="{Binding Command1}" />
+                   Content="فتح ملف لمحتاج" Command="{Binding PageOpenAccountPoorCommand}" />
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="فتح محضر لمحتاج"  Command="{Binding Command2}" />
+                   Content="فتح محضر لمحتاج"  Command="{Binding PageOpenRecordPoorCommand}" />
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="إضافة زكاة جديدة" Command="{Binding Command2}" />
+                   Content="إضافة زكاة جديدة" Command="{Binding PageAddNewZakatCommand}" />
             </StackPanel>
         </Grid>
 

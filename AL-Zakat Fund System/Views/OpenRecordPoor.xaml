@@ -5,8 +5,51 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <StackPanel Background="Bisque"></StackPanel>
-    </Grid>
+             FlowDirection="RightToLeft"
+             d:DesignHeight="800" d:DesignWidth="700">
+    <ScrollViewer>
+        <StackPanel Margin="10">
+            <GroupBox Header="استمارة فتح محضر" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="الرقم الوطني للمحتاج : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="2"/>
+                    <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"  >
+                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBlock Text="الرقم الوطني للمحتاج الذي يريد فتح محضر" Style="{StaticResource smallText}"/>
+                    </StackPanel>
+                    <TextBlock Text="رقم قرار اللجنة الاستشارية : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0" Grid.ColumnSpan="2" />
+                    <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" >
+                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBlock Text="رقم قرار اللجنة الاستشارية لفتح المحضر" Style="{StaticResource smallText}"/>
+                    </StackPanel>
+                    <TextBlock Text="حالة المحضر : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
+                    <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="2"  >
+                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
+                            <ComboBoxItem>فعال</ComboBoxItem>
+                            <ComboBoxItem>غير فعال</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <TextBlock Text="تاريخ المحضر : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="2"/>
+                    <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="2"  >
+                        <DatePicker Style="{StaticResource datePicker}"  />
+                    </StackPanel>
+                    <Button Content="حفظ" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="3"  />
+                    <Button Content="تفريغ" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="3"  />
+                    <Button Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="3" Grid.Row="3"  />
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

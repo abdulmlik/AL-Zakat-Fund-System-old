@@ -73,7 +73,7 @@ namespace AL_Zakat_Fund_System.Models
         public DateTime BirthDate
         {
             get { return _BirthDate; }
-            set { BirthDate = value; }
+            set { SetProperty(ref _BirthDate, value); }
         }
 
         public bool StillWorking

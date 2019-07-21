@@ -12,12 +12,12 @@
     <Style TargetType="{x:Type TextBlock}" x:Key="smallText" BasedOn="{StaticResource BaseTextBlockStyle}">
         <Setter Property="Foreground" Value="{StaticResource ForegroundGrayBrush}" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontSize" Value="14" />
     </Style>
 
     <Style TargetType="{x:Type TextBlock}" x:Key="filedText" BasedOn="{StaticResource BaseTextBlockStyle}">
         <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}" />
         <Setter Property="FontSize" Value="20" />
-        <Setter Property="Margin" Value="0 6" />
+        <Setter Property="Margin" Value="0 10 0 0" />
     </Style>
 </ResourceDictionary>
