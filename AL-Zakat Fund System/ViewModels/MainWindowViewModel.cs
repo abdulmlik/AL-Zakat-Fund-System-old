@@ -93,7 +93,6 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             mWindow = window;
             Page = PageANZ;
-
             PageOpenAccountPoorCommand = new DelegateCommand(PageOpenAccountPoorExecute);
             PageOpenRecordPoorCommand = new DelegateCommand(PageOpenRecordPoorExecute);
             PageAddNewZakatCommand = new DelegateCommand(PageAddNewZakatExecute);

@@ -7,9 +7,9 @@
              xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
              mc:Ignorable="d" 
              FlowDirection="RightToLeft"
-             d:DesignHeight="800" d:DesignWidth="700">
+             d:DesignHeight="480" d:DesignWidth="700">
     <Grid>
-        <ScrollViewer Style="{StaticResource ScrollViewerStyle}" >
+        <ScrollViewer Style="{StaticResource ScrollViewerStyle}" Height="480" VerticalAlignment="Top" >
             <StackPanel Margin="10">
                 <GroupBox Header="إذن صرف" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
                     <Grid Margin="10">
