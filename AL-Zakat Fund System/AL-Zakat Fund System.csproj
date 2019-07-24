@@ -98,6 +98,12 @@
     <Compile Include="Views\DeliverRecord.xaml.cs">
       <DependentUpon>DeliverRecord.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EditFollowUp.xaml.cs">
+      <DependentUpon>EditFollowUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditRecord.xaml.cs">
+      <DependentUpon>EditRecord.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ModifyExchangePermission.xaml.cs">
       <DependentUpon>ModifyExchangePermission.xaml</DependentUpon>
     </Compile>
@@ -155,6 +161,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DeliverRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditFollowUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditRecord.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
