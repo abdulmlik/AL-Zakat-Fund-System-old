@@ -95,6 +95,9 @@
     <Compile Include="Views\CreateExchangePermission.xaml.cs">
       <DependentUpon>CreateExchangePermission.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DeliverRecord.xaml.cs">
+      <DependentUpon>DeliverRecord.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\OpenAccountPoor.xaml.cs">
       <DependentUpon>OpenAccountPoor.xaml</DependentUpon>
     </Compile>
@@ -142,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CreateExchangePermission.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DeliverRecord.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

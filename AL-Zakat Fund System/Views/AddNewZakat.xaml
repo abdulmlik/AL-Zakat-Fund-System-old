@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              FlowDirection="RightToLeft"
              d:DesignHeight="800" d:DesignWidth="700">
-    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility ="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" >
+    <ScrollViewer Style="{StaticResource ScrollViewerStyle}" >
         <StackPanel Margin="10">
             <GroupBox Header="ايصال استلام الزكاة" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
                 <Grid Margin="10">
