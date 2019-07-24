@@ -84,12 +84,16 @@
     <Compile Include="Models\SQLServerConnection.cs" />
     <Compile Include="Models\Zakat.cs" />
     <Compile Include="ViewModels\AddNewZakatViewModel.cs" />
+    <Compile Include="ViewModels\CreateExchangePermissionViewModel.cs" />
     <Compile Include="ViewModels\loginWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\OpenAccountPoorViewModel.cs" />
     <Compile Include="ViewModels\OpenRecordPoorViewModel.cs" />
     <Compile Include="Views\AddNewZakat.xaml.cs">
       <DependentUpon>AddNewZakat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateExchangePermission.xaml.cs">
+      <DependentUpon>CreateExchangePermission.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\OpenAccountPoor.xaml.cs">
       <DependentUpon>OpenAccountPoor.xaml</DependentUpon>
@@ -134,6 +138,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\AddNewZakat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateExchangePermission.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

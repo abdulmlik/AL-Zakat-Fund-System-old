@@ -8,93 +8,95 @@ using Prism.Mvvm;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
-    class AddNewZakatViewModel : BindableBase
+    class AddNewZakatViewModel : Zakat
     {
         #region private Member
-        Zakat zakat = new Zakat();
+
         #endregion
 
         #region public properties
         public int Zakat_id
         {
-            get { return zakat.Zakat_id; }
-            set { SetProperty(ref zakat.Zakat_id, value); }
+            get { return _Zakat_id; }
+            set { SetProperty(ref _Zakat_id, value); }
         }
 
         public string Name
         {
-            get { return zakat.Name; }
-            set { SetProperty(ref zakat.Name, value); }
+            get { return _Name; }
+            set { SetProperty(ref _Name, value); }
         }
 
         public string Address
         {
-            get { return zakat.Address; }
-            set { SetProperty(ref zakat.Address, value); }
+            get { return _Address; }
+            set { SetProperty(ref _Address, value); }
         }
 
         public DateTime SDate
         {
-            get { return zakat.SDate; }
-            set { SetProperty(ref zakat.SDate, value); }
+            get { return _SDate; }
+            set { SetProperty(ref _SDate, value); }
         }
 
         public decimal Amount
         {
-            get { return zakat.Amount; }
-            set { SetProperty(ref zakat.Amount, value); }
+            get { return _Amount; }
+            set { SetProperty(ref _Amount, value); }
         }
 
         public int ReceiptNO
         {
-            get { return zakat.ReceiptNO; }
-            set { SetProperty(ref zakat.ReceiptNO, value); }
+            get { return _ReceiptNO; }
+            set { SetProperty(ref _ReceiptNO, value); }
         }
 
         public byte ZType
         {
-            get { return zakat.ZType; }
-            set { SetProperty(ref zakat.ZType, value); }
+            get { return _ZType; }
+            set { SetProperty(ref _ZType, value); }
         }
 
         public string ZCalss
         {
-            get { return zakat.ZCalss; }
-            set { SetProperty(ref zakat.ZCalss, value); }
+            get { return _ZCalss; }
+            set { SetProperty(ref _ZCalss, value); }
         }
 
         public int InstrumentNo
         {
-            get { return zakat.InstrumentNo; }
-            set { SetProperty(ref zakat.InstrumentNo, value); }
+            get { return _InstrumentNo; }
+            set { SetProperty(ref _InstrumentNo, value); }
         }
 
         public string Phone
         {
-            get { return zakat.Phone; }
-            set { SetProperty(ref zakat.Phone, value); }
+            get { return _Phone; }
+            set { SetProperty(ref _Phone, value); }
         }
 
         public string Email
         {
-            get { return zakat.Email; }
-            set { SetProperty(ref zakat.Email, value); }
+            get { return _Email; }
+            set { SetProperty(ref _Email, value); }
         }
 
         public byte CaseDeposit
         {
-            get { return zakat.CaseDeposit; }
-            set { SetProperty(ref zakat.CaseDeposit, value); }
+            get { return _CaseDeposit; }
+            set { SetProperty(ref _CaseDeposit, value); }
         }
+
         public bool Convrsion
         {
-            get { return zakat.Convrsion; }
-            set { SetProperty(ref zakat.Convrsion, value); }
+            get { return _Convrsion; }
+            set { SetProperty(ref _Convrsion, value); }
         }
+
         public long Emp_ssn
         {
-            get { return zakat.Emp_ssn; }
-            set { SetProperty(ref zakat.Emp_ssn, value); }
+            get { return _Emp_ssn; }
+            set { SetProperty(ref _Emp_ssn, value); }
         }
         #endregion
 
