@@ -9,7 +9,7 @@
         d:DesignHeight="550" d:DesignWidth="700">
     <ScrollViewer Style="{StaticResource ScrollViewerStyle}" >
         <StackPanel Margin="10">
-            <GroupBox Header="استمارة فتح محضر" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
+            <GroupBox Header="التعديل في المحضر" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
                 <Grid Margin="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>

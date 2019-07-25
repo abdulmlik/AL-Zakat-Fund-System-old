@@ -29,6 +29,9 @@
         <DataTemplate x:Key="AddNewZakatViewModel" DataType="{x:Type vm:AddNewZakatViewModel}">
             <v:AddNewZakat />
         </DataTemplate>
+        <DataTemplate x:Key="EditFollowUpViewModel" DataType="{x:Type vm:EditFollowUpViewModel}">
+            <v:EditFollowUp />
+        </DataTemplate>
     </Window.Resources>
 
     <!-- Divide the page -->

@@ -18,9 +18,26 @@ namespace AL_Zakat_Fund_System.ViewModels
         private Window mWindow;
         private object _Page;
 
-        private OpenAccountPoor PageOAP = new OpenAccountPoor();
-        private OpenRecordPoor PageORP = new OpenRecordPoor();
-        private AddNewZakat PageANZ = new AddNewZakat();
+        //private OpenAccountPoor PageOAP = new OpenAccountPoor();
+        //private OpenRecordPoor PageORP = new OpenRecordPoor();
+        //private AddNewZakat PageANZ = new AddNewZakat();
+        //private CreateExchangePermission PageCEP = new CreateExchangePermission();
+        //private DeliverRecord PageDR = new DeliverRecord();
+
+        //private EditRecord PageER = new EditRecord();
+        //private ModifyZakat PageMZ = new ModifyZakat();
+        //private ModifyExchangePermission PageMEP = new ModifyExchangePermission();
+        //private EditFollowUp PageEFUP = new EditFollowUp();
+        private OpenAccountPoor PageOAP;
+        private OpenRecordPoor PageORP;
+        private AddNewZakat PageANZ;
+        private CreateExchangePermission PageCEP;
+        private DeliverRecord PageDR;
+
+        private EditRecord PageER;
+        private ModifyZakat PageMZ;
+        private ModifyExchangePermission PageMEP;
+        private EditFollowUp PageEFUP;
 
         #endregion
 
@@ -92,7 +109,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         public MainWindowViewModel(Window window)
         {
             mWindow = window;
-            Page = PageANZ;
+            //Page = PageEFUP;
             PageOpenAccountPoorCommand = new DelegateCommand(PageOpenAccountPoorExecute);
             PageOpenRecordPoorCommand = new DelegateCommand(PageOpenRecordPoorExecute);
             PageAddNewZakatCommand = new DelegateCommand(PageAddNewZakatExecute);

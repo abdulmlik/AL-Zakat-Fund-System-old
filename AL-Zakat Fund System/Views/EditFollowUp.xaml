@@ -7,10 +7,10 @@
              xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
              mc:Ignorable="d"
              FlowDirection="RightToLeft"
-             d:DesignHeight="400" d:DesignWidth="700">
+             d:DesignHeight="600" d:DesignWidth="700">
     <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
         <StackPanel Margin="10">
-            <GroupBox Header="تحويل المحتاج إلى البحث الاجتماعي" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
+            <GroupBox Header="تعديل في المتابعة" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
                 <Grid Margin="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
@@ -25,34 +25,53 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="الرقم الوطني للمحتاج : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="2"/>
+                    <TextBlock Text="الرقم الوطني للمحتاج : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="2"/>
                     <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"  >
                         <TextBox Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="الرقم الوطني للمحتاج الذي يريد فتح محضر" Style="{StaticResource smallText}"/>
                     </StackPanel>
-                    <TextBlock Text="تاريخ الاستلام : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0"/>
-                    <StackPanel Margin="10" Grid.Column="3" Grid.Row="0"  >
-                        <DatePicker SelectedDate="{x:Static sys:DateTime.Now}"  Style="{StaticResource datePicker}"  />
+                    <TextBlock Text="رقم المتابع : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0"/>
+                    <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2"  >
+                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox2}" IsEditable="True" >
+                            
+                        </ComboBox>
+                        <TextBlock Text="رقم الوطني الخاص بالمتابع" Style="{StaticResource smallText}"/>
                     </StackPanel>
-                    <TextBlock Text="المسافة : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="1"/>
-                    <StackPanel Margin="0 10" Grid.Column="3" Grid.Row="1"  >
+                    <TextBlock Text="تاريخ الاستلام : "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
+                    <StackPanel Margin="10" Grid.Column="1" Grid.Row="2"  >
+                        <DatePicker SelectedDate=""  Style="{StaticResource datePicker}"  />
+                    </StackPanel>
+                    <TextBlock Text="تاريخ الزيارة : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="3"/>
+                    <StackPanel Margin="10" Grid.Column="1" Grid.Row="3"  >
+                        <DatePicker SelectedDate=""  Style="{StaticResource datePicker}"  />
+                    </StackPanel>
+                    <TextBlock Text="تاريخ التسليم : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="4"/>
+                    <StackPanel Margin="10" Grid.Column="1" Grid.Row="4"  >
+                        <DatePicker SelectedDate=""  Style="{StaticResource datePicker}"  />
+                    </StackPanel>
+                    <TextBlock Text="المسافة : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="2"/>
+                    <StackPanel Margin="0 10" Grid.Column="3" Grid.Row="2"  >
                         <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
                             <ComboBoxItem>عادية</ComboBoxItem>
                             <ComboBoxItem>بعيدة</ComboBoxItem>
                         </ComboBox>
                         <TextBlock Text="المسافة بين المتابع والمحتاج" Style="{StaticResource smallText}"/>
                     </StackPanel>
-                    <TextBlock Text="رقم المتابع : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
-                    <StackPanel Margin="0 10" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"  >
-                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" IsEditable="True" >
-
+                    <TextBlock Text="حالة المتابعة : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="3"/>
+                    <StackPanel Margin="0 10" Grid.Column="3" Grid.Row="3"  >
+                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
+                            <ComboBoxItem>تحت الاجراء</ComboBoxItem>
+                            <ComboBoxItem>مرجعة</ComboBoxItem>
                         </ComboBox>
-                        <TextBlock Text="رقم الوطني الخاص بالمتابع" Style="{StaticResource smallText}"/>
+                        <TextBlock Text="المسافة بين المتابع والمحتاج" Style="{StaticResource smallText}"/>
                     </StackPanel>
-                    <Button Content="حفظ" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="5"  />
-                    <Button Content="تفريغ" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="5"  />
-                    <Button Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="3" Grid.Row="5"  />
+                   
+                    <Button Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="5"  />
+                    <Button Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="5"  />
                 </Grid>
             </GroupBox>
         </StackPanel>
