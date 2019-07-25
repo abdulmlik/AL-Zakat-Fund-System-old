@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
-    class OpenAccountPoorViewModel
+    class DeliverRecordViewModel
     {
         #region private Member
 

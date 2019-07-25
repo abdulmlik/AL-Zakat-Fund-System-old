@@ -85,8 +85,13 @@
     <Compile Include="Models\Zakat.cs" />
     <Compile Include="ViewModels\AddNewZakatViewModel.cs" />
     <Compile Include="ViewModels\CreateExchangePermissionViewModel.cs" />
+    <Compile Include="ViewModels\DeliverRecordViewModel.cs" />
+    <Compile Include="ViewModels\EditFollowUpViewModel.cs" />
+    <Compile Include="ViewModels\EditRecordViewModel.cs" />
     <Compile Include="ViewModels\loginWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\ModifyExchangePermissionViewModel.cs" />
+    <Compile Include="ViewModels\ModifyZakatViewModel.cs" />
     <Compile Include="ViewModels\OpenAccountPoorViewModel.cs" />
     <Compile Include="ViewModels\OpenRecordPoorViewModel.cs" />
     <Compile Include="Views\AddNewZakat.xaml.cs">
