@@ -39,7 +39,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             set { SetProperty(ref _SDate, value); }
         }
 
-        public decimal Amount
+        public decimal? Amount
         {
             get { return _Amount; }
             set { SetProperty(ref _Amount, value); }

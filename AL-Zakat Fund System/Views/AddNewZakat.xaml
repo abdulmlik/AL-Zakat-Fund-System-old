@@ -42,7 +42,7 @@
                     </StackPanel>
                     <TextBlock Text="قيمة الزكاة : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="2"  >
-                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding Amount,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="قيمة الاموال المجباة من المزكي" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="رقم الإيصال : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="2"/>

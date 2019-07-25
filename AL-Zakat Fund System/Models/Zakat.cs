@@ -16,7 +16,7 @@ namespace AL_Zakat_Fund_System.Models
         protected string _Name;
         protected string _Address;
         protected DateTime _SDate;
-        protected decimal _Amount;
+        protected decimal? _Amount;
         protected int _ReceiptNO;
         protected byte _ZType;
         protected string _ZCalss;
