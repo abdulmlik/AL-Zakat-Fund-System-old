@@ -120,6 +120,17 @@ namespace AL_Zakat_Fund_System.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public int EmpNo {
+            get {
+                return ((int)(this["EmpNo"]));
+            }
+            set {
+                this["EmpNo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public int Office {
             get {
                 return ((int)(this["Office"]));

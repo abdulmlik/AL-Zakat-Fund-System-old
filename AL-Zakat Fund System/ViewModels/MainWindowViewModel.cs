@@ -20,20 +20,34 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         #region reason not use this method because they consume a lot of memory
 
-        //private OpenAccountPoor PageOAP = new OpenAccountPoor();
-        //private OpenRecordPoor PageORP = new OpenRecordPoor();
-        //private AddNewZakat PageANZ = new AddNewZakat();
-        //private CreateExchangePermission PageCEP = new CreateExchangePermission();
-        //private DeliverRecord PageDR = new DeliverRecord();
+        private OpenAccountPoor PageOAP = new OpenAccountPoor();
+        private OpenRecordPoor PageORP = new OpenRecordPoor();
+        private AddNewZakat PageANZ = new AddNewZakat();
+        private CreateExchangePermission PageCEP = new CreateExchangePermission();
+        private DeliverRecord PageDR = new DeliverRecord();
+
+        private ViewAccountData PageVAD = new ViewAccountData();
+        private ViewExchangePermissionData PageVEPD = new ViewExchangePermissionData();
+        private ViewFollowUpData PageVFD = new ViewFollowUpData();
+        private ViewFollowUpDataObserver PageVFDO = new ViewFollowUpDataObserver();
+        private ViewRecordData PageVRD = new ViewRecordData();
+        private ViewZakatData PageVZD = new ViewZakatData();
 
         #endregion
 
-        private OpenAccountPoor PageOAP;
-        private OpenRecordPoor PageORP;
-        private AddNewZakat PageANZ;
-        private CreateExchangePermission PageCEP;
-        private DeliverRecord PageDR;
+        //private OpenAccountPoor PageOAP;
+        //private OpenRecordPoor PageORP;
+        //private AddNewZakat PageANZ;
+        //private CreateExchangePermission PageCEP;
+        //private DeliverRecord PageDR;
 
+        //private ViewAccountData PageVAD;
+        //private ViewExchangePermissionData PageVEPD;
+        //private ViewFollowUpData PageVFD;
+        //private ViewFollowUpDataObserver PageVFDO;
+        //private ViewRecordData PageVRD;
+        //private ViewZakatData PageVZD;
+        
         //private EditAccount PageEA;
         //private EditRecord PageER;
         //private ModifyZakat PageMZ;

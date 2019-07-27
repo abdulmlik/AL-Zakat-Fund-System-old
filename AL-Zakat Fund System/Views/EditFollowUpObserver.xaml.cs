@@ -10,22 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 using AL_Zakat_Fund_System.ViewModels;
-
 namespace AL_Zakat_Fund_System.Views
 {
     /// <summary>
-    /// Interaction logic for ViewFollowUpDataObserver.xaml
+    /// Interaction logic for EditFollowUpObserver.xaml
     /// </summary>
-    public partial class ViewFollowUpDataObserver : UserControl
+    public partial class EditFollowUpObserver : Window
     {
-        public ViewFollowUpDataObserver()
+        public EditFollowUpObserver()
         {
             InitializeComponent();
-            this.DataContext = new ViewFollowUpDataObserverViewModel();
+            this.DataContext = new EditFollowUpObserverViewModel();
         }
     }
 }

@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using AL_Zakat_Fund_System.ViewModels;
+
 namespace AL_Zakat_Fund_System.Views
 {
     /// <summary>
@@ -23,6 +25,7 @@ namespace AL_Zakat_Fund_System.Views
         public ViewFollowUpData()
         {
             InitializeComponent();
+            this.DataContext = new ViewFollowUpDataViewModel();
         }
     }
 }

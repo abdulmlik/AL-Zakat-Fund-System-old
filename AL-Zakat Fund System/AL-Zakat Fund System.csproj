@@ -87,6 +87,7 @@
     <Compile Include="ViewModels\CreateExchangePermissionViewModel.cs" />
     <Compile Include="ViewModels\DeliverRecordViewModel.cs" />
     <Compile Include="ViewModels\EditAccountViewModel.cs" />
+    <Compile Include="ViewModels\EditFollowUpObserverViewModel.cs" />
     <Compile Include="ViewModels\EditFollowUpViewModel.cs" />
     <Compile Include="ViewModels\EditRecordViewModel.cs" />
     <Compile Include="ViewModels\loginWindowViewModel.cs" />
@@ -115,6 +116,9 @@
     </Compile>
     <Compile Include="Views\EditFollowUp.xaml.cs">
       <DependentUpon>EditFollowUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditFollowUpObserver.xaml.cs">
+      <DependentUpon>EditFollowUpObserver.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EditRecord.xaml.cs">
       <DependentUpon>EditRecord.xaml</DependentUpon>
@@ -202,6 +206,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EditFollowUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditFollowUpObserver.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

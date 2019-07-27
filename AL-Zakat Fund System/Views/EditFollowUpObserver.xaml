@@ -1,0 +1,59 @@
+﻿<Window x:Class="AL_Zakat_Fund_System.Views.EditFollowUpObserver"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
+        mc:Ignorable="d"
+        Title="EditFollowUpObserver" FlowDirection="RightToLeft"
+             Height="600" Width="700">
+    <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
+        <StackPanel Margin="10">
+            <GroupBox Header="تعديل في المتابعة" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="اسم المحتاج : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="0" />
+                    <TextBlock Text="اسم المحتاج : " Style="{StaticResource filedText}" Grid.Column="1" Grid.Row="0" />
+                    <TextBlock Text="رقمه الوطني : " Style="{StaticResource filedText}" Grid.Column="2" Grid.Row="0" />
+                    <TextBlock Text="اسم المحتاج : " Style="{StaticResource filedText}" Grid.Column="3" Grid.Row="0" />
+                    <TextBlock Text="تاريخ اخر اتصال : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="1" Grid.ColumnSpan="2"/>
+                    <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"  >
+                        <DatePicker SelectedDate=""  Style="{StaticResource datePicker}"  />
+                        <TextBlock Text="تاريخ اخر اتصال بالمحتاج" Style="{StaticResource smallText}"/>
+                    </StackPanel>
+                    <TextBlock Text="رقم قرار اللجنة : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="1"/>
+                    <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2"  >
+                        <TextBox Style="{StaticResource Textbox4}" />
+                        <TextBlock Text="رقم قرار اللجنة الاستشارية" Style="{StaticResource smallText}"/>
+                    </StackPanel>
+                    <TextBlock Text="قرار اللجنة : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="3"/>
+                    <StackPanel Margin="0 5" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3"  >
+                        <TextBox Height="100" Margin="0" TextWrapping="WrapWithOverflow"  />
+                        <TextBlock Text="ملاحظة هي قرار اللجنة الاستشارية بخصوص المحتاج" Style="{StaticResource smallText}" />
+                    </StackPanel>
+                    <TextBlock Text="وضع المتابعة : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="4"/>
+                    <StackPanel Margin="0 5" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4"  >
+                        <TextBox Height="100"  TextWrapping="WrapWithOverflow" />
+                        <TextBlock Text="تعليق على حالة المتابعة مثل هل تم الاتصال به او ماذا سيتم ابلاغه" Style="{StaticResource smallText}" />
+                    </StackPanel>
+
+                    <Button Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="5"  />
+                    <Button Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="5"  />
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

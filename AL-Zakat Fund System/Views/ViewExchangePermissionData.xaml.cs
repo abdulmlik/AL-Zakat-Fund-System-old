@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AL_Zakat_Fund_System.ViewModels;
 
 namespace AL_Zakat_Fund_System.Views
 {
@@ -23,6 +24,7 @@ namespace AL_Zakat_Fund_System.Views
         public ViewExchangePermissionData()
         {
             InitializeComponent();
+            this.DataContext = new ViewExchangePermissionDataViewModel();
         }
     }
 }
