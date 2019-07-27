@@ -50,19 +50,16 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <!-- -->
 
-    <Style TargetType="RadioButton" x:Key="RadioButtonStyle">
-        <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}" />
-        <Setter Property="FontSize" Value="16" />
-        <Setter Property="FontFamily" Value="Adobe Arabic" />
-        <Setter Property="FontWeight" Value="Regular"/>
-    </Style>
-    
+    <!-- -->
     <Style x:Key="controlStyle" TargetType="Control">
         <Setter Property="HorizontalContentAlignment" Value="Right" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
-
+    <!-- -->
+    
+    <!-- -->
     <Style x:Key="viewButtonStyle" TargetType="Control">
         <Setter Property="Padding" Value="6"/>
         <Setter Property="Margin" Value="0 20 0 0"/>
@@ -74,7 +71,23 @@
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
+    <!-- -->
 
+    <!-- -->
+    <Style x:Key="viewButtonStyleSearch" TargetType="Control">
+        <Setter Property="Padding" Value="6"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Width" Value="80" />
+        <Setter Property="FontFamily" Value="Adobe Arabic"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="MinHeight" Value="25"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <!-- -->
+    
+    <!-- -->
     <Style TargetType="TextBox" x:Key="Textbox4">
         <Setter Property="Padding" Value="7"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}"/>
@@ -128,6 +141,8 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    <!-- -->
+    
     <!-- -->
     <Style TargetType="TextBox" x:Key="smallTextbox">
         <Setter Property="Padding" Value="7"/>
@@ -183,6 +198,8 @@
         </Style.Triggers>
     </Style>
     <!-- -->
+
+    <!-- -->
     <Style TargetType="ComboBox" x:Key="ComboBox1">
         <Setter Property="Padding" Value="5"/>
         <Setter Property="FontWeight" Value="Regular"/>
@@ -194,8 +211,9 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         
     </Style>
-
-
+    <!-- -->
+    
+    <!-- -->
     <Style TargetType="ComboBox" x:Key="ComboBox2">
         <Setter Property="FontWeight" Value="Regular"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}"/>
@@ -208,7 +226,8 @@
         <Style.Triggers>
         </Style.Triggers>
     </Style>
-
+    <!-- -->
+    
     <!-- -->
     <Style TargetType="DatePicker" x:Key="datePicker">
         <Setter Property="Padding" Value="5"/>
@@ -223,8 +242,10 @@
         <Setter Property="FirstDayOfWeek" Value="Saturday" />
         <Setter Property="SelectedDateFormat" Value="Short" />
     </Style>
-
-    <!--  -->
+    <!-- -->
+    
+    
+    <!-- not use -->
     <Style TargetType="TextBox" x:Key="Textbox">
         <Setter Property="Padding" Value="7"/>
         <Setter Property="Margin" Value="5"/>
@@ -388,5 +409,13 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <Style TargetType="RadioButton" x:Key="RadioButtonStyle">
+        <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="Adobe Arabic" />
+        <Setter Property="FontWeight" Value="Regular"/>
+    </Style>
+
 
 </ResourceDictionary>

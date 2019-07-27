@@ -95,6 +95,12 @@
     <Compile Include="ViewModels\ModifyZakatViewModel.cs" />
     <Compile Include="ViewModels\OpenAccountPoorViewModel.cs" />
     <Compile Include="ViewModels\OpenRecordPoorViewModel.cs" />
+    <Compile Include="ViewModels\ViewAccountDataViewModel.cs" />
+    <Compile Include="ViewModels\ViewExchangePermissionDataViewModel.cs" />
+    <Compile Include="ViewModels\ViewFollowUpDataObserverViewModel.cs" />
+    <Compile Include="ViewModels\ViewFollowUpDataViewModel.cs" />
+    <Compile Include="ViewModels\ViewRecordDataViewModel.cs" />
+    <Compile Include="ViewModels\ViewZakatDataViewModel.cs" />
     <Compile Include="Views\AddNewZakat.xaml.cs">
       <DependentUpon>AddNewZakat.xaml</DependentUpon>
     </Compile>
@@ -124,6 +130,24 @@
     </Compile>
     <Compile Include="Views\OpenRecordPoor.xaml.cs">
       <DependentUpon>OpenRecordPoor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewAccountData.xaml.cs">
+      <DependentUpon>ViewAccountData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewExchangePermissionData.xaml.cs">
+      <DependentUpon>ViewExchangePermissionData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewFollowUpData.xaml.cs">
+      <DependentUpon>ViewFollowUpData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewFollowUpDataObserver.xaml.cs">
+      <DependentUpon>ViewFollowUpDataObserver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewRecordData.xaml.cs">
+      <DependentUpon>ViewRecordData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewZakatData.xaml.cs">
+      <DependentUpon>ViewZakatData.xaml</DependentUpon>
     </Compile>
     <Page Include="loginWindow.xaml">
       <SubType>Designer</SubType>
@@ -198,6 +222,30 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\OpenRecordPoor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewAccountData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewExchangePermissionData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewFollowUpData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewFollowUpDataObserver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewRecordData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewZakatData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -8,80 +8,78 @@
              mc:Ignorable="d" 
              FlowDirection="RightToLeft"
              d:DesignHeight="480" d:DesignWidth="700">
-    <Grid>
-        <ScrollViewer Style="{StaticResource ScrollViewerStyle}" Height="480" VerticalAlignment="Top" >
-            <StackPanel Margin="10">
-                <GroupBox Header="إذن صرف" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
-                    <Grid Margin="10">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                        </Grid.RowDefinitions>
+    <ScrollViewer Style="{StaticResource ScrollViewerStyle}" Height="480" VerticalAlignment="Top" >
+        <StackPanel Margin="10">
+            <GroupBox Header="إذن صرف" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
 
-                        <TextBlock Text="رقم قرار اللجنة الاستشارية : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="2" />
-                        <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" >
-                            <TextBox Style="{StaticResource smallTextbox}" />
-                            <TextBlock Text="رقم قرار اللجنة الاستشارية لإذن الصرف" Style="{StaticResource smallText}"/>
-                        </StackPanel>
-                        <TextBlock Text="الرقم الوطني للمحتاج : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0" Grid.ColumnSpan="2"/>
-                        <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2"  >
-                            <TextBox Style="{StaticResource smallTextbox}" />
-                            <TextBlock Text="الرقم الوطني للمحتاج الذي سيتم صرف الزكاة عليه" Style="{StaticResource smallText}"/>
-                        </StackPanel>
-                        <TextBlock Text=" نوع المساعدة : * "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
-                        <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" >
-                            <TextBox Style="{StaticResource smallTextbox}" />
-                            <TextBlock Text="انواع المساعدة مثل مساعة علاج مساعدة ايجار مساعدة زواج سداد دين وما إلى ذلك" Style="{StaticResource smallText}"/>
-                        </StackPanel>
-                        <TextBlock Text="قيمة الصرف : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="3"/>
-                        <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="3" >
-                            <TextBox Style="{StaticResource smallTextbox}" />
-                            <TextBlock Text="قيمة الاموال التي ستصرف" Style="{StaticResource smallText}"/>
-                        </StackPanel>
+                    <TextBlock Text="رقم قرار اللجنة الاستشارية : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="2" />
+                    <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" >
+                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBlock Text="رقم قرار اللجنة الاستشارية لإذن الصرف" Style="{StaticResource smallText}"/>
+                    </StackPanel>
+                    <TextBlock Text="الرقم الوطني للمحتاج : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0" Grid.ColumnSpan="2"/>
+                    <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2"  >
+                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBlock Text="الرقم الوطني للمحتاج الذي سيتم صرف الزكاة عليه" Style="{StaticResource smallText}"/>
+                    </StackPanel>
+                    <TextBlock Text=" نوع المساعدة : * "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
+                    <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" >
+                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBlock Text="انواع المساعدة مثل مساعة علاج مساعدة ايجار مساعدة زواج سداد دين وما إلى ذلك" Style="{StaticResource smallText}"/>
+                    </StackPanel>
+                    <TextBlock Text="قيمة الصرف : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="3"/>
+                    <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="3" >
+                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBlock Text="قيمة الاموال التي ستصرف" Style="{StaticResource smallText}"/>
+                    </StackPanel>
 
-                        <StackPanel Margin="10 10 0 0" Grid.Column="2"  Grid.Row="3" >
-                            <TextBlock Text="نوع الفئة " Margin="0"  Style="{StaticResource filedText}" />
-                            <TextBlock Text="المستتفيدة : * " Margin="0" Style="{StaticResource filedText}" />
-                        </StackPanel>
-                        <StackPanel  VerticalAlignment="Center" Grid.Column="3" Grid.Row="3"  >
-                            <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
-                                <ComboBoxItem>الفقراء</ComboBoxItem>
-                                <ComboBoxItem>المسكين</ComboBoxItem>
-                                <ComboBoxItem>المكتب</ComboBoxItem>
-                                <ComboBoxItem>الجباة</ComboBoxItem>
-                                <ComboBoxItem>المؤلفة قلوبهم</ComboBoxItem>
-                                <ComboBoxItem>في الرقاب</ComboBoxItem>
-                                <ComboBoxItem>الغارمين</ComboBoxItem>
-                                <ComboBoxItem>في سبيل الله</ComboBoxItem>
-                                <ComboBoxItem>ابن السبيل</ComboBoxItem>
-                            </ComboBox>
-                        </StackPanel>
-                        <TextBlock Text="رقم الصك : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="4"/>
-                        <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="4" >
-                            <TextBox Style="{StaticResource smallTextbox}" />
-                            <TextBlock Text="رقم الصك المعطى للمحتاج" Style="{StaticResource smallText}"/>
-                        </StackPanel>
-                        <TextBlock Text="تاريخ إذن الصرف : "  Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="4"/>
-                        <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="4"  >
-                            <DatePicker SelectedDate="{x:Static sys:DateTime.Now}"  Style="{StaticResource datePicker}"  />
-                        </StackPanel>
-                        <Button Content="حفظ" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="6"  />
-                        <Button Content="تفريغ" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="6"  />
-                        <Button Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="3" Grid.Row="6"  />
-                    </Grid>
-                </GroupBox>
-            </StackPanel>
-        </ScrollViewer>
-    </Grid>
+                    <StackPanel Margin="10 10 0 0" Grid.Column="2"  Grid.Row="3" >
+                        <TextBlock Text="نوع الفئة " Margin="0"  Style="{StaticResource filedText}" />
+                        <TextBlock Text="المستتفيدة : * " Margin="0" Style="{StaticResource filedText}" />
+                    </StackPanel>
+                    <StackPanel  VerticalAlignment="Center" Grid.Column="3" Grid.Row="3"  >
+                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
+                            <ComboBoxItem>الفقراء</ComboBoxItem>
+                            <ComboBoxItem>المسكين</ComboBoxItem>
+                            <ComboBoxItem>المكتب</ComboBoxItem>
+                            <ComboBoxItem>الجباة</ComboBoxItem>
+                            <ComboBoxItem>المؤلفة قلوبهم</ComboBoxItem>
+                            <ComboBoxItem>في الرقاب</ComboBoxItem>
+                            <ComboBoxItem>الغارمين</ComboBoxItem>
+                            <ComboBoxItem>في سبيل الله</ComboBoxItem>
+                            <ComboBoxItem>ابن السبيل</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <TextBlock Text="رقم الصك : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="4"/>
+                    <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="4" >
+                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBlock Text="رقم الصك المعطى للمحتاج" Style="{StaticResource smallText}"/>
+                    </StackPanel>
+                    <TextBlock Text="تاريخ إذن الصرف : "  Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="4"/>
+                    <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="4"  >
+                        <DatePicker SelectedDate="{x:Static sys:DateTime.Now}"  Style="{StaticResource datePicker}"  />
+                    </StackPanel>
+                    <Button Content="حفظ" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="6"  />
+                    <Button Content="تفريغ" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="6"  />
+                    <Button Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="3" Grid.Row="6"  />
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>
