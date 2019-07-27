@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AL_Zakat_Fund_System.Models;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
-    class CreateExchangePermissionViewModel
+    class EditAccountViewModel
     {
         #region private Member
         #endregion

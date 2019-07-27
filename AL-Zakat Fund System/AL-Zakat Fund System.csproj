@@ -86,6 +86,7 @@
     <Compile Include="ViewModels\AddNewZakatViewModel.cs" />
     <Compile Include="ViewModels\CreateExchangePermissionViewModel.cs" />
     <Compile Include="ViewModels\DeliverRecordViewModel.cs" />
+    <Compile Include="ViewModels\EditAccountViewModel.cs" />
     <Compile Include="ViewModels\EditFollowUpViewModel.cs" />
     <Compile Include="ViewModels\EditRecordViewModel.cs" />
     <Compile Include="ViewModels\loginWindowViewModel.cs" />
@@ -102,6 +103,9 @@
     </Compile>
     <Compile Include="Views\DeliverRecord.xaml.cs">
       <DependentUpon>DeliverRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditAccount.xaml.cs">
+      <DependentUpon>EditAccount.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EditFollowUp.xaml.cs">
       <DependentUpon>EditFollowUp.xaml</DependentUpon>
@@ -166,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DeliverRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

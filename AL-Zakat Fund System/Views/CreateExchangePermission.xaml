@@ -49,6 +49,11 @@
                             <TextBox Style="{StaticResource smallTextbox}" />
                             <TextBlock Text="قيمة الاموال التي ستصرف" Style="{StaticResource smallText}"/>
                         </StackPanel>
+
+                        <StackPanel Margin="10 10 0 0" Grid.Column="2"  Grid.Row="3" >
+                            <TextBlock Text="نوع الفئة " Margin="0"  Style="{StaticResource filedText}" />
+                            <TextBlock Text="المستتفيدة : * " Margin="0" Style="{StaticResource filedText}" />
+                        </StackPanel>
                         <StackPanel  VerticalAlignment="Center" Grid.Column="3" Grid.Row="3"  >
                             <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
                                 <ComboBoxItem>الفقراء</ComboBoxItem>
@@ -66,10 +71,6 @@
                         <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="4" >
                             <TextBox Style="{StaticResource smallTextbox}" />
                             <TextBlock Text="رقم الصك المعطى للمحتاج" Style="{StaticResource smallText}"/>
-                        </StackPanel>
-                        <StackPanel Margin="10 10 0 0" Grid.Column="2"  Grid.Row="3" >
-                            <TextBlock Text="نوع الفئة " Margin="0"  Style="{StaticResource filedText}" />
-                            <TextBlock Text="المستتفيدة : * " Margin="0" Style="{StaticResource filedText}" />
                         </StackPanel>
                         <TextBlock Text="تاريخ إذن الصرف : "  Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="4"/>
                         <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="4"  >

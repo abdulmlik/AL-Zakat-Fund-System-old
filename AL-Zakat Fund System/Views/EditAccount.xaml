@@ -1,13 +1,13 @@
-﻿<UserControl x:Class="AL_Zakat_Fund_System.Views.OpenAccountPoor"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+﻿<Window x:Class="AL_Zakat_Fund_System.Views.EditAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
              mc:Ignorable="d" 
              FlowDirection="RightToLeft"
-             d:DesignHeight="1660" d:DesignWidth="700">
+             d:DesignHeight="1720" d:DesignWidth="720">
     <ScrollViewer Style="{StaticResource ScrollViewerStyle}" >
         <StackPanel Margin="10">
             <GroupBox Header="إستمارة بحث اجتماعي" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
@@ -19,7 +19,6 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
@@ -211,7 +210,7 @@
                     </StackPanel>
                     <TextBlock Text="ملاحظة : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="18"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="18"  >
-                        <TextBox Height="100"  TextWrapping="WrapWithOverflow" HorizontalAlignment="Right" Width="484" />
+                        <TextBox Height="100"  TextWrapping="Wrap" HorizontalAlignment="Right" Width="484" />
                         <TextBlock Text="ملاحظة على الحالة المعيشة" Style="{StaticResource smallText}" />
                     </StackPanel>
                     <TextBlock Text="الجنس : "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="19"/>
@@ -241,4 +240,4 @@
             </GroupBox>
         </StackPanel>
     </ScrollViewer>
-</UserControl>
+</Window>

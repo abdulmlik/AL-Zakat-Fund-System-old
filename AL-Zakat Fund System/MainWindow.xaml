@@ -26,12 +26,7 @@
             <v:OpenRecordPoor />
             <!--<v::OpenRecordPoor DataContext="{Binding p2}"/> p2 = new :OpenRecordPoorViewModel(); -->
         </DataTemplate>
-        <DataTemplate x:Key="AddNewZakatViewModel" DataType="{x:Type vm:AddNewZakatViewModel}">
-            <v:AddNewZakat />
-        </DataTemplate>
-        <DataTemplate x:Key="EditFollowUpViewModel" DataType="{x:Type vm:EditFollowUpViewModel}">
-            <v:EditFollowUp />
-        </DataTemplate>
+        
     </Window.Resources>
 
     <!-- Divide the page -->
