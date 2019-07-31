@@ -11,18 +11,18 @@ namespace AL_Zakat_Fund_System.Models
     {
         #region private Member
         
-        private int _FU_no;
-        private byte _DecisionNO;
-        private DateTime _LastConnection;
-        private string _Notice;
-        private string _Comment;
-        private DateTime _ReceivedDate;
-        private DateTime _VisitDate;
-        private DateTime _DeliverDate;
-        private byte _Distance;
-        private byte _FStatus;
-        private long _Emp_ssn;
-        private long _Indigent_ssn;
+        protected int _FU_no;
+        protected byte _DecisionNO;
+        protected DateTime _LastConnection;
+        protected string _Notice;
+        protected string _Comment;
+        protected DateTime _ReceivedDate;
+        protected DateTime _VisitDate;
+        protected DateTime _DeliverDate;
+        protected byte _Distance;
+        protected byte _FStatus;
+        protected string _Emp_ssn;
+        protected string _Indigent_ssn;
 
         #endregion
 
@@ -78,12 +78,12 @@ namespace AL_Zakat_Fund_System.Models
             get { return _FStatus; }
             set { SetProperty(ref _FStatus, value); }
         }
-        public long Emp_ssn
+        public string Emp_ssn
         {
             get { return _Emp_ssn; }
             set { SetProperty(ref _Emp_ssn, value); }
         }
-        public long Indigent_ssn
+        public string Indigent_ssn
         {
             get { return _Indigent_ssn; }
             set { SetProperty(ref _Indigent_ssn, value); }
@@ -101,7 +101,7 @@ namespace AL_Zakat_Fund_System.Models
         #endregion
 
         #region Construct all parameter
-        public Follow_up(int FU_no_, byte DecisionNO_, DateTime LastConnection_, string Notice_, string Comment_, DateTime ReceivedDate_, DateTime VisitDate_, DateTime DeliverDate_, byte Distance_, byte FStatus_, long Emp_ssn_, long Indigent_ssn_)
+        public Follow_up(int FU_no_, byte DecisionNO_, DateTime LastConnection_, string Notice_, string Comment_, DateTime ReceivedDate_, DateTime VisitDate_, DateTime DeliverDate_, byte Distance_, byte FStatus_, string Emp_ssn_, string Indigent_ssn_)
         {
             this.FU_no = FU_no_;
             this.DecisionNO = DecisionNO_;

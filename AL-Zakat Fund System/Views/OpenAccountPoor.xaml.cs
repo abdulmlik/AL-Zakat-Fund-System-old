@@ -24,7 +24,7 @@ namespace AL_Zakat_Fund_System.Views
         public OpenAccountPoor()
         {
             InitializeComponent();
-            this.DataContext = new OpenAccountPoorViewModel();
+            this.DataContext = new OpenAccountPoorViewModel(this);
         }
     }
 }

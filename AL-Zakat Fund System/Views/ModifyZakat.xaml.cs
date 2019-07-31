@@ -23,7 +23,7 @@ namespace AL_Zakat_Fund_System.Views
         public ModifyZakat()
         {
             InitializeComponent();
-            this.DataContext = new ModifyZakatViewModel();
+            this.DataContext = new ModifyZakatViewModel(this);
         }
     }
 }

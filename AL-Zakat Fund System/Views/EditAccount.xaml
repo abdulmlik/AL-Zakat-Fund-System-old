@@ -210,7 +210,7 @@
                     </StackPanel>
                     <TextBlock Text="ملاحظة : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="18"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="18"  >
-                        <TextBox Height="100"  TextWrapping="Wrap" HorizontalAlignment="Right" Width="484" />
+                        <TextBox  Style="{StaticResource Textarea}" />
                         <TextBlock Text="ملاحظة على الحالة المعيشة" Style="{StaticResource smallText}" />
                     </StackPanel>
                     <TextBlock Text="الجنس : "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="19"/>
@@ -230,7 +230,7 @@
                     </StackPanel>
                     <TextBlock Text="ملاحظة : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="20"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="20"  >
-                        <TextBox Height="100"  TextWrapping="Wrap" HorizontalAlignment="Right" Width="484" />
+                        <TextBox Style="{StaticResource Textarea}" />
                         <TextBlock Text="ملاحظة على الحالة الصحية" Style="{StaticResource smallText}" />
                     </StackPanel>
                     <Button Content="حفظ" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="22"  />

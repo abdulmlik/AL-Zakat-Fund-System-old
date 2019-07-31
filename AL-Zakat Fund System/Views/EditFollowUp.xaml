@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="AL_Zakat_Fund_System.Views.EditFollowUp"
+﻿<Window x:Class="AL_Zakat_Fund_System.Views.EditFollowUp"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -31,31 +31,31 @@
                     </Grid.RowDefinitions>
                     <TextBlock Text="الرقم الوطني للمحتاج : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="2"/>
                     <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"  >
-                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding Indigent_ssn,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="الرقم الوطني للمحتاج الذي يريد فتح محضر" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="رقم المتابع : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0"/>
                     <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2"  >
-                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox2}" IsEditable="True" >
+                        <ComboBox Text="{Binding Emp_ssn,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox2}" IsEditable="True" >
                             
                         </ComboBox>
                         <TextBlock Text="رقم الوطني الخاص بالمتابع" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="تاريخ الاستلام : "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
                     <StackPanel Margin="10" Grid.Column="1" Grid.Row="2"  >
-                        <DatePicker SelectedDate=""  Style="{StaticResource datePicker}"  />
+                        <DatePicker SelectedDate="{Binding ReceivedDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Style="{StaticResource datePicker}"  />
                     </StackPanel>
                     <TextBlock Text="تاريخ الزيارة : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="3"/>
                     <StackPanel Margin="10" Grid.Column="1" Grid.Row="3"  >
-                        <DatePicker SelectedDate=""  Style="{StaticResource datePicker}"  />
+                        <DatePicker SelectedDate="{Binding VisitDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Style="{StaticResource datePicker}"  />
                     </StackPanel>
                     <TextBlock Text="تاريخ التسليم : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="4"/>
                     <StackPanel Margin="10" Grid.Column="1" Grid.Row="4"  >
-                        <DatePicker SelectedDate=""  Style="{StaticResource datePicker}"  />
+                        <DatePicker SelectedDate="{Binding DeliverDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Style="{StaticResource datePicker}"  />
                     </StackPanel>
                     <TextBlock Text="المسافة : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="2"/>
                     <StackPanel Margin="0 10" Grid.Column="3" Grid.Row="2"  >
-                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
+                        <ComboBox SelectedIndex="{Binding Distance,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
                             <ComboBoxItem>عادية</ComboBoxItem>
                             <ComboBoxItem>بعيدة</ComboBoxItem>
                         </ComboBox>
@@ -63,18 +63,18 @@
                     </StackPanel>
                     <TextBlock Text="حالة المتابعة : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="3"/>
                     <StackPanel Margin="0 10" Grid.Column="3" Grid.Row="3"  >
-                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
+                        <ComboBox SelectedIndex="{Binding FStatus,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
                             <ComboBoxItem>تحت الاجراء</ComboBoxItem>
                             <ComboBoxItem>مرجعة</ComboBoxItem>
                         </ComboBox>
                         <TextBlock Text="المسافة بين المتابع والمحتاج" Style="{StaticResource smallText}"/>
                     </StackPanel>
-                   
-                    <Button Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="5"  />
-                    <Button Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="5"  />
+
+                    <Button Command="{Binding UpdateFollowUPDatabaseCommand}" Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="5"  />
+                    <Button Command="{Binding CancelCommand}" Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="5"  />
                 </Grid>
             </GroupBox>
         </StackPanel>
     </ScrollViewer>
-</UserControl>
+</Window>
 

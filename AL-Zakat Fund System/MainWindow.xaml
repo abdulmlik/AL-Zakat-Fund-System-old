@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:AL_Zakat_Fund_System"
         xmlns:vm="clr-namespace:AL_Zakat_Fund_System.ViewModels"
         xmlns:v="clr-namespace:AL_Zakat_Fund_System.Views"
-        xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Class="AL_Zakat_Fund_System.MainWindow"
+        xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" 
+        x:Class="AL_Zakat_Fund_System.MainWindow"
         mc:Ignorable="d"
         Title="صندوق الزكاة الليبي" 
         Icon="Images/Logo/34.png"
@@ -59,7 +60,7 @@
                 </Border.Background>
             </Border>
             <!-- user name -->
-            <TextBlock Margin="5" Text="اسم المستخدم"  TextAlignment="Center" Foreground="#FFEEEEEE"/>
+            <TextBlock Margin="5" Text="{Binding EmpName}"  TextAlignment="Center" Foreground="#FFEEEEEE"/>
         </StackPanel>
 
         <!-- main Mueu -->
@@ -81,10 +82,7 @@
             </MenuItem>
             <MenuItem Header="_المحتاجين">
                 <MenuItem Header="_فتح ملف لمحتاج" />
-                <MenuItem Header="_عرض بيانات المحتاجين" />
-                <MenuItem Header="_البحث على محتاج" />
-                <MenuItem Header="_تعديل في بيانات محتاج" />
-                <MenuItem Header="إلغاء محتاج" />
+                <MenuItem Header="_إدارة المحتاجين" />
                 <Separator />
                 <MenuItem Header="التقارير" >
                     <MenuItem Header=" محتاج" />
@@ -94,10 +92,7 @@
             </MenuItem>
             <MenuItem Header="_المحاضر">
                 <MenuItem Header="_فتح محضر لمحتاج" />
-                <MenuItem Header="_عرض بيانات المحاضر" />
-                <MenuItem Header="_البحث على محضر" />
-                <MenuItem Header="_تعديل في بيانات محضر" />
-                <MenuItem Header="إلغاء محضر" />
+                <MenuItem Header="_إدارة المحاضر" />
                 <Separator />
                 <MenuItem Header="التقارير" >
                     <MenuItem Header=" محضر" />
@@ -107,7 +102,7 @@
             </MenuItem>
             <MenuItem Header="_المتابعات">
                 <MenuItem Header="تحويل المحتاج إلى المتابعة" />
-                <MenuItem Header="تعديل في بيانات المتابعة" />
+                <MenuItem Header="إدارة المتابعات" />
                 <Separator />
                 <MenuItem Header="التقارير" >
                     <MenuItem Header=" المتابعة" />
@@ -115,12 +110,9 @@
                     <MenuItem Header=" المتابعة" />
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="_الزكواة">
+            <MenuItem Header="_الزكاة">
                 <MenuItem Header="_إضافة زكاة جديدة" />
-                <MenuItem Header="_عرض بيانات الزكواة" />
-                <MenuItem Header="_البحث على زكاة" />
-                <MenuItem Header="_تعديل في بيانات زكاة" />
-                <MenuItem Header="إلغاء زكاة" />
+                <MenuItem Header="_إدارة الزكاة" />
                 <Separator />
                 <MenuItem Header="_تحويل الزكواة إلى حساب المصارف" />
                 <Separator />
@@ -132,31 +124,29 @@
             </MenuItem>
             <MenuItem Header="_المصروفات">
                 <MenuItem Header="_إذن صرف جديدة" />
-                <MenuItem Header="_عرض بيانات المصروفات" />
-                <MenuItem Header="_البحث على إذن صرف" />
-                <MenuItem Header="_تعديل في بيانات إذن صرف" />
-                <MenuItem Header="إلغاء إذن صرف" />
-                <MenuItem Header="التقارير" />
+                <MenuItem Header="_إدارة المصروفات" />
+                <Separator />
+                <MenuItem Header="التقارير" >
+                    <MenuItem Header=" مصارف" />
+                    <MenuItem Header=" مصارف" />
+                    <MenuItem Header=" مصارف" />
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="_المتابعات">
-                <MenuItem Header="_إضافة متابعة جديدة" />
-                <MenuItem Header="_عرض بيانات المتابعات" />
-                <MenuItem Header="_البحث على متابعة" />
-                <MenuItem Header="_تعديل في بيانات متابعة" />
-                <MenuItem Header="إلغاء متابعة" />
+                <MenuItem Header="_متابعاتي" />
                 <Separator />
-                <MenuItem Header="مراجعات" />
+                <MenuItem Header="المراجعات" />
             </MenuItem>
             <MenuItem Header="المساعدة">
                 <MenuItem Header="_مساعدة" />
                 <MenuItem Header="_الصفحة الرئيسية" />
                 <Separator />
-                <MenuItem Icon="Images/Logo/34.png" Header="_حول نظام صندوق الزكاة" />
+                <MenuItem Header="_حول نظام صندوق الزكاة" />
             </MenuItem>
             <MenuItem Header="_الواجهة" HorizontalAlignment="Right" >
                 <MenuItem Header="_الجابي" />
                 <MenuItem Header="_الساعي" />
-                <MenuItem Header="_الموظف" />
+                <MenuItem Header="_الكاتب" />
                 <MenuItem Header="_المتابع" />
             </MenuItem>
         </Menu>
@@ -174,6 +164,7 @@
 
 
             <!-- sidebar buttons -->
+
             <StackPanel   Grid.Row="1" Grid.Column="0" Opacity="0.8" Grid.ColumnSpan="2" >
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="فتح ملف لمحتاج" Command="{Binding PageOpenAccountPoorCommand}" />
@@ -181,7 +172,12 @@
                    Content="فتح محضر لمحتاج"  Command="{Binding PageOpenRecordPoorCommand}" />
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="إضافة زكاة جديدة" Command="{Binding PageAddNewZakatCommand}" />
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="انشاء إذن صرف" Command="{Binding PageCreateExchangePermissionCommand}" />
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="تسليم المحضر للمتابع" Command="{Binding PageDeliverRecordCommand}" />
             </StackPanel>
+
         </Grid>
 
         <!-- pages content -->

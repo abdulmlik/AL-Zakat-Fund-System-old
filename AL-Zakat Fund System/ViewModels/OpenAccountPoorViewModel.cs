@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using AL_Zakat_Fund_System.Models;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
-    class OpenAccountPoorViewModel
+    class OpenAccountPoorViewModel : Indigent
     {
         #region private Member
-
+        UserControl CurrentPage;
         #endregion
 
         #region public properties
@@ -25,7 +27,10 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region Construct
-
+        public OpenAccountPoorViewModel(UserControl CP)
+        {
+            CurrentPage = CP;
+        }
         #endregion
     }
 }

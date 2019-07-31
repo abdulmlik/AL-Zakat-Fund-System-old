@@ -30,26 +30,31 @@
 
                         <TextBlock Text="رقم قرار اللجنة الاستشارية : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="2" />
                         <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" >
-                            <TextBox  Style="{StaticResource smallTextbox}" IsEnabled="False" />
+                            <TextBox Text="{Binding CommitteeDecisionNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                             <TextBlock Text="رقم قرار اللجنة الاستشارية لإذن الصرف" Style="{StaticResource smallText}"/>
                         </StackPanel>
                         <TextBlock Text="الرقم الوطني للمحتاج : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0" Grid.ColumnSpan="2"/>
                         <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2"  >
-                            <TextBox Style="{StaticResource smallTextbox}" />
+                            <TextBox Text="{Binding Indigent_ssn,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                             <TextBlock Text="الرقم الوطني للمحتاج الذي سيتم صرف الزكاة عليه" Style="{StaticResource smallText}"/>
                         </StackPanel>
                         <TextBlock Text=" نوع المساعدة : * "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
                         <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" >
-                            <TextBox Style="{StaticResource smallTextbox}" />
+                            <TextBox Text="{Binding TypeAssistance,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                             <TextBlock Text="انواع المساعدة مثل مساعة علاج مساعدة ايجار مساعدة زواج سداد دين وما إلى ذلك" Style="{StaticResource smallText}"/>
                         </StackPanel>
                         <TextBlock Text="قيمة الصرف : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="3"/>
                         <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="3" >
-                            <TextBox Style="{StaticResource smallTextbox}" />
+                            <TextBox Text="{Binding Amount,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                             <TextBlock Text="قيمة الاموال التي ستصرف" Style="{StaticResource smallText}"/>
                         </StackPanel>
+
+                        <StackPanel Margin="10 10 0 0" Grid.Column="2"  Grid.Row="3" >
+                            <TextBlock Text="نوع الفئة " Margin="0"  Style="{StaticResource filedText}" />
+                            <TextBlock Text="المستتفيدة : * " Margin="0" Style="{StaticResource filedText}" />
+                        </StackPanel>
                         <StackPanel  VerticalAlignment="Center" Grid.Column="3" Grid.Row="3"  >
-                            <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
+                            <ComboBox SelectedIndex="{Binding CategoryPoor,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
                                 <ComboBoxItem>الفقراء</ComboBoxItem>
                                 <ComboBoxItem>المسكين</ComboBoxItem>
                                 <ComboBoxItem>المكتب</ComboBoxItem>
@@ -63,19 +68,15 @@
                         </StackPanel>
                         <TextBlock Text="رقم الصك : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="4"/>
                         <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="4" >
-                            <TextBox Style="{StaticResource smallTextbox}" />
+                            <TextBox Text="{Binding InstrumentNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                             <TextBlock Text="رقم الصك المعطى للمحتاج" Style="{StaticResource smallText}"/>
-                        </StackPanel>
-                        <StackPanel Margin="10 10 0 0" Grid.Column="2"  Grid.Row="3" >
-                            <TextBlock Text="نوع الفئة " Margin="0"  Style="{StaticResource filedText}" />
-                            <TextBlock Text="المستتفيدة : * " Margin="0" Style="{StaticResource filedText}" />
                         </StackPanel>
                         <TextBlock Text="تاريخ إذن الصرف : "  Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="4"/>
                         <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="4"  >
-                            <DatePicker SelectedDate=""  Style="{StaticResource datePicker}"  />
+                            <DatePicker SelectedDate="{Binding SDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Style="{StaticResource datePicker}"  />
                         </StackPanel>
-                        <Button Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="6"  />
-                        <Button Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="6"  />
+                        <Button Command="{Binding updateExchangePermissionDatabaseCommand}" Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="6"  />
+                        <Button Command="{Binding CancelCommand}" Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="6"  />
                     </Grid>
                 </GroupBox>
             </StackPanel>

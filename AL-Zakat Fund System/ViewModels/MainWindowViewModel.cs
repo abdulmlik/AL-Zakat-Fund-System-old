@@ -15,10 +15,12 @@ namespace AL_Zakat_Fund_System.ViewModels
     {
         #region private Member
 
+        private string _EmpName;
+
         private Window mWindow;
         private object _Page;
 
-        #region reason not use this method because they consume a lot of memory
+        #region reason not use this method because they causes slow startup
 
         private OpenAccountPoor PageOAP = new OpenAccountPoor();
         private OpenRecordPoor PageORP = new OpenRecordPoor();
@@ -57,6 +59,11 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region public properties
+        public string EmpName
+        {
+            get { return _EmpName; }
+            set { SetProperty(ref _EmpName, value); }
+        }
         public object Page
         {
             get { return _Page; }
@@ -68,8 +75,8 @@ namespace AL_Zakat_Fund_System.ViewModels
         public DelegateCommand PageOpenAccountPoorCommand { get; set; }
         public DelegateCommand PageOpenRecordPoorCommand { get; set; }
         public DelegateCommand PageAddNewZakatCommand { get; set; }
-        public DelegateCommand PageCommand { get; set; }
-        public DelegateCommand PageCommand5 { get; set; }
+        public DelegateCommand PageCreateExchangePermissionCommand { get; set; }
+        public DelegateCommand PageDeliverRecordCommand { get; set; }
 
         public DelegateCommand LogoutCommand { get; set; }
         public DelegateCommand ContactStatusCommand { get; set; }
@@ -80,10 +87,13 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region functions file meun
         private void LogOut()
         {
+            Properties.Settings.Default.EmpName = "";
+            Properties.Settings.Default.EmPassword = "";
+            Properties.Settings.Default.EmpNo = 0;
+            Properties.Settings.Default.EmpPriv = 0;
+            Properties.Settings.Default.Save();
+
             loginWindow LWindow = new loginWindow();
-            @Properties.Settings.Default.EmpName = "";
-            @Properties.Settings.Default.EmPassword = "";
-            @Properties.Settings.Default.EmpPriv = 0;
             mWindow.Close();
             LWindow.ShowDialog();
         }
@@ -110,7 +120,16 @@ namespace AL_Zakat_Fund_System.ViewModels
         }
         private void PageAddNewZakatExecute()
         {
+            //PageANZ = (PageANZ == null) new AddNewZakat(): PageANZ;
             Page = PageANZ;
+        }
+        private void PageCreateExchangePermissionExecute()
+        {
+            Page = PageCEP;
+        }
+        private void PageDeliverRecordExecute()
+        {
+            Page = PageDR;
         }
         #endregion
 
@@ -124,22 +143,14 @@ namespace AL_Zakat_Fund_System.ViewModels
         public MainWindowViewModel(Window window)
         {
             mWindow = window;
-            PageOAP = new OpenAccountPoor();
-            //PageORP = new OpenRecordPoor();
-            //PageANZ = new AddNewZakat();
-            //PageCEP = new CreateExchangePermission();
-            //PageDR = new DeliverRecord();
 
-            //PageER;
-            //PageMZ;
-            //PageMEP;
-            //PageEFUP;
+            EmpName = Properties.Settings.Default.EmpName;
             
-            //PageOAP = new OpenAccountPoor();
-            Page = PageOAP;
             PageOpenAccountPoorCommand = new DelegateCommand(PageOpenAccountPoorExecute);
             PageOpenRecordPoorCommand = new DelegateCommand(PageOpenRecordPoorExecute);
             PageAddNewZakatCommand = new DelegateCommand(PageAddNewZakatExecute);
+            PageCreateExchangePermissionCommand = new DelegateCommand(PageCreateExchangePermissionExecute);
+            PageDeliverRecordCommand = new DelegateCommand(PageDeliverRecordExecute);
             LogoutCommand = new DelegateCommand(LogOut);
             ContactStatusCommand = new DelegateCommand(ContactStatus);
         }

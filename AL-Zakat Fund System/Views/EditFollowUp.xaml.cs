@@ -19,12 +19,12 @@ namespace AL_Zakat_Fund_System.Views
     /// <summary>
     /// Interaction logic for EditFollowUp.xaml
     /// </summary>
-    public partial class EditFollowUp : UserControl
+    public partial class EditFollowUp : Window
     {
         public EditFollowUp()
         {
             InitializeComponent();
-            this.DataContext = new EditFollowUpViewModel();
+            this.DataContext = new EditFollowUpViewModel(this);
         }
     }
 }

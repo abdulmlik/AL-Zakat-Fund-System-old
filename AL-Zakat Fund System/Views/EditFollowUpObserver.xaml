@@ -26,32 +26,32 @@
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="اسم المحتاج : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="0" />
-                    <TextBlock Text="اسم المحتاج : " Style="{StaticResource filedText}" Grid.Column="1" Grid.Row="0" />
+                    <TextBlock Text="{Binding Indigent_name}" Style="{StaticResource filedText}" Grid.Column="1" Grid.Row="0" />
                     <TextBlock Text="رقمه الوطني : " Style="{StaticResource filedText}" Grid.Column="2" Grid.Row="0" />
-                    <TextBlock Text="اسم المحتاج : " Style="{StaticResource filedText}" Grid.Column="3" Grid.Row="0" />
+                    <TextBlock Text="{Binding Indigent_ssn}" Style="{StaticResource filedText}" Grid.Column="3" Grid.Row="0" />
                     <TextBlock Text="تاريخ اخر اتصال : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="1" Grid.ColumnSpan="2"/>
                     <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"  >
-                        <DatePicker SelectedDate=""  Style="{StaticResource datePicker}"  />
+                        <DatePicker SelectedDate="{Binding LastConnection,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Style="{StaticResource datePicker}"  />
                         <TextBlock Text="تاريخ اخر اتصال بالمحتاج" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="رقم قرار اللجنة : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="1"/>
                     <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2"  >
-                        <TextBox Style="{StaticResource Textbox4}" />
+                        <TextBox Text="{Binding DecisionNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource Textbox4}" />
                         <TextBlock Text="رقم قرار اللجنة الاستشارية" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="قرار اللجنة : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="3"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3"  >
-                        <TextBox Height="100" Margin="0" TextWrapping="WrapWithOverflow"  />
+                        <TextBox Text="{Binding Notice,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Style="{StaticResource Textarea}" />
                         <TextBlock Text="ملاحظة هي قرار اللجنة الاستشارية بخصوص المحتاج" Style="{StaticResource smallText}" />
                     </StackPanel>
                     <TextBlock Text="وضع المتابعة : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="4"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4"  >
-                        <TextBox Height="100"  TextWrapping="WrapWithOverflow" />
+                        <TextBox Text="{Binding Comment,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource Textarea}" />
                         <TextBlock Text="تعليق على حالة المتابعة مثل هل تم الاتصال به او ماذا سيتم ابلاغه" Style="{StaticResource smallText}" />
                     </StackPanel>
 
-                    <Button Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="5"  />
-                    <Button Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="5"  />
+                    <Button Command="{Binding upDateFollowUpObserverDatabaseCommand}" Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="5"  />
+                    <Button Command="{Binding CancelCommand}" Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="5"  />
                 </Grid>
             </GroupBox>
         </StackPanel>

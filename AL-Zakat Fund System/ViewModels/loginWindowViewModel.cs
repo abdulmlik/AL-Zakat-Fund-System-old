@@ -73,10 +73,14 @@ namespace AL_Zakat_Fund_System.ViewModels
                 //you have not been successfully logged in
                 if (succ)
                 {
+                    Properties.Settings.Default.EmpName = UserName;
+                    Properties.Settings.Default.EmPassword = Password;
+                    Properties.Settings.Default.EmpNo = 0;
+                    Properties.Settings.Default.EmpPriv = priv;
+                    Properties.Settings.Default.Save();
+
+                    //Create the MainWindow should be under Settings
                     MainWindow mainWindow = new MainWindow();
-                    @Properties.Settings.Default.EmpName = UserName;
-                    @Properties.Settings.Default.EmPassword = Password;
-                    @Properties.Settings.Default.EmpPriv = priv;
                     mWindow.Close();
                     mainWindow.ShowDialog();
                 }
