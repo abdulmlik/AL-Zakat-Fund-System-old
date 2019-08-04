@@ -25,7 +25,7 @@ namespace AL_Zakat_Fund_System.Views
         public ViewFollowUpData()
         {
             InitializeComponent();
-            this.DataContext = new ViewFollowUpDataViewModel();
+            this.DataContext = new ViewFollowUpDataViewModel(this);
         }
     }
 }

@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              FlowDirection="RightToLeft"
              d:DesignHeight="480" d:DesignWidth="700">
-    <GroupBox Header="إدارة الزكاة" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
+    <GroupBox Header="إدارة المتابعات" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
         <Grid Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
@@ -23,17 +23,22 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <Button Content="بحث" Style="{StaticResource viewButtonStyleSearch}" Grid.Column="1" Grid.Row="0"/>
-            <TextBox Margin="10" Style="{StaticResource Textbox4}" Grid.Column="2" Grid.Row="0"/>
-            <DataGrid  AutoGenerateColumns="False" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="4">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="" Binding="{Binding Path=ModelName}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="" Binding="{Binding Path=UnitCost}"></DataGridTextColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-            <Button Content="تعديل" Style="{StaticResource viewButtonStyleSearch}" Grid.Column="0" Grid.Row="1"/>
-            <Button Content="عرض" Style="{StaticResource viewButtonStyleSearch}" Grid.Column="0" Grid.Row="2"/>
-            <Button Content="حذف" Style="{StaticResource viewButtonStyleSearch}" Grid.Column="0" Grid.Row="3"/>
+            <Button Command="{Binding SearchFollowUpCommand}" Content="بحث" Style="{StaticResource viewButtonStyleSearch}" Grid.Column="1" Grid.Row="0"/>
+            <TextBox Text="{Binding SearchText}" Margin="10" Style="{StaticResource Textbox4}" Grid.Column="2" Grid.Row="0"/>
+            <ListView FontSize="20" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="4">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=ModelName}" />
+                            <GridViewColumn Header="Model" DisplayMemberBinding="{Binding Path=ModelNumber}" />
+                            <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Path=UnitCost, StringFormat={}{0:C}}" />
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button Command="{Binding EditFollowUpCommand}" Content="تعديل" Style="{StaticResource viewButtonStyleSearch}" Grid.Column="0" Grid.Row="1"/>
+            <Button Command="{Binding ViewFollowUpCommand}" Content="عرض" Style="{StaticResource viewButtonStyleSearch}" Grid.Column="0" Grid.Row="2"/>
+            <Button Command="{Binding DeleteFollowUpCommand}" Content="حذف" Style="{StaticResource viewButtonStyleSearch}" Grid.Column="0" Grid.Row="3"/>
 
             <StackPanel Margin="4" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Margin="4,0" Content="&lt;&lt;" Command="{Binding FirstCommand}"/>
