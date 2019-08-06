@@ -311,7 +311,15 @@
   <ItemGroup>
     <Resource Include="Images\image1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\81806.jpg" />
+    <Resource Include="Images\94263125-islamic-ornament-grey-vector-background.jpg" />
+    <Resource Include="Images\maxresdefault %284%29.jpg" />
+    <Resource Include="Images\maxresdefault.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\userIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -41,19 +41,20 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="الرقم الوطني للمحتاج : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="2"/>
                     <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"  >
-                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding Ssn,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MaxLength="20"  Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="الرقم الوطني للمحتاج الذي يطلب اعانة" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="تاريخ الطلب  : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="0"  >
-                        <DatePicker SelectedDate="{x:Static sys:DateTime.Now}" Style="{StaticResource datePicker}"  />
+                        <DatePicker SelectedDate="{Binding Date,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource datePicker}"  />
                     </StackPanel>
                     <TextBlock Text="حالة الطلب : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="1"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="1"  >
-                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
+                        <ComboBox SelectedIndex="{Binding RequestStatus,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
                             <ComboBoxItem>قيد البحث الاجتماعي</ComboBoxItem>
                             <ComboBoxItem>تم قبول المحتاج</ComboBoxItem>
                             <ComboBoxItem>تم استبعاد المحتاج</ComboBoxItem>
@@ -61,36 +62,41 @@
                     </StackPanel>
                     <TextBlock Text=" اسم المحتاج : * "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" >
-                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Text="{Binding FName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallNameTextbox}" />
+                            <TextBox Text="{Binding MName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallNameTextbox}" />
+                            <TextBox Text="{Binding GName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallNameTextbox}" />
+                            <TextBox Text="{Binding LName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallNameTextbox}" />
+                        </StackPanel>
                         <TextBlock Text="اسم المحتاج الرباعي اسمه واسم الاب تم اسم الجد وفي اخر اللقب " Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text=" اسم الام : * "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="3"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" >
-                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding MotherName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="اسم الثلاثي للام اسمها اسم الاب تم اللقب " Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="مكان الولادة : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="4"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="4" >
-                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding PlaceOfBirth,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="اسم المدبنة التي ولد فيها" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="تاريخ الولادة : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="4"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="4"  >
-                        <DatePicker SelectedDate="{x:Static sys:DateTime.Now}" Style="{StaticResource datePicker}"  />
+                        <DatePicker SelectedDate="{Binding BirthDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource datePicker}"  />
                     </StackPanel>
                     <TextBlock Text=" نوع المساعدة : "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="5"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" >
-                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding TypeAssistance,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="انواع المساعدة مثل مساعة علاج مساعدة ايجار مساعدة زواج سداد دين وما إلى ذلك" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="جنسية المحتاج : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="6"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="6" >
-                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding Nationality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="اسم بلد المحتاج" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="حالة الاجتماعية : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="6"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="6"  >
-                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
+                        <ComboBox SelectedIndex="{Binding SocialStatus,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
                             <ComboBoxItem>متزوج</ComboBoxItem>
                             <ComboBoxItem>اعزب</ComboBoxItem>
                             <ComboBoxItem>مطلق</ComboBoxItem>
@@ -99,83 +105,87 @@
                     </StackPanel>
                     <TextBlock Text="رقم كتيب العائلة : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="7"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="7" >
-                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding BrochureFamilyNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="رقم كتيب العائلة للمحتاج" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="تاريخ اصداره: "  Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="7"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="7"  >
-                        <DatePicker Style="{StaticResource datePicker}"  />
+                        <DatePicker SelectedDate="{Binding BFDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource datePicker}"  />
                         <TextBlock Text="تاريخ اصدار كتيب العائلة" Style="{StaticResource smallText}" />
                     </StackPanel>
                     <TextBlock Text="مكان اصداره : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="8"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="8"  >
-                        <TextBox Text="{Binding Amount,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding BFPlace,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="المدينة التي صدر فيها كتيب" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="رقم ورقة العائلة: " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="8"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="8" >
-                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding FamilyPaperNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="رقم ورقة العائلة" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="رقم البطاقة : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="9"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="9"  >
-                        <TextBox Text="{Binding Amount,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                        <TextBox  Text="{Binding PersonalCardNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="رقم البطاقة الشخصية للمحتاج" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="رقم جواز السفر : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="9"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="9" >
-                        <TextBox  Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding PassportNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="رقم جواز السفر الخاص بالمحتاج" Style="{StaticResource smallText}"/>
                     </StackPanel>
-                    <TextBlock Text="عنوان المزكي : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="10"/>
+                    <TextBlock Text="عنوان المحتاج : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="10"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="3">
-                        <TextBox Style="{StaticResource Textbox4}" />
-                        <TextBlock Text="عنوان المزكي ويكتب بهذا النمط (طرابلس ،سوق الجمعة ،الجلاء) ،الحقل اختياري" Style="{StaticResource smallText}"/>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBox Margin="0 0 10 0" MinWidth="154" Text="{Binding City,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                            <TextBox Margin="0 0 10 0" MinWidth="154"  Text="{Binding Municipality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                            <TextBox MinWidth="154"  Text="{Binding Locality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                        </StackPanel>
+                        <TextBlock Text="عنوان المزكي ويكتب هكذا(المدينة ،البلدية ،المحلة) مثل (طرابلس ،سوق الجمعة ،الجلاء)" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="شارع المحتاج : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="11"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="11"  >
-                        <TextBox Text="{Binding Amount,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding Street,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="اسم المنطقة التي يعيش فيها" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="أقرب مسجد : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="11"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="11" >
-                        <TextBox  Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding NearestMosque,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="اسم أقرب مسجد للمحتاج" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="هاتف المحتاج : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="12"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" >
-                        <TextBox Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding Number,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" HorizontalAlignment="Left" Width="313" />
                         <TextBlock Text="الهاتف يكتب بهذا النمط (09x-xxxxxxx) ،الحقل اختياري" Style="{StaticResource smallText}" />
                     </StackPanel>
                     <StackPanel Margin="5" Grid.Column="3" Grid.Row="12">
-                        <TextBox Style="{StaticResource smallTextbox}" Text="218" />
+                        <TextBox Text="{Binding DialCode,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="الرقم الدولي (xxx)" Style="{StaticResource smallText}" />
                     </StackPanel>
                     <TextBlock Text="بريد المحتاج : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="13"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="13" Grid.ColumnSpan="3">
-                        <TextBox Style="{StaticResource Textbox4}" />
+                        <TextBox Text="{Binding Email,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource Textbox4}" />
                         <TextBlock Text="البريد الالكتروني للمحتاج ويكتب بهذا النمط (xxxx@xxx.xxx) ،الحقل اختياري" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="عمل المحتاج : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="14"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="14"  >
-                        <TextBox Text="{Binding Amount,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding Job,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="اسم العمل الذي يشتغل فيه" Style="{StaticResource smallText}"/>
                         <TextBlock Text="و يترك فارغ اذا المحتاج عاطل" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="راتب المحتاج : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="14"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="14" >
-                        <TextBox  Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding Salary,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="قيمة الراتب الذي يتقاضه" Style="{StaticResource smallText}"/>
                         <TextBlock Text="المحتاج من العمل" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="مصدر الراتب : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="15"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="15" Grid.ColumnSpan="3">
-                        <TextBox Style="{StaticResource Textbox4}" />
+                        <TextBox Text="{Binding SourceOFSalary,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource Textbox4}" />
                         <TextBlock Text="اسم الشركة او الشخص الذي يعطي المحتاج راتبه" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="حالة السكن : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="16"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="16"  >
-                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
+                        <ComboBox SelectedIndex="{Binding HousingCase,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
                             <ComboBoxItem>سيئ</ComboBoxItem>
                             <ComboBoxItem>مقبول</ComboBoxItem>
                             <ComboBoxItem>جيد</ComboBoxItem>
@@ -185,7 +195,7 @@
                     </StackPanel>
                     <TextBlock Text="نوع السكن : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="16"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="16"  >
-                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
+                        <ComboBox SelectedIndex="{Binding TypeHousing,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
                             <ComboBoxItem>ايجار</ComboBoxItem>
                             <ComboBoxItem>شقة ملكه</ComboBoxItem>
                             <ComboBoxItem>منزل ملكه</ComboBoxItem>
@@ -193,14 +203,14 @@
                     </StackPanel>
                     <TextBlock Text="نوع المركوب : "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="17"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="17"  >
-                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
+                        <ComboBox SelectedIndex="{Binding Transportation,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
                             <ComboBoxItem>لديه مركوب</ComboBoxItem>
                             <ComboBoxItem>ليس لديه مركوب</ComboBoxItem>
                         </ComboBox>
                     </StackPanel>
                     <TextBlock Text="حالة المركوب : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="17"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="17"  >
-                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
+                        <ComboBox SelectedIndex="{Binding TCase,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
                             <ComboBoxItem>سيئ</ComboBoxItem>
                             <ComboBoxItem>مقبول</ComboBoxItem>
                             <ComboBoxItem>جيد</ComboBoxItem>
@@ -210,19 +220,19 @@
                     </StackPanel>
                     <TextBlock Text="ملاحظة : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="18"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="18"  >
-                        <TextBox  Style="{StaticResource Textarea}" />
+                        <TextBox Text="{Binding LSComment,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource Textarea}" />
                         <TextBlock Text="ملاحظة على الحالة المعيشة" Style="{StaticResource smallText}" />
                     </StackPanel>
                     <TextBlock Text="الجنس : "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="19"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="19"  >
-                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
+                        <ComboBox SelectedIndex="{Binding Gender,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
                             <ComboBoxItem>ذكر</ComboBoxItem>
                             <ComboBoxItem>أنثى</ComboBoxItem>
                         </ComboBox>
                     </StackPanel>
                     <TextBlock Text="مرض مزمن : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="19"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="19"  >
-                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox1}" >
+                        <ComboBox SelectedIndex="{Binding ChronicDisease,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
                             <ComboBoxItem>نعم مريض</ComboBoxItem>
                             <ComboBoxItem>غير مريض</ComboBoxItem>
                         </ComboBox>
@@ -230,12 +240,11 @@
                     </StackPanel>
                     <TextBlock Text="ملاحظة : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="20"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="20"  >
-                        <TextBox Style="{StaticResource Textarea}" />
+                        <TextBox Text="{Binding HSComment,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource Textarea}" />
                         <TextBlock Text="ملاحظة على الحالة الصحية" Style="{StaticResource smallText}" />
                     </StackPanel>
-                    <Button Content="حفظ" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="22"  />
-                    <Button Content="تفريغ" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="22"  />
-                    <Button Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="3" Grid.Row="22"  />
+                    <Button Command="{Binding UPdateAccountPoorDatabaesCommand}" Content="حفظ" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="22"  />
+                    <Button Command="{Binding CancelCommand}" Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="3" Grid.Row="22"  />
                 </Grid>
             </GroupBox>
         </StackPanel>

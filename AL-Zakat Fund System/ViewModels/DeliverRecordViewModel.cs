@@ -49,8 +49,8 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             ReceivedDate = DateTime.Now;
             Distance = 0;
-            Emp_ssn = "";
-            Indigent_ssn = "";
+            Observer_ssn = "";
+            DecisionNO = "";
         }
         #endregion
 

@@ -14,7 +14,9 @@ namespace AL_Zakat_Fund_System.Models
 
         protected int _Zakat_id;
         protected string _Name;
-        protected string _Address;
+        protected string _City;
+        protected string _Municipality;
+        protected string _Locality;
         protected DateTime _SDate;
         protected string _Amount;
         protected string _ReceiptNO;
@@ -25,7 +27,8 @@ namespace AL_Zakat_Fund_System.Models
         protected string _Email;
         protected byte _CaseDeposit;
         protected bool _Convrsion;
-        protected long _Emp_ssn;
+        protected long _Colle_ssn;
+        protected int _Office_no;
 
         #endregion
 
@@ -41,10 +44,20 @@ namespace AL_Zakat_Fund_System.Models
             set { SetProperty(ref _Name, value); }
         }
 
-        public string Address
+        public string City
         {
-            get { return _Address; }
-            set { SetProperty(ref _Address, value); }
+            get { return _City; }
+            set { SetProperty(ref _City, value); }
+        }
+        public string Municipality
+        {
+            get { return _Municipality; }
+            set { SetProperty(ref _Municipality, value); }
+        }
+        public string Locality
+        {
+            get { return _Locality; }
+            set { SetProperty(ref _Locality, value); }
         }
 
         public DateTime SDate
@@ -106,10 +119,15 @@ namespace AL_Zakat_Fund_System.Models
             set { SetProperty(ref _Convrsion, value); }
         }
 
-        public long Emp_ssn
+        public long Colle_ssn
         {
-            get { return _Emp_ssn; }
-            set { SetProperty(ref _Emp_ssn, value); }
+            get { return _Colle_ssn; }
+            set { SetProperty(ref _Colle_ssn, value); }
+        }
+        public int Office_no
+        {
+            get { return _Office_no; }
+            set { SetProperty(ref _Office_no, value); }
         }
         #endregion
 
@@ -128,7 +146,9 @@ namespace AL_Zakat_Fund_System.Models
         /// </summary>
         /// <param name="Zakat_id_"></param>
         /// <param name="Name_"></param>
-        /// <param name="Address_"></param>
+        /// <param name="City_"></param>
+        /// <param name="Municipality_"></param>
+        /// <param name="Locality_"></param>
         /// <param name="SDate_"></param>
         /// <param name="Amount_"></param>
         /// <param name="ReceiptNO_"></param>
@@ -140,11 +160,13 @@ namespace AL_Zakat_Fund_System.Models
         /// <param name="CaseDeposit_"></param>
         /// <param name="Convrsion_"></param>
         /// <param name="Emp_ssn_"></param>
-        public Zakat(int Zakat_id_, string Name_, string Address_, DateTime SDate_, string Amount_, string ReceiptNO_, byte ZType_, string ZCalss_, string InstrumentNo_, string Phone_, string Email_, byte CaseDeposit_, bool Convrsion_, long Emp_ssn_)
+        public Zakat(int Zakat_id_, string Name_, string City_, string Municipality_, string Locality_, DateTime SDate_, string Amount_, string ReceiptNO_, byte ZType_, string ZCalss_, string InstrumentNo_, string Phone_, string Email_, byte CaseDeposit_, bool Convrsion_, long Colle_ssn_, int Office_no_)
         {
             this.Zakat_id = Zakat_id_;
             this.Name = Name_;
-            this.Address = Address_;
+            this.City = City_;
+            this.Municipality = Municipality_;
+            this.Locality = Locality_;
             this.SDate = SDate_;
             this.Amount = Amount_;
             this.ReceiptNO = ReceiptNO_;
@@ -155,7 +177,8 @@ namespace AL_Zakat_Fund_System.Models
             this.Email = Email_;
             this.CaseDeposit = CaseDeposit_;
             this.Convrsion = Convrsion_;
-            this.Emp_ssn = Emp_ssn_;
+            this.Colle_ssn = Colle_ssn_;
+            this.Office_no = Office_no_;
         }
         #endregion
 

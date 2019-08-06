@@ -33,10 +33,10 @@
                             <TextBox Text="{Binding CommitteeDecisionNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                             <TextBlock Text="رقم قرار اللجنة الاستشارية لإذن الصرف" Style="{StaticResource smallText}"/>
                         </StackPanel>
-                        <TextBlock Text="الرقم الوطني للمحتاج : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0" Grid.ColumnSpan="2"/>
+                        <TextBlock Text="رقم المحضر : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0" Grid.ColumnSpan="2"/>
                         <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2"  >
-                            <TextBox Text="{Binding Indigent_ssn,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
-                            <TextBlock Text="الرقم الوطني للمحتاج الذي سيتم صرف الزكاة عليه" Style="{StaticResource smallText}"/>
+                            <TextBox Text="{Binding RecrodID,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                            <TextBlock Text="رقم المحضر الذي سيتم صرف الزكاة عليه" Style="{StaticResource smallText}"/>
                         </StackPanel>
                         <TextBlock Text=" نوع المساعدة : * "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
                         <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" >

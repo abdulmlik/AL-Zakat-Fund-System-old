@@ -12,28 +12,36 @@ namespace AL_Zakat_Fund_System.Models
 
         #region private Member
 
-        private long _Ssn;
+        private string _Ssn;
+        private DateTime _Date;
         private byte _RequestStatus;
-        private string _FullName;
+        private string _FName;
         private string _MName;
+        private string _GName;
+        private string _LName;
+        private string _MotherName;
         private DateTime _BirthDate;
         private string _PlaceOfBirth;
         private string _TypeAssistance;
         private byte _SocialStatus;
         private string _Nationality;
-        private int _BrochureFamilyNO;
+        private string _BrochureFamilyNO;
         private DateTime _BFDate;
         private string _BFPlace;
-        private int _FamilyPaperNO;
-        private int _PersonalCardNO;
-        private int _PassportNO;
-        private string _Address;
+        private string _FamilyPaperNO;
+        private string _NumberOfChildren;
+        private string _PersonalCardNO;
+        private string _PassportNO;
+        private string _City;
+        private string _Municipality;
+        private string _Locality;
         private string _Street;
         private string _NearestMosque;
-        private string _Phone;
+        private string _DialCode;
+        private string _Number;
         private string _Email;
         private string _Job;
-        private decimal _Salary;
+        private string _Salary;
         private string _SourceOFSalary;
         private byte _HousingCase;
         private byte _TypeHousing;
@@ -43,32 +51,53 @@ namespace AL_Zakat_Fund_System.Models
         private byte _ChronicDisease;
         private string _HSComment;
         private bool _Gender;
-        private long _Emp_ssn;
+        private long _Scribe_ssn;
         private int _Office_no;
 
         #endregion
 
         #region public properties
 
-        public long Ssn
+        public string Ssn
         {
             get { return _Ssn; }
             set { SetProperty(ref _Ssn, value); }
         }
+        public DateTime Date
+        {
+            get { return _Date; }
+            set { SetProperty(ref _Date, value); }
+        }
         public byte RequestStatus
         {
             get { return _RequestStatus; }
+
             set { SetProperty(ref _RequestStatus, value); }
         }
-        public string FullName
+        public string FName
         {
-            get { return _FullName; }
-            set { SetProperty(ref _FullName, value); }
+            get { return _FName; }
+            set { SetProperty(ref _FName, value); }
         }
         public string MName
         {
             get { return _MName; }
             set { SetProperty(ref _MName, value); }
+        }
+        public string GName
+        {
+            get { return _GName; }
+            set { SetProperty(ref _GName, value); }
+        }
+        public string LName
+        {
+            get { return _LName; }
+            set { SetProperty(ref _LName, value); }
+        }
+        public string MotherName
+        {
+            get { return _MotherName; }
+            set { SetProperty(ref _MotherName, value); }
         }
         public DateTime BirthDate
         {
@@ -95,7 +124,7 @@ namespace AL_Zakat_Fund_System.Models
             get { return _Nationality; }
             set { SetProperty(ref _Nationality, value); }
         }
-        public int BrochureFamilyNO
+        public string BrochureFamilyNO
         {
             get { return _BrochureFamilyNO; }
             set { SetProperty(ref _BrochureFamilyNO, value); }
@@ -110,25 +139,40 @@ namespace AL_Zakat_Fund_System.Models
             get { return _BFPlace; }
             set { SetProperty(ref _BFPlace, value); }
         }
-        public int FamilyPaperNO
+        public string FamilyPaperNO
         {
             get { return _FamilyPaperNO; }
             set { SetProperty(ref _FamilyPaperNO, value); }
         }
-        public int PersonalCardNO
+        public string NumberOfChildren
+        {
+            get { return _NumberOfChildren; }
+            set { SetProperty(ref _NumberOfChildren, value); }
+        }
+        public string PersonalCardNO
         {
             get { return _PersonalCardNO; }
             set { SetProperty(ref _PersonalCardNO, value); }
         }
-        public int PassportNO
+        public string PassportNO
         {
             get { return _PassportNO; }
             set { SetProperty(ref _PassportNO, value); }
         }
-        public string Address
+        public string City
         {
-            get { return _Address; }
-            set { SetProperty(ref _Address, value); }
+            get { return _City; }
+            set { SetProperty(ref _City, value); }
+        }
+        public string Municipality
+        {
+            get { return _Municipality; }
+            set { SetProperty(ref _Municipality, value); }
+        }
+        public string Locality
+        {
+            get { return _Locality; }
+            set { SetProperty(ref _Locality, value); }
         }
         public string Street
         {
@@ -140,10 +184,15 @@ namespace AL_Zakat_Fund_System.Models
             get { return _NearestMosque; }
             set { SetProperty(ref _NearestMosque, value); }
         }
-        public string Phone
+        public string DialCode
         {
-            get { return _Phone; }
-            set { SetProperty(ref _Phone, value); }
+            get { return _DialCode; }
+            set { SetProperty(ref _DialCode, value); }
+        }
+        public string Number
+        {
+            get { return _Number; }
+            set { SetProperty(ref _Number, value); }
         }
         public string Email
         {
@@ -155,7 +204,7 @@ namespace AL_Zakat_Fund_System.Models
             get { return _Job; }
             set { SetProperty(ref _Job, value); }
         }
-        public decimal Salary
+        public string Salary
         {
             get { return _Salary; }
             set { SetProperty(ref _Salary, value); }
@@ -164,7 +213,7 @@ namespace AL_Zakat_Fund_System.Models
         {
             get { return _SourceOFSalary; }
             set { SetProperty(ref _SourceOFSalary, value); }
-        }   
+        }
         public byte HousingCase
         {
             get { return _HousingCase; }
@@ -205,10 +254,10 @@ namespace AL_Zakat_Fund_System.Models
             get { return _Gender; }
             set { SetProperty(ref _Gender, value); }
         }
-        public long Emp_ssn
+        public long Scribe_ssn
         {
-            get { return _Emp_ssn; }
-            set { SetProperty(ref _Emp_ssn, value); }
+            get { return _Scribe_ssn; }
+            set { SetProperty(ref _Scribe_ssn, value); }
         }
         public int Office_no
         {
@@ -230,12 +279,15 @@ namespace AL_Zakat_Fund_System.Models
         #region Construct all parameters
 
         /// <summary>
-        ///  Construct parameter
+        /// Construct all parameters
         /// </summary>
         /// <param name="Ssn_"></param>
         /// <param name="RequestStatus_"></param>
-        /// <param name="FullName_"></param>
+        /// <param name="FName_"></param>
         /// <param name="MName_"></param>
+        /// <param name="GName_"></param>
+        /// <param name="LName_"></param>
+        /// <param name="MotherName_"></param>
         /// <param name="BirthDate_"></param>
         /// <param name="PlaceOfBirth_"></param>
         /// <param name="TypeAssistance_"></param>
@@ -247,10 +299,13 @@ namespace AL_Zakat_Fund_System.Models
         /// <param name="FamilyPaperNO_"></param>
         /// <param name="PersonalCardNO_"></param>
         /// <param name="PassportNO_"></param>
-        /// <param name="Address_"></param>
+        /// <param name="City_"></param>
+        /// <param name="Municipality_"></param>
+        /// <param name="Locality_"></param>
         /// <param name="Street_"></param>
         /// <param name="NearestMosque_"></param>
-        /// <param name="Phone_"></param>
+        /// <param name="DialCode_"></param>
+        /// <param name="Number_"></param>
         /// <param name="Email_"></param>
         /// <param name="Job_"></param>
         /// <param name="Salary_"></param>
@@ -263,14 +318,21 @@ namespace AL_Zakat_Fund_System.Models
         /// <param name="ChronicDisease_"></param>
         /// <param name="HSComment_"></param>
         /// <param name="Gender_"></param>
-        /// <param name="Emp_ssn_"></param>
+        /// <param name="Scribe_ssn_"></param>
         /// <param name="Office_no_"></param>
-        public Indigent(long Ssn_, byte RequestStatus_, string FullName_, string MName_, DateTime BirthDate_, string PlaceOfBirth_, string TypeAssistance_, byte SocialStatus_, string Nationality_, int BrochureFamilyNO_, DateTime BFDate_, string BFPlace_, int FamilyPaperNO_, int PersonalCardNO_, int PassportNO_, string Address_, string Street_, string NearestMosque_, string Phone_, string Email_, string Job_, decimal Salary_, string SourceOFSalary_, byte HousingCase_, byte TypeHousing_, byte Transportation_, byte TCase_, string LSComment_, byte ChronicDisease_, string HSComment_, bool Gender_, long Emp_ssn_, int Office_no_)
+        public Indigent(string Ssn_, byte RequestStatus_, string FName_, string MName_, string GName_, string LName_, string MotherName_, DateTime BirthDate_
+            , string PlaceOfBirth_, string TypeAssistance_, byte SocialStatus_, string Nationality_, string BrochureFamilyNO_, DateTime BFDate_, string BFPlace_
+            , string FamilyPaperNO_, string PersonalCardNO_, string PassportNO_, string City_, string Municipality_, string Locality_, string Street_, string NearestMosque_
+            , string DialCode_, string Number_, string Email_, string Job_, string Salary_, string SourceOFSalary_, byte HousingCase_, byte TypeHousing_, byte Transportation_, byte TCase_
+            , string LSComment_, byte ChronicDisease_, string HSComment_, bool Gender_, long Scribe_ssn_, int Office_no_)
         {
             this.Ssn = Ssn_;
             this.RequestStatus = RequestStatus_;
-            this.FullName = FullName_;
+            this.FName = FName_;
             this.MName = MName_;
+            this.GName = GName_;
+            this.LName = LName_;
+            this.MotherName = MotherName_;
             this.BirthDate = BirthDate_;
             this.PlaceOfBirth = PlaceOfBirth_;
             this.TypeAssistance = TypeAssistance_;
@@ -282,10 +344,13 @@ namespace AL_Zakat_Fund_System.Models
             this.FamilyPaperNO = FamilyPaperNO_;
             this.PersonalCardNO = PersonalCardNO_;
             this.PassportNO = PassportNO_;
-            this.Address = Address_;
+            this.City = City_;
+            this.Municipality = Municipality_;
+            this.Locality = Locality_;
             this.Street = Street_;
             this.NearestMosque = NearestMosque_;
-            this.Phone = Phone_;
+            this.DialCode = DialCode_;
+            this.Number = Number_;
             this.Email = Email_;
             this.Job = Job_;
             this.Salary = Salary_;
@@ -298,7 +363,7 @@ namespace AL_Zakat_Fund_System.Models
             this.ChronicDisease = ChronicDisease_;
             this.HSComment = HSComment_;
             this.Gender = Gender_;
-            this.Emp_ssn = Emp_ssn_;
+            this.Scribe_ssn = Scribe_ssn_;
             this.Office_no = Office_no_;
         }
         #endregion

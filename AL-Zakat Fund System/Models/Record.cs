@@ -15,6 +15,7 @@ namespace AL_Zakat_Fund_System.Models
         protected string _ID;
         protected DateTime _RDate;
         protected int _RStatus;
+        protected long _Scribe_ssn;
         protected string _Indigent_ssn;
         protected int _Office_no;
 
@@ -43,6 +44,11 @@ namespace AL_Zakat_Fund_System.Models
             get { return _Indigent_ssn; }
             set { SetProperty(ref _Indigent_ssn, value); }
         }
+        public long Scribe_ssn
+        {
+            get { return _Scribe_ssn; }
+            set { SetProperty(ref _Scribe_ssn, value); }
+        }
         public int Office_no
         {
             get { return _Office_no; }
@@ -69,11 +75,12 @@ namespace AL_Zakat_Fund_System.Models
         /// <param name="RStatus_"></param>
         /// <param name="Indigent_ssn_"></param>
         /// <param name="Office_no_"></param>
-        public Record(string ID_, DateTime RDate_, byte RStatus_, string Indigent_ssn_, int Office_no_)
+        public Record(string ID_, DateTime RDate_, byte RStatus_, long Scribe_ssn_, string Indigent_ssn_, int Office_no_)
         {
             this.ID = ID_;
             this.RDate = RDate_;
             this.RStatus = RStatus_;
+            this.Scribe_ssn = Scribe_ssn_;
             this.Indigent_ssn = Indigent_ssn_;
             this.Office_no = Office_no_;
         }

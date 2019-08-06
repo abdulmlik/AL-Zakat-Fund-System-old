@@ -15,7 +15,7 @@
         <Setter Property="Padding" Value="10 5"/>
         <Setter Property="Height" Value="60"/>
         <Setter Property="Width" Value="150"/>
-        <Setter Property="BorderThickness" Value="4"/>
+        <Setter Property="BorderThickness" Value="0 0 10 0"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}"/>
@@ -41,9 +41,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="BorderBrush" TargetName="Bd" Value="#FFeeeeee" />
-                            <Setter Property="Background" Value="#FFeeeeee" TargetName="Bd"/>
-                            <Setter Property="Opacity" TargetName="Bd" Value=".8"/>
+                            <Setter Property="Foreground" Value="#FFf6a60a" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -59,7 +59,9 @@ namespace AL_Zakat_Fund_System.ViewModels
         private void ResetExecute()
         {
             Name = "";
-            Address = "";
+            City = "";
+            Municipality = "";
+            Locality = "";
             SDate = DateTime.Now;
             Amount = "";
             ReceiptNO = "";

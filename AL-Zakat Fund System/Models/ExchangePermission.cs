@@ -17,7 +17,8 @@ namespace AL_Zakat_Fund_System.Models
         protected string _Amount;
         protected DateTime _SDate;
         protected string _InstrumentNO;
-        protected string _Indigent_ssn;
+        protected long _Courier_ssn;
+        protected string _RecrodID;
 
         #endregion
 
@@ -53,10 +54,15 @@ namespace AL_Zakat_Fund_System.Models
             get { return _InstrumentNO; }
             set { SetProperty(ref _InstrumentNO, value); }
         }
-        public string Indigent_ssn
+        public long Courier_ssn
         {
-            get { return _Indigent_ssn; }
-            set { SetProperty(ref _Indigent_ssn, value); }
+            get { return _Courier_ssn; }
+            set { SetProperty(ref _Courier_ssn, value); }
+        }
+        public string RecrodID
+        {
+            get { return _RecrodID; }
+            set { SetProperty(ref _RecrodID, value); }
         }
 
         #endregion
@@ -81,7 +87,7 @@ namespace AL_Zakat_Fund_System.Models
         /// <param name="SDate_"></param>
         /// <param name="InstrumentNO_"></param>
         /// <param name="Indigent_ssn_"></param>
-        public ExchangePermission(string CommitteeDecisionNO_, byte CategoryPoor_, string TypeAssistance_, string Amount_, DateTime SDate_, string InstrumentNO_, string Indigent_ssn_)
+        public ExchangePermission(string CommitteeDecisionNO_, byte CategoryPoor_, string TypeAssistance_, string Amount_, DateTime SDate_, string InstrumentNO_, string RecrodID_)
         {
             this.CommitteeDecisionNO = CommitteeDecisionNO_;
             this.CategoryPoor = CategoryPoor_;
@@ -89,7 +95,7 @@ namespace AL_Zakat_Fund_System.Models
             this.Amount = Amount_;
             this.SDate = SDate_;
             this.InstrumentNO = InstrumentNO_;
-            this.Indigent_ssn = Indigent_ssn_;
+            this.RecrodID = RecrodID_;
         }
         #endregion
 

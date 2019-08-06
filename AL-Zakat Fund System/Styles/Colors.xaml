@@ -23,4 +23,11 @@
     <Color x:Key="ForegroundGray">#808080</Color>
     <SolidColorBrush x:Key="ForegroundGrayBrush" Color="{StaticResource ForegroundGray}" />
 
+    <Color x:Key="ForegroundPurpleDark">#475edf</Color>
+    <SolidColorBrush x:Key="ForegroundPurpleDarkBrush" Color="{StaticResource ForegroundPurpleDark}" />
+    <Color x:Key="ForegroundPurpleLight">#704cf9</Color>
+    <SolidColorBrush x:Key="ForegroundPurpleLightBrush" Color="{StaticResource ForegroundPurpleLight}" />
+    <Color x:Key="ForegroundYellow">#f8c35c</Color>
+    <SolidColorBrush x:Key="ForegroundYellowBrush" Color="{StaticResource ForegroundYellow}" />
+    
 </ResourceDictionary>

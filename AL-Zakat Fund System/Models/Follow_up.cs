@@ -11,8 +11,7 @@ namespace AL_Zakat_Fund_System.Models
     {
         #region private Member
         
-        protected int _FU_no;
-        protected byte _DecisionNO;
+        protected string _DecisionNO;
         protected DateTime _LastConnection;
         protected string _Notice;
         protected string _Comment;
@@ -21,19 +20,14 @@ namespace AL_Zakat_Fund_System.Models
         protected DateTime _DeliverDate;
         protected byte _Distance;
         protected byte _FStatus;
-        protected string _Emp_ssn;
-        protected string _Indigent_ssn;
+        protected string _Observer_ssn;
+        protected long _Scribe_ssn;
 
         #endregion
 
         #region public properties
-
-        public int FU_no
-        {
-            get { return _FU_no; }
-            set { SetProperty(ref _FU_no, value); }
-        }
-        public byte DecisionNO
+        
+        public string DecisionNO
         {
             get { return _DecisionNO; }
             set { SetProperty(ref _DecisionNO, value); }
@@ -78,15 +72,15 @@ namespace AL_Zakat_Fund_System.Models
             get { return _FStatus; }
             set { SetProperty(ref _FStatus, value); }
         }
-        public string Emp_ssn
+        public string Observer_ssn
         {
-            get { return _Emp_ssn; }
-            set { SetProperty(ref _Emp_ssn, value); }
+            get { return _Observer_ssn; }
+            set { SetProperty(ref _Observer_ssn, value); }
         }
-        public string Indigent_ssn
+        public long Scribe_ssn
         {
-            get { return _Indigent_ssn; }
-            set { SetProperty(ref _Indigent_ssn, value); }
+            get { return _Scribe_ssn; }
+            set { SetProperty(ref _Scribe_ssn, value); }
         }
 
         #endregion
@@ -101,9 +95,22 @@ namespace AL_Zakat_Fund_System.Models
         #endregion
 
         #region Construct all parameter
-        public Follow_up(int FU_no_, byte DecisionNO_, DateTime LastConnection_, string Notice_, string Comment_, DateTime ReceivedDate_, DateTime VisitDate_, DateTime DeliverDate_, byte Distance_, byte FStatus_, string Emp_ssn_, string Indigent_ssn_)
+        /// <summary>
+        /// Construct all parameter
+        /// </summary>
+        /// <param name="DecisionNO_"></param>
+        /// <param name="LastConnection_"></param>
+        /// <param name="Notice_"></param>
+        /// <param name="Comment_"></param>
+        /// <param name="ReceivedDate_"></param>
+        /// <param name="VisitDate_"></param>
+        /// <param name="DeliverDate_"></param>
+        /// <param name="Distance_"></param>
+        /// <param name="FStatus_"></param>
+        /// <param name="Observer_ssn_"></param>
+        /// <param name="Scribe_ssn_"></param>
+        public Follow_up(string DecisionNO_, DateTime LastConnection_, string Notice_, string Comment_, DateTime ReceivedDate_, DateTime VisitDate_, DateTime DeliverDate_, byte Distance_, byte FStatus_, string Observer_ssn_, long Scribe_ssn_)
         {
-            this.FU_no = FU_no_;
             this.DecisionNO = DecisionNO_;
             this.LastConnection = LastConnection_;
             this.Notice = Notice_;
@@ -113,8 +120,8 @@ namespace AL_Zakat_Fund_System.Models
             this.DeliverDate = DeliverDate_;
             this.Distance = Distance_;
             this.FStatus = FStatus_;
-            this.Emp_ssn = Emp_ssn_;
-            this.Indigent_ssn = Indigent_ssn_;
+            this.Observer_ssn = Observer_ssn_;
+            this.Scribe_ssn = Scribe_ssn_;
         }
         #endregion
 

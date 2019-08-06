@@ -51,7 +51,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             CategoryPoor = 0;
             TypeAssistance = "";
             InstrumentNO = "";
-            Indigent_ssn = "";
+            RecrodID = "";
 
         }
         #endregion

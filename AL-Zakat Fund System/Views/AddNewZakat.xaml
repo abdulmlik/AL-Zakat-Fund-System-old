@@ -38,9 +38,9 @@
                     <TextBlock Text="عنوان المزكي : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="1"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3">
                         <StackPanel Orientation="Horizontal" >
-                            <TextBox Margin="0 0 10 0" MinWidth="162" Text="{Binding Address,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
-                            <TextBox Margin="0 0 10 0" MinWidth="162"  Text="{Binding Address,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
-                            <TextBox MinWidth="162"  Text="{Binding Address,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                            <TextBox Margin="0 0 10 0" MinWidth="162" Text="{Binding City,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                            <TextBox Margin="0 0 10 0" MinWidth="162"  Text="{Binding Municipality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                            <TextBox MinWidth="162"  Text="{Binding Locality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         </StackPanel>
                         <TextBlock Text="عنوان المزكي ويكتب هكذا(المدينة ،البلدية ،المحلة) مثل (طرابلس ،سوق الجمعة ،الجلاء)" Style="{StaticResource smallText}"/>
                     </StackPanel>
