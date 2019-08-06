@@ -26,7 +26,7 @@
     <Setting Name="EmpPriv" Type="System.Int32" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="EmpNo" Type="System.Int32" Scope="User">
+    <Setting Name="EmpNo" Type="System.Int64" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Office" Type="System.Int32" Scope="User">

@@ -32,15 +32,15 @@
                     </Grid.RowDefinitions>
                     <TextBlock Text="اسم المزكي : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3">
-                        <TextBox Text="{Binding Name,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource Textbox4}" />
+                        <TextBox Text="{Binding Name,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MaxLength="60"  Style="{StaticResource Textbox4}" />
                         <TextBlock Text="الاسم المزكي الثلاثي او الاسم الاول فقط ،الحقل اختياري" Style="{StaticResource smallText}" />
                     </StackPanel>
                     <TextBlock Text="عنوان المزكي : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="1"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3">
                         <StackPanel Orientation="Horizontal" >
-                            <TextBox Margin="0 0 10 0" MinWidth="162" Text="{Binding City,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
-                            <TextBox Margin="0 0 10 0" MinWidth="162"  Text="{Binding Municipality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
-                            <TextBox MinWidth="162"  Text="{Binding Locality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                            <TextBox Margin="0 0 10 0" MinWidth="162" Text="{Binding City,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MaxLength="20"  Style="{StaticResource smallTextbox}" />
+                            <TextBox Margin="0 0 10 0" MinWidth="162"  Text="{Binding Municipality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MaxLength="20" Style="{StaticResource smallTextbox}" />
+                            <TextBox MinWidth="162"  Text="{Binding Locality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MaxLength="20" Style="{StaticResource smallTextbox}" />
                         </StackPanel>
                         <TextBlock Text="عنوان المزكي ويكتب هكذا(المدينة ،البلدية ،المحلة) مثل (طرابلس ،سوق الجمعة ،الجلاء)" Style="{StaticResource smallText}"/>
                     </StackPanel>
@@ -51,7 +51,7 @@
                     </StackPanel>
                     <TextBlock Text="رقم الإيصال : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="2"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="2" >
-                        <TextBox Text="{Binding ReceiptNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding ReceiptNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="رقم إيصال استلام الزكاة (xxxxxxx)" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="نوع الزكاة : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="3"/>
@@ -64,7 +64,7 @@
                     </StackPanel>
                     <TextBlock Text="صنف الزكاة : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="3"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="3"  >
-                        <TextBox Text="{Binding ZCalss,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding ZCalss,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MaxLength="7" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="صنف الزكاة مثل النقود او الابل..." Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="رقم الصك : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="4"/>
@@ -78,16 +78,16 @@
                     </StackPanel>
                     <TextBlock Text="هاتف المزكي : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="6"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" >
-                        <TextBox Text="{Binding Phone,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding Phone,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  MaxLength="10" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="الهاتف يكتب بهذا النمط (09x-xxxxxxx) ،الحقل اختياري" Style="{StaticResource smallText}" />
                     </StackPanel>
                     <StackPanel Margin="5" Grid.Column="3" Grid.Row="6">
-                        <TextBox Text="{Binding GloblNoPhone,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                        <TextBox Text="{Binding GloblNoPhone,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  MaxLength="3" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="الرقم الدولي (xxx)" Style="{StaticResource smallText}" />
                     </StackPanel>
                     <TextBlock Text="بريد المزكي : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="7"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3">
-                        <TextBox Text="{Binding Email,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource Textbox4}" />
+                        <TextBox Text="{Binding Email,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  MaxLength="50" Style="{StaticResource Textbox4}" />
                         <TextBlock Text="البريد الالكتروني للمزكي ويكتب بهذا النمط (xxxx@xxx.xxx) ،الحقل اختياري" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <Button Command="{Binding AddZakatDatabaseCommand}" Content="حفظ" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="8"  />

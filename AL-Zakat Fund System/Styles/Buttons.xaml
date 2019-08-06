@@ -60,8 +60,9 @@
     <!-- -->
     <Style x:Key="viewButtonStyle" TargetType="Control">
         <Setter Property="Padding" Value="6"/>
-        <Setter Property="Margin" Value="0 20 0 0"/>
-        <Setter Property="Width" Value="120" />
+        <Setter Property="Margin" Value="5 10 10 5"/>
+        <Setter Property="Width" Value="90" />
+        <Setter Property="Height" Value="40" />
         <Setter Property="FontFamily" Value="Adobe Arabic"/>
         <Setter Property="FontSize" Value="24"/>
         <Setter Property="FontWeight" Value="Normal"/>

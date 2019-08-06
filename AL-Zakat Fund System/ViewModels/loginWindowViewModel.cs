@@ -47,7 +47,6 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region login function
         private void loginExecute()
         {
-            int priv = 0;
             bool succ = false;
             try
             {
@@ -58,25 +57,25 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@EmpName", SqlDbType.VarChar, 30));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@pass", SqlDbType.VarChar, 30));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@EmpPriv", SqlDbType.Int));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@EmpNo", SqlDbType.BigInt));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Bit));
                 DBConnection.cmd.Parameters["@EmpName"].Value = UserName;
                 DBConnection.cmd.Parameters["@pass"].Value = Password;
                 DBConnection.cmd.Parameters["@EmpPriv"].Direction = ParameterDirection.Output;
+                DBConnection.cmd.Parameters["@EmpNo"].Direction = ParameterDirection.Output;
                 DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
 
                 DBConnection.cmd.ExecuteNonQuery();
 
                 succ = (bool)DBConnection.cmd.Parameters["@Success"].Value;
-                priv = (succ) ? (int)DBConnection.cmd.Parameters["@EmpPriv"].Value : 0;
-
 
                 //you have not been successfully logged in
                 if (succ)
                 {
                     Properties.Settings.Default.EmpName = UserName;
                     Properties.Settings.Default.EmPassword = Password;
-                    Properties.Settings.Default.EmpNo = 0;
-                    Properties.Settings.Default.EmpPriv = priv;
+                    Properties.Settings.Default.EmpPriv = (int)DBConnection.cmd.Parameters["@EmpPriv"].Value;
+                    Properties.Settings.Default.EmpNo = (long)DBConnection.cmd.Parameters["@EmpNo"].Value;
                     Properties.Settings.Default.Save();
 
                     //Create the MainWindow should be under Settings

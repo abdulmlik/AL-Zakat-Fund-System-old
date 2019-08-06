@@ -120,9 +120,9 @@ namespace AL_Zakat_Fund_System.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int EmpNo {
+        public long EmpNo {
             get {
-                return ((int)(this["EmpNo"]));
+                return ((long)(this["EmpNo"]));
             }
             set {
                 this["EmpNo"] = value;

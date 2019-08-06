@@ -25,7 +25,7 @@
             </Grid.RowDefinitions>
             <Button Command="{Binding SearchAccountCommand}" Content="بحث" Style="{StaticResource viewButtonStyleSearch}" Grid.Column="1" Grid.Row="0"/>
             <TextBox Text="{Binding SearchText}" Margin="10" Style="{StaticResource Textbox4}" Grid.Column="2" Grid.Row="0"/>
-            <ListView FontSize="20" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="4">
+            <ListView Width="520" Height="350" FontSize="20" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="4">
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
@@ -36,10 +36,13 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-            <Button Command="{Binding EditAccountCommand}" Content="تعديل" Style="{StaticResource viewButtonStyleSearch}" Grid.Column="0" Grid.Row="1"/>
-            <Button Command="{Binding ViewAccountCommand}" Content="عرض" Style="{StaticResource viewButtonStyleSearch}" Grid.Column="0" Grid.Row="2"/>
-            <Button Command="{Binding DeleteAccountCommand}" Content="حذف" Style="{StaticResource viewButtonStyleSearch}" Grid.Column="0" Grid.Row="3"/>
+            <StackPanel Grid.Column="0" Grid.Row="1">
+                <Button Command="{Binding EditAccountCommand}" Content="تعديل" Style="{StaticResource viewButtonStyle}" />
+                <Button Command="{Binding ViewAccountCommand}" Content="عرض" Style="{StaticResource viewButtonStyle}" />
+                <Button Command="{Binding DeleteAccountCommand}" Content="حذف" Style="{StaticResource viewButtonStyle}"/>
 
+            </StackPanel>
+            
             <StackPanel Margin="4" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Margin="4,0" Content="&lt;&lt;" Command="{Binding FirstCommand}"/>
                 <Button Margin="4,0" Content="&lt;" Command="{Binding PreviousCommand}"/>
