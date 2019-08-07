@@ -103,16 +103,16 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                     succ = (bool)DBConnection.cmd.Parameters["@Success"].Value;
                 }
-                
 
 
-                //you have not been successfully logged in
+
+                // It Was Stored in Database
                 if (succ)
                 {
                     MessageBox.Show("تم حفظ الزكاة بنجاح", "", MessageBoxButton.OK, MessageBoxImage.None,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
-                // Sign in Successfully
+                // It is not Stored in Database
                 else
                 {
                     MessageBox.Show("لم يتم حفظ الزكاة الرجاء التاكد من البيانات", "", MessageBoxButton.OK, MessageBoxImage.Error,

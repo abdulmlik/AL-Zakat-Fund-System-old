@@ -13,20 +13,20 @@ namespace AL_Zakat_Fund_System.Models
         #region private Member
 
         private string _Ssn;
-        private DateTime _Date;
+        private DateTime _SDate;
         private byte _RequestStatus;
         private string _FName;
         private string _MName;
         private string _GName;
         private string _LName;
         private string _MotherName;
-        private DateTime _BirthDate;
+        private DateTime? _BirthDate;
         private string _PlaceOfBirth;
         private string _TypeAssistance;
         private byte _SocialStatus;
         private string _Nationality;
         private string _BrochureFamilyNO;
-        private DateTime _BFDate;
+        private DateTime? _BFDate;
         private string _BFPlace;
         private string _FamilyPaperNO;
         private string _NumberOfChildren;
@@ -63,10 +63,10 @@ namespace AL_Zakat_Fund_System.Models
             get { return _Ssn; }
             set { SetProperty(ref _Ssn, value); }
         }
-        public DateTime Date
+        public DateTime SDate
         {
-            get { return _Date; }
-            set { SetProperty(ref _Date, value); }
+            get { return _SDate; }
+            set { SetProperty(ref _SDate, value); }
         }
         public byte RequestStatus
         {
@@ -99,7 +99,7 @@ namespace AL_Zakat_Fund_System.Models
             get { return _MotherName; }
             set { SetProperty(ref _MotherName, value); }
         }
-        public DateTime BirthDate
+        public DateTime? BirthDate
         {
             get { return _BirthDate; }
             set { SetProperty(ref _BirthDate, value); }
@@ -129,7 +129,7 @@ namespace AL_Zakat_Fund_System.Models
             get { return _BrochureFamilyNO; }
             set { SetProperty(ref _BrochureFamilyNO, value); }
         }
-        public DateTime BFDate
+        public DateTime? BFDate
         {
             get { return _BFDate; }
             set { SetProperty(ref _BFDate, value); }
