@@ -43,6 +43,19 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.cmd.CommandType = CommandType.StoredProcedure;
                 DBConnection.cmd.CommandText = "sp_insertIndigent";
 
+
+                //int PassportNO_Filter, PersonalCardNO_Filter, FamilyPaperNO_Filter;
+                //sbyte NumberOfChildren_Filter;
+                //decimal Salary_Filter;
+                //PassportNO_Filter = (PassportNO ==  null) ? -1 : int.Parse(PassportNO);
+                //PersonalCardNO_Filter = (PersonalCardNO == null) ? -1 : int.Parse(PersonalCardNO);
+                //FamilyPaperNO_Filter = (FamilyPaperNO == null) ? -1 : int.Parse(FamilyPaperNO);
+                //Salary_Filter = (Salary == null) ? 0 : decimal.Parse(Salary);
+                //if (string.IsNullOrWhiteSpace(NumberOfChildren))
+                //{ NumberOfChildren_Filter = 0; }
+                //else
+                //{ NumberOfChildren_Filter = sbyte.Parse(NumberOfChildren); }
+
                 #region create Parameters
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Ssn", SqlDbType.BigInt));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@SDate", SqlDbType.DateTime));
@@ -97,19 +110,6 @@ namespace AL_Zakat_Fund_System.ViewModels
                 
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Bit));
                 #endregion
-
-                //int PassportNO_Filter, PersonalCardNO_Filter, FamilyPaperNO_Filter;
-                //sbyte NumberOfChildren_Filter;
-                //decimal Salary_Filter;
-                //PassportNO_Filter = (PassportNO ==  null) ? -1 : int.Parse(PassportNO);
-                //PersonalCardNO_Filter = (PersonalCardNO == null) ? -1 : int.Parse(PersonalCardNO);
-                //FamilyPaperNO_Filter = (FamilyPaperNO == null) ? -1 : int.Parse(FamilyPaperNO);
-                //Salary_Filter = (Salary == null) ? 0 : decimal.Parse(Salary);
-                //if (string.IsNullOrWhiteSpace(NumberOfChildren))
-                //{ NumberOfChildren_Filter = 0; }
-                //else
-                //{ NumberOfChildren_Filter = sbyte.Parse(NumberOfChildren); }
-
 
                 #region parameters indigent
                 DBConnection.cmd.Parameters["@Ssn"].Value = Ssn;

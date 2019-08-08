@@ -53,6 +53,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.cmd.CommandType = CommandType.StoredProcedure;
                 DBConnection.cmd.CommandText = "sp_insertZakat";
 
+                #region Create Parameters
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Name", SqlDbType.NVarChar, 60));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@City", SqlDbType.NVarChar, 20));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Municipality", SqlDbType.NVarChar, 20));
@@ -70,6 +71,8 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Colle_ssn", SqlDbType.BigInt));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Office_no", SqlDbType.Int));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Bit));
+                #endregion
+
 
                 Decimal Amount_Filter;
                 int ReceiptNO_Filter, InstrumentNo_Filter;
@@ -80,18 +83,55 @@ namespace AL_Zakat_Fund_System.ViewModels
                     {
                         InstrumentNo_Filter = -1;
                     }
-                    DBConnection.cmd.Parameters["@Name"].Value = Name;
-                    DBConnection.cmd.Parameters["@City"].Value = City;
-                    DBConnection.cmd.Parameters["@Municipality"].Value = Municipality;
-                    DBConnection.cmd.Parameters["@Locality"].Value = Locality;
+
+                    DBConnection.cmd.Parameters["@Name"].IsNullable = true;
+                    if (Name != null)
+                    { DBConnection.cmd.Parameters["@Name"].Value = Name; }
+                    else
+                    { DBConnection.cmd.Parameters["@Name"].Value = DBNull.Value; }
+
+                    DBConnection.cmd.Parameters["@City"].IsNullable = true;
+                    if (City != null)
+                    { DBConnection.cmd.Parameters["@City"].Value = City; }
+                    else
+                    { DBConnection.cmd.Parameters["@City"].Value = DBNull.Value; }
+
+                    DBConnection.cmd.Parameters["@Municipality"].IsNullable = true;
+                    if (Municipality != null)
+                    { DBConnection.cmd.Parameters["@Municipality"].Value = Municipality; }
+                    else
+                    { DBConnection.cmd.Parameters["@Municipality"].Value = DBNull.Value; }
+
+                    DBConnection.cmd.Parameters["@Locality"].IsNullable = true;
+                    if (Locality != null)
+                    { DBConnection.cmd.Parameters["@Locality"].Value = Locality; }
+                    else
+                    { DBConnection.cmd.Parameters["@Locality"].Value = DBNull.Value; }
+
                     DBConnection.cmd.Parameters["@SDate"].Value = SDate;
                     DBConnection.cmd.Parameters["@Amount"].Value = Amount_Filter;
                     DBConnection.cmd.Parameters["@ReceiptNO"].Value = ReceiptNO_Filter;
                     DBConnection.cmd.Parameters["@ZType"].Value = ZType;
                     DBConnection.cmd.Parameters["@ZCalss"].Value = ZCalss;
-                    DBConnection.cmd.Parameters["@InstrumentNo"].Value = InstrumentNo_Filter;
-                    DBConnection.cmd.Parameters["@Phone"].Value = GloblNoPhone + Phone;
-                    DBConnection.cmd.Parameters["@Email"].Value = Email;
+
+                    DBConnection.cmd.Parameters["@InstrumentNo"].IsNullable = true;
+                    if (InstrumentNo != null)
+                    { DBConnection.cmd.Parameters["@InstrumentNo"].Value = InstrumentNo; }
+                    else
+                    { DBConnection.cmd.Parameters["@InstrumentNo"].Value = DBNull.Value; }
+
+                    DBConnection.cmd.Parameters["@Phone"].IsNullable = true;
+                    if (Phone != null)
+                    { DBConnection.cmd.Parameters["@Phone"].Value = GloblNoPhone + Phone; }
+                    else
+                    { DBConnection.cmd.Parameters["@Phone"].Value = DBNull.Value; }
+
+                    DBConnection.cmd.Parameters["@Email"].IsNullable = true;
+                    if (Email != null)
+                    { DBConnection.cmd.Parameters["@Email"].Value = Email; }
+                    else
+                    { DBConnection.cmd.Parameters["@Email"].Value = DBNull.Value; }
+
                     DBConnection.cmd.Parameters["@CaseDeposit"].Value = 1;
                     DBConnection.cmd.Parameters["@Convrsion"].Value = 0;
                     DBConnection.cmd.Parameters["@Colle_ssn"].Value = Properties.Settings.Default.EmpNo;

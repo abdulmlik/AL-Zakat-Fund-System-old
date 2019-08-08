@@ -12,12 +12,12 @@ namespace AL_Zakat_Fund_System.Models
         #region private Member
         
         protected string _DecisionNO;
-        protected DateTime _LastConnection;
+        protected DateTime? _LastConnection;
         protected string _Notice;
         protected string _Comment;
         protected DateTime _ReceivedDate;
-        protected DateTime _VisitDate;
-        protected DateTime _DeliverDate;
+        protected DateTime? _VisitDate;
+        protected DateTime? _DeliverDate;
         protected byte _Distance;
         protected byte _FStatus;
         protected string _Observer_ssn;
@@ -32,7 +32,7 @@ namespace AL_Zakat_Fund_System.Models
             get { return _DecisionNO; }
             set { SetProperty(ref _DecisionNO, value); }
         }
-        public DateTime LastConnection
+        public DateTime? LastConnection
         {
             get { return _LastConnection; }
             set { SetProperty(ref _LastConnection, value); }
@@ -52,12 +52,12 @@ namespace AL_Zakat_Fund_System.Models
             get { return _ReceivedDate; }
             set { SetProperty(ref _ReceivedDate, value); }
         }
-        public DateTime VisitDate
+        public DateTime? VisitDate
         {
             get { return _VisitDate; }
             set { SetProperty(ref _VisitDate, value); }
         }
-        public DateTime DeliverDate
+        public DateTime? DeliverDate
         {
             get { return _DeliverDate; }
             set { SetProperty(ref _DeliverDate, value); }
