@@ -146,32 +146,38 @@ namespace AL_Zakat_Fund_System.ViewModels
         }
         private void PageViewAccountDataExecute()
         {
-            if (PageVAD == null || PageVAD.Content == null) { PageVAD = new ViewAccountData(); }
+            //if (PageVAD == null || PageVAD.Content == null) { PageVAD = new ViewAccountData(); }
+            PageVAD = new ViewAccountData();
             Page = PageVAD;
         }
         private void PageViewExchangePermissionDataExecute()
         {
-            if (PageVEPD == null || PageVEPD.Content == null) { PageVEPD = new ViewExchangePermissionData(); }
+            //if (PageVEPD == null || PageVEPD.Content == null) { PageVEPD = new ViewExchangePermissionData(); }
+            PageVEPD = new ViewExchangePermissionData();
             Page = PageVEPD;
         }
         private void PageViewFollowUpDataExecute()
         {
-            if (PageVFD == null || PageVFD.Content == null) { PageVFD = new ViewFollowUpData(); }
+            //if (PageVFD == null || PageVFD.Content == null) { PageVFD = new ViewFollowUpData(); }
+            PageVFD = new ViewFollowUpData();
             Page = PageVFD;
         }
         private void PageViewFollowUpDataObserverExecute()
         {
-            if (PageVFDO == null || PageVFDO.Content == null) { PageVFDO = new ViewFollowUpDataObserver(); }
+            //if (PageVFDO == null || PageVFDO.Content == null) { PageVFDO = new ViewFollowUpDataObserver(); }
+            PageVFDO = new ViewFollowUpDataObserver();
             Page = PageVFDO;
         }
         private void PageViewRecordDataExecute()
         {
-            if (PageVRD == null || PageVRD.Content == null) { PageVRD = new ViewRecordData(); }
+            //if (PageVRD == null || PageVRD.Content == null) { PageVRD = new ViewRecordData(); }
+            PageVRD = new ViewRecordData();
             Page = PageVRD;
         }
         private void PageViewZakatDataExecute()
         {
-            if (PageVZD == null || PageVZD.Content == null) { PageVZD = new ViewZakatData(); }
+            //if (PageVZD == null || PageVZD.Content == null) { PageVZD = new ViewZakatData(); }
+            PageVZD = new ViewZakatData();
             Page = PageVZD;
         }
         #endregion

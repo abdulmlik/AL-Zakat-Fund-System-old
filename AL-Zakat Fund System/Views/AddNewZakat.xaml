@@ -91,7 +91,7 @@
                         <TextBlock Text="البريد الالكتروني للمزكي ويكتب بهذا النمط (xxxx@xxx.xxx) ،الحقل اختياري" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <Button Command="{Binding AddZakatDatabaseCommand}" Content="حفظ" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="8"  />
-                    <Button Command="{Binding ResetCommand}" Content="تفريغ" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="8"  />
+                    <Button Command="{Binding ResetCommand}" Content="اعادة الادخال" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="8"  />
                     <Button Command="{Binding CancelCommand}" Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="3" Grid.Row="8"  />
                 </Grid>
             </GroupBox>

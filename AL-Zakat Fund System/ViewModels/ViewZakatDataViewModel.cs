@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using System;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,15 +20,18 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region private Member
         UserControl CurrentPage;
         private ObservableCollection<Zakat> _list = new ObservableCollection<Zakat>();
+        private ObservableCollection<Zakat> _list2 = new ObservableCollection<Zakat>();
         private string _SearchText;
         private int _Start;
         private int _End;
         private int _TotalItems;
 
+        private Zakat _SelectItem;
+
         #region fill Observable Collection list
         private void FillList()
         {
-            DBConnection.OpenConnection();
+            SelectItem = null;
 
             DBConnection.cmd.CommandType = CommandType.StoredProcedure;
             DBConnection.cmd.CommandText = "sp_displayZakat";
@@ -40,6 +44,10 @@ namespace AL_Zakat_Fund_System.ViewModels
 
             try
             {
+                list.Clear();
+
+                DBConnection.OpenConnection();
+                
                 DBConnection.reader = DBConnection.cmd.ExecuteReader();
 
                 while (DBConnection.reader.Read())
@@ -63,6 +71,8 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                     list.Add(TZ);
                 }
+                _list2.Clear();
+                _list2.AddRange(list.ToList<Zakat>());
             }
             catch(Exception ex)
             {
@@ -88,7 +98,28 @@ namespace AL_Zakat_Fund_System.ViewModels
         public string SearchText
         {
             get { return _SearchText; }
-            set { SetProperty(ref _SearchText, value); }
+            set
+            {
+                if (_SearchText == value) return;
+
+                SetProperty(ref _SearchText, value);
+
+                if (_SearchText == "" || _SearchText == null)
+                {
+                    SelectItem = null;
+                    list.Clear();
+                    list = _list2;
+                }
+                else
+                {
+                    SelectItem = null;
+                    Regex regEx = new Regex(_SearchText.ToString(), RegexOptions.IgnoreCase);
+                    list = new ObservableCollection<Zakat>(_list2.Where(item => regEx.IsMatch(item.Name) || regEx.IsMatch(item.Address) || regEx.IsMatch(item.SDate.ToString("dd/MM/yyyy")) ||
+                                                            regEx.IsMatch(item.Amount) || regEx.IsMatch(item.ReceiptNO) || regEx.IsMatch(item.ZType2) || regEx.IsMatch(item.ZCalss) ||
+                                                            regEx.IsMatch(item.InstrumentNo) || regEx.IsMatch(item.Phone) || regEx.IsMatch(item.Email) || regEx.IsMatch(item.CaseDeposit2) ||
+                                                            regEx.IsMatch(item.Convrsion2) || regEx.IsMatch(item.Colle_ssn2) || regEx.IsMatch(item.Office_no2)).ToList<Zakat>());
+                }
+            }
         }
         public int Start
         {
@@ -105,13 +136,18 @@ namespace AL_Zakat_Fund_System.ViewModels
             get { return _TotalItems; }
             set { SetProperty(ref _TotalItems, value); }
         }
+        public Zakat SelectItem
+        {
+            get { return _SelectItem; }
+            set { SetProperty(ref _SelectItem, value); }
+        }
         #endregion
 
         #region Delegate Command 
 
         public DelegateCommand CancelCommand { get; set; }
 
-        public DelegateCommand SearchZakatCommand { get; set; }
+        public DelegateCommand ReFreshZakatCommand { get; set; }
         public DelegateCommand EditZakatCommand { get; set; }
         public DelegateCommand ViewZakatCommand { get; set; }
         public DelegateCommand DeleteZakatCommand { get; set; }
@@ -127,20 +163,13 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         #region Execute and CanExecute Functions
 
-        #region Search Zakat
-        private void SearchZakatExecute()
+        #region ReFresh Zakat
+        private void ReFreshZakatExecute()
         {
-
-        }
-        private bool SearchZakatCanExecute()
-        {
-            if (true)
-            {
-
-            }
-            return true;
+            FillList();
         }
         #endregion
+
         #region Edit Zakat
         private void EditZakatExecute()
         {
@@ -148,37 +177,85 @@ namespace AL_Zakat_Fund_System.ViewModels
         }
         private bool EditZakatCanExecute()
         {
-            if (true)
+            if (SelectItem == null)
             {
-
+                return false;
             }
             return true;
         }
         #endregion
+
         #region view Zakat
         private void ViewZakatExecute()
         {
-
+            
         }
         private bool ViewZakatCanExecute()
         {
-            if (true)
+            if (SelectItem == null)
             {
-
+                return false;
             }
             return true;
         }
         #endregion
+
         #region Delete Zakat
         private void DeleteZakatExecute()
         {
+            MessageBoxResult result = MessageBox.Show("هل انت متأكد من حذف الزكاة رقم " + SelectItem.Zakat_id.ToString() + Environment.NewLine + "في حال ضغط على نعم سيتم حذف الزكاة نهائيا",
+                                                        "", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+            if(result == MessageBoxResult.Yes)
+            {
+                int succ = 0;
+                try
+                {
 
+                    DBConnection.OpenConnection();
+
+                    DBConnection.cmd.CommandType = CommandType.StoredProcedure;
+                    DBConnection.cmd.CommandText = "sp_deleteZakat";
+
+                    DBConnection.cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int));
+                    DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
+
+                    DBConnection.cmd.Parameters["@Id"].Value = SelectItem.Zakat_id;
+                    DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
+
+                    DBConnection.cmd.ExecuteNonQuery();
+                    succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("لم يتم حذف الزكاة الرجاء التاكد من الاتصال بالسيرفر" + Environment.NewLine + ex.Message.ToString(), "", MessageBoxButton.OK, MessageBoxImage.Error,
+                                        MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                }
+                finally
+                {
+                    DBConnection.CloseConnection();
+
+                    if (succ == 1)
+                    {
+                        MessageBox.Show("تم حذف الزكاة رقم " + SelectItem.Zakat_id.ToString() + " بنجاح");
+                        FillList();
+                    }
+                    else if (succ == 2)
+                    {
+                        MessageBox.Show("لم يتم العثور على الزكاة رقم : " + SelectItem.Zakat_id.ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("لم يتم حذف الزكاة رقم : " + SelectItem.Zakat_id.ToString());
+                    }
+                }//end finally
+            }
         }
         private bool DeleteZakatCanExecute()
         {
-            if (true)
+            if (SelectItem == null)
             {
-
+                return false;
             }
             return true;
         }
@@ -219,10 +296,10 @@ namespace AL_Zakat_Fund_System.ViewModels
 
             FillList();
 
-            SearchZakatCommand = new DelegateCommand(SearchZakatExecute, SearchZakatCanExecute);
-            EditZakatCommand = new DelegateCommand(EditZakatExecute, EditZakatCanExecute);
-            ViewZakatCommand = new DelegateCommand(ViewZakatExecute, ViewZakatCanExecute);
-            DeleteZakatCommand = new DelegateCommand(DeleteZakatExecute, DeleteZakatCanExecute);
+            ReFreshZakatCommand = new DelegateCommand(ReFreshZakatExecute);
+            EditZakatCommand = new DelegateCommand(EditZakatExecute, EditZakatCanExecute).ObservesProperty(() =>SelectItem);
+            ViewZakatCommand = new DelegateCommand(ViewZakatExecute, ViewZakatCanExecute).ObservesProperty(() => SelectItem);
+            DeleteZakatCommand = new DelegateCommand(DeleteZakatExecute, DeleteZakatCanExecute).ObservesProperty(() => SelectItem);
 
             CancelCommand = new DelegateCommand(CancelExecute);
 
