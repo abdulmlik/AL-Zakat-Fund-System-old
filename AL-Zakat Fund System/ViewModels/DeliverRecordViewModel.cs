@@ -86,7 +86,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                 succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
 
-
+                #region messge box
                 // It Was Stored in Database
                 if (succ == 1)
                 {
@@ -109,6 +109,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                     MessageBox.Show("لم يتم  تحويل المحضر للمتابعة الرجاء التاكد من البيانات", "", MessageBoxButton.OK, MessageBoxImage.Error,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
+                #endregion
             }
             catch (Exception ex)
             {

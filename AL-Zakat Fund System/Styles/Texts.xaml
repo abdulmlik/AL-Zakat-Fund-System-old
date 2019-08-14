@@ -21,6 +21,7 @@
         <Setter Property="VerticalAlignment" Value="Stretch" />
         <Setter Property="Margin" Value="0 10 0 0" />
     </Style>
+    
     <Style TargetType="{x:Type TextBlock}" x:Key="filedText2" BasedOn="{StaticResource BaseTextBlockStyle}">
         <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}" />
         <Setter Property="FontSize" Value="20" />

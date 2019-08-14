@@ -9,7 +9,7 @@ using AL_Zakat_Fund_System.Models;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
-    class ModifyExchangePermissionViewModel : ExchangePermission
+    class ModifyExchangePermissionViewModel : AuthorizeExpenditure
     {
         #region private Member
         Window CurrentWin;

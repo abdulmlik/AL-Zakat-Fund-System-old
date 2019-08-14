@@ -30,6 +30,14 @@ namespace AL_Zakat_Fund_System.Models
         protected long _Colle_ssn;
         protected int _Office_no;
 
+
+        // display
+        protected string _Address;
+        protected string _ZType2;
+        protected string _CaseDeposit2;
+        protected string _Convrsion2;
+        protected string _Colle_ssn2;
+        protected string _Office_no2;
         #endregion
 
         #region public properties
@@ -128,6 +136,39 @@ namespace AL_Zakat_Fund_System.Models
         {
             get { return _Office_no; }
             set { SetProperty(ref _Office_no, value); }
+        }
+
+
+        //
+        public string Address
+        {
+            get { return _Address; }
+            set { SetProperty(ref _Address, value); }
+        }
+        public string ZType2
+        {
+            get { return _ZType2; }
+            set { SetProperty(ref _ZType2, value); }
+        }
+        public string CaseDeposit2
+        {
+            get { return _CaseDeposit2; }
+            set { SetProperty(ref _CaseDeposit2, value); }
+        }
+        public string Convrsion2
+        {
+            get { return _Convrsion2; }
+            set { SetProperty(ref _Convrsion2, value); }
+        }
+        public string Colle_ssn2
+        {
+            get { return _Colle_ssn2; }
+            set { SetProperty(ref _Colle_ssn2, value); }
+        }
+        public string Office_no2
+        {
+            get { return _Office_no2; }
+            set { SetProperty(ref _Office_no2, value); }
         }
         #endregion
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AL_Zakat_Fund_System.Models
 {
-    class ExchangePermission : BindableBase
+    class AuthorizeExpenditure : BindableBase
     {
         #region private Member
 
@@ -18,7 +18,7 @@ namespace AL_Zakat_Fund_System.Models
         protected DateTime _SDate;
         protected string _InstrumentNO;
         protected long _Courier_ssn;
-        protected string _RecrodID;
+        protected string _Record_id;
 
         #endregion
 
@@ -59,10 +59,10 @@ namespace AL_Zakat_Fund_System.Models
             get { return _Courier_ssn; }
             set { SetProperty(ref _Courier_ssn, value); }
         }
-        public string RecrodID
+        public string Record_id
         {
-            get { return _RecrodID; }
-            set { SetProperty(ref _RecrodID, value); }
+            get { return _Record_id; }
+            set { SetProperty(ref _Record_id, value); }
         }
 
         #endregion
@@ -70,7 +70,7 @@ namespace AL_Zakat_Fund_System.Models
         #region Construct
 
         #region Construct without parameter
-        public ExchangePermission()
+        public AuthorizeExpenditure()
         {
 
         }
@@ -87,7 +87,7 @@ namespace AL_Zakat_Fund_System.Models
         /// <param name="SDate_"></param>
         /// <param name="InstrumentNO_"></param>
         /// <param name="Indigent_ssn_"></param>
-        public ExchangePermission(string CommitteeDecisionNO_, byte CategoryPoor_, string TypeAssistance_, string Amount_, DateTime SDate_, string InstrumentNO_, string RecrodID_)
+        public AuthorizeExpenditure(string CommitteeDecisionNO_, byte CategoryPoor_, string TypeAssistance_, string Amount_, DateTime SDate_, string InstrumentNO_, string RecrodID_)
         {
             this.CommitteeDecisionNO = CommitteeDecisionNO_;
             this.CategoryPoor = CategoryPoor_;
@@ -95,7 +95,7 @@ namespace AL_Zakat_Fund_System.Models
             this.Amount = Amount_;
             this.SDate = SDate_;
             this.InstrumentNO = InstrumentNO_;
-            this.RecrodID = RecrodID_;
+            this.Record_id = RecrodID_;
         }
         #endregion
 

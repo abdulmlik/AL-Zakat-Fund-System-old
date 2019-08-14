@@ -49,7 +49,7 @@ namespace AL_Zakat_Fund_System.Models
             sql = "";
             con = new SqlConnection();
             cmd = new SqlCommand("", con);
-            rd  = null;
+            reader  = null;
             dt  = null;
             da  = null;
         }
@@ -59,7 +59,7 @@ namespace AL_Zakat_Fund_System.Models
         public static string sql;
         public static SqlConnection con = new SqlConnection();
         public static SqlCommand cmd = new SqlCommand("", con);
-        public static SqlDataReader rd;
+        public static SqlDataReader reader;
         public static DataTable dt;
         public static SqlDataAdapter da;
         #endregion

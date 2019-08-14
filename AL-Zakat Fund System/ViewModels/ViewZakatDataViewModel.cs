@@ -6,8 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Controls;
 using AL_Zakat_Fund_System.Models;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
@@ -20,6 +23,58 @@ namespace AL_Zakat_Fund_System.ViewModels
         private int _Start;
         private int _End;
         private int _TotalItems;
+
+        #region fill Observable Collection list
+        private void FillList()
+        {
+            DBConnection.OpenConnection();
+
+            DBConnection.cmd.CommandType = CommandType.StoredProcedure;
+            DBConnection.cmd.CommandText = "sp_displayZakat";
+
+            DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
+
+            DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
+
+            Zakat TZ;
+
+            try
+            {
+                DBConnection.reader = DBConnection.cmd.ExecuteReader();
+
+                while (DBConnection.reader.Read())
+                {
+                    TZ = new Zakat();
+                    TZ.Zakat_id = DBConnection.reader.GetInt32(0);
+                    TZ.Name = DBConnection.reader.GetString(1);
+                    TZ.Address = DBConnection.reader.GetString(2);
+                    TZ.SDate = DBConnection.reader.GetDateTime(3);
+                    TZ.Amount = DBConnection.reader.GetDecimal(4).ToString();
+                    TZ.ReceiptNO = DBConnection.reader.GetInt32(5).ToString();
+                    TZ.ZType2 = DBConnection.reader.GetString(6);
+                    TZ.ZCalss = DBConnection.reader.GetString(7);
+                    TZ.InstrumentNo = DBConnection.reader.GetString(8);
+                    TZ.Phone = DBConnection.reader.GetString(9);
+                    TZ.Email = DBConnection.reader.GetString(10);
+                    TZ.CaseDeposit2 = DBConnection.reader.GetString(11);
+                    TZ.Convrsion2 = DBConnection.reader.GetString(12);
+                    TZ.Colle_ssn2 = DBConnection.reader.GetString(13);
+                    TZ.Office_no2 = DBConnection.reader.GetString(14);
+
+                    list.Add(TZ);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("خطا في عرض البيانات" + Environment.NewLine + ex.Message.ToString(), "", MessageBoxButton.OK, MessageBoxImage.Error,
+                                    MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+            }
+            finally
+            {
+                DBConnection.CloseConnection();
+            }
+        }
+        #endregion
 
         #endregion
 
@@ -162,6 +217,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             CurrentPage = CP;
 
+            FillList();
 
             SearchZakatCommand = new DelegateCommand(SearchZakatExecute, SearchZakatCanExecute);
             EditZakatCommand = new DelegateCommand(EditZakatExecute, EditZakatCanExecute);

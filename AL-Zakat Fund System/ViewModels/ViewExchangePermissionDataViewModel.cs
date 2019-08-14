@@ -15,7 +15,7 @@ namespace AL_Zakat_Fund_System.ViewModels
     {
         #region private Member
         UserControl CurrentPage;
-        private ObservableCollection<ExchangePermission> _list = new ObservableCollection<ExchangePermission>();
+        private ObservableCollection<AuthorizeExpenditure> _list = new ObservableCollection<AuthorizeExpenditure>();
         private string _SearchText;
         private int _Start;
         private int _End;
@@ -25,7 +25,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         #region public properties
 
-        public ObservableCollection<ExchangePermission> list
+        public ObservableCollection<AuthorizeExpenditure> list
         {
             get { return _list; }
             set { SetProperty(ref _list, value); }
