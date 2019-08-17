@@ -45,15 +45,27 @@ namespace AL_Zakat_Fund_System.Models
         private string _SourceOFSalary;
         private byte _HousingCase;
         private byte _TypeHousing;
-        private byte _Transportation;
+        private bool _Transportation;
         private byte _TCase;
         private string _LSComment;
-        private byte _ChronicDisease;
+        private bool _ChronicDisease;
         private string _HSComment;
         private bool _Gender;
         private long _Scribe_ssn;
         private int _Office_no;
 
+
+        //display
+        private string _RequestStatus2;
+        private string _SocialStatus2;
+        private string _HousingCase2;
+        private string _TypeHousing2;
+        private string _Transportation2;
+        private string _TCase2;
+        private string _ChronicDisease2;
+        private string _Gender2;
+        private string _Scribe_ssn2;
+        private string _Office_no2;
         #endregion
 
         #region public properties
@@ -184,6 +196,11 @@ namespace AL_Zakat_Fund_System.Models
             get { return _NearestMosque; }
             set { SetProperty(ref _NearestMosque, value); }
         }
+        public string Address
+        {
+            get { return _City + " " + _Municipality; }
+            set { }
+        }
         public string DialCode
         {
             get { return _DialCode; }
@@ -193,6 +210,11 @@ namespace AL_Zakat_Fund_System.Models
         {
             get { return _Number; }
             set { SetProperty(ref _Number, value); }
+        }
+        public string Phone
+        {
+            get { return _DialCode +"-"+ _Number; }
+            set { }
         }
         public string Email
         {
@@ -224,7 +246,7 @@ namespace AL_Zakat_Fund_System.Models
             get { return _TypeHousing; }
             set { SetProperty(ref _TypeHousing, value); }
         }
-        public byte Transportation
+        public bool Transportation
         {
             get { return _Transportation; }
             set { SetProperty(ref _Transportation, value); }
@@ -239,7 +261,7 @@ namespace AL_Zakat_Fund_System.Models
             get { return _LSComment; }
             set { SetProperty(ref _LSComment, value); }
         }
-        public byte ChronicDisease
+        public bool ChronicDisease
         {
             get { return _ChronicDisease; }
             set { SetProperty(ref _ChronicDisease, value); }
@@ -254,6 +276,11 @@ namespace AL_Zakat_Fund_System.Models
             get { return _Gender; }
             set { SetProperty(ref _Gender, value); }
         }
+        public string Gender2
+        {
+            get { return _Gender2; }
+            set { SetProperty(ref _Gender2, value); }
+        }
         public long Scribe_ssn
         {
             get { return _Scribe_ssn; }
@@ -263,6 +290,68 @@ namespace AL_Zakat_Fund_System.Models
         {
             get { return _Office_no; }
             set { SetProperty(ref _Office_no, value); }
+        }
+
+
+        // dsplay
+        public string FullName
+        {
+            get { return _FName + " " + _MName + " " + _GName + " " + _LName; }
+            set {}
+        }
+
+        public string RequestStatus2
+        {
+            get { return _RequestStatus2; }
+            set { SetProperty(ref _RequestStatus2, value); }
+        }
+
+        public string SocialStatus2
+        {
+            get { return _SocialStatus2; }
+            set { SetProperty(ref _SocialStatus2, value); }
+        }
+
+        public string HousingCase2
+        {
+            get { return _HousingCase2; }
+            set { SetProperty(ref _HousingCase2, value); }
+        }
+
+        public string TypeHousing2
+        {
+            get { return _TypeHousing2; }
+            set { SetProperty(ref _TypeHousing2, value); }
+        }
+
+        public string Transportation2
+        {
+            get { return _Transportation2; }
+            set { SetProperty(ref _Transportation2, value); }
+        }
+
+        public string TCase2
+        {
+            get { return _TCase2; }
+            set { SetProperty(ref _TCase2, value); }
+        }
+
+        public string ChronicDisease2
+        {
+            get { return _ChronicDisease2; }
+            set { SetProperty(ref _ChronicDisease2, value); }
+        }
+
+        public string Scribe_ssn2
+        {
+            get { return _Scribe_ssn2; }
+            set { SetProperty(ref _Scribe_ssn2, value); }
+        }
+
+        public string Office_no2
+        {
+            get { return _Office_no2; }
+            set { SetProperty(ref _Office_no2, value); }
         }
 
         #endregion
@@ -323,8 +412,8 @@ namespace AL_Zakat_Fund_System.Models
         public Indigent(string Ssn_, byte RequestStatus_, string FName_, string MName_, string GName_, string LName_, string MotherName_, DateTime BirthDate_
             , string PlaceOfBirth_, string TypeAssistance_, byte SocialStatus_, string Nationality_, string BrochureFamilyNO_, DateTime BFDate_, string BFPlace_
             , string FamilyPaperNO_, string PersonalCardNO_, string PassportNO_, string City_, string Municipality_, string Locality_, string Street_, string NearestMosque_
-            , string DialCode_, string Number_, string Email_, string Job_, string Salary_, string SourceOFSalary_, byte HousingCase_, byte TypeHousing_, byte Transportation_, byte TCase_
-            , string LSComment_, byte ChronicDisease_, string HSComment_, bool Gender_, long Scribe_ssn_, int Office_no_)
+            , string DialCode_, string Number_, string Email_, string Job_, string Salary_, string SourceOFSalary_, byte HousingCase_, byte TypeHousing_, bool Transportation_, byte TCase_
+            , string LSComment_, bool ChronicDisease_, string HSComment_, bool Gender_, long Scribe_ssn_, int Office_no_)
         {
             this.Ssn = Ssn_;
             this.RequestStatus = RequestStatus_;

@@ -46,4 +46,26 @@
         <Setter Property="Margin" Value="30 0 10 0" />
     </Style>
 
+    <Style TargetType="{x:Type TextBlock}" x:Key="filedHederText" BasedOn="{StaticResource BaseTextBlockStyle}">
+        <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}" />
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontFamily" Value="Adobe Arabic" />
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Margin" Value="0 0 0 10" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}" x:Key="filedDisplayText" BasedOn="{StaticResource BaseTextBlockStyle}">
+        <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="Margin" Value="0 0 0 10" />
+        <Setter Property="MaxHeight" Value="100" />
+        <Setter Property="Foreground" Value="{StaticResource ForegroundGrayDarkBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+
 </ResourceDictionary>

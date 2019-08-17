@@ -170,7 +170,7 @@
         <!-- pages content -->
         <UserControl Grid.Column="1" Grid.Row="1" Content="{Binding Page,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" >
             <UserControl.Background>
-                <SolidColorBrush Color="#FFD6DBE9" Opacity="0.8"/>
+                <SolidColorBrush Color="{StaticResource ForegroundBlueLight}" Opacity="0.8"/>
             </UserControl.Background>
         </UserControl>
 

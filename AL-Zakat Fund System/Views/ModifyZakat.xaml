@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
         mc:Ignorable="d" 
+        Title="تعديل في الزكاة"
+        Width="730" MaxHeight="730" MinHeight="600"
+        Icon="../Images/Logo/34.png"
+        WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft"
-        d:DesignHeight="800" d:DesignWidth="700">
+        d:DesignHeight="730" d:DesignWidth="730">
     <ScrollViewer Style="{StaticResource ScrollViewerStyle}" >
         <StackPanel Margin="10">
             <GroupBox Header="تعديل في الزكاة" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">

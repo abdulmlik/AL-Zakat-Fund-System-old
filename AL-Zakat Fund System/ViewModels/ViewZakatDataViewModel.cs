@@ -12,13 +12,15 @@ using System.Windows.Controls;
 using AL_Zakat_Fund_System.Models;
 using System.Data;
 using System.Data.SqlClient;
+using AL_Zakat_Fund_System.Views;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
     class ViewZakatDataViewModel : BindableBase
     {
         #region private Member
-        UserControl CurrentPage;
+        private UserControl CurrentPage;
+        private Window mWindow;
         private ObservableCollection<Zakat> _list = new ObservableCollection<Zakat>();
         private ObservableCollection<Zakat> _list2 = new ObservableCollection<Zakat>();
         private string _SearchText;
@@ -28,11 +30,13 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         private Zakat _SelectItem;
 
+        #endregion
+
+        #region private function
+
         #region fill Observable Collection list
         private void FillList()
         {
-            SelectItem = null;
-
             DBConnection.cmd.CommandType = CommandType.StoredProcedure;
             DBConnection.cmd.CommandText = "sp_displayZakat";
 
@@ -47,7 +51,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 list.Clear();
 
                 DBConnection.OpenConnection();
-                
+
                 DBConnection.reader = DBConnection.cmd.ExecuteReader();
 
                 while (DBConnection.reader.Read())
@@ -74,7 +78,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 _list2.Clear();
                 _list2.AddRange(list.ToList<Zakat>());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("خطا في عرض البيانات" + Environment.NewLine + ex.Message.ToString(), "", MessageBoxButton.OK, MessageBoxImage.Error,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
@@ -100,17 +104,16 @@ namespace AL_Zakat_Fund_System.ViewModels
             get { return _SearchText; }
             set
             {
+
                 if (_SearchText == value) return;
+
+
+                value = value.Replace('\\', '/');
 
                 SetProperty(ref _SearchText, value);
 
-                if (_SearchText == "" || _SearchText == null)
-                {
-                    SelectItem = null;
-                    list.Clear();
-                    list = _list2;
-                }
-                else
+
+                if (!string.IsNullOrWhiteSpace(_SearchText) && !string.IsNullOrEmpty(_SearchText))
                 {
                     SelectItem = null;
                     Regex regEx = new Regex(_SearchText.ToString(), RegexOptions.IgnoreCase);
@@ -118,6 +121,12 @@ namespace AL_Zakat_Fund_System.ViewModels
                                                             regEx.IsMatch(item.Amount) || regEx.IsMatch(item.ReceiptNO) || regEx.IsMatch(item.ZType2) || regEx.IsMatch(item.ZCalss) ||
                                                             regEx.IsMatch(item.InstrumentNo) || regEx.IsMatch(item.Phone) || regEx.IsMatch(item.Email) || regEx.IsMatch(item.CaseDeposit2) ||
                                                             regEx.IsMatch(item.Convrsion2) || regEx.IsMatch(item.Colle_ssn2) || regEx.IsMatch(item.Office_no2)).ToList<Zakat>());
+                }
+                else
+                {
+                    SelectItem = null;
+                    list.Clear();
+                    list.AddRange(_list2.ToList<Zakat>());
                 }
             }
         }
@@ -167,13 +176,22 @@ namespace AL_Zakat_Fund_System.ViewModels
         private void ReFreshZakatExecute()
         {
             FillList();
+            SearchText = "";
+            SelectItem = null;
         }
         #endregion
 
         #region Edit Zakat
         private void EditZakatExecute()
         {
-
+            ModifyZakat view = new ModifyZakat();
+            view.DataContext = new ModifyZakatViewModel(view, SelectItem.Zakat_id);
+            view.Owner = mWindow;
+            bool? result = view.ShowDialog();
+            if(result == true)
+            {
+                ReFreshZakatExecute();
+            }
         }
         private bool EditZakatCanExecute()
         {
@@ -188,7 +206,11 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region view Zakat
         private void ViewZakatExecute()
         {
-            
+            DisplayZakat view = new DisplayZakat();
+            view.DataContext = new DisplayZakatViewModel(view, SelectItem.Zakat_id);
+            view.Owner = mWindow;
+            view.Show();
+
         }
         private bool ViewZakatCanExecute()
         {
@@ -290,9 +312,10 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region Construct
-        public ViewZakatDataViewModel(UserControl CP)
+        public ViewZakatDataViewModel(UserControl CP, Window window)
         {
             CurrentPage = CP;
+            mWindow = window;
 
             FillList();
 

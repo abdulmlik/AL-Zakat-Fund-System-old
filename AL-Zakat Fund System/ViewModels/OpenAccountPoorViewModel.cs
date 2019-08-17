@@ -93,7 +93,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@TCase", SqlDbType.TinyInt));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@LSComment", SqlDbType.NText));
 
-                DBConnection.cmd.Parameters.Add(new SqlParameter("@ChronicDisease", SqlDbType.TinyInt));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@ChronicDisease", SqlDbType.Bit));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@HSComment", SqlDbType.NText));
 
 
@@ -392,10 +392,10 @@ namespace AL_Zakat_Fund_System.ViewModels
             SourceOFSalary = "";
             HousingCase = 0;
             TypeHousing = 0;
-            Transportation = 0;
+            Transportation = false;
             TCase = 0;
             LSComment = "";
-            ChronicDisease = 0;
+            ChronicDisease = false;
             HSComment = "";
             Gender = false;
         }

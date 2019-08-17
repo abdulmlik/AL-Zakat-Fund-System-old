@@ -148,6 +148,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             //if (PageVAD == null || PageVAD.Content == null) { PageVAD = new ViewAccountData(); }
             PageVAD = new ViewAccountData();
+            PageVAD.DataContext = new ViewAccountDataViewModel(PageVAD, mWindow);
             Page = PageVAD;
         }
         private void PageViewExchangePermissionDataExecute()
@@ -178,6 +179,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             //if (PageVZD == null || PageVZD.Content == null) { PageVZD = new ViewZakatData(); }
             PageVZD = new ViewZakatData();
+            PageVZD.DataContext = new ViewZakatDataViewModel(PageVZD, mWindow);
             Page = PageVZD;
         }
         #endregion

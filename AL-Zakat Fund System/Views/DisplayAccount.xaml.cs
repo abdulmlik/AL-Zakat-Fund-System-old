@@ -11,16 +11,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using AL_Zakat_Fund_System.ViewModels;
 
 namespace AL_Zakat_Fund_System.Views
 {
     /// <summary>
-    /// Interaction logic for ModifyZakat.xaml
+    /// Interaction logic for DisplayAccount.xaml
     /// </summary>
-    public partial class ModifyZakat : Window
+    public partial class DisplayAccount : Window
     {
-        public ModifyZakat()
+        public DisplayAccount()
         {
             InitializeComponent();
         }
