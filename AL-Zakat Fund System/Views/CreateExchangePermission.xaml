@@ -66,10 +66,10 @@
                             <ComboBoxItem>ابن السبيل</ComboBoxItem>
                         </ComboBox>
                     </StackPanel>
-                    <TextBlock Text="رقم الصك : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="4"/>
+                    <TextBlock Text="رقم الصك : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="4"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="4" >
                         <TextBox MaxLength="11" Text="{Binding InstrumentNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
-                        <TextBlock Text="رقم الصك المعطى للمحتاج" Style="{StaticResource smallText}"/>
+                        <TextBlock TextWrapping="Wrap" Text="رقم الصك المعطى للمحتاج يترك فارغ إذا كان كاش" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="تاريخ إذن الصرف : "  Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="4"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="4"  >

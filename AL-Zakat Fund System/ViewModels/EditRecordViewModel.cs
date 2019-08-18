@@ -203,8 +203,6 @@ namespace AL_Zakat_Fund_System.ViewModels
             UPdateRecordPoorDatabaesCommand = new DelegateCommand(UPdateRecordPoorDatabaesExecute, UPdateRecordPoorDatabaesCanExecute);
             CancelCommand = new DelegateCommand(CancelExecute);
         }
-        #endregion
-        
-
+        #endregion        
     }
 }

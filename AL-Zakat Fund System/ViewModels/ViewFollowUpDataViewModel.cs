@@ -11,7 +11,7 @@ using System.Windows.Controls;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
-    class ViewFollowUpDataViewModel : BindableBase
+    class ViewFollowUpDataViewModel : Follow_up
     {
         #region private Member
         UserControl CurrentPage;

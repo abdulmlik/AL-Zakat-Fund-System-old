@@ -93,7 +93,7 @@
             <TextBlock Text="{Binding TypeAssistance}"   Style="{StaticResource filedDisplayText}" Grid.Column="2"  Grid.Row="7"  />
 
             <TextBlock Text="تاريخ الطلب : "  Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="7" />
-            <TextBlock Text="{Binding SDate,StringFormat=dd/MM/yyyy HH:MM}"   Style="{StaticResource filedDisplayText}" Grid.Column="4"  Grid.Row="7"  />
+            <TextBlock Text="{Binding SDate,StringFormat=dd/MM/yyyy MM:HH}"   Style="{StaticResource filedDisplayText}" Grid.Column="4"  Grid.Row="7"  />
 
             <TextBlock Text="حالة الطلب : "  Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="8" />
             <TextBlock Text="{Binding RequestStatus2}"   Style="{StaticResource filedDisplayText}" Grid.Column="2"  Grid.Row="8"  />

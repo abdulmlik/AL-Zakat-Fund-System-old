@@ -20,6 +20,11 @@ namespace AL_Zakat_Fund_System.Models
         protected long _Courier_ssn;
         protected string _Record_id;
 
+        private string _CategoryPoor2;
+        private string _FullName;
+        private string _InstrumentNO2;
+        private string _Courier_ssn2;
+        private string _TempCDN;
         #endregion
 
         #region public properties
@@ -33,6 +38,11 @@ namespace AL_Zakat_Fund_System.Models
         {
             get { return _CategoryPoor; }
             set { SetProperty(ref _CategoryPoor, value); }
+        }
+        public string CategoryPoor2
+        {
+            get { return _CategoryPoor2; }
+            set { SetProperty(ref _CategoryPoor2, value); }
         }
         public string TypeAssistance
         {
@@ -64,7 +74,27 @@ namespace AL_Zakat_Fund_System.Models
             get { return _Record_id; }
             set { SetProperty(ref _Record_id, value); }
         }
-
+        public string FullName
+        {
+            get { return _FullName; }
+            set { SetProperty(ref _FullName, value); }
+        }
+        public string Courier_ssn2
+        {
+            get { return _Courier_ssn2; }
+            set { SetProperty(ref _Courier_ssn2, value); }
+        }
+        public string InstrumentNO2
+        {
+            get { return _InstrumentNO2; }
+            set { SetProperty(ref _InstrumentNO2, value); }
+        }
+        public string TempCDN
+        {
+            get { return _TempCDN; }
+            set { SetProperty(ref _TempCDN, value); }
+        }
+        
         #endregion
 
         #region Construct

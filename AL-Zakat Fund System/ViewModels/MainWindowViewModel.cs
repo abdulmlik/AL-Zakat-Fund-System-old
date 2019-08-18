@@ -155,7 +155,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             //if (PageVEPD == null || PageVEPD.Content == null) { PageVEPD = new ViewExchangePermissionData(); }
             PageVEPD = new ViewExchangePermissionData();
-
+            PageVEPD.DataContext = new ViewExchangePermissionDataViewModel(PageVEPD, mWindow);
             Page = PageVEPD;
         }
         private void PageViewFollowUpDataExecute()

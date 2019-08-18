@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
-        mc:Ignorable="d" Title="عرض بيانات الزكاة"
+        mc:Ignorable="d" Title="عرض بيانات المحضر"
         Icon="../Images/Logo/34.png"
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft"
@@ -44,7 +44,7 @@
             <TextBlock Text="{Binding RStatus2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="2" />
 
             <TextBlock Text="تاريخ المحضر : "  Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="3" />
-            <TextBlock Text="{Binding RDate,StringFormat=dd/MM/yyyy HH:MM}"   Style="{StaticResource filedDisplayText}" Grid.Column="4"  Grid.Row="3"  />
+            <TextBlock Text="{Binding RDate,StringFormat=dd/MM/yyyy MM:HH}"   Style="{StaticResource filedDisplayText}" Grid.Column="4"  Grid.Row="3"  />
 
             <TextBlock Text="حالة المحضر : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="3"/>
             <TextBlock Text="{Binding Indigent_ssn}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="3" />

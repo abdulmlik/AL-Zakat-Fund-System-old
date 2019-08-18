@@ -1,0 +1,67 @@
+﻿<Window x:Class="AL_Zakat_Fund_System.Views.DisplayAuthorizeExpenditure"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
+        mc:Ignorable="d" Title="عرض بيانات المحضر"
+        Icon="../Images/Logo/34.png"
+        WindowStartupLocation="CenterScreen"
+        FlowDirection="RightToLeft"
+        MaxHeight="450" MinHeight="420" MaxWidth="720" MinWidth="650"
+        d:DesignHeight="420" d:DesignWidth="700" ResizeMode="CanMinimize">
+    <Window.Background>
+        <SolidColorBrush Color="{StaticResource ForegroundBlueLight}"/>
+    </Window.Background>
+    <ScrollViewer Style="{StaticResource ScrollViewerStyle}" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal"  Grid.Column="1"  Grid.Row="1" Grid.ColumnSpan="2" >
+                <TextBlock FontSize="28" Text="رقم قرار اللجنة الاستشارية : " TextWrapping="Wrap" Style="{StaticResource filedHederText}" />
+                <TextBlock Text="{Binding CommitteeDecisionNO}"   Style="{StaticResource filedDisplayText}"  />
+            </StackPanel>
+
+            <TextBlock Text="اسم المستفيد : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="2"/>
+            <TextBlock Text="{Binding FullName}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="2" />
+
+            <TextBlock Text="تاريخ إذن الصرف : "  Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="3" />
+            <TextBlock Text="{Binding SDate,StringFormat=dd/MM/yyyy MM:HH}"   Style="{StaticResource filedDisplayText}" Grid.Column="4"  Grid.Row="3"  />
+
+            <TextBlock Text="الفئة المستفيدة : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="3"/>
+            <TextBlock Text="{Binding CategoryPoor2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="3" />
+
+            <TextBlock Text="القيمة المعطاء : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="5"/>
+            <TextBlock Text="{Binding Amount}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="5" />
+
+            <TextBlock Text="كيفية الاعطاء: " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="5"/>
+            <TextBlock Text="{Binding InstrumentNO2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="5" />
+
+            <TextBlock Text="رقم الصك : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="6"/>
+            <TextBlock Text="{Binding InstrumentNO}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="6" />
+
+            <TextBlock Text="اسم الساعي : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="8"/>
+            <TextBlock Text="{Binding Courier_ssn2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="8" />
+
+         </Grid>
+    </ScrollViewer>
+</Window>
+

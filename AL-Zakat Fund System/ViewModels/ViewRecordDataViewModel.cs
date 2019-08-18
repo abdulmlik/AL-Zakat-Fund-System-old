@@ -199,7 +199,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         }
         #endregion
 
-        #region view Account
+        #region view Record
         private void ViewRecordExecute()
         {
             DisplayRecord view = new DisplayRecord();
@@ -220,7 +220,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         }
         #endregion
 
-        #region Delete Account
+        #region Delete Record
         private void DeleteRecordExecute()
         {
             MessageBoxResult result = MessageBox.Show("هل انت متأكد من حذف المحضر رقم " + SelectItem.ID + " الخاص ب" + SelectItem.Indigent_ssn + Environment.NewLine+ "حذف المحضر يترتب عليه حذف المتابعة الخاصة به ووضع الصرف تحت مجهول" + Environment.NewLine + "في حال ضغط على نعم سيتم حذف الملف نهائيا",
