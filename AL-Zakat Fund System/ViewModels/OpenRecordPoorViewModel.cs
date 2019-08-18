@@ -16,30 +16,12 @@ namespace AL_Zakat_Fund_System.ViewModels
     {
         #region private Member
 
-        private string _Name1;
-        private string _Name2;
-        private string _Name3;
-
         UserControl CurrentPage;
 
         #endregion
 
         #region public properties
-        public string Name1
-        {
-            get { return _Name1; }
-            set { SetProperty(ref _Name1, value); }
-        }
-        public string Name2
-        {
-            get { return _Name2; }
-            set { SetProperty(ref _Name2, value); }
-        }
-        public string Name3
-        {
-            get { return _Name3; }
-            set { SetProperty(ref _Name3, value); }
-        }
+        
         #endregion
 
         #region Delegate Command
@@ -176,6 +158,19 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             CurrentPage = CP;
 
+            RDate = DateTime.Now;
+            RStatus = 0;
+
+            AddRecordPoorDatabaesCommand = new DelegateCommand(AddRecordPoorDatabaesExecute, AddRecordPoorDatabaesCanExecute);
+            ResetCommand = new DelegateCommand(ResetExecute);
+            CancelCommand = new DelegateCommand(CancelExecute);
+        }
+
+        public OpenRecordPoorViewModel(UserControl CP, string Indigent_ssn_)
+        {
+            CurrentPage = CP;
+
+            Indigent_ssn = Indigent_ssn_;
             RDate = DateTime.Now;
             RStatus = 0;
 

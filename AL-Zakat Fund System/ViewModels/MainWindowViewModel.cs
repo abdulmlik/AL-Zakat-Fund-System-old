@@ -155,6 +155,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             //if (PageVEPD == null || PageVEPD.Content == null) { PageVEPD = new ViewExchangePermissionData(); }
             PageVEPD = new ViewExchangePermissionData();
+
             Page = PageVEPD;
         }
         private void PageViewFollowUpDataExecute()
@@ -173,6 +174,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             //if (PageVRD == null || PageVRD.Content == null) { PageVRD = new ViewRecordData(); }
             PageVRD = new ViewRecordData();
+            PageVRD.DataContext = new ViewRecordDataViewModel(PageVRD, mWindow);
             Page = PageVRD;
         }
         private void PageViewZakatDataExecute()

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
         mc:Ignorable="d" 
         Title="تعديل في الزكاة"
-        Width="730" MaxHeight="730" MinHeight="600"
+        Width="730" MaxHeight="1000" MinHeight="600"
         Icon="../Images/Logo/34.png"
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft"

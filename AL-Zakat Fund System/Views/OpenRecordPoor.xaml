@@ -36,7 +36,7 @@
                     <TextBlock Text="رقم قرار اللجنة الاستشارية : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0" Grid.ColumnSpan="2" />
                     <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" >
                         <TextBox MaxLength="6" Text="{Binding ID,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
-                        <TextBlock Text="رقم قرار اللجنة الاستشارية لفتح المحضر" Style="{StaticResource smallText}"/>
+                        <TextBlock TextWrapping="Wrap" Text="رقم قرار اللجنة الاستشارية لفتح المحضر يضيف النظام السنة تلقائيا" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="حالة المحضر : * "  Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="2"  >

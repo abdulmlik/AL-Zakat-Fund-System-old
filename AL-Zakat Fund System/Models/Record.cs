@@ -14,11 +14,22 @@ namespace AL_Zakat_Fund_System.Models
 
         protected string _ID;
         protected DateTime _RDate;
-        protected int _RStatus;
+        protected byte _RStatus;
         protected long _Scribe_ssn;
         protected string _Indigent_ssn;
         protected int _Office_no;
 
+
+        private string _RStatus2;
+
+        protected string _Name1;
+        protected string _Name2;
+        protected string _Name3;
+
+        private string _Scribe_ssn2;
+        private string _Office_no2;
+
+        private string _TempID;
 
         #endregion
 
@@ -34,7 +45,7 @@ namespace AL_Zakat_Fund_System.Models
             get { return _RDate; }
             set { SetProperty(ref _RDate, value); }
         }
-        public int RStatus
+        public byte RStatus
         {
             get { return _RStatus; }
             set { SetProperty(ref _RStatus, value); }
@@ -53,6 +64,43 @@ namespace AL_Zakat_Fund_System.Models
         {
             get { return _Office_no; }
             set { SetProperty(ref _Office_no, value); }
+        }
+
+        public string RStatus2
+        {
+            get { return _RStatus2; }
+            set { SetProperty(ref _RStatus2, value); }
+        }
+
+        public string Name1
+        {
+            get { return _Name1; }
+            set { SetProperty(ref _Name1, value); }
+        }
+        public string Name2
+        {
+            get { return _Name2; }
+            set { SetProperty(ref _Name2, value); }
+        }
+        public string Name3
+        {
+            get { return _Name3; }
+            set { SetProperty(ref _Name3, value); }
+        }
+        public string Office_no2
+        {
+            get { return _Office_no2; }
+            set { SetProperty(ref _Office_no2, value); }
+        }
+        public string Scribe_ssn2
+        {
+            get { return _Scribe_ssn2; }
+            set { SetProperty(ref _Scribe_ssn2, value); }
+        }
+        public string TempID
+        {
+            get { return _TempID; }
+            set { SetProperty(ref _TempID, value); }
         }
 
         #endregion

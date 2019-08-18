@@ -89,6 +89,7 @@
     <Compile Include="ViewModels\CreateExchangePermissionViewModel.cs" />
     <Compile Include="ViewModels\DeliverRecordViewModel.cs" />
     <Compile Include="ViewModels\DisplayAccountViewModel.cs" />
+    <Compile Include="ViewModels\DisplayRecordViewModel.cs" />
     <Compile Include="ViewModels\DisplayZakatViewModel.cs" />
     <Compile Include="ViewModels\EditAccountViewModel.cs" />
     <Compile Include="ViewModels\EditFollowUpObserverViewModel.cs" />
@@ -117,6 +118,9 @@
     </Compile>
     <Compile Include="Views\DisplayAccount.xaml.cs">
       <DependentUpon>DisplayAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DisplayRecord.xaml.cs">
+      <DependentUpon>DisplayRecord.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DisplayZakat.xaml.cs">
       <DependentUpon>DisplayZakat.xaml</DependentUpon>
@@ -212,6 +216,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DisplayAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DisplayRecord.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

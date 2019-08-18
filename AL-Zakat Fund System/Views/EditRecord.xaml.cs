@@ -23,7 +23,6 @@ namespace AL_Zakat_Fund_System.Views
         public EditRecord()
         {
             InitializeComponent();
-            this.DataContext = new EditRecordViewModel(this);
         }
     }
 }

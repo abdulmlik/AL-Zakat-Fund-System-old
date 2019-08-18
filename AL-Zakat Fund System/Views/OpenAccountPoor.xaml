@@ -229,7 +229,7 @@
                         <TextBox Text="{Binding LSComment,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource Textarea}" />
                         <TextBlock Text="ملاحظة على الحالة المعيشة" Style="{StaticResource smallText}" />
                     </StackPanel>
-                    <TextBlock Text="الجنس : "  Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="3"/>
+                    <TextBlock Text="الجنس : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="3"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="3"  >
                         <ComboBox SelectedIndex="{Binding Gender,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
                             <ComboBoxItem>ذكر</ComboBoxItem>

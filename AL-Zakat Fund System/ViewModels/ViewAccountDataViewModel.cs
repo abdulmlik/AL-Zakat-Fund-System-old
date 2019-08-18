@@ -275,7 +275,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                     }
                     else
                     {
-                        MessageBox.Show("لم يتم حذف ملف : " + SelectItem.FullName);
+                        MessageBox.Show("لم يتم حذف ملف : " + SelectItem.FullName + Environment.NewLine + "قد يكون لديه محاضر يرجى حذف المحاضره تم اعد حذفه");
                     }
                 }//end finally
             }
