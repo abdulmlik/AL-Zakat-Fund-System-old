@@ -57,8 +57,9 @@
                     <DockPanel HorizontalAlignment="Stretch"/>
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
+            
             <MenuItem Header="_ملف">
-                <MenuItem Header="_تسجيل الخروج" Command="{Binding LogoutCommand}" />
+                <MenuItem Header="_تسجيل الخروج" Command="{Binding LogoutCommand}" HorizontalAlignment="Left" />
                 <Separator />
                 <MenuItem Header="_إنشاء نسخة احطياطية" />
                 <MenuItem Header="_إستعادة نسخة محفوظة" />
@@ -67,7 +68,7 @@
                 <Separator />
                 <MenuItem Header="_خروج" />
             </MenuItem>
-            <MenuItem Header="_المحتاجين">
+            <MenuItem Header="_المحتاجين" Visibility="{Binding Scribe}" HorizontalAlignment="Left" >
                 <MenuItem Command="{Binding PageOpenAccountPoorCommand}" Header="_فتح ملف لمحتاج" />
                 <MenuItem Command="{Binding PageViewAccountDataCommand}" Header="_إدارة المحتاجين" />
                 <Separator />
@@ -77,7 +78,7 @@
                     <MenuItem Header=" محتاج" />
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="_المحاضر">
+            <MenuItem Header="_المحاضر" Visibility="{Binding Scribe}" HorizontalAlignment="Left" >
                 <MenuItem Command="{Binding PageOpenRecordPoorCommand}" Header="_فتح محضر لمحتاج" />
                 <MenuItem Command="{Binding PageViewRecordDataCommand}" Header="_إدارة المحاضر" />
                 <Separator />
@@ -87,7 +88,7 @@
                     <MenuItem Header=" محضر" />
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="_المتابعات">
+            <MenuItem Header="_المتابعات" Visibility="{Binding Scribe}" HorizontalAlignment="Left" >
                 <MenuItem Command="{Binding PageDeliverRecordCommand}" Header="تحويل المحتاج إلى المتابعة" />
                 <MenuItem Command="{Binding PageViewFollowUpDataCommand}" Header="إدارة المتابعات" />
                 <Separator />
@@ -97,7 +98,7 @@
                     <MenuItem Header=" المتابعة" />
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="_الزكاة">
+            <MenuItem Header="_الزكاة" Visibility="{Binding Collector}" HorizontalAlignment="Left" >
                 <MenuItem Command="{Binding PageAddNewZakatCommand}" Header="_إضافة زكاة جديدة" />
                 <MenuItem Command="{Binding PageViewZakatDataCommand}" Header="_إدارة الزكاة" />
                 <Separator />
@@ -109,7 +110,7 @@
                     <MenuItem Header=" زكاة" />
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="_المصروفات">
+            <MenuItem Header="_المصروفات" Visibility="{Binding Courier}" HorizontalAlignment="Left" >
                 <MenuItem Command="{Binding PageCreateExchangePermissionCommand}" Header="_إذن صرف جديدة" />
                 <MenuItem Command="{Binding PageViewExchangePermissionDataCommand}" Header="_إدارة المصروفات" />
                 <Separator />
@@ -119,22 +120,22 @@
                     <MenuItem Header=" مصارف" />
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="_المتابعات">
+            <MenuItem Header="_المتابعات" Visibility="{Binding Observer}" HorizontalAlignment="Left" >
                 <MenuItem Command="{Binding PageViewFollowUpDataObserverCommand}" Header="_متابعاتي" />
                 <Separator />
                 <MenuItem Header="المراجعات" />
             </MenuItem>
-            <MenuItem Header="المساعدة">
+            <MenuItem Header="المساعدة" HorizontalAlignment="Left">
                 <MenuItem Header="_مساعدة" />
                 <MenuItem Header="_الصفحة الرئيسية" />
                 <Separator />
                 <MenuItem Header="_حول نظام صندوق الزكاة" />
             </MenuItem>
-            <MenuItem Header="_الواجهة" HorizontalAlignment="Right" >
-                <MenuItem Header="_الجابي" />
-                <MenuItem Header="_الساعي" />
-                <MenuItem Header="_الكاتب" />
-                <MenuItem Header="_المتابع" />
+            <MenuItem Header="_الواجهة" Width="55" HorizontalAlignment="Right" Visibility="{Binding Supervisor}" >
+                <MenuItem Header="_الجابي" Command="{Binding GetPrivCommand}" CommandParameter="1" />
+                <MenuItem Header="_الساعي" Command="{Binding GetPrivCommand}" CommandParameter="2" />
+                <MenuItem Header="_الكاتب" Command="{Binding GetPrivCommand}" CommandParameter="3"/>
+                <MenuItem Header="_المتابع" Command="{Binding GetPrivCommand}" CommandParameter="4" />
             </MenuItem>
         </Menu>
 
@@ -154,15 +155,20 @@
 
             <StackPanel   Grid.Row="1" Grid.Column="0" Opacity="0.8" Grid.ColumnSpan="2" >
                 <Button BorderBrush="#FF8631c7" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="فتح ملف لمحتاج" Command="{Binding PageOpenAccountPoorCommand}" />
+                   Content="فتح ملف لمحتاج" Command="{Binding PageOpenAccountPoorCommand}"
+                       Visibility="{Binding Scribe}" />
                 <Button BorderBrush="#FFfff29d" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="فتح محضر لمحتاج"  Command="{Binding PageOpenRecordPoorCommand}" />
+                   Content="فتح محضر لمحتاج"  Command="{Binding PageOpenRecordPoorCommand}" 
+                       Visibility="{Binding Scribe}" />
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="تسليم المحضر للمتابع" Command="{Binding PageDeliverRecordCommand}" 
+                       Visibility="{Binding Scribe}" />
                 <Button BorderBrush="#FF007acc" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="إضافة زكاة جديدة" Command="{Binding PageAddNewZakatCommand}" />
+                   Content="إضافة زكاة جديدة" Command="{Binding PageAddNewZakatCommand}" 
+                       Visibility="{Binding Collector}" />
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="انشاء إذن صرف" Command="{Binding PageCreateExchangePermissionCommand}" />
-                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="تسليم المحضر للمتابع" Command="{Binding PageDeliverRecordCommand}" />
+                   Content="انشاء إذن صرف" Command="{Binding PageCreateExchangePermissionCommand}"
+                       Visibility="{Binding Courier}" />
             </StackPanel>
 
         </Grid>

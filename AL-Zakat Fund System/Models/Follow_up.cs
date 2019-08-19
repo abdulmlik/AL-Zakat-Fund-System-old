@@ -23,10 +23,19 @@ namespace AL_Zakat_Fund_System.Models
         protected string _Observer_ssn;
         protected long _Scribe_ssn;
 
+        private string _LastConnection2;
+        private string _VisitDate2;
+        private string _DeliverDate2;
+        private string _Distance2;
+        private string _FStatus2;
+        private string _fullname;
+        private string _Scribe_ssn2;
+        private string _Phone;
+        private string _Office; 
         #endregion
 
         #region public properties
-        
+
         public string DecisionNO
         {
             get { return _DecisionNO; }
@@ -83,6 +92,52 @@ namespace AL_Zakat_Fund_System.Models
             set { SetProperty(ref _Scribe_ssn, value); }
         }
 
+        //
+        public string LastConnection2
+        {
+            get { return _LastConnection2; }
+            set { SetProperty(ref _LastConnection2, value); }
+        }
+        public string VisitDate2
+        {
+            get { return _VisitDate2; }
+            set { SetProperty(ref _VisitDate2, value); }
+        }
+        public string DeliverDate2
+        {
+            get { return _DeliverDate2; }
+            set { SetProperty(ref _DeliverDate2, value); }
+        }
+        public string Distance2
+        {
+            get { return _Distance2; }
+            set { SetProperty(ref _Distance2, value); }
+        }
+        public string FStatus2
+        {
+            get { return _FStatus2; }
+            set { SetProperty(ref _FStatus2, value); }
+        }
+        public string fullname
+        {
+            get { return _fullname; }
+            set { SetProperty(ref _fullname, value); }
+        }
+        public string Scribe_ssn2
+        {
+            get { return _Scribe_ssn2; }
+            set { SetProperty(ref _Scribe_ssn2, value); }
+        }
+        public string Phone
+        {
+            get { return _Phone; }
+            set { SetProperty(ref _Phone, value); }
+        }
+        public string Office
+        {
+            get { return _Office; }
+            set { SetProperty(ref _Office, value); }
+        }
         #endregion
 
         #region Construct

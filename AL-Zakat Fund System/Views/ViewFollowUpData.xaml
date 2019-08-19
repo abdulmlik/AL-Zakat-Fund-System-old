@@ -7,68 +7,68 @@
              mc:Ignorable="d" 
              FlowDirection="RightToLeft"
              d:DesignHeight="480" d:DesignWidth="700">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="20"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="20"/>
-            </Grid.RowDefinitions>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
         <TextBlock Text="إدارة المتابعات : " Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
-            <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="2">
-                <TextBlock Text="بحث" Style="{StaticResource filedTextS}" />
-                <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="0 10" MinWidth="180" Style="{StaticResource smallTextbox}" />
-            </StackPanel>
-            <StackPanel Grid.Column="1" Grid.Row="3" Grid.RowSpan="5">
-                <Button Command="{Binding ReFreshCommand}" Content="تحديث" Style="{StaticResource viewButtonStyleSearch}" />
-                <Button Command="{Binding EditCommand}" Content="تعديل" Style="{StaticResource viewButtonStyleSearch}" />
-                <Button Command="{Binding ViewCommand}" Content="عرض" Style="{StaticResource viewButtonStyleSearch}" />
-                <Button Command="{Binding DeleteCommand}" Content="حذف" Style="{StaticResource viewButtonStyleSearch}"/>
-            </StackPanel>
-            <ListView ItemsSource="{Binding list}" FontSize="18" Foreground="Black" 
+        <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="2">
+            <TextBlock Text="بحث" Style="{StaticResource filedTextS}" />
+            <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="0 10" MinWidth="180" Style="{StaticResource smallTextbox}" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="3" Grid.RowSpan="5">
+            <Button Command="{Binding ReFreshCommand}" Content="تحديث" Style="{StaticResource viewButtonStyleSearch}" />
+            <Button Command="{Binding EditCommand}" Content="تعديل" Style="{StaticResource viewButtonStyleSearch}" />
+            <Button Command="{Binding ViewCommand}" Content="عرض" Style="{StaticResource viewButtonStyleSearch}" />
+            <Button Command="{Binding DeleteCommand}" Content="حذف" Style="{StaticResource viewButtonStyleSearch}"/>
+        </StackPanel>
+        <ListView ItemsSource="{Binding list}" FontSize="18" Foreground="Black" 
                   IsSynchronizedWithCurrentItem="True"  SelectedItem="{Binding SelectItem}"
                   Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="4" MaxHeight="400">
-                <ListView.View>
-                    <GridView AllowsColumnReorder="False" >
-                        <GridView.ColumnHeaderContainerStyle>
-                            <Style TargetType="{x:Type GridViewColumnHeader}">
-                                <Setter Property="IsEnabled" Value="False"/>
-                                <Setter Property="FontSize" Value="20"/>
-                                <Setter Property="FontFamily" Value="Adobe Arabic"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsEnabled" Value="False">
-                                        <Setter Property="TextElement.Foreground" Value="Black"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </GridView.ColumnHeaderContainerStyle>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=CommitteeDecisionNO}" Header="رقم قرار اللجنة" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=FullName}" Header="اسم المستفيد" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=CategoryPoor2}" Header="الفئة المستفيدة" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=TypeAssistance}" Header="نوع المساعة" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=SDate, StringFormat=dd/MM/yyyy}" Header="تاريخ إذن الصرف" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Amount}" Header="القيمة المعطاء" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=InstrumentNO2}" Header="كيفية الاعطاء" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=InstrumentNO}" Header="رقم الصك" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Courier_ssn2}" Header="اسم الساعي" />
-                    </GridView>
-                </ListView.View>
-            </ListView>
-            <!--
+            <ListView.View>
+                <GridView AllowsColumnReorder="False" >
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="IsEnabled" Value="False"/>
+                            <Setter Property="FontSize" Value="20"/>
+                            <Setter Property="FontFamily" Value="Adobe Arabic"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="TextElement.Foreground" Value="Black"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=DecisionNO}" Width="auto"  Header="رقم المحضر" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=fullname}" Width="auto"  Header="اسم المحتاج" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ReceivedDate, StringFormat=dd/MM/yyyy}" Width="auto"  Header="تاريخ الاستلام" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=DeliverDate2}" Width="auto" Header="تاريخ الزيارة" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=VisitDate2}" Width="auto"  Header="تاريخ التسليم" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Distance2}" Width="auto"  Header="المسافة" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=FStatus2}" Width="auto"  Header="حالة المتابعة" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Observer_ssn}" Width="auto"  Header="اسم المتابع" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Scribe_ssn2}" Width="auto"  Header="اسم الكاتب" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--
             <StackPanel Margin="4" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Margin="4,0" Content="&lt;&lt;" Command="{Binding FirstCommand}"/>
                 <Button Margin="4,0" Content="&lt;" Command="{Binding PreviousCommand}"/>
@@ -83,5 +83,5 @@
                 <Button Margin="4,0" Content=">>" Command="{Binding LastCommand}"/>
             </StackPanel>
             -->
-        </Grid>
+    </Grid>
 </UserControl>

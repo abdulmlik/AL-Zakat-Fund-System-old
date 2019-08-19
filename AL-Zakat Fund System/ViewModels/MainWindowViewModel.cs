@@ -56,20 +56,85 @@ namespace AL_Zakat_Fund_System.ViewModels
         //private ModifyExchangePermission PageMEP;
         //private EditFollowUp PageEFUP;
 
+        private Visibility _Collector;
+        private Visibility _Courier;
+        private Visibility _Scribe;
+        private Visibility _Observer;
+        private Visibility _Supervisor;
+
+        #endregion
+
+        #region private function
+
+        void GetPriv(int priv)
+        {
+            switch (priv)
+            {
+                case 1:
+                    Collector = Visibility.Visible;
+                    Courier = Scribe = Observer = Supervisor = Visibility.Collapsed;
+                    break;
+                case 2:
+                    Courier = Visibility.Visible;
+                    Collector = Scribe = Observer = Supervisor = Visibility.Collapsed;
+                    break;
+                case 3:
+                    Scribe = Visibility.Visible;
+                    Courier = Collector = Observer = Supervisor = Visibility.Collapsed;
+                    break;
+                case 4:
+                    Observer = Visibility.Visible;
+                    Courier = Scribe = Collector = Supervisor = Visibility.Collapsed;
+                    break;
+                case 10:
+                    Supervisor = Visibility.Visible;
+                    Courier = Scribe = Collector = Observer = Visibility.Collapsed;
+                    break;
+            }
+
+        }
+
         #endregion
 
         #region public properties
         public string EmpName
-        {
-            get { return _EmpName; }
-            set { SetProperty(ref _EmpName, value); }
-        }
-        public object Page
-        {
-            get { return _Page; }
-            set { SetProperty(ref _Page, value); }
-        }
-        #endregion
+            {
+                get { return _EmpName; }
+                set { SetProperty(ref _EmpName, value); }
+            }
+            public object Page
+            {
+                get { return _Page; }
+                set { SetProperty(ref _Page, value); }
+            }
+
+            //
+            public Visibility Collector
+            {
+                get { return _Collector; }
+                set { SetProperty(ref _Collector, value); }
+            }
+            public Visibility Courier
+            {
+                get { return _Courier; }
+                set { SetProperty(ref _Courier, value); }
+            }
+            public Visibility Scribe
+            {
+                get { return _Scribe; }
+                set { SetProperty(ref _Scribe, value); }
+            }
+            public Visibility Observer
+            {
+                get { return _Observer; }
+                set { SetProperty(ref _Observer, value); }
+            }
+            public Visibility Supervisor
+            {
+                get { return _Supervisor; }
+                set { SetProperty(ref _Supervisor, value); }
+            }
+            #endregion
 
         #region Delegate Command
         public DelegateCommand PageOpenAccountPoorCommand { get; set; }
@@ -80,6 +145,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         public DelegateCommand LogoutCommand { get; set; }
         public DelegateCommand ContactStatusCommand { get; set; }
+        public DelegateCommand<string> GetPrivCommand { get; set; }
 
         public DelegateCommand PageViewAccountDataCommand { get; set; }
         public DelegateCommand PageViewExchangePermissionDataCommand { get; set; }
@@ -114,6 +180,11 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.CloseConnection();
             }
 
+        }
+
+        void GetPrivExecute(string sender)
+        {
+            GetPriv(int.Parse(sender));
         }
         #endregion
 
@@ -162,12 +233,14 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             //if (PageVFD == null || PageVFD.Content == null) { PageVFD = new ViewFollowUpData(); }
             PageVFD = new ViewFollowUpData();
+            PageVFD.DataContext = new ViewFollowUpDataViewModel(PageVFD, mWindow);
             Page = PageVFD;
         }
         private void PageViewFollowUpDataObserverExecute()
         {
             //if (PageVFDO == null || PageVFDO.Content == null) { PageVFDO = new ViewFollowUpDataObserver(); }
             PageVFDO = new ViewFollowUpDataObserver();
+            PageVFDO.DataContext = new ViewFollowUpDataObserverViewModel(PageVFDO, mWindow);
             Page = PageVFDO;
         }
         private void PageViewRecordDataExecute()
@@ -198,7 +271,17 @@ namespace AL_Zakat_Fund_System.ViewModels
             mWindow = window;
 
             EmpName = Properties.Settings.Default.EmpName;
-            
+
+            //if (Properties.Settings.Default.EmpPriv == 10)
+            //{
+            //    GetPriv(Properties.Settings.Default.EmpPriv);
+            //    Scribe = Visibility.Visible;
+            //}
+            //else
+            //{
+            //    GetPriv(Properties.Settings.Default.EmpPriv);
+            //}
+
             PageOpenAccountPoorCommand = new DelegateCommand(PageOpenAccountPoorExecute);
             PageOpenRecordPoorCommand = new DelegateCommand(PageOpenRecordPoorExecute);
             PageAddNewZakatCommand = new DelegateCommand(PageAddNewZakatExecute);
@@ -214,6 +297,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
             LogoutCommand = new DelegateCommand(LogOut);
             ContactStatusCommand = new DelegateCommand(ContactStatus);
+            GetPrivCommand = new DelegateCommand<string>(GetPrivExecute);
         }
         #endregion
     }

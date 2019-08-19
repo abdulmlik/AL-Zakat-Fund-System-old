@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
         mc:Ignorable="d"
-        Title="تعديل إذن تاصرف"
+        Title="تعديل إذن الصرف"
         MinWidth="730" MaxWidth="730" MaxHeight="570" MinHeight="500"
         Icon="../Images/Logo/34.png"
         WindowStartupLocation="CenterScreen"

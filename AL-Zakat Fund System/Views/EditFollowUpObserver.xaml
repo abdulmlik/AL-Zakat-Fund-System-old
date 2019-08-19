@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
         mc:Ignorable="d"
-        Title="EditFollowUpObserver" FlowDirection="RightToLeft"
-             Height="600" Width="700">
+        Title="تعديل المتابعة"
+        MinWidth="750" MaxHeight="650" MinHeight="550"
+        Icon="../Images/Logo/34.png"
+        WindowStartupLocation="CenterScreen"
+        FlowDirection="RightToLeft"
+        d:DesignHeight="550" d:DesignWidth="700" ResizeMode="CanMinimize">
     <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
         <StackPanel Margin="10">
             <GroupBox Header="تعديل في المتابعة" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
@@ -26,9 +30,9 @@
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="اسم المحتاج : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="0" />
-                    <TextBlock Text="{Binding Indigent_name}" Style="{StaticResource filedText}" Grid.Column="1" Grid.Row="0" />
+                    <TextBlock Text="{Binding fullname}" Style="{StaticResource filedText}" Grid.Column="1" Grid.Row="0" />
                     <TextBlock Text="رقمه الوطني : " Style="{StaticResource filedText}" Grid.Column="2" Grid.Row="0" />
-                    <TextBlock Text="{Binding Indigent_ssn}" Style="{StaticResource filedText}" Grid.Column="3" Grid.Row="0" />
+                    <TextBlock Text="{Binding Observer_ssn}" Style="{StaticResource filedText}" Grid.Column="3" Grid.Row="0" />
                     <TextBlock Text="تاريخ اخر اتصال : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="1" Grid.ColumnSpan="2"/>
                     <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"  >
                         <DatePicker SelectedDate="{Binding LastConnection,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Style="{StaticResource datePicker}"  />
@@ -36,8 +40,8 @@
                     </StackPanel>
                     <TextBlock Text="رقم قرار اللجنة : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="1"/>
                     <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2"  >
-                        <TextBox Text="{Binding DecisionNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource Textbox4}" />
-                        <TextBlock Text="رقم قرار اللجنة الاستشارية" Style="{StaticResource smallText}"/>
+                        <TextBox Text="{Binding DecisionNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Style="{StaticResource Textbox4}" IsReadOnly="True" />
+                        <TextBlock Text="رقم قرار اللجنة الاستشارية المحضر" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="قرار اللجنة : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="3"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3"  >
@@ -50,7 +54,7 @@
                         <TextBlock Text="تعليق على حالة المتابعة مثل هل تم الاتصال به او ماذا سيتم ابلاغه" Style="{StaticResource smallText}" />
                     </StackPanel>
 
-                    <Button Command="{Binding upDateFollowUpObserverDatabaseCommand}" Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="5"  />
+                    <Button Command="{Binding UpdateDatabaseCommand}" Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="5"  />
                     <Button Command="{Binding CancelCommand}" Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="5"  />
                 </Grid>
             </GroupBox>

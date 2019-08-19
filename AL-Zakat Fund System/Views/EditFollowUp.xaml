@@ -6,8 +6,12 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
              mc:Ignorable="d"
-             FlowDirection="RightToLeft"
-             d:DesignHeight="600" d:DesignWidth="700">
+             Title="تعديل المتابعة"
+            MinWidth="730" MaxWidth="730" MaxHeight="550" MinHeight="500"
+            Icon="../Images/Logo/34.png"
+            WindowStartupLocation="CenterScreen"
+            FlowDirection="RightToLeft"
+            d:DesignHeight="550" d:DesignWidth="700" ResizeMode="CanMinimize">
     <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
         <StackPanel Margin="10">
             <GroupBox Header="تعديل في المتابعة" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
@@ -70,7 +74,7 @@
                         <TextBlock Text="المسافة بين المتابع والمحتاج" Style="{StaticResource smallText}"/>
                     </StackPanel>
 
-                    <Button Command="{Binding UpdateFollowUPDatabaseCommand}" Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="5"  />
+                    <Button Command="{Binding UpdateDatabaseCommand}" Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="5"  />
                     <Button Command="{Binding CancelCommand}" Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="5"  />
                 </Grid>
             </GroupBox>
