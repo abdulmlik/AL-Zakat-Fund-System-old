@@ -16,9 +16,34 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region private Member
 
         private string _EmpName;
-
+        
         private Window mWindow;
         private object _Page;
+
+        #region Button SideBar ,When Click
+        private Thickness ZeroBorderThickness = new Thickness(0);
+        private Thickness LeftBorderThickness = new Thickness(0,0,10,0);
+        private Thickness _OpenAccountBorderThickness;
+        private Thickness _ViewAccountBorderThickness;
+        private Thickness _OpenRecordBorderThickness;
+        private Thickness _ViewRecordBorderThickness;
+        private Thickness _DeliverRecordBorderThickness;
+        private Thickness _ViewFollowUpBorderThickness;
+        private Thickness _AddNewZakatBorderThickness;
+        private Thickness _ViewZakatBorderThickness;
+        private Thickness _CreateAuthorizeExpenditureBorderThickness;
+        private Thickness _ViewAuthorizeExpenditureBorderThickness;
+        private Thickness _ViewFollowUpObserverBorderThickness;
+        private Thickness _ViewAlertBorderThickness;
+        #endregion
+
+        #region User Priv
+        private Visibility _Collector;
+        private Visibility _Courier;
+        private Visibility _Scribe;
+        private Visibility _Observer;
+        private Visibility _Supervisor;
+        #endregion
 
         #region reason not use this method because they causes slow startup
 
@@ -37,6 +62,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         #endregion
 
+        #region Page Content
         private OpenAccountPoor PageOAP;
         private OpenRecordPoor PageORP;
         private AddNewZakat PageANZ;
@@ -50,91 +76,159 @@ namespace AL_Zakat_Fund_System.ViewModels
         private ViewRecordData PageVRD;
         private ViewZakatData PageVZD;
 
-        //private EditAccount PageEA;
-        //private EditRecord PageER;
-        //private ModifyZakat PageMZ;
-        //private ModifyExchangePermission PageMEP;
-        //private EditFollowUp PageEFUP;
-
-        private Visibility _Collector;
-        private Visibility _Courier;
-        private Visibility _Scribe;
-        private Visibility _Observer;
-        private Visibility _Supervisor;
+        #endregion
 
         #endregion
 
         #region private function
 
-        void GetPriv(int priv)
+        private void GetPriv(int priv)
         {
             switch (priv)
             {
                 case 1:
                     Collector = Visibility.Visible;
-                    Courier = Scribe = Observer = Supervisor = Visibility.Collapsed;
+                    Courier = Scribe = Observer = Visibility.Collapsed;
                     break;
                 case 2:
                     Courier = Visibility.Visible;
-                    Collector = Scribe = Observer = Supervisor = Visibility.Collapsed;
+                    Collector = Scribe = Observer = Visibility.Collapsed;
                     break;
                 case 3:
                     Scribe = Visibility.Visible;
-                    Courier = Collector = Observer = Supervisor = Visibility.Collapsed;
+                    Courier = Collector = Observer = Visibility.Collapsed;
                     break;
                 case 4:
                     Observer = Visibility.Visible;
-                    Courier = Scribe = Collector = Supervisor = Visibility.Collapsed;
-                    break;
-                case 10:
-                    Supervisor = Visibility.Visible;
-                    Courier = Scribe = Collector = Observer = Visibility.Collapsed;
+                    Courier = Scribe = Collector = Visibility.Collapsed;
                     break;
             }
 
+        }
+
+        private void ZeroThickness()
+        {
+            OpenAccountBorderThickness = ZeroBorderThickness;
+            ViewAccountBorderThickness = ZeroBorderThickness;
+            OpenRecordBorderThickness = ZeroBorderThickness;
+            ViewRecordBorderThickness = ZeroBorderThickness;
+            DeliverRecordBorderThickness = ZeroBorderThickness;
+            ViewFollowUpBorderThickness = ZeroBorderThickness;
+            AddNewZakatBorderThickness = ZeroBorderThickness;
+            ViewZakatBorderThickness = ZeroBorderThickness;
+            CreateAuthorizeExpenditureBorderThickness = ZeroBorderThickness;
+            ViewAuthorizeExpenditureBorderThickness = ZeroBorderThickness;
+            ViewFollowUpObserverBorderThickness = ZeroBorderThickness;
+            ViewAlertBorderThickness = ZeroBorderThickness;
         }
 
         #endregion
 
         #region public properties
         public string EmpName
-            {
-                get { return _EmpName; }
-                set { SetProperty(ref _EmpName, value); }
-            }
-            public object Page
-            {
-                get { return _Page; }
-                set { SetProperty(ref _Page, value); }
-            }
+        {
+            get { return _EmpName; }
+            set { SetProperty(ref _EmpName, value); }
+        }
+        public object Page
+        {
+            get { return _Page; }
+            set { SetProperty(ref _Page, value); }
+        }
 
-            //
-            public Visibility Collector
-            {
-                get { return _Collector; }
-                set { SetProperty(ref _Collector, value); }
-            }
-            public Visibility Courier
-            {
-                get { return _Courier; }
-                set { SetProperty(ref _Courier, value); }
-            }
-            public Visibility Scribe
-            {
-                get { return _Scribe; }
-                set { SetProperty(ref _Scribe, value); }
-            }
-            public Visibility Observer
-            {
-                get { return _Observer; }
-                set { SetProperty(ref _Observer, value); }
-            }
-            public Visibility Supervisor
-            {
-                get { return _Supervisor; }
-                set { SetProperty(ref _Supervisor, value); }
-            }
-            #endregion
+
+        #region Button SideBar ,When Click
+        public Thickness OpenAccountBorderThickness
+        {
+            get { return _OpenAccountBorderThickness; }
+            set { SetProperty(ref _OpenAccountBorderThickness, value); }
+        }
+        public Thickness ViewAccountBorderThickness
+        {
+            get { return _ViewAccountBorderThickness; }
+            set { SetProperty(ref _ViewAccountBorderThickness, value); }
+        }
+        public Thickness OpenRecordBorderThickness
+        {
+            get { return _OpenRecordBorderThickness; }
+            set { SetProperty(ref _OpenRecordBorderThickness, value); }
+        }
+        public Thickness ViewRecordBorderThickness
+        {
+            get { return _ViewRecordBorderThickness; }
+            set { SetProperty(ref _ViewRecordBorderThickness, value); }
+        }
+        public Thickness DeliverRecordBorderThickness
+        {
+            get { return _DeliverRecordBorderThickness; }
+            set { SetProperty(ref _DeliverRecordBorderThickness, value); }
+        }
+        public Thickness ViewFollowUpBorderThickness
+        {
+            get { return _ViewFollowUpBorderThickness; }
+            set { SetProperty(ref _ViewFollowUpBorderThickness, value); }
+        }
+        public Thickness AddNewZakatBorderThickness
+        {
+            get { return _AddNewZakatBorderThickness; }
+            set { SetProperty(ref _AddNewZakatBorderThickness, value); }
+        }
+        public Thickness ViewZakatBorderThickness
+        {
+            get { return _ViewZakatBorderThickness; }
+            set { SetProperty(ref _ViewZakatBorderThickness, value); }
+        }
+        public Thickness CreateAuthorizeExpenditureBorderThickness
+        {
+            get { return _CreateAuthorizeExpenditureBorderThickness; }
+            set { SetProperty(ref _CreateAuthorizeExpenditureBorderThickness, value); }
+        }
+        public Thickness ViewAuthorizeExpenditureBorderThickness
+        {
+            get { return _ViewAuthorizeExpenditureBorderThickness; }
+            set { SetProperty(ref _ViewAuthorizeExpenditureBorderThickness, value); }
+        }
+        public Thickness ViewFollowUpObserverBorderThickness
+        {
+            get { return _ViewFollowUpObserverBorderThickness; }
+            set { SetProperty(ref _ViewFollowUpObserverBorderThickness, value); }
+        }
+        public Thickness ViewAlertBorderThickness
+        {
+            get { return _ViewAlertBorderThickness; }
+            set { SetProperty(ref _ViewAlertBorderThickness, value); }
+        }
+        #endregion
+
+        #region User Priv
+        public Visibility Collector
+        {
+            get { return _Collector; }
+            set { SetProperty(ref _Collector, value); }
+        }
+        public Visibility Courier
+        {
+            get { return _Courier; }
+            set { SetProperty(ref _Courier, value); }
+        }
+        public Visibility Scribe
+        {
+            get { return _Scribe; }
+            set { SetProperty(ref _Scribe, value); }
+        }
+        public Visibility Observer
+        {
+            get { return _Observer; }
+            set { SetProperty(ref _Observer, value); }
+        }
+        public Visibility Supervisor
+        {
+            get { return _Supervisor; }
+            set { SetProperty(ref _Supervisor, value); }
+        }
+        #endregion
+
+        #endregion
 
         #region Delegate Command
         public DelegateCommand PageOpenAccountPoorCommand { get; set; }
@@ -146,6 +240,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         public DelegateCommand LogoutCommand { get; set; }
         public DelegateCommand ContactStatusCommand { get; set; }
         public DelegateCommand<string> GetPrivCommand { get; set; }
+        public DelegateCommand CloseCommand { get; set; }
 
         public DelegateCommand PageViewAccountDataCommand { get; set; }
         public DelegateCommand PageViewExchangePermissionDataCommand { get; set; }
@@ -184,75 +279,97 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         void GetPrivExecute(string sender)
         {
+            Page = null;
+            ZeroThickness();
             GetPriv(int.Parse(sender));
+        }
+        void CloseExecute()
+        {
+            mWindow.Close();
         }
         #endregion
 
         #region functions change content of pages
         private void PageOpenAccountPoorExecute()
         {
+            ZeroThickness();
+            OpenAccountBorderThickness = LeftBorderThickness;
             //true if first opening program or when you press a Close
             if (PageOAP == null || PageOAP.Content == null) { PageOAP = new OpenAccountPoor(); }
             Page = PageOAP;
         }
         private void PageOpenRecordPoorExecute()
         {
+            ZeroThickness();
+            OpenRecordBorderThickness = LeftBorderThickness;
             if (PageORP == null || PageORP.Content == null) { PageORP = new OpenRecordPoor(); }
             Page = PageORP;
         }
         private void PageAddNewZakatExecute()
         {
+            ZeroThickness();
+            AddNewZakatBorderThickness = LeftBorderThickness;
             if (PageANZ == null || PageANZ.Content == null) { PageANZ = new AddNewZakat(); }
             Page = PageANZ;
         }
         private void PageCreateExchangePermissionExecute()
         {
+            ZeroThickness();
+            CreateAuthorizeExpenditureBorderThickness = LeftBorderThickness;
             if (PageCEP == null || PageCEP.Content == null) { PageCEP = new CreateExchangePermission(); }
             Page = PageCEP;
         }
         private void PageDeliverRecordExecute()
         {
+            ZeroThickness();
+            DeliverRecordBorderThickness = LeftBorderThickness;
             if (PageDR == null || PageDR.Content == null) { PageDR = new DeliverRecord(); }
             Page = PageDR;
         }
         private void PageViewAccountDataExecute()
         {
-            //if (PageVAD == null || PageVAD.Content == null) { PageVAD = new ViewAccountData(); }
+            ZeroThickness();
+            ViewAccountBorderThickness = LeftBorderThickness;
             PageVAD = new ViewAccountData();
             PageVAD.DataContext = new ViewAccountDataViewModel(PageVAD, mWindow);
             Page = PageVAD;
         }
         private void PageViewExchangePermissionDataExecute()
         {
-            //if (PageVEPD == null || PageVEPD.Content == null) { PageVEPD = new ViewExchangePermissionData(); }
+            ZeroThickness();
+            ViewAuthorizeExpenditureBorderThickness = LeftBorderThickness;
             PageVEPD = new ViewExchangePermissionData();
             PageVEPD.DataContext = new ViewExchangePermissionDataViewModel(PageVEPD, mWindow);
             Page = PageVEPD;
         }
         private void PageViewFollowUpDataExecute()
         {
-            //if (PageVFD == null || PageVFD.Content == null) { PageVFD = new ViewFollowUpData(); }
+            ZeroThickness();
+            ViewFollowUpBorderThickness = LeftBorderThickness;
             PageVFD = new ViewFollowUpData();
             PageVFD.DataContext = new ViewFollowUpDataViewModel(PageVFD, mWindow);
             Page = PageVFD;
         }
         private void PageViewFollowUpDataObserverExecute()
         {
-            //if (PageVFDO == null || PageVFDO.Content == null) { PageVFDO = new ViewFollowUpDataObserver(); }
+            ZeroThickness();
+            ViewFollowUpObserverBorderThickness = LeftBorderThickness;
             PageVFDO = new ViewFollowUpDataObserver();
             PageVFDO.DataContext = new ViewFollowUpDataObserverViewModel(PageVFDO, mWindow);
             Page = PageVFDO;
         }
         private void PageViewRecordDataExecute()
         {
-            //if (PageVRD == null || PageVRD.Content == null) { PageVRD = new ViewRecordData(); }
+            ZeroThickness();
+            ViewRecordBorderThickness = LeftBorderThickness;
             PageVRD = new ViewRecordData();
             PageVRD.DataContext = new ViewRecordDataViewModel(PageVRD, mWindow);
             Page = PageVRD;
         }
         private void PageViewZakatDataExecute()
         {
-            //if (PageVZD == null || PageVZD.Content == null) { PageVZD = new ViewZakatData(); }
+            ZeroThickness();
+            ViewZakatBorderThickness = LeftBorderThickness;
             PageVZD = new ViewZakatData();
             PageVZD.DataContext = new ViewZakatDataViewModel(PageVZD, mWindow);
             Page = PageVZD;
@@ -272,15 +389,16 @@ namespace AL_Zakat_Fund_System.ViewModels
 
             EmpName = Properties.Settings.Default.EmpName;
 
-            //if (Properties.Settings.Default.EmpPriv == 10)
-            //{
-            //    GetPriv(Properties.Settings.Default.EmpPriv);
-            //    Scribe = Visibility.Visible;
-            //}
-            //else
-            //{
-            //    GetPriv(Properties.Settings.Default.EmpPriv);
-            //}
+            if (Properties.Settings.Default.EmpPriv == 10)
+            {
+                GetPriv(3);
+                Scribe = Visibility.Visible;
+            }
+            else
+            {
+                GetPriv(Properties.Settings.Default.EmpPriv);
+            }
+
 
             PageOpenAccountPoorCommand = new DelegateCommand(PageOpenAccountPoorExecute);
             PageOpenRecordPoorCommand = new DelegateCommand(PageOpenRecordPoorExecute);
@@ -298,6 +416,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             LogoutCommand = new DelegateCommand(LogOut);
             ContactStatusCommand = new DelegateCommand(ContactStatus);
             GetPrivCommand = new DelegateCommand<string>(GetPrivExecute);
+            CloseCommand = new DelegateCommand(CloseExecute);
         }
         #endregion
     }

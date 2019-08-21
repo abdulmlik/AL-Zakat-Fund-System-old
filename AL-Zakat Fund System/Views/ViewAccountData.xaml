@@ -43,7 +43,7 @@
                   IsSynchronizedWithCurrentItem="True"  SelectedItem="{Binding SelectItem}"
                   Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="4" MaxHeight="400">
             <ListView.View>
-                <GridView AllowsColumnReorder="False" >
+                <GridView AllowsColumnReorder="False">
                     <GridView.ColumnHeaderContainerStyle>
                         <Style TargetType="{x:Type GridViewColumnHeader}">
                             <Setter Property="IsEnabled" Value="False"/>

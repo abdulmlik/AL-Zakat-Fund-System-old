@@ -60,8 +60,8 @@ namespace AL_Zakat_Fund_System.ViewModels
                     TR.DecisionNO = DBConnection.reader.GetInt64(0).ToString();
                     TR.fullname = DBConnection.reader.GetString(1);
                     TR.ReceivedDate = DBConnection.reader.GetDateTime(2);
-                    TR.DeliverDate2 = DBConnection.reader.GetString(3);
-                    TR.VisitDate2 = DBConnection.reader.GetString(4);
+                    TR.VisitDate2 = DBConnection.reader.GetString(3);
+                    TR.DeliverDate2 = DBConnection.reader.GetString(4);
                     TR.Distance2 = DBConnection.reader.GetString(5);
                     TR.FStatus2 = DBConnection.reader.GetString(6);
                     TR.Scribe_ssn2 = DBConnection.reader.GetString(7);
@@ -201,12 +201,12 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region view Follow_up
         private void ViewExecute()
         {
-            //DisplayAuthorizeExpenditure view = new DisplayAuthorizeExpenditure();
-            //view.DataContext = new DisplayAuthorizeExpenditureViewModel(view, SelectItem.CommitteeDecisionNO);
-            //view.Owner = mWindow;
-            //bool? result = view.ShowDialog();
-            //if (result == true)
-            //{ }
+            DisplayFollowUp view = new DisplayFollowUp();
+            view.DataContext = new DisplayFollowUpViewModel(view, SelectItem.DecisionNO);
+            view.Owner = mWindow;
+            bool? result = view.ShowDialog();
+            if (result == true)
+            { }
 
         }
         private bool ViewCanExecute()

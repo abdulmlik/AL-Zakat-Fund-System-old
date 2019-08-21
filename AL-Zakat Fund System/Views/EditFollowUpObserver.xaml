@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
         mc:Ignorable="d"
         Title="تعديل المتابعة"
-        MinWidth="750" MaxHeight="650" MinHeight="550"
+        MinWidth="780" MaxWidth="800" MaxHeight="670" MinHeight="580"
         Icon="../Images/Logo/34.png"
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft"
         d:DesignHeight="550" d:DesignWidth="700" ResizeMode="CanMinimize">
     <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
         <StackPanel Margin="10">
-            <GroupBox Header="تعديل في المتابعة" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
+            <GroupBox Header="تعديل في المتابعة" FontSize="32" FontWeight="Bold"  Width="700" HorizontalAlignment="Center">
                 <Grid Margin="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>

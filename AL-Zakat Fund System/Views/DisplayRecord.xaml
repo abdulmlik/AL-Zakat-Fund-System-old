@@ -37,36 +37,36 @@
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal"  Grid.Column="1"  Grid.Row="1" Grid.ColumnSpan="2" >
                 <TextBlock FontSize="28" Text="رقم قرار اللجنة الاستشارية : " TextWrapping="Wrap" Style="{StaticResource filedHederText}" />
-                <TextBlock Text="{Binding ID}"   Style="{StaticResource filedDisplayText}"  />
+                <TextBox Text="{Binding ID}"   Style="{StaticResource TextboxToTextBlock}"  />
             </StackPanel>
 
             <TextBlock Text="صاحب المحضر : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="2"/>
-            <TextBlock Text="{Binding RStatus2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="2" />
-
-            <TextBlock Text="تاريخ المحضر : "  Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="3" />
-            <TextBlock Text="{Binding RDate,StringFormat=dd/MM/yyyy MM:HH}"   Style="{StaticResource filedDisplayText}" Grid.Column="4"  Grid.Row="3"  />
+            <TextBox Text="{Binding Indigent_ssn}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="2" />
 
             <TextBlock Text="حالة المحضر : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="3"/>
-            <TextBlock Text="{Binding Indigent_ssn}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="3" />
+            <TextBox Text="{Binding RStatus2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="3" />
+
+            <TextBlock Text="تاريخ المحضر : "  Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="3" />
+            <TextBox Text="{Binding RDate,StringFormat=dd/MM/yyyy MM:HH}"   Style="{StaticResource TextboxToTextBlock}" Grid.Column="4"  Grid.Row="3"  />
 
             <TextBlock Text="اسماء اعضاء اللجنة الاستشرية :- " FontSize="28"  Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="4"  Grid.ColumnSpan="2"/>
 
             <TextBlock Text="العضو الاول : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="5"/>
-            <TextBlock Text="{Binding Name1}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="5" />
+            <TextBox Text="{Binding Name1}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="5" />
 
             <TextBlock Text="العضو الثاني : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="5"/>
-            <TextBlock Text="{Binding Name2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="5" />
+            <TextBox Text="{Binding Name2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="5" />
 
             <TextBlock Text="العضو الثالث : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="6"/>
-            <TextBlock Text="{Binding Name3}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="6" />
+            <TextBox Text="{Binding Name3}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="6" />
 
             <TextBlock Text="المكتب :- " FontSize="28" Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="7"  Grid.ColumnSpan="2"/>
 
             <TextBlock Text="اسم الكاتب : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="8"/>
-            <TextBlock Text="{Binding Scribe_ssn2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="8" />
+            <TextBox Text="{Binding Scribe_ssn2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="8" />
 
             <TextBlock Text="اسم المكتب : "  Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="8"/>
-            <TextBlock Text="{Binding Office_no2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="8" />
+            <TextBox Text="{Binding Office_no2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="8" />
         </Grid>
     </ScrollViewer>
 </Window>

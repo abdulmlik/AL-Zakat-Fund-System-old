@@ -26,16 +26,40 @@
     <Color x:Key="ForegroundBlueLight">#D6DBE9</Color>
     <SolidColorBrush x:Key="ForegroundBlueLightBrush" Color="{StaticResource ForegroundBlueLight}" />
 
-    <Color x:Key="ForegroundGrayDark">#413e3e</Color>
+    <Color x:Key="ForegroundGrayDark">#293955</Color>
     <SolidColorBrush x:Key="ForegroundGrayDarkBrush" Color="{StaticResource ForegroundGrayDark}" />
+
+    <Color x:Key="ForegroundBlueGray">#465a7d</Color>
+    <SolidColorBrush x:Key="ForegroundBlueGrayBrush" Color="{StaticResource ForegroundBlueGray}" />
+
+    <Color x:Key="ForegroundGrayLight">#9ba7b7</Color>
+    <SolidColorBrush x:Key="ForegroundGrayLightBrush" Color="{StaticResource ForegroundGrayLight}" />
+    
+    <Color x:Key="ForegroundBlackLight">#413e3e</Color>
+    <SolidColorBrush x:Key="ForegroundBlackLightBrush" Color="{StaticResource ForegroundBlackLight}" />
 
     <Color x:Key="ForegroundPurpleDark">#475edf</Color>
     <SolidColorBrush x:Key="ForegroundPurpleDarkBrush" Color="{StaticResource ForegroundPurpleDark}" />
-    
+
     <Color x:Key="ForegroundPurpleLight">#704cf9</Color>
     <SolidColorBrush x:Key="ForegroundPurpleLightBrush" Color="{StaticResource ForegroundPurpleLight}" />
-    
+
     <Color x:Key="ForegroundYellow">#f8c35c</Color>
     <SolidColorBrush x:Key="ForegroundYellowBrush" Color="{StaticResource ForegroundYellow}" />
+
+    <Color x:Key="ForegroundPurple">#8631c7</Color>
+    <SolidColorBrush x:Key="ForegroundPurpleBrush" Color="{StaticResource ForegroundPurple}" />
+
+    <Color x:Key="ForegroundBlue">#007acc</Color>
+    <SolidColorBrush x:Key="ForegroundBlueBrush" Color="{StaticResource ForegroundBlue}" />
+
+    <Color x:Key="ForegroundYellow2">#fff29d</Color>
+    <SolidColorBrush x:Key="ForegroundYellow2Brush" Color="{StaticResource ForegroundYellow2}" />
+
+    <Color x:Key="ForegroundBlueEyes">#2b91af</Color>
+    <SolidColorBrush x:Key="ForegroundBlueEyesBrush" Color="{StaticResource ForegroundBlueEyes}" />
     
+
+
+
 </ResourceDictionary>

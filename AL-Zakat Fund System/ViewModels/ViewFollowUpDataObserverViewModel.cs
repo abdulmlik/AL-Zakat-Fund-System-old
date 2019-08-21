@@ -201,12 +201,12 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region view Follow_up
         private void ViewExecute()
         {
-            //DisplayAuthorizeExpenditure view = new DisplayAuthorizeExpenditure();
-            //view.DataContext = new DisplayAuthorizeExpenditureViewModel(view, SelectItem.CommitteeDecisionNO);
-            //view.Owner = mWindow;
-            //bool? result = view.ShowDialog();
-            //if (result == true)
-            //{ }
+            DisplayFollowUpObserver view = new DisplayFollowUpObserver();
+            view.DataContext = new DisplayFollowUpObserverViewModel(view, SelectItem.DecisionNO);
+            view.Owner = mWindow;
+            bool? result = view.ShowDialog();
+            if (result == true)
+            { }
 
         }
         private bool ViewCanExecute()

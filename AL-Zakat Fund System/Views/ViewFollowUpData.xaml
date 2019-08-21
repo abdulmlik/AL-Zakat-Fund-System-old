@@ -59,8 +59,8 @@
                     <GridViewColumn DisplayMemberBinding="{Binding Path=DecisionNO}" Width="auto"  Header="رقم المحضر" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=fullname}" Width="auto"  Header="اسم المحتاج" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=ReceivedDate, StringFormat=dd/MM/yyyy}" Width="auto"  Header="تاريخ الاستلام" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=DeliverDate2}" Width="auto" Header="تاريخ الزيارة" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=VisitDate2}" Width="auto"  Header="تاريخ التسليم" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=VisitDate2}" Width="auto" Header="تاريخ الزيارة" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=DeliverDate2}" Width="auto"  Header="تاريخ التسليم" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Distance2}" Width="auto"  Header="المسافة" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=FStatus2}" Width="auto"  Header="حالة المتابعة" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Observer_ssn}" Width="auto"  Header="اسم المتابع" />

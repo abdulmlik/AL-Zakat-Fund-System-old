@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
-        mc:Ignorable="d" Title="عرض بيانات الزكاة"
+        mc:Ignorable="d" Title="عرض بيانات المحتاج"
         Icon="../Images/Logo/34.png"
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft"
@@ -60,125 +60,125 @@
             <TextBlock Text="بيانات المحتاج :- " Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="1"  Grid.ColumnSpan="2"/>
             
             <TextBlock Text="رقمه الوطني : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="2" />
-            <TextBlock Text="{Binding Ssn}"   Style="{StaticResource filedDisplayText}" Grid.Column="4"  Grid.Row="2" />
+            <TextBox Text="{Binding Ssn}"   Style="{StaticResource TextboxToTextBlock}" Grid.Column="4"  Grid.Row="2" />
          
             <TextBlock Text="اسم المحتاج : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="2"/>
-            <TextBlock Text="{Binding FullName}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="2"/>
+            <TextBox Text="{Binding FullName}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="2"/>
 
             <TextBlock Text="اسم الام: " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="3"/>
-            <TextBlock Text="{Binding MotherName}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="3" />
+            <TextBox Text="{Binding MotherName}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="3" />
 
             <TextBlock Text="جنسية المحتاج : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="3"/>
-            <TextBlock Text="{Binding Nationality}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="3" />
+            <TextBox Text="{Binding Nationality}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="3" />
 
             <TextBlock Text="الحالة اللإجتماعية : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="4"/>
-            <TextBlock Text="{Binding SocialStatus2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="4" />
+            <TextBox Text="{Binding SocialStatus2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="4" />
 
             <TextBlock Text="الجنس : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="4"/>
-            <TextBlock Text="{Binding Gender2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="4" />
+            <TextBox Text="{Binding Gender2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="4" />
 
             <TextBlock Text="الهاتف : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="5"/>
-            <TextBlock Text="{Binding Phone}"   Style="{StaticResource filedDisplayText}" Grid.Column="2"  Grid.Row="5" />
+            <TextBox Text="{Binding Phone}"   Style="{StaticResource TextboxToTextBlock}" Grid.Column="2"  Grid.Row="5" />
 
             <TextBlock Text="البريد الإلكتروني: " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="5"/>
-            <TextBlock Text="{Binding Email}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="5" />
+            <TextBox Text="{Binding Email}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="5" />
 
             <TextBlock Text="رقم البطاقة : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="6"/>
-            <TextBlock Text="{Binding PersonalCardNO}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="6" />
+            <TextBox Text="{Binding PersonalCardNO}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="6" />
 
             <TextBlock Text="رقم الجواز : "  Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="6"/>
-            <TextBlock Text="{Binding PassportNO}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="6" />
+            <TextBox Text="{Binding PassportNO}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="6" />
 
             <TextBlock Text="المساعدة المطلوبة : "  Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="7" />
-            <TextBlock Text="{Binding TypeAssistance}"   Style="{StaticResource filedDisplayText}" Grid.Column="2"  Grid.Row="7"  />
+            <TextBox Text="{Binding TypeAssistance}"   Style="{StaticResource TextboxToTextBlock}" Grid.Column="2"  Grid.Row="7"  />
 
             <TextBlock Text="تاريخ الطلب : "  Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="7" />
-            <TextBlock Text="{Binding SDate,StringFormat=dd/MM/yyyy MM:HH}"   Style="{StaticResource filedDisplayText}" Grid.Column="4"  Grid.Row="7"  />
+            <TextBox Text="{Binding SDate,StringFormat=dd/MM/yyyy MM:HH}"   Style="{StaticResource TextboxToTextBlock}" Grid.Column="4"  Grid.Row="7"  />
 
             <TextBlock Text="حالة الطلب : "  Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="8" />
-            <TextBlock Text="{Binding RequestStatus2}"   Style="{StaticResource filedDisplayText}" Grid.Column="2"  Grid.Row="8"  />
+            <TextBox Text="{Binding RequestStatus2}"   Style="{StaticResource TextboxToTextBlock}" Grid.Column="2"  Grid.Row="8"  />
 
             <TextBlock Text="عنوانه :- " Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="9"  Grid.ColumnSpan="2"/>
             
             <TextBlock Text="المدينة والبلدية : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="10"/>
-            <TextBlock Text="{Binding Address}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="10"  />
+            <TextBox Text="{Binding Address}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="10"  />
 
             <TextBlock Text="المحلة : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="10"/>
-            <TextBlock Text="{Binding Locality}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="10" />
+            <TextBox Text="{Binding Locality}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="10" />
 
             <TextBlock Text="الشارغ : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="11"/>
-            <TextBlock Text="{Binding Street}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="11"  />
+            <TextBox Text="{Binding Street}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="11"  />
 
             <TextBlock Text="أقرب مسجد : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="11"/>
-            <TextBlock Text="{Binding NearestMosque}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="11" />
+            <TextBox Text="{Binding NearestMosque}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="11" />
 
 
             <TextBlock Text="كتيب العائلة :- " Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="12"  Grid.ColumnSpan="2"/>
 
             <TextBlock Text="رقم الكتيب : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="13"/>
-            <TextBlock Text="{Binding BrochureFamilyNO}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="13" />
+            <TextBox Text="{Binding BrochureFamilyNO}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="13" />
 
             <TextBlock Text="تاريخ اصداره : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="13"/>
-            <TextBlock Text="{Binding BFDate,StringFormat=dd/MM/yyyy,TargetNullValue='غير معروف'}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="13" />
+            <TextBox Text="{Binding BFDate,StringFormat=dd/MM/yyyy,TargetNullValue='غير معروف'}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="13" />
 
             <TextBlock Text="مكان صدوره : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="14"/>
-            <TextBlock Text="{Binding BFPlace}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="14" />
+            <TextBox Text="{Binding BFPlace}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="14" />
 
             <TextBlock Text="رقم ورقة العائلة : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="14"/>
-            <TextBlock Text="{Binding FamilyPaperNO}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="14" />
+            <TextBox Text="{Binding FamilyPaperNO}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="14" />
 
             <TextBlock Text="تاريخ الولادة : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="15"/>
-            <TextBlock Text="{Binding BirthDate,StringFormat=dd/MM/yyyy,TargetNullValue='غير معروف'}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="15" />
+            <TextBox Text="{Binding BirthDate,StringFormat=dd/MM/yyyy,TargetNullValue='غير معروف'}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="15" />
 
             <TextBlock Text="مكان الولادة : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="15"/>
-            <TextBlock Text="{Binding PlaceOfBirth}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="15" />
+            <TextBox Text="{Binding PlaceOfBirth}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="15" />
 
             <TextBlock Text="عدد الاطفال : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="16"/>
-            <TextBlock Text="{Binding NumberOfChildren}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="16" />
+            <TextBox Text="{Binding NumberOfChildren}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="16" />
 
             <TextBlock Text="العمل :- " Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="17"  Grid.ColumnSpan="2"/>
 
             <TextBlock Text="اسم العمل : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="18"/>
-            <TextBlock Text="{Binding Job}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="18" />
+            <TextBox Text="{Binding Job}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="18" />
 
             <TextBlock Text="الراتب : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="18"/>
-            <TextBlock Text="{Binding Salary}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="18" />
+            <TextBox Text="{Binding Salary}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="18" />
 
             <TextBlock Text="مصدر الراتب : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="19"/>
-            <TextBlock Text="{Binding SourceOFSalary}" Style="{StaticResource filedDisplayText}" Grid.Column="2" Grid.Row="19" Grid.ColumnSpan="3" />
+            <TextBox Text="{Binding SourceOFSalary}" Style="{StaticResource TextboxToTextBlock}" Grid.Column="2" Grid.Row="19" Grid.ColumnSpan="3" />
 
             <TextBlock Text="وضعه المعيشي :- " Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="20"  Grid.ColumnSpan="2"/>
 
             <TextBlock Text="حالة السكن : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="21"/>
-            <TextBlock Text="{Binding HousingCase2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="21" />
+            <TextBox Text="{Binding HousingCase2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="21" />
 
             <TextBlock Text="نوع السكن : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="21"/>
-            <TextBlock Text="{Binding TypeHousing2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="21" />
+            <TextBox Text="{Binding TypeHousing2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="21" />
             
             <TextBlock Text="المركوب : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="22"/>
-            <TextBlock Text="{Binding Transportation2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="22" />
+            <TextBox Text="{Binding Transportation2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="22" />
 
             <TextBlock Text="حالة المركوب : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="22"/>
-            <TextBlock Text="{Binding TCase2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="22" />
+            <TextBox Text="{Binding TCase2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="22" />
 
             <TextBlock Text="ملاحظة : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="23"/>
-            <TextBlock Text="{Binding LSComment}" TextWrapping="Wrap"  Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="23" Grid.ColumnSpan="3" />
+            <TextBox Text="{Binding LSComment}" TextWrapping="Wrap"  Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="23" Grid.ColumnSpan="3" />
 
             <TextBlock Text="وضعه الصحي :- " Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="24"  Grid.ColumnSpan="2"/>
 
             <TextBlock Text="حالة الصحية : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="25"/>
-            <TextBlock Text="{Binding ChronicDisease2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="25" />
+            <TextBox Text="{Binding ChronicDisease2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="25" />
 
             <TextBlock Text="ملاحظة: " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="26"/>
-            <TextBlock Text="{Binding HSComment}" TextWrapping="Wrap"  Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="26" Grid.ColumnSpan="3" />
+            <TextBox Text="{Binding HSComment}" TextWrapping="Wrap"  Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="26" Grid.ColumnSpan="3" />
 
             <TextBlock Text="المكتب :- " Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="27"  Grid.ColumnSpan="2"/>
 
             <TextBlock Text="سجله : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="28"/>
-            <TextBlock Text="{Binding Scribe_ssn2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="28" />
+            <TextBox Text="{Binding Scribe_ssn2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="28" />
 
             <TextBlock Text="اسم المكتب : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="28"/>
-            <TextBlock Text="{Binding Office_no2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="28" />
+            <TextBox Text="{Binding Office_no2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="28" />
         </Grid>
     </ScrollViewer>
 </Window>

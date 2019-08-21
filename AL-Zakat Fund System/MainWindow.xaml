@@ -12,7 +12,7 @@
         Title="صندوق الزكاة الليبي" 
         Icon="Images/Logo/34.png"
         Height="600" Width="950" 
-        MinHeight="600" MinWidth="920"
+        MinHeight="610" MinWidth="920"
         WindowStartupLocation="CenterScreen"
         FontFamily="Adobe Arabic"
         FontSize="20"
@@ -57,7 +57,7 @@
                     <DockPanel HorizontalAlignment="Stretch"/>
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
-            
+
             <MenuItem Header="_ملف">
                 <MenuItem Header="_تسجيل الخروج" Command="{Binding LogoutCommand}" HorizontalAlignment="Left" />
                 <Separator />
@@ -66,7 +66,7 @@
                 <Separator />
                 <MenuItem Header="_فحص حالة الاتصال بالخادم" Command="{Binding ContactStatusCommand}" />
                 <Separator />
-                <MenuItem Header="_خروج" />
+                <MenuItem Header="_خروج" Command="{Binding CloseCommand}" />
             </MenuItem>
             <MenuItem Header="_المحتاجين" Visibility="{Binding Scribe}" HorizontalAlignment="Left" >
                 <MenuItem Command="{Binding PageOpenAccountPoorCommand}" Header="_فتح ملف لمحتاج" />
@@ -102,8 +102,6 @@
                 <MenuItem Command="{Binding PageAddNewZakatCommand}" Header="_إضافة زكاة جديدة" />
                 <MenuItem Command="{Binding PageViewZakatDataCommand}" Header="_إدارة الزكاة" />
                 <Separator />
-                <MenuItem Header="_تحويل الزكواة إلى حساب المصارف" />
-                <Separator />
                 <MenuItem Header="التقارير" >
                     <MenuItem Header=" زكاة" />
                     <MenuItem Header=" زكاة" />
@@ -111,7 +109,7 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_المصروفات" Visibility="{Binding Courier}" HorizontalAlignment="Left" >
-                <MenuItem Command="{Binding PageCreateExchangePermissionCommand}" Header="_إذن صرف جديدة" />
+                <MenuItem Command="{Binding PageCreateExchangePermissionCommand}" Header="_إذن صرف جديد" />
                 <MenuItem Command="{Binding PageViewExchangePermissionDataCommand}" Header="_إدارة المصروفات" />
                 <Separator />
                 <MenuItem Header="التقارير" >
@@ -154,32 +152,50 @@
             <!-- sidebar buttons -->
 
             <StackPanel   Grid.Row="1" Grid.Column="0" Opacity="0.8" Grid.ColumnSpan="2" >
-                <Button BorderBrush="#FF8631c7" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="فتح ملف لمحتاج" Command="{Binding PageOpenAccountPoorCommand}"
-                       Visibility="{Binding Scribe}" />
-                <Button BorderBrush="#FFfff29d" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                       Visibility="{Binding Scribe}" BorderThickness="{Binding OpenAccountBorderThickness}" />
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="إدارة المحتاجين" Command="{Binding PageViewAccountDataCommand}"
+                       Visibility="{Binding Scribe}" BorderThickness="{Binding ViewAccountBorderThickness}" />
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="فتح محضر لمحتاج"  Command="{Binding PageOpenRecordPoorCommand}" 
-                       Visibility="{Binding Scribe}" />
+                       Visibility="{Binding Scribe}" BorderThickness="{Binding OpenRecordBorderThickness}" />
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="إدارة المحاضر"  Command="{Binding PageViewRecordDataCommand}" 
+                       Visibility="{Binding Scribe}" BorderThickness="{Binding ViewRecordBorderThickness}" />
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="تسليم المحضر للمتابع" Command="{Binding PageDeliverRecordCommand}" 
-                       Visibility="{Binding Scribe}" />
-                <Button BorderBrush="#FF007acc" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                       Visibility="{Binding Scribe}" BorderThickness="{Binding DeliverRecordBorderThickness}" />
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="إدارة المتابعات" Command="{Binding PageViewFollowUpDataCommand}" 
+                       Visibility="{Binding Scribe}" BorderThickness="{Binding ViewFollowUpBorderThickness}" />
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="إضافة زكاة جديدة" Command="{Binding PageAddNewZakatCommand}" 
-                       Visibility="{Binding Collector}" />
+                       Visibility="{Binding Collector}" BorderThickness="{Binding AddNewZakatBorderThickness}" />
+                <Button  Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="إدارة الزكاة" Command="{Binding PageViewZakatDataCommand}" 
+                       Visibility="{Binding Collector}" BorderThickness="{Binding ViewZakatBorderThickness}" />
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="انشاء إذن صرف" Command="{Binding PageCreateExchangePermissionCommand}"
-                       Visibility="{Binding Courier}" />
+                       Visibility="{Binding Courier}" BorderThickness="{Binding CreateAuthorizeExpenditureBorderThickness}" />
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="إدارة المصروفات" Command="{Binding PageViewExchangePermissionDataCommand}"
+                       Visibility="{Binding Courier}" BorderThickness="{Binding ViewAuthorizeExpenditureBorderThickness}" />
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="متابعاتي" Command="{Binding PageViewFollowUpDataObserverCommand}"
+                       Visibility="{Binding Observer}" BorderThickness="{Binding ViewFollowUpObserverBorderThickness}" />
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="المراجعات" Command="{Binding PageViewFollowUpDataObserverCommand}"
+                       Visibility="{Binding Observer}" />
+                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="خروج" Command="{Binding CloseCommand}"/>
             </StackPanel>
 
         </Grid>
 
         <!-- pages content -->
-        <UserControl Grid.Column="1" Grid.Row="1" Content="{Binding Page,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" >
-            <UserControl.Background>
-                <SolidColorBrush Color="{StaticResource ForegroundBlueLight}" Opacity="0.8"/>
-            </UserControl.Background>
-        </UserControl>
-
+        <UserControl Grid.Column="1" Grid.Row="1" Content="{Binding Page,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
 
     </Grid>
 

@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
-        mc:Ignorable="d" Title="عرض بيانات المحضر"
+        mc:Ignorable="d" Title="عرض بيانات إذن الصرف"
         Icon="../Images/Logo/34.png"
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft"
@@ -37,29 +37,29 @@
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal"  Grid.Column="1"  Grid.Row="1" Grid.ColumnSpan="2" >
                 <TextBlock FontSize="28" Text="رقم قرار اللجنة الاستشارية : " TextWrapping="Wrap" Style="{StaticResource filedHederText}" />
-                <TextBlock Text="{Binding CommitteeDecisionNO}"   Style="{StaticResource filedDisplayText}"  />
+                <TextBox Text="{Binding CommitteeDecisionNO}"   Style="{StaticResource TextboxToTextBlock}"  />
             </StackPanel>
 
             <TextBlock Text="اسم المستفيد : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="2"/>
-            <TextBlock Text="{Binding FullName}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="2" />
+            <TextBox Text="{Binding FullName}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="2" />
 
             <TextBlock Text="تاريخ إذن الصرف : "  Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="3" />
-            <TextBlock Text="{Binding SDate,StringFormat=dd/MM/yyyy MM:HH}"   Style="{StaticResource filedDisplayText}" Grid.Column="4"  Grid.Row="3"  />
+            <TextBox Text="{Binding SDate,StringFormat=dd/MM/yyyy MM:HH}"   Style="{StaticResource TextboxToTextBlock}" Grid.Column="4"  Grid.Row="3"  />
 
             <TextBlock Text="الفئة المستفيدة : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="3"/>
-            <TextBlock Text="{Binding CategoryPoor2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="3" />
+            <TextBox Text="{Binding CategoryPoor2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="3" />
 
             <TextBlock Text="القيمة المعطاء : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="5"/>
-            <TextBlock Text="{Binding Amount}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="5" />
+            <TextBox Text="{Binding Amount}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="5" />
 
             <TextBlock Text="كيفية الاعطاء: " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="5"/>
-            <TextBlock Text="{Binding InstrumentNO2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="4" Grid.Row="5" />
+            <TextBox Text="{Binding InstrumentNO2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="5" />
 
             <TextBlock Text="رقم الصك : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="6"/>
-            <TextBlock Text="{Binding InstrumentNO}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="6" />
+            <TextBox Text="{Binding InstrumentNO}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="6" />
 
             <TextBlock Text="اسم الساعي : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="8"/>
-            <TextBlock Text="{Binding Courier_ssn2}"   Style="{StaticResource filedDisplayText}"  Grid.Column="2" Grid.Row="8" />
+            <TextBox Text="{Binding Courier_ssn2}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="8" />
 
          </Grid>
     </ScrollViewer>

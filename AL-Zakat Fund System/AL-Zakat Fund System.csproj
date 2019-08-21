@@ -90,6 +90,8 @@
     <Compile Include="ViewModels\DeliverRecordViewModel.cs" />
     <Compile Include="ViewModels\DisplayAccountViewModel.cs" />
     <Compile Include="ViewModels\DisplayAuthorizeExpenditureViewModel.cs" />
+    <Compile Include="ViewModels\DisplayFollowUpObserverViewModel.cs" />
+    <Compile Include="ViewModels\DisplayFollowUpViewModel.cs" />
     <Compile Include="ViewModels\DisplayRecordViewModel.cs" />
     <Compile Include="ViewModels\DisplayZakatViewModel.cs" />
     <Compile Include="ViewModels\EditAccountViewModel.cs" />
@@ -122,6 +124,12 @@
     </Compile>
     <Compile Include="Views\DisplayAuthorizeExpenditure.xaml.cs">
       <DependentUpon>DisplayAuthorizeExpenditure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DisplayFollowUp.xaml.cs">
+      <DependentUpon>DisplayFollowUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DisplayFollowUpObserver.xaml.cs">
+      <DependentUpon>DisplayFollowUpObserver.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DisplayRecord.xaml.cs">
       <DependentUpon>DisplayRecord.xaml</DependentUpon>
@@ -224,6 +232,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DisplayAuthorizeExpenditure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DisplayFollowUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DisplayFollowUpObserver.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -346,13 +362,17 @@
     <Resource Include="Images\image1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\81806.jpg" />
-    <Resource Include="Images\94263125-islamic-ornament-grey-vector-background.jpg" />
     <Resource Include="Images\maxresdefault %284%29.jpg" />
     <Resource Include="Images\maxresdefault.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\userIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\flip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\icons8_Registration.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
