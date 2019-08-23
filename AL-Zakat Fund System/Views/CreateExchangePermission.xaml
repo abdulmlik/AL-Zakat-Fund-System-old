@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
              mc:Ignorable="d" 
              FlowDirection="RightToLeft"
-             d:DesignHeight="480" d:DesignWidth="700">
+             d:DesignHeight="600" d:DesignWidth="700">
     <ScrollViewer Style="{StaticResource ScrollViewerStyle}" Height="480" VerticalAlignment="Top" >
         <StackPanel Margin="10">
             <GroupBox Header="إذن صرف" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
@@ -55,26 +55,26 @@
                     </StackPanel>
                     <StackPanel  VerticalAlignment="Center" Grid.Column="3" Grid.Row="3"  >
                         <ComboBox SelectedIndex="{Binding CategoryPoor,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
-                            <ComboBoxItem>الفقراء</ComboBoxItem>
-                            <ComboBoxItem>المسكين</ComboBoxItem>
-                            <ComboBoxItem>المكتب</ComboBoxItem>
-                            <ComboBoxItem>الجباة</ComboBoxItem>
+                            <ComboBoxItem>الفقراء والمسكين</ComboBoxItem>
                             <ComboBoxItem>المؤلفة قلوبهم</ComboBoxItem>
                             <ComboBoxItem>في الرقاب</ComboBoxItem>
                             <ComboBoxItem>الغارمين</ComboBoxItem>
                             <ComboBoxItem>في سبيل الله</ComboBoxItem>
                             <ComboBoxItem>ابن السبيل</ComboBoxItem>
+                            <ComboBoxItem>المكتب</ComboBoxItem>
+                            <ComboBoxItem>الجباة</ComboBoxItem>
                         </ComboBox>
                     </StackPanel>
                     <TextBlock Text="رقم الصك : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="4"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="4" >
                         <TextBox MaxLength="11" Text="{Binding InstrumentNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
-                        <TextBlock TextWrapping="Wrap" Text="رقم الصك المعطى للمحتاج يترك فارغ إذا كان كاش" Style="{StaticResource smallText}"/>
+                        <TextBlock TextWrapping="Wrap" Text="رقم الصك المعطى للمحتاج يترك فارغ إذا كان نقدا" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="تاريخ إذن الصرف : "  Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="4"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="4"  >
                         <DatePicker SelectedDate="{Binding SDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Style="{StaticResource datePicker}"  />
                     </StackPanel>
+                    
                     <Button Command="{Binding CreateAuthorizeExpenditureDatabaseCommand}" Content="حفظ" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="6"  />
                     <Button Command="{Binding ResetCommand}" Content="اعادة الادخال" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="6"  />
                     <Button Command="{Binding CancelCommand}" Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="3" Grid.Row="6"  />

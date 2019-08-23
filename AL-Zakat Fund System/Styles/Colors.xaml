@@ -1,7 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:AL_Zakat_Fund_System">
+    
+    <Color x:Key="AntiFlashWhite">#f0f0f0</Color>
+    <SolidColorBrush x:Key="AntiFlashWhiteBrush" Color="{StaticResource AntiFlashWhite}" />
 
+    <Color x:Key="AntiFlashWhite2">#f2f3f4</Color>
+    <SolidColorBrush x:Key="AntiFlashWhite2Brush" Color="{StaticResource AntiFlashWhite2}" />
+    
     <Color x:Key="BackgroundLight">#efefef</Color>
     <SolidColorBrush x:Key="BackgroundLightBrush" Color="{StaticResource BackgroundLight}" />
 

@@ -15,7 +15,7 @@ namespace AL_Zakat_Fund_System.Models
     public class DBConnection
     {
 
-        #region private Member
+        #region private function
         /// <summary>
         /// Get Connection String  From App.config
         /// </summary>
@@ -111,7 +111,31 @@ namespace AL_Zakat_Fund_System.Models
                 Clear();   
             }
         }//end Close connection
-        #endregion   
+        #endregion
+
+        #region Connection Status
+
+        /// <summary>
+        /// Connection Status
+        /// </summary>
+        /// <returns> true When you can contact the Server</returns>
+        public static bool ConnectionStatus()
+        {
+            try
+            {
+                con.ConnectionString = GetConnectionString();
+                con.Open();
+                con.Close();
+                Clear();
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }//end open connection
+        
+        #endregion
 
     }// end class
 

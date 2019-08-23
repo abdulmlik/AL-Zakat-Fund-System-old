@@ -261,7 +261,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.cmd.Parameters["@Gender"].Value = Gender;
 
                 DBConnection.cmd.Parameters["@Scribe_ssn"].Value = Properties.Settings.Default.EmpNo;
-                DBConnection.cmd.Parameters["@Office_no"].Value = Office_no;// Office_no;
+                DBConnection.cmd.Parameters["@Office_no"].Value = Office_no;
                 #endregion
 
                 #region parameters Brochure Family
@@ -415,7 +415,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 //
                 else if (succ == 2)
                 {
-                    MessageBox.Show("الملف غير موجودة", "", MessageBoxButton.OK, MessageBoxImage.Error,
+                    MessageBox.Show("الملف المحتاج غير موجودة", "", MessageBoxButton.OK, MessageBoxImage.Error,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
                 // It is not Stored in Database

@@ -65,9 +65,11 @@ namespace AL_Zakat_Fund_System.ViewModels
                     TR.Name1 = DBConnection.reader.GetString(4);
                     TR.Name2 = DBConnection.reader.GetString(5);
                     TR.Name3 = DBConnection.reader.GetString(6);
-                    TR.Scribe_ssn2 = DBConnection.reader.GetString(7);
-                    TR.Office_no2 = DBConnection.reader.GetString(8);
-                    
+                    TR.Name4 = DBConnection.reader.GetString(7);
+                    TR.Name5 = DBConnection.reader.GetString(8);
+                    TR.Scribe_ssn2 = DBConnection.reader.GetString(9);
+                    TR.Office_no2 = DBConnection.reader.GetString(10);
+
 
                     list.Add(TR);
                 }

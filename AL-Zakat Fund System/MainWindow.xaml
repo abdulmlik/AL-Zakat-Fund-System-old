@@ -58,8 +58,8 @@
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
 
-            <MenuItem Header="_ملف">
-                <MenuItem Header="_تسجيل الخروج" Command="{Binding LogoutCommand}" HorizontalAlignment="Left" />
+            <MenuItem Header="_ملف" HorizontalAlignment="Left">
+                <MenuItem Header="_تسجيل الخروج" Command="{Binding LogoutCommand}"  />
                 <Separator />
                 <MenuItem Header="_إنشاء نسخة احطياطية" />
                 <MenuItem Header="_إستعادة نسخة محفوظة" />

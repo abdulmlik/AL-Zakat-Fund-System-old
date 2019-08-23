@@ -25,6 +25,9 @@ namespace AL_Zakat_Fund_System.Models
         protected string _Name1;
         protected string _Name2;
         protected string _Name3;
+        protected string _Name4;
+        protected string _Name5;
+
 
         private string _Scribe_ssn2;
         private string _Office_no2;
@@ -86,6 +89,16 @@ namespace AL_Zakat_Fund_System.Models
         {
             get { return _Name3; }
             set { SetProperty(ref _Name3, value); }
+        }
+        public string Name4
+        {
+            get { return _Name4; }
+            set { SetProperty(ref _Name4, value); }
+        }
+        public string Name5
+        {
+            get { return _Name5; }
+            set { SetProperty(ref _Name5, value); }
         }
         public string Office_no2
         {

@@ -51,8 +51,10 @@ namespace AL_Zakat_Fund_System.ViewModels
                 Name1 = DBConnection.reader.IsDBNull(4) ? null : DBConnection.reader.GetString(4);
                 Name2 = DBConnection.reader.IsDBNull(5) ? null : DBConnection.reader.GetString(5);
                 Name3 = DBConnection.reader.IsDBNull(6) ? null : DBConnection.reader.GetString(6);
-                Scribe_ssn = DBConnection.reader.GetInt64(7);
-                Office_no = DBConnection.reader.GetInt32(8);
+                Name4 = DBConnection.reader.IsDBNull(7) ? null : DBConnection.reader.GetString(7);
+                Name5 = DBConnection.reader.IsDBNull(8) ? null : DBConnection.reader.GetString(8);
+                Scribe_ssn = DBConnection.reader.GetInt64(9);
+                Office_no = DBConnection.reader.GetInt32(10);
             }
             catch (Exception ex)
             {
@@ -100,6 +102,8 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Name1", SqlDbType.NVarChar, 62));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Name2", SqlDbType.NVarChar, 62));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Name3", SqlDbType.NVarChar, 62));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Name4", SqlDbType.NVarChar, 62));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Name5", SqlDbType.NVarChar, 62));
 
 
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
@@ -131,10 +135,22 @@ namespace AL_Zakat_Fund_System.ViewModels
                 else
                 { DBConnection.cmd.Parameters["@Name3"].Value = DBNull.Value; }
 
+                DBConnection.cmd.Parameters["@Name4"].IsNullable = true;
+                if (Name4 != null)
+                { DBConnection.cmd.Parameters["@Name4"].Value = Name4; }
+                else
+                { DBConnection.cmd.Parameters["@Name4"].Value = DBNull.Value; }
+
+                DBConnection.cmd.Parameters["@Name5"].IsNullable = true;
+                if (Name5 != null)
+                { DBConnection.cmd.Parameters["@Name5"].Value = Name5; }
+                else
+                { DBConnection.cmd.Parameters["@Name5"].Value = DBNull.Value; }
+
                 #endregion
 
                 DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
-
+                
                 DBConnection.cmd.ExecuteNonQuery();
 
                 succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
@@ -145,10 +161,16 @@ namespace AL_Zakat_Fund_System.ViewModels
                     MessageBox.Show("تم حفظ التحديث بنجاح", "", MessageBoxButton.OK, MessageBoxImage.None,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
-                //
+                //id is not found
                 else if (succ == 2)
                 {
                     MessageBox.Show("المحضر غير موجودة", "", MessageBoxButton.OK, MessageBoxImage.Error,
+                                    MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                }
+                //Indigent_ssn is not found
+                else if (succ == 3)
+                {
+                    MessageBox.Show("رقم الوطني غير موجودة", "", MessageBoxButton.OK, MessageBoxImage.Error,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
                 // It is not Stored in Database

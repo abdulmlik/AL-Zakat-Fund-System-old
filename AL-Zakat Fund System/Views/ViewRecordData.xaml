@@ -26,6 +26,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <TextBlock Text="إدارة المحاضر : " Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
@@ -41,7 +42,7 @@
         </StackPanel>
         <ListView ItemsSource="{Binding list}" FontSize="18" Foreground="Black" 
                   IsSynchronizedWithCurrentItem="True"  SelectedItem="{Binding SelectItem}"
-                  Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="4" MaxHeight="400">
+                  Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="6" MaxHeight="400">
             <ListView.View>
                 <GridView AllowsColumnReorder="False" >
                     <GridView.ColumnHeaderContainerStyle>
@@ -49,6 +50,8 @@
                             <Setter Property="IsEnabled" Value="False"/>
                             <Setter Property="FontSize" Value="20"/>
                             <Setter Property="FontFamily" Value="Adobe Arabic"/>
+                            <Setter Property="Padding" Value="5 2" />
+                            <Setter Property="Margin" Value="0" />
                             <Style.Triggers>
                                 <Trigger Property="IsEnabled" Value="False">
                                     <Setter Property="TextElement.Foreground" Value="Black"/>
@@ -60,9 +63,11 @@
                     <GridViewColumn DisplayMemberBinding="{Binding Path=RDate, StringFormat=dd/MM/yyyy}" Header="تاريخ فتح المحضر" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Indigent_ssn}" Header="اسم المحتاج" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=RStatus2}" Header="حالة المحضر" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name1}" Header="عضو اللجنة الاستشارية" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name1}" Header="رئيس اللجنة الاستشارية" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Name2}" Header="عضو اللجنة الاستشارية" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Name3}" Header="عضو اللجنة الاستشارية" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name4}" Header="عضو اللجنة الاستشارية" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name5}" Header="عضو اللجنة الاستشارية" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Scribe_ssn2}" Header="اسم الكاتب" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Office_no2}" Header="اسم المكتب" />
                 </GridView>

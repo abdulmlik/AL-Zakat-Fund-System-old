@@ -35,7 +35,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region save AccountPoor
         private void OpenAccountPoorDatabaseExecute()
         {
-            bool succ = false;
+            int succ = 0;
             try
             {
                 DBConnection.OpenConnection();
@@ -108,7 +108,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 
 
                 
-                DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Bit));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
                 #endregion
 
                 #region parameters indigent
@@ -178,7 +178,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.cmd.Parameters["@Gender"].Value = Gender;
 
                 DBConnection.cmd.Parameters["@Scribe_ssn"].Value = Properties.Settings.Default.EmpNo;
-                DBConnection.cmd.Parameters["@Office_no"].Value = 2;// Office_no;
+                DBConnection.cmd.Parameters["@Office_no"].Value = Properties.Settings.Default.Office;
                 #endregion
 
                 #region parameters Brochure Family
@@ -224,7 +224,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 else
                 { DBConnection.cmd.Parameters["@NumberOfChildren"].Value = DBNull.Value; }
                 #endregion
-                
+
                 #region parameters Job
                 DBConnection.cmd.Parameters["@Job"].IsNullable = true;
                 if (Job !=  null)
@@ -319,13 +319,19 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                 DBConnection.cmd.ExecuteNonQuery();
 
-                succ = (bool)DBConnection.cmd.Parameters["@Success"].Value;
+                succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
                 
                 
                 // It Was Stored in Database
-                if (succ)
+                if (succ == 1)
                 {
                     MessageBox.Show("تم تسجيل المحتاج بنجاح", "", MessageBoxButton.OK, MessageBoxImage.None,
+                                    MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                }
+                // Indigent Already exists
+                else if (succ == 2)
+                {
+                    MessageBox.Show("الرقم الوطني موجود مسبقا", "", MessageBoxButton.OK, MessageBoxImage.Error,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
                 // It is not Stored in Database

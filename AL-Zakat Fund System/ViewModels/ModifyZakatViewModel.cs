@@ -189,7 +189,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                     DBConnection.cmd.Parameters["@CaseDeposit"].Value = CaseDeposit;
                     DBConnection.cmd.Parameters["@Convrsion"].Value = Convrsion;
                     DBConnection.cmd.Parameters["@Colle_ssn"].Value = Properties.Settings.Default.EmpNo;
-                    DBConnection.cmd.Parameters["@Office_no"].Value = 2;
+                    DBConnection.cmd.Parameters["@Office_no"].Value = Office_no;
 
                     DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
 

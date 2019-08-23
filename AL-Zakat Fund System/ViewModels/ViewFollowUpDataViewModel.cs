@@ -111,7 +111,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 if (!string.IsNullOrWhiteSpace(_SearchText) && !string.IsNullOrEmpty(_SearchText))
                 {
                     SelectItem = null;
-                    Regex regEx = new Regex(_SearchText.ToString(), RegexOptions.IgnoreCase);
+                    Regex regEx = new Regex(_SearchText.ToString(), RegexOptions.IgnoreCase);//
                     list = new ObservableCollection<Follow_up>(_list2.Where(item => regEx.IsMatch(item.DecisionNO) || regEx.IsMatch(item.fullname) || regEx.IsMatch(item.ReceivedDate.ToString("dd/MM/yyyy")) ||
                                                             regEx.IsMatch(item.VisitDate2) || regEx.IsMatch(item.DeliverDate2) || regEx.IsMatch(item.Distance2) || regEx.IsMatch(item.FStatus2) ||
                                                             regEx.IsMatch(item.Observer_ssn) || regEx.IsMatch(item.Scribe_ssn2)).ToList<Follow_up>());

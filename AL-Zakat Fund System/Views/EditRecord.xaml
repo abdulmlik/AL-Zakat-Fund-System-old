@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
         mc:Ignorable="d" 
         Title="تعديل في محضر"
-        MinWidth="730" MaxWidth="730" MaxHeight="570" MinHeight="570"
+        MinWidth="730" MaxWidth="730" MaxHeight="570" MinHeight="650"
         Icon="../Images/Logo/34.png"
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft"
@@ -22,6 +22,8 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
@@ -52,23 +54,33 @@
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="2"  >
                         <DatePicker SelectedDate="{Binding RDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource datePicker}"  />
                     </StackPanel>
-                    <TextBlock Text="اسم العضو الاول : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="3" Grid.ColumnSpan="2"/>
+                    <TextBlock Text="اسم رئيس اللجنة : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="3" Grid.ColumnSpan="2"/>
                     <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"  >
                         <TextBox MaxLength="62" Text="{Binding Name1,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
-                        <TextBlock Text="اسم احد اعضاء اللجنة الاستشرية" Style="{StaticResource smallText}"/>
+                        <TextBlock Text="اسم رئيس اللجنة الاستشرية" Style="{StaticResource smallText}"/>
                     </StackPanel>
-                    <TextBlock Text="اسم العضو الثاني : " Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="3" Grid.ColumnSpan="2"/>
-                    <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2"  >
+                    <TextBlock Text="اسم العضو الاول : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="5" Grid.ColumnSpan="2"/>
+                    <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2"  >
                         <TextBox MaxLength="62" Text="{Binding Name2,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="اسم احد اعضاء اللجنة الاستشرية" Style="{StaticResource smallText}"/>
                     </StackPanel>
-                    <TextBlock Text="اسم العضو الثالث : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="5" Grid.ColumnSpan="2"/>
-                    <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2"  >
+                    <TextBlock Text="اسم العضو الثاني : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="5" Grid.ColumnSpan="2"/>
+                    <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2"  >
                         <TextBox MaxLength="62" Text="{Binding Name3,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         <TextBlock Text="اسم احد اعضاء اللجنة الاستشرية" Style="{StaticResource smallText}"/>
                     </StackPanel>
-                    <Button Command="{Binding UPdateRecordPoorDatabaesCommand}" Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="7"  />
-                    <Button Command="{Binding CancelCommand}" Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="7"  />
+                    <TextBlock Text="اسم العضو الثالث : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="7" Grid.ColumnSpan="2"/>
+                    <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2"  >
+                        <TextBox MaxLength="62" Text="{Binding Name4,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                        <TextBlock Text="اسم احد اعضاء اللجنة الاستشرية" Style="{StaticResource smallText}"/>
+                    </StackPanel>
+                    <TextBlock Text="اسم العضو الرابع : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="7" Grid.ColumnSpan="2"/>
+                    <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2"  >
+                        <TextBox MaxLength="62" Text="{Binding Name5,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                        <TextBlock Text="اسم احد اعضاء اللجنة الاستشرية" Style="{StaticResource smallText}"/>
+                    </StackPanel>
+                    <Button Command="{Binding UPdateRecordPoorDatabaesCommand}" Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="9"  />
+                    <Button Command="{Binding CancelCommand}" Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="9"  />
                 </Grid>
             </GroupBox>
         </StackPanel>

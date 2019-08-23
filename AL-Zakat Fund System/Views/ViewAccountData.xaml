@@ -26,6 +26,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <TextBlock Text="إدارة المحتاجين : " Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
@@ -33,15 +34,20 @@
             <TextBlock Text="بحث" Style="{StaticResource filedTextS}" />
             <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="0 10" MinWidth="180" Style="{StaticResource smallTextbox}" />
         </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="3" Grid.RowSpan="5">
+        <StackPanel Grid.Column="1" Grid.Row="3" Grid.RowSpan="6">
             <Button Command="{Binding ReFreshAccountCommand}" Content="تحديث" Style="{StaticResource viewButtonStyleSearch}" />
-            <Button Command="{Binding EditAccountCommand}" Content="تعديل" Style="{StaticResource viewButtonStyleSearch}" />
+            <Button Command="{Binding EditAccountCommand}" Style="{StaticResource viewButtonStyleSearch}" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/AL-Zakat Fund System;component/Images/Icons/Edit_Registration.ico" Width="20" Height="20" />
+                    <TextBlock Text=" تعديل" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
             <Button Command="{Binding ViewAccountCommand}" Content="عرض" Style="{StaticResource viewButtonStyleSearch}" />
             <Button Command="{Binding DeleteAccountCommand}" Content="حذف" Style="{StaticResource viewButtonStyleSearch}"/>
         </StackPanel>
-        <ListView ItemsSource="{Binding list}" FontSize="18" Foreground="Black" 
+        <ListView ItemsSource="{Binding list}" FontSize="18" Foreground="Black" VerticalAlignment="Stretch"
                   IsSynchronizedWithCurrentItem="True"  SelectedItem="{Binding SelectItem}"
-                  Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="4" MaxHeight="400">
+                  Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="6" MaxHeight="400">
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
                     <GridView.ColumnHeaderContainerStyle>
@@ -49,6 +55,8 @@
                             <Setter Property="IsEnabled" Value="False"/>
                             <Setter Property="FontSize" Value="20"/>
                             <Setter Property="FontFamily" Value="Adobe Arabic"/>
+                            <Setter Property="Padding" Value="5 2" />
+                            <Setter Property="Margin" Value="0" />
                             <Style.Triggers>
                                 <Trigger Property="IsEnabled" Value="False">
                                     <Setter Property="TextElement.Foreground" Value="Black"/>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 using Prism.Commands;
 using Prism.Mvvm;
 using System.Windows;
@@ -120,6 +121,26 @@ namespace AL_Zakat_Fund_System.ViewModels
             ViewAuthorizeExpenditureBorderThickness = ZeroBorderThickness;
             ViewFollowUpObserverBorderThickness = ZeroBorderThickness;
             ViewAlertBorderThickness = ZeroBorderThickness;
+        }
+
+        public void OnWindowClosing(object sender, CancelEventArgs e)
+        {
+            // Handle closing logic, set e.Cancel as needed
+            try
+            {
+                //Properties.Settings.Default.EmpName = "";
+                //Properties.Settings.Default.EmPassword = "";
+                //Properties.Settings.Default.EmpNo = 0;
+                //Properties.Settings.Default.EmpPriv = 0;
+                //Properties.Settings.Default.Save();
+            }
+            catch
+            {
+                //e.Cancel = true;
+            }
+            finally
+            {
+            }
         }
 
         #endregion
@@ -256,11 +277,11 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region functions file meun
         private void LogOut()
         {
-            Properties.Settings.Default.EmpName = "";
-            Properties.Settings.Default.EmPassword = "";
-            Properties.Settings.Default.EmpNo = 0;
-            Properties.Settings.Default.EmpPriv = 0;
-            Properties.Settings.Default.Save();
+            //Properties.Settings.Default.EmpName = "";
+            //Properties.Settings.Default.EmPassword = "";
+            //Properties.Settings.Default.EmpNo = 0;
+            //Properties.Settings.Default.EmpPriv = 0;
+            //Properties.Settings.Default.Save();
 
             loginWindow LWindow = new loginWindow();
             mWindow.Close();
@@ -387,19 +408,23 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             mWindow = window;
 
+            // Name Employee
             EmpName = Properties.Settings.Default.EmpName;
 
             if (Properties.Settings.Default.EmpPriv == 10)
             {
                 GetPriv(3);
-                Scribe = Visibility.Visible;
             }
             else
             {
                 GetPriv(Properties.Settings.Default.EmpPriv);
+                Supervisor = Visibility.Collapsed;
             }
 
+            // When close window call OnWindowClosing function
+            mWindow.Closing += OnWindowClosing;
 
+            //Create Commands
             PageOpenAccountPoorCommand = new DelegateCommand(PageOpenAccountPoorExecute);
             PageOpenRecordPoorCommand = new DelegateCommand(PageOpenRecordPoorExecute);
             PageAddNewZakatCommand = new DelegateCommand(PageAddNewZakatExecute);

@@ -104,6 +104,7 @@
     <Compile Include="ViewModels\ModifyZakatViewModel.cs" />
     <Compile Include="ViewModels\OpenAccountPoorViewModel.cs" />
     <Compile Include="ViewModels\OpenRecordPoorViewModel.cs" />
+    <Compile Include="ViewModels\SettingViewModel.cs" />
     <Compile Include="ViewModels\ViewAccountDataViewModel.cs" />
     <Compile Include="ViewModels\ViewExchangePermissionDataViewModel.cs" />
     <Compile Include="ViewModels\ViewFollowUpDataObserverViewModel.cs" />
@@ -160,6 +161,9 @@
     </Compile>
     <Compile Include="Views\OpenRecordPoor.xaml.cs">
       <DependentUpon>OpenRecordPoor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Setting.xaml.cs">
+      <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewAccountData.xaml.cs">
       <DependentUpon>ViewAccountData.xaml</DependentUpon>
@@ -283,6 +287,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Setting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ViewAccountData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -372,7 +380,10 @@
     <Resource Include="Images\flip.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Icons\icons8_Registration.ico" />
+    <Resource Include="Images\Icons\Edit_Registration.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\Settings.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

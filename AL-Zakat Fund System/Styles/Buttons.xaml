@@ -9,7 +9,7 @@
         </ResourceDictionary.MergedDictionaries>
 
     <!-- Flat button -->
-    <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" TargetType="{x:Type Button}">
+    <Style TargetType="{x:Type Button}" x:Key="{x:Static ToolBar.ButtonStyleKey}" >
         <Setter Property="Foreground"
            Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="Padding" Value="10 5"/>
@@ -49,16 +49,16 @@
         </Setter>
     </Style>
     <!-- -->
-
+    
     <!-- -->
-    <Style x:Key="controlStyle" TargetType="Control">
+    <Style TargetType="Control" x:Key="controlStyle" >
         <Setter Property="HorizontalContentAlignment" Value="Right" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
     <!-- -->
 
     <!-- -->
-    <Style x:Key="viewButtonStyle" TargetType="Control">
+    <Style TargetType="Control" x:Key="viewButtonStyle" >
         <Setter Property="Padding" Value="6"/>
         <Setter Property="Margin" Value="5 10 10 5"/>
         <Setter Property="MaxWidth" Value="120" />
@@ -73,7 +73,7 @@
     <!-- -->
 
     <!-- -->
-    <Style x:Key="viewButtonStyle2" TargetType="Control">
+    <Style TargetType="Control" x:Key="viewButtonStyle2" >
         <Setter Property="Padding" Value="6"/>
         <Setter Property="Margin" Value="5 10 10 5"/>
         <Setter Property="Width" Value="90" />
@@ -88,7 +88,21 @@
     <!-- -->
 
     <!-- -->
-    <Style x:Key="viewButtonStyleSearch" TargetType="Control">
+    <Style TargetType="Control" x:Key="viewButtonStyle3" >
+        <Setter Property="Padding" Value="6"/>
+        <Setter Property="Margin" Value="5 10 10 5"/>
+        <Setter Property="Width" Value="90" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="FontFamily" Value="Adobe Arabic"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <!-- -->
+
+    <!-- -->
+    <Style TargetType="Control" x:Key="viewButtonStyleSearch">
         <Setter Property="Padding" Value="6"/>
         <Setter Property="Margin" Value="10"/>
         <Setter Property="Width" Value="80" />
@@ -274,6 +288,63 @@
     <!-- -->
 
     <!-- -->
+    <Style TargetType="TextBox" x:Key="TextboxSetting">
+        <Setter Property="Padding" Value="7"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="MinWidth" Value="150"/>
+        <Setter Property="FontFamily" Value="Adobe Arabic" />
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="border" CornerRadius="10"
+                            BorderBrush="#808080"
+                            BorderThickness="1"
+                            Background="#fff"
+                            >
+
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                        Focusable="false"
+                                        HorizontalScrollBarVisibility="Hidden"
+                                        VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TextBox}">
+                            <Border x:Name="border" CornerRadius="10"
+                            BorderBrush="Red"
+                            BorderThickness="1"
+                            Background="#fff"
+                            >
+
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                        Focusable="false"
+                                        HorizontalScrollBarVisibility="Hidden"
+                                        VerticalScrollBarVisibility="Hidden"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!-- -->
+    
+    <!-- -->
     <Style TargetType="TextBox" x:Key="TextboxToTextBlock">
         <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}" />
         <Setter Property="FontSize" Value="18" />
@@ -369,7 +440,64 @@
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
     </Style>
     <!-- -->
-    
+
+    <!-- -->
+    <Style TargetType="PasswordBox" x:Key="TextboxPassword">
+        <Setter Property="Padding" Value="7"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="MinWidth" Value="250"/>
+        <Setter Property="FontFamily" Value="Adobe Arabic" />
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                    <Border x:Name="border" CornerRadius="10"
+                            BorderBrush="#808080"
+                            BorderThickness="1"
+                            Background="#fff"
+                            >
+
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                        Focusable="false"
+                                        HorizontalScrollBarVisibility="Hidden"
+                                        VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TextBox}">
+                            <Border x:Name="border" CornerRadius="10"
+                            BorderBrush="Red"
+                            BorderThickness="1"
+                            Background="#fff"
+                            >
+
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                        Focusable="false"
+                                        HorizontalScrollBarVisibility="Hidden"
+                                        VerticalScrollBarVisibility="Hidden"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!-- -->
+
     <!-- -->
     <Style TargetType="ComboBox" x:Key="ComboBox1">
         <Setter Property="Padding" Value="5"/>
@@ -398,7 +526,20 @@
         </Style.Triggers>
     </Style>
     <!-- -->
-    
+
+    <!-- -->
+    <Style TargetType="ComboBox" x:Key="ComboBox3">
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="MinWidth" Value="150"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <!-- -->
+
     <!-- -->
     <Style TargetType="DatePicker" x:Key="datePicker">
         <Setter Property="Padding" Value="5"/>
@@ -414,7 +555,5 @@
         <Setter Property="SelectedDateFormat" Value="Short" />
     </Style>
     <!-- -->
-    
-    
 
 </ResourceDictionary>

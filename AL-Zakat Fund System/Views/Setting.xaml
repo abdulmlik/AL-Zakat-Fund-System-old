@@ -1,0 +1,95 @@
+﻿<Window x:Class="AL_Zakat_Fund_System.Views.Setting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
+        mc:Ignorable="d"
+        Title="إعدادات البرنامج" 
+        Icon="/AL-Zakat Fund System;component/Images/Logo/34.png"
+        MinWidth="570" Width="570" MinHeight="370" MaxHeight="450" Height="auto"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="Adobe Arabic"
+        FontSize="22" Background="{StaticResource AntiFlashWhiteBrush}"
+        FlowDirection="RightToLeft">
+    <TabControl TabStripPlacement="Left" Background="{StaticResource AntiFlashWhite2Brush}" >
+        <TabItem Header="الاتصال بالسيرفر" Height="40" >
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Text="اسم السيرفر : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0"/>
+                <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="0" >
+                    <TextBox Text="{Binding ServerName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MaxLength="60"  Style="{StaticResource Textbox4}" />
+                    <!--<TextBlock Text="" Style="{StaticResource smallText}" />-->
+                </StackPanel>
+                <TextBlock Text="قاعدة البايانات : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="1"/>
+                <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="1">
+                    <TextBox Text="{Binding DataBase,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MaxLength="60"  Style="{StaticResource Textbox4}" />
+                    <!--<TextBlock Text="" Style="{StaticResource smallText}" />-->
+                </StackPanel>
+                <TextBlock Text="طريقة الولوج : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
+                <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="2" >
+                    <RadioButton IsChecked="{Binding OptionAuthentication1}" Content="Windows Authentication" Margin="0,5" />
+                    <RadioButton IsChecked="{Binding OptionAuthentication2}" Content="SQL Server Authentication" Margin="0,5" />
+                </StackPanel>
+                <TextBlock Text="اسم المستخدم : " Style="{StaticResource filedText}" Visibility="{Binding Authentication}" Grid.Column="0"  Grid.Row="3"/>
+                <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="3" Visibility="{Binding Authentication}" >
+                    <TextBox Text="{Binding UserName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MaxLength="60"  Style="{StaticResource Textbox4}" />
+                    <!--<TextBlock Text="" Style="{StaticResource smallText}" />-->
+                </StackPanel>
+                <TextBlock Text="كلمة المرور : " Style="{StaticResource filedText}" Visibility="{Binding Authentication}" Grid.Column="0"  Grid.Row="4"/>
+                <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="4" Visibility="{Binding Authentication}" >
+                    <TextBox Text="{Binding Password,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MaxLength="60"  Style="{StaticResource Textbox4}" />
+                    <!--<TextBlock Text="" Style="{StaticResource smallText}" />-->
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="5" >
+                    <Button Content="حفظ الاعدادات" Command="{Binding SaveSettingDBCommand}" Style="{StaticResource viewButtonStyle3}" />
+                    <Button Content="خروج" Command="{Binding CloseCommand}" Style="{StaticResource  viewButtonStyle3}" />
+                </StackPanel>
+            </Grid>
+        </TabItem>
+        <TabItem Header="المكتب" Height="40" IsEnabled="{Binding IsEnabled}" >
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Text="اسم المكتب : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0"/>
+                <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="0" >
+                    <TextBox  Text="{Binding FilterService2.c}" MaxLength="60"  Style="{StaticResource TextboxToTextBlock}" />
+                    <!--<TextBlock Text="" Style="{StaticResource smallText}" />-->
+                </StackPanel>
+                <TextBlock Text="اسم الوحدة : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="1"/>
+                <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="1">
+                    <ComboBox SelectedValue="{Binding FilterService2, Mode=TwoWay}"
+                            ItemsSource="{Binding UripLengthList}"
+                            SelectedValuePath="a"
+                            DisplayMemberPath="b"
+                              Style="{StaticResource ComboBox3}" >
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 5" Grid.Column="1" Grid.Row="2" >
+                    <Button Content="حفظ الاعدادات" Command="{Binding SaveSettingOfficeCommand}" Style="{StaticResource viewButtonStyle3}" />
+                    <Button Content="خروج" Command="{Binding CloseCommand}" Style="{StaticResource  viewButtonStyle3}" />
+                </StackPanel>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>

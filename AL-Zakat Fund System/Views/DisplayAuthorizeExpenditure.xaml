@@ -40,6 +40,9 @@
                 <TextBox Text="{Binding CommitteeDecisionNO}"   Style="{StaticResource TextboxToTextBlock}"  />
             </StackPanel>
 
+            <TextBlock Text="سنة القرار : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="1"/>
+            <TextBox Text="{Binding SDate,StringFormat=yyyy}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="1" />
+
             <TextBlock Text="اسم المستفيد : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="2"/>
             <TextBox Text="{Binding FullName}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="2" />
 

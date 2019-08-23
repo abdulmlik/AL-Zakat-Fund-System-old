@@ -37,7 +37,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region save Record
         private void AddRecordPoorDatabaesExecute()
         {
-            bool succ = false;
+            int succ = 0;
             try
             {
                 DBConnection.OpenConnection();
@@ -56,9 +56,11 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Name1", SqlDbType.NVarChar, 62));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Name2", SqlDbType.NVarChar, 62));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Name3", SqlDbType.NVarChar, 62));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Name4", SqlDbType.NVarChar, 62));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Name5", SqlDbType.NVarChar, 62));
 
 
-                DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Bit));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
                 #endregion
 
                 #region set value in parameters 
@@ -68,7 +70,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                 DBConnection.cmd.Parameters["@Scribe_ssn"].Value = Properties.Settings.Default.EmpNo;
                 DBConnection.cmd.Parameters["@Indigent_ssn"].Value = long.Parse(Indigent_ssn);
-                DBConnection.cmd.Parameters["@Office_no"].Value = 2;// Properties.Settings.Default.Office;
+                DBConnection.cmd.Parameters["@Office_no"].Value = Properties.Settings.Default.Office;
 
                 DBConnection.cmd.Parameters["@Name1"].IsNullable = true;
                 if (Name1 != null)
@@ -88,19 +90,43 @@ namespace AL_Zakat_Fund_System.ViewModels
                 else
                 { DBConnection.cmd.Parameters["@Name3"].Value = DBNull.Value; }
 
+                DBConnection.cmd.Parameters["@Name4"].IsNullable = true;
+                if (Name4 != null)
+                { DBConnection.cmd.Parameters["@Name4"].Value = Name4; }
+                else
+                { DBConnection.cmd.Parameters["@Name4"].Value = DBNull.Value; }
+
+                DBConnection.cmd.Parameters["@Name5"].IsNullable = true;
+                if (Name5 != null)
+                { DBConnection.cmd.Parameters["@Name5"].Value = Name5; }
+                else
+                { DBConnection.cmd.Parameters["@Name5"].Value = DBNull.Value; }
+
                 #endregion
 
                 DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
 
                 DBConnection.cmd.ExecuteNonQuery();
 
-                succ = (bool)DBConnection.cmd.Parameters["@Success"].Value;
+                succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
 
 
                 // It Was Stored in Database
-                if (succ)
+                if (succ == 1)
                 {
                     MessageBox.Show("تم فتح محضر للمحتاج بنجاح", "", MessageBoxButton.OK, MessageBoxImage.None,
+                                    MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                }
+                //id is not found
+                else if (succ == 2)
+                {
+                    MessageBox.Show("المحضر موجود مسبقا", "", MessageBoxButton.OK, MessageBoxImage.Error,
+                                    MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                }
+                //Indigent_ssn is not found
+                else if (succ == 3)
+                {
+                    MessageBox.Show("رقم الوطني غير موجودة", "", MessageBoxButton.OK, MessageBoxImage.Error,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
                 // It is not Stored in Database

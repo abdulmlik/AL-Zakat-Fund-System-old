@@ -10,6 +10,7 @@ using AL_Zakat_Fund_System.Models;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using AL_Zakat_Fund_System.Views;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
@@ -39,6 +40,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         #region Delegate Command
         public DelegateCommand loginCommand { get; set; }
+        public DelegateCommand SettingCommand { get; set; }
 
         #endregion
 
@@ -80,6 +82,9 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                     //Create the MainWindow should be under Settings
                     MainWindow mainWindow = new MainWindow();
+                    // Close Connection Brcause it will not be implemented finally
+                    DBConnection.CloseConnection();
+
                     mWindow.Close();
                     mainWindow.ShowDialog();
                 }
@@ -115,6 +120,19 @@ namespace AL_Zakat_Fund_System.ViewModels
         }
         #endregion
 
+        #region Setting
+
+        private void SettingExecute()
+        {
+            Setting view = new Setting();
+            view.Owner = mWindow;
+            bool? result = view.ShowDialog();
+            if (result == true)
+            { }
+        }
+
+        #endregion
+
         #endregion
 
         #region Construct
@@ -127,6 +145,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             mWindow = window;
 
             loginCommand = new DelegateCommand(loginExecute, loginCanExecute).ObservesProperty(() => UserName).ObservesProperty(() => Password);
+            SettingCommand = new DelegateCommand(SettingExecute);
         }
         #endregion
 
