@@ -70,8 +70,11 @@ namespace AL_Zakat_Fund_System.ViewModels
                     TZ.Email = DBConnection.reader.GetString(10);
                     TZ.CaseDeposit2 = DBConnection.reader.GetString(11);
                     TZ.Convrsion2 = DBConnection.reader.GetString(12);
-                    TZ.Colle_ssn2 = DBConnection.reader.GetString(13);
-                    TZ.Office_no2 = DBConnection.reader.GetString(14);
+                    TZ.Collector2 = DBConnection.reader.GetString(13);
+                    TZ.Activity2 = DBConnection.reader.GetString(14);
+                    TZ.Migration2 = DBConnection.reader.GetString(15);
+                    TZ.Colle_ssn2 = DBConnection.reader.GetString(16);
+                    TZ.Office_no2 = DBConnection.reader.GetString(17);
 
                     list.Add(TZ);
                 }
@@ -120,7 +123,8 @@ namespace AL_Zakat_Fund_System.ViewModels
                     list = new ObservableCollection<Zakat>(_list2.Where(item => regEx.IsMatch(item.Name) || regEx.IsMatch(item.Address) || regEx.IsMatch(item.SDate.ToString("dd/MM/yyyy")) ||
                                                             regEx.IsMatch(item.Amount) || regEx.IsMatch(item.ReceiptNO) || regEx.IsMatch(item.ZType2) || regEx.IsMatch(item.ZCalss) ||
                                                             regEx.IsMatch(item.InstrumentNo) || regEx.IsMatch(item.Phone) || regEx.IsMatch(item.Email) || regEx.IsMatch(item.CaseDeposit2) ||
-                                                            regEx.IsMatch(item.Convrsion2) || regEx.IsMatch(item.Colle_ssn2) || regEx.IsMatch(item.Office_no2)).ToList<Zakat>());
+                                                            regEx.IsMatch(item.Convrsion2) || regEx.IsMatch(item.Collector2) || regEx.IsMatch(item.Activity2) || regEx.IsMatch(item.Migration2)
+                                                            || regEx.IsMatch(item.Colle_ssn2) || regEx.IsMatch(item.Office_no2)).ToList<Zakat>());
                 }
                 else
                 {

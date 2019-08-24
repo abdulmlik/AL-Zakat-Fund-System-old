@@ -27,15 +27,22 @@ namespace AL_Zakat_Fund_System.Models
         protected string _Email;
         protected byte _CaseDeposit;
         protected bool _Convrsion;
+        protected byte _Collector;
+        protected bool _Activity;
+        protected bool _Migration;
         protected long _Colle_ssn;
         protected int _Office_no;
 
-
+        //temp
+        protected bool _ConvrsionTemp;
         // display
         protected string _Address;
         protected string _ZType2;
         protected string _CaseDeposit2;
         protected string _Convrsion2;
+        protected string _Collector2;
+        protected string _Activity2;
+        protected string _Migration2;
         protected string _Colle_ssn2;
         protected string _Office_no2;
         #endregion
@@ -126,6 +133,23 @@ namespace AL_Zakat_Fund_System.Models
             get { return _Convrsion; }
             set { SetProperty(ref _Convrsion, value); }
         }
+        public byte Collector
+        {
+            get { return _Collector; }
+            set { SetProperty(ref _Collector, value); }
+        }
+
+        public bool Activity
+        {
+            get { return _Activity; }
+            set { SetProperty(ref _Activity, value); }
+        }
+
+        public bool Migration
+        {
+            get { return _Migration; }
+            set { SetProperty(ref _Migration, value); }
+        }
 
         public long Colle_ssn
         {
@@ -138,6 +162,14 @@ namespace AL_Zakat_Fund_System.Models
             set { SetProperty(ref _Office_no, value); }
         }
 
+
+
+        //
+        public bool ConvrsionTemp
+        {
+            get { return _ConvrsionTemp; }
+            set { SetProperty(ref _ConvrsionTemp, value); }
+        }
 
         //
         public string Address
@@ -159,6 +191,23 @@ namespace AL_Zakat_Fund_System.Models
         {
             get { return _Convrsion2; }
             set { SetProperty(ref _Convrsion2, value); }
+        }
+        public string Collector2
+        {
+            get { return _Collector2; }
+            set { SetProperty(ref _Collector2, value); }
+        }
+
+        public string Activity2
+        {
+            get { return _Activity2; }
+            set { SetProperty(ref _Activity2, value); }
+        }
+
+        public string Migration2
+        {
+            get { return _Migration2; }
+            set { SetProperty(ref _Migration2, value); }
         }
         public string Colle_ssn2
         {

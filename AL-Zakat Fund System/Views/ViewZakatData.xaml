@@ -42,7 +42,7 @@
         </StackPanel>
         <ListView ItemsSource="{Binding list}" FontSize="18" Foreground="Black" 
                   IsSynchronizedWithCurrentItem="True"  SelectedItem="{Binding SelectItem}"
-                  Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="6" MaxHeight="400">
+                  Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="6">
             <ListView.View>
                 <GridView AllowsColumnReorder="False" >
                     <GridView.ColumnHeaderContainerStyle>
@@ -62,6 +62,7 @@
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Zakat_id}" Header="رقم الزكاة" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="اسم المزكي" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Address}" Header="عنوان المزكي" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Activity2}" Header="نشاط الزكاة" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=SDate, StringFormat=dd/MM/yyyy}" Header="تاريخ اخذ الزكاة" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Amount}" Header="قيمة الزكاة" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=ReceiptNO}" Header="رقم الواصل" />
@@ -72,6 +73,8 @@
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Email}" Header="البريد اللاكتروني" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=CaseDeposit2}" Header="حالة الايداع" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Convrsion2}" Header="مكان الزكاة" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Migration2}" Header="ترحيل الزكاة" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Collector2}" Header="كيفية الجباية" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Colle_ssn2}" Header="اسم الجابي" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Office_no2}" Header="اسم المكتب" />
                 </GridView>

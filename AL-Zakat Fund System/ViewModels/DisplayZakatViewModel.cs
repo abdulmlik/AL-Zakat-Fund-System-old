@@ -49,8 +49,11 @@ namespace AL_Zakat_Fund_System.ViewModels
                 Email = DBConnection.reader.GetString(10);
                 CaseDeposit2 = DBConnection.reader.GetString(11);
                 Convrsion2 = DBConnection.reader.GetString(12);
-                Colle_ssn2 = DBConnection.reader.GetString(13);
-                Office_no2 = DBConnection.reader.GetString(14);
+                Collector2 = DBConnection.reader.GetString(13);
+                Activity2 = DBConnection.reader.GetString(14);
+                Migration2 = DBConnection.reader.GetString(15);
+                Colle_ssn2 = DBConnection.reader.GetString(16);
+                Office_no2 = DBConnection.reader.GetString(17);
             }
             catch (Exception ex)
             {

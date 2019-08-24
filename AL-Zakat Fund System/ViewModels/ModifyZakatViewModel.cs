@@ -40,6 +40,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                 DBConnection.reader = DBConnection.cmd.ExecuteReader();
 
+                #region read data
                 DBConnection.reader.Read();
                 Zakat_id = DBConnection.reader.GetInt32(0);
                 Name = DBConnection.reader.IsDBNull(1) ? null : DBConnection.reader.GetString(1);
@@ -57,8 +58,12 @@ namespace AL_Zakat_Fund_System.ViewModels
                 Email = DBConnection.reader.IsDBNull(12) ? null : DBConnection.reader.GetString(12);
                 CaseDeposit = DBConnection.reader.GetByte(13);
                 Convrsion = DBConnection.reader.GetBoolean(14);
-                Colle_ssn = DBConnection.reader.GetInt64(15);
-                Office_no = DBConnection.reader.GetInt32(16);
+                Collector = DBConnection.reader.GetByte(15);
+                Activity = DBConnection.reader.GetBoolean(16);
+                Migration = DBConnection.reader.GetBoolean(17);
+                Colle_ssn = DBConnection.reader.GetInt64(18);
+                Office_no = DBConnection.reader.GetInt32(19);
+                #endregion
             }
             catch (Exception ex)
             {
@@ -120,6 +125,9 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Email", SqlDbType.VarChar, 50));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@CaseDeposit", SqlDbType.TinyInt));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Convrsion", SqlDbType.Bit));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Collector", SqlDbType.TinyInt));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Activity", SqlDbType.Bit));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Migration", SqlDbType.Bit));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Colle_ssn", SqlDbType.BigInt));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Office_no", SqlDbType.Int));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
@@ -136,6 +144,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                         InstrumentNo_Filter = -1;
                     }
 
+                    #region set value to Parameters
                     DBConnection.cmd.Parameters["@Id"].Value = Zakat_id;
 
                     DBConnection.cmd.Parameters["@Name"].IsNullable = true;
@@ -188,8 +197,24 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                     DBConnection.cmd.Parameters["@CaseDeposit"].Value = CaseDeposit;
                     DBConnection.cmd.Parameters["@Convrsion"].Value = Convrsion;
+
+                    DBConnection.cmd.Parameters["@Collector"].Value = Collector;
+                    DBConnection.cmd.Parameters["@Activity"].Value = Activity;
+
+                    //Activity == 1
+                    if (Convrsion && Convrsion != ConvrsionTemp)
+                    {
+                        DBConnection.cmd.Parameters["@Migration"].Value = (SDate.Year < DateTime.Now.Year || (SDate.Year == DateTime.Now.Year && SDate.Month < DateTime.Now.Month)) ? 1 : 0;
+                    }
+                    else
+                    {
+                        DBConnection.cmd.Parameters["@Migration"].Value = 0;
+                    }
+                    
+
                     DBConnection.cmd.Parameters["@Colle_ssn"].Value = Properties.Settings.Default.EmpNo;
                     DBConnection.cmd.Parameters["@Office_no"].Value = Office_no;
+                    #endregion
 
                     DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
 
@@ -197,8 +222,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                     succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
                 }
-
-
+               
 
                 // It Was Stored in Database
                 if (succ == 1)

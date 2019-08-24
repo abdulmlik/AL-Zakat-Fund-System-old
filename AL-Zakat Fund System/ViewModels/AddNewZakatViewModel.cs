@@ -18,9 +18,11 @@ namespace AL_Zakat_Fund_System.ViewModels
     class AddNewZakatViewModel : Zakat
     {
         #region private Member
+
         private string _globlNoPhone;
         UserControl CurrentPage;
         private MainWindowViewModel mainWindowVM;
+
         #endregion
 
         #region public properties
@@ -46,7 +48,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region save Zakat
         private void AddZakatDatabaseExecute()
         {
-            bool succ = false;
+            int succ = 0;
             try
             {
                 DBConnection.OpenConnection();
@@ -69,9 +71,12 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Email", SqlDbType.VarChar, 50));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@CaseDeposit", SqlDbType.TinyInt));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Convrsion", SqlDbType.Bit));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Collector", SqlDbType.TinyInt));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Activity", SqlDbType.Bit));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Migration", SqlDbType.Bit));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Colle_ssn", SqlDbType.BigInt));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Office_no", SqlDbType.Int));
-                DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Bit));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
                 #endregion
 
 
@@ -85,6 +90,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                         InstrumentNo_Filter = -1;
                     }
 
+                    #region set value to Parameters
                     DBConnection.cmd.Parameters["@Name"].IsNullable = true;
                     if (Name != null)
                     { DBConnection.cmd.Parameters["@Name"].Value = Name; }
@@ -133,22 +139,28 @@ namespace AL_Zakat_Fund_System.ViewModels
                     else
                     { DBConnection.cmd.Parameters["@Email"].Value = DBNull.Value; }
 
-                    DBConnection.cmd.Parameters["@CaseDeposit"].Value = 1;
+                    DBConnection.cmd.Parameters["@CaseDeposit"].Value = 2;
                     DBConnection.cmd.Parameters["@Convrsion"].Value = 0;
+                    DBConnection.cmd.Parameters["@Collector"].Value = Collector;
+                    DBConnection.cmd.Parameters["@Activity"].Value = Activity;
+
+                    DBConnection.cmd.Parameters["@Migration"].Value = 0;
+
                     DBConnection.cmd.Parameters["@Colle_ssn"].Value = Properties.Settings.Default.EmpNo;
                     DBConnection.cmd.Parameters["@Office_no"].Value = Properties.Settings.Default.Office;
+                    #endregion
 
                     DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
 
                     DBConnection.cmd.ExecuteNonQuery();
 
-                    succ = (bool)DBConnection.cmd.Parameters["@Success"].Value;
+                    succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
                 }
 
 
 
                 // It Was Stored in Database
-                if (succ)
+                if (succ == 1)
                 {
                     MessageBox.Show("تم حفظ الزكاة بنجاح", "", MessageBoxButton.OK, MessageBoxImage.None,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
@@ -188,11 +200,13 @@ namespace AL_Zakat_Fund_System.ViewModels
             City = "";
             Municipality = "";
             Locality = "";
+            Activity = false;
             SDate = DateTime.Now;
             Amount = "";
             ReceiptNO = "";
             ZType = 0;
             ZCalss = "";
+            Collector = 0;
             InstrumentNo = "";
             Phone = "";
             GloblNoPhone = "218";
@@ -217,6 +231,8 @@ namespace AL_Zakat_Fund_System.ViewModels
             CurrentPage = CP;
             mainWindowVM = mainWindowVM_;
             ZType = 0;
+            Collector = 0;
+            Activity = false;
             GloblNoPhone = "218";
             SDate = DateTime.Now;
 
