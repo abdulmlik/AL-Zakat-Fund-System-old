@@ -33,6 +33,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             DBConnection.cmd.Parameters["@CommitteeDecisionNO"].Value = long.Parse(CommitteeDecisionNO);
             DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
 
+            
             try
             {
 
@@ -48,7 +49,8 @@ namespace AL_Zakat_Fund_System.ViewModels
                 Amount = DBConnection.reader.GetDecimal(3).ToString();
                 SDate = DBConnection.reader.GetDateTime(4);
                 InstrumentNO = DBConnection.reader.IsDBNull(5) ? null : DBConnection.reader.GetInt32(5).ToString();
-                Record_id = DBConnection.reader.GetInt64(6).ToString();
+                Comment = DBConnection.reader.IsDBNull(6) ? null : DBConnection.reader.GetString(6);
+                Record_id = DBConnection.reader.GetInt64(7).ToString();
             }
             catch (Exception ex)
             {
@@ -94,6 +96,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Amount", SqlDbType.Money));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@SDate", SqlDbType.Date));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@InstrumentNO", SqlDbType.Int));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Comment", SqlDbType.NText));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Record_id", SqlDbType.BigInt));
 
 
@@ -113,7 +116,13 @@ namespace AL_Zakat_Fund_System.ViewModels
                 { DBConnection.cmd.Parameters["@InstrumentNO"].Value = DBNull.Value; }
                 else
                 { DBConnection.cmd.Parameters["@InstrumentNO"].Value = int.Parse(InstrumentNO); }
-                
+
+                DBConnection.cmd.Parameters["@Comment"].IsNullable = true;
+                if (string.IsNullOrEmpty(Comment) || string.IsNullOrWhiteSpace(Comment))
+                { DBConnection.cmd.Parameters["@Comment"].Value = DBNull.Value; }
+                else
+                { DBConnection.cmd.Parameters["@Comment"].Value = Comment; }
+
                 DBConnection.cmd.Parameters["@Record_id"].Value = int.Parse(Record_id);
 
                 #endregion
@@ -131,10 +140,16 @@ namespace AL_Zakat_Fund_System.ViewModels
                     MessageBox.Show("تم حفظ التحديث بنجاح", "", MessageBoxButton.OK, MessageBoxImage.None,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
-                //
+                //AUTHORIZE EXPENDITURE is Already exists
                 else if (succ == 2)
                 {
-                    MessageBox.Show("إذن الصرف غير موجودة", "", MessageBoxButton.OK, MessageBoxImage.Error,
+                    MessageBox.Show("رقم قرار اللجنة غير موجود", "", MessageBoxButton.OK, MessageBoxImage.Error,
+                                    MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                }
+                //record is not exist
+                else if (succ == 3)
+                {
+                    MessageBox.Show("رقم المحضر غير موجود", "", MessageBoxButton.OK, MessageBoxImage.Error,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
                 // It is not Stored in Database

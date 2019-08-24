@@ -67,6 +67,7 @@
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Amount}" Header="القيمة المعطاء" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=InstrumentNO2}" Header="كيفية الاعطاء" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=InstrumentNO}" Header="رقم الصك" />
+                    <!--<GridViewColumn DisplayMemberBinding="{Binding Path=Comment}" Width="200"  Header="تعليق" />-->
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Courier_ssn2}" Header="اسم الساعي" />
                 </GridView>
             </ListView.View>

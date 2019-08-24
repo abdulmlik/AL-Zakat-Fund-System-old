@@ -40,7 +40,8 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.reader = DBConnection.cmd.ExecuteReader();
 
                 DBConnection.reader.Read();
-                CommitteeDecisionNO = DBConnection.reader.GetInt64(0).ToString();
+                TempCDN = DBConnection.reader.GetInt64(0).ToString();
+                CommitteeDecisionNO = TempCDN.Substring(4);
                 FullName = DBConnection.reader.GetString(1);
                 CategoryPoor2 = DBConnection.reader.GetString(2);
                 TypeAssistance = DBConnection.reader.GetString(3);
@@ -48,7 +49,8 @@ namespace AL_Zakat_Fund_System.ViewModels
                 SDate = DBConnection.reader.GetDateTime(5);
                 InstrumentNO2 = DBConnection.reader.GetString(6);
                 InstrumentNO = DBConnection.reader.GetString(7);
-                Courier_ssn2 = DBConnection.reader.GetString(8);
+                Comment = DBConnection.reader.GetString(8);
+                Courier_ssn2 = DBConnection.reader.GetString(9);
             }
             catch (Exception ex)
             {

@@ -49,6 +49,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Amount", SqlDbType.Money));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@SDate", SqlDbType.Date));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@InstrumentNO", SqlDbType.Int));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Comment", SqlDbType.NText));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Courier_ssn", SqlDbType.BigInt));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Record_id", SqlDbType.BigInt));
 
@@ -69,6 +70,13 @@ namespace AL_Zakat_Fund_System.ViewModels
                 else
                 { DBConnection.cmd.Parameters["@InstrumentNO"].Value = DBNull.Value; }
 
+                DBConnection.cmd.Parameters["@Comment"].IsNullable = true;
+                if (Comment != null)
+                { DBConnection.cmd.Parameters["@Comment"].Value = Comment; }
+                else
+                { DBConnection.cmd.Parameters["@Comment"].Value = DBNull.Value; }
+                
+
                 DBConnection.cmd.Parameters["@Courier_ssn"].Value = Properties.Settings.Default.EmpNo;
                 DBConnection.cmd.Parameters["@Record_id"].Value = Record_id;
 
@@ -88,7 +96,14 @@ namespace AL_Zakat_Fund_System.ViewModels
                     MessageBox.Show("تم الصرف بنجاح", "", MessageBoxButton.OK, MessageBoxImage.None,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
+                //AUTHORIZE EXPENDITURE is Already exists
                 else if (succ == 2)
+                {
+                    MessageBox.Show("رقم قرار اللجنة موجود مسبقا", "", MessageBoxButton.OK, MessageBoxImage.Error,
+                                    MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                }
+                //record is not exist
+                else if (succ == 3)
                 {
                     MessageBox.Show("رقم المحضر غير موجود", "", MessageBoxButton.OK, MessageBoxImage.Error,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
@@ -130,8 +145,8 @@ namespace AL_Zakat_Fund_System.ViewModels
             CategoryPoor = 0;
             TypeAssistance = "";
             InstrumentNO = "";
+            Comment = "";
             Record_id = "";
-
         }
         #endregion
 

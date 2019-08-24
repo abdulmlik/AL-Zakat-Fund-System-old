@@ -20,6 +20,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region private Member
         private string _globlNoPhone;
         UserControl CurrentPage;
+        private MainWindowViewModel mainWindowVM;
         #endregion
 
         #region public properties
@@ -203,6 +204,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region Cancel
         private void CancelExecute()
         {
+            mainWindowVM.ZeroThickness();
             CurrentPage.Content = null;
         }
         #endregion
@@ -210,10 +212,10 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region Construct
-        public AddNewZakatViewModel(UserControl CP)
+        public AddNewZakatViewModel(UserControl CP,MainWindowViewModel mainWindowVM_)
         {
             CurrentPage = CP;
-
+            mainWindowVM = mainWindowVM_;
             ZType = 0;
             GloblNoPhone = "218";
             SDate = DateTime.Now;

@@ -65,7 +65,8 @@ namespace AL_Zakat_Fund_System.ViewModels
                     TR.SDate = DBConnection.reader.GetDateTime(5);
                     TR.InstrumentNO2 = DBConnection.reader.GetString(6);
                     TR.InstrumentNO = DBConnection.reader.GetString(7);
-                    TR.Courier_ssn2 = DBConnection.reader.GetString(8);
+                    TR.Comment = DBConnection.reader.GetString(8);
+                    TR.Courier_ssn2 = DBConnection.reader.GetString(9);
 
 
                     list.Add(TR);

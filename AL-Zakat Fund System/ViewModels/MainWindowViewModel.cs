@@ -107,7 +107,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         }
 
-        private void ZeroThickness()
+        public void ZeroThickness()
         {
             OpenAccountBorderThickness = ZeroBorderThickness;
             ViewAccountBorderThickness = ZeroBorderThickness;
@@ -331,6 +331,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             ZeroThickness();
             AddNewZakatBorderThickness = LeftBorderThickness;
             if (PageANZ == null || PageANZ.Content == null) { PageANZ = new AddNewZakat(); }
+            PageANZ.DataContext = new AddNewZakatViewModel(PageANZ, this);
             Page = PageANZ;
         }
         private void PageCreateExchangePermissionExecute()

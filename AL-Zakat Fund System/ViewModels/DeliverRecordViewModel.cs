@@ -93,12 +93,20 @@ namespace AL_Zakat_Fund_System.ViewModels
                     MessageBox.Show("تم تحويل المحضر للمتابعة بنجاح", "", MessageBoxButton.OK, MessageBoxImage.None,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
-                else if(succ == 2)
+                //record is not exist
+                else if (succ == 2)
                 {
                     MessageBox.Show("رقم المحضر غير موجود", "", MessageBoxButton.OK, MessageBoxImage.Error,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
-                else if(succ == 3)
+                // follow up Already exist
+                else if (succ == 3)
+                {
+                    MessageBox.Show("المحظر حول للمتابعة بالفعل", "", MessageBoxButton.OK, MessageBoxImage.Error,
+                                    MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                }
+                // EMPLOYEE is not exist
+                else if (succ == 4)
                 {
                     MessageBox.Show("رقم المتابع غير موجود", "", MessageBoxButton.OK, MessageBoxImage.Error,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);

@@ -163,6 +163,8 @@ namespace AL_Zakat_Fund_System.ViewModels
             Name1 = "";
             Name2 = "";
             Name3 = "";
+            Name4 = "";
+            Name5 = "";
             ID = "";
             RDate = DateTime.Now;
             RStatus = 0;

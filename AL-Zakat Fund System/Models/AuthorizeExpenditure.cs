@@ -19,6 +19,7 @@ namespace AL_Zakat_Fund_System.Models
         protected string _InstrumentNO;
         protected long _Courier_ssn;
         protected string _Record_id;
+        private string _Comment;
 
         private string _CategoryPoor2;
         private string _FullName;
@@ -63,6 +64,11 @@ namespace AL_Zakat_Fund_System.Models
         {
             get { return _InstrumentNO; }
             set { SetProperty(ref _InstrumentNO, value); }
+        }
+        public string Comment
+        {
+            get { return _Comment; }
+            set { SetProperty(ref _Comment, value); }
         }
         public long Courier_ssn
         {

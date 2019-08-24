@@ -134,16 +134,23 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                 succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
 
+                #region  message box
                 // It Was Stored in Database
                 if (succ == 1)
                 {
                     MessageBox.Show("تم حفظ التحديث بنجاح", "", MessageBoxButton.OK, MessageBoxImage.None,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
-                //
+                // FOLLOW_UP is not found
                 else if (succ == 2)
                 {
                     MessageBox.Show("المتابعة غير موجودة", "", MessageBoxButton.OK, MessageBoxImage.Error,
+                                    MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                }
+                // Ssn is not found
+                else if (succ == 3)
+                {
+                    MessageBox.Show("المتابع غير موجودة", "", MessageBoxButton.OK, MessageBoxImage.Error,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
                 // It is not Stored in Database
@@ -152,6 +159,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                     MessageBox.Show("لم يتم حفظ التحديث الرجاء التاكد من البيانات", "", MessageBoxButton.OK, MessageBoxImage.Error,
                                     MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
+                #endregion
             }
             catch (Exception ex)
             {
