@@ -24,7 +24,6 @@ namespace AL_Zakat_Fund_System.Views
         public CreateExchangePermission()
         {
             InitializeComponent();
-            this.DataContext = new CreateExchangePermissionViewModel(this);
         }
     }
 }

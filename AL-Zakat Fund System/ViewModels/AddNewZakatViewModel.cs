@@ -226,7 +226,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region Construct
-        public AddNewZakatViewModel(UserControl CP,MainWindowViewModel mainWindowVM_)
+        public AddNewZakatViewModel(UserControl CP, MainWindowViewModel mainWindowVM_)
         {
             CurrentPage = CP;
             mainWindowVM = mainWindowVM_;

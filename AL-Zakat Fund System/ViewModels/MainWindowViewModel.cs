@@ -317,6 +317,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             OpenAccountBorderThickness = LeftBorderThickness;
             //true if first opening program or when you press a Close
             if (PageOAP == null || PageOAP.Content == null) { PageOAP = new OpenAccountPoor(); }
+            PageOAP.DataContext = new OpenAccountPoorViewModel(PageOAP, this);
             Page = PageOAP;
         }
         private void PageOpenRecordPoorExecute()
@@ -324,6 +325,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             ZeroThickness();
             OpenRecordBorderThickness = LeftBorderThickness;
             if (PageORP == null || PageORP.Content == null) { PageORP = new OpenRecordPoor(); }
+            PageORP.DataContext = new OpenRecordPoorViewModel(PageORP, this);
             Page = PageORP;
         }
         private void PageAddNewZakatExecute()
@@ -339,6 +341,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             ZeroThickness();
             CreateAuthorizeExpenditureBorderThickness = LeftBorderThickness;
             if (PageCEP == null || PageCEP.Content == null) { PageCEP = new CreateExchangePermission(); }
+            PageCEP.DataContext = new CreateExchangePermissionViewModel(PageCEP, this);
             Page = PageCEP;
         }
         private void PageDeliverRecordExecute()
@@ -346,6 +349,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             ZeroThickness();
             DeliverRecordBorderThickness = LeftBorderThickness;
             if (PageDR == null || PageDR.Content == null) { PageDR = new DeliverRecord(); }
+            PageDR.DataContext = new DeliverRecordViewModel(PageDR, this);
             Page = PageDR;
         }
         private void PageViewAccountDataExecute()

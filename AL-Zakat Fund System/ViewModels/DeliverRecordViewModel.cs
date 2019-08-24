@@ -15,7 +15,8 @@ namespace AL_Zakat_Fund_System.ViewModels
     class DeliverRecordViewModel : Follow_up
     {
         #region private Member
-        UserControl CurrentPage;
+        private UserControl CurrentPage;
+        private MainWindowViewModel mainWindowVM;
         #endregion
 
         #region public properties
@@ -153,6 +154,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region Cancel
         private void CancelExecute()
         {
+            mainWindowVM.ZeroThickness();
             CurrentPage.Content = null;
         }
         #endregion
@@ -160,9 +162,10 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region Construct
-        public DeliverRecordViewModel(UserControl CP)
+        public DeliverRecordViewModel(UserControl CP, MainWindowViewModel mainWindowVM_)
         {
             CurrentPage = CP;
+            mainWindowVM = mainWindowVM_;
 
             ReceivedDate = DateTime.Now;
             Distance = 0;

@@ -16,12 +16,13 @@ namespace AL_Zakat_Fund_System.ViewModels
     {
         #region private Member
 
-        UserControl CurrentPage;
+        private UserControl CurrentPage;
+        private MainWindowViewModel mainWindowVM;
 
         #endregion
 
         #region public properties
-        
+
         #endregion
 
         #region Delegate Command
@@ -175,6 +176,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region Cancel
         private void CancelExecute()
         {
+            mainWindowVM.ZeroThickness();
             CurrentPage.Content = null;
         }
         #endregion
@@ -182,9 +184,10 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region Construct
-        public OpenRecordPoorViewModel(UserControl CP)
+        public OpenRecordPoorViewModel(UserControl CP, MainWindowViewModel mainWindowVM_)
         {
             CurrentPage = CP;
+            mainWindowVM = mainWindowVM_;
 
             RDate = DateTime.Now;
             RStatus = 0;

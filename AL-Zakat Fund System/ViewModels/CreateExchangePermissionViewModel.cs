@@ -15,11 +15,12 @@ namespace AL_Zakat_Fund_System.ViewModels
     class CreateExchangePermissionViewModel : AuthorizeExpenditure
     {
         #region private Member
-        UserControl CurrentPage;
+        private UserControl CurrentPage;
+        private MainWindowViewModel mainWindowVM;
         #endregion
 
         #region public properties
-        
+
         #endregion
 
         #region Delegate Command
@@ -153,6 +154,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region Cancel
         private void CancelExecute()
         {
+            mainWindowVM.ZeroThickness();
             CurrentPage.Content = null;
         }
         #endregion
@@ -160,9 +162,10 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region Construct
-        public CreateExchangePermissionViewModel(UserControl CP)
+        public CreateExchangePermissionViewModel(UserControl CP, MainWindowViewModel mainWindowVM_)
         {
             CurrentPage = CP;
+            mainWindowVM = mainWindowVM_;
 
             CategoryPoor = 0;
             SDate = DateTime.Now;
