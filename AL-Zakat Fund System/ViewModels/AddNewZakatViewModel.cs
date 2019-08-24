@@ -12,6 +12,7 @@ using System.Windows.Media;
 using AL_Zakat_Fund_System.Views;
 using System.Data;
 using System.Data.SqlClient;
+using AL_Zakat_Fund_System.Views.UserControlBackground;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
@@ -219,7 +220,8 @@ namespace AL_Zakat_Fund_System.ViewModels
         private void CancelExecute()
         {
             mainWindowVM.ZeroThickness();
-            CurrentPage.Content = null;
+            mainWindowVM.Page = new mainCollector();// chang page
+            CurrentPage.Content = null;// delete page
         }
         #endregion
 

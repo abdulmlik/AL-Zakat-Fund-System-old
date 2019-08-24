@@ -165,6 +165,18 @@
     <Compile Include="Views\Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControlBackground\mainCollector.xaml.cs">
+      <DependentUpon>mainCollector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControlBackground\mainCourier.xaml.cs">
+      <DependentUpon>mainCourier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControlBackground\mainObserver.xaml.cs">
+      <DependentUpon>mainObserver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControlBackground\mainScribe.xaml.cs">
+      <DependentUpon>mainScribe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ViewAccountData.xaml.cs">
       <DependentUpon>ViewAccountData.xaml</DependentUpon>
     </Compile>
@@ -291,6 +303,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\UserControlBackground\mainCollector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControlBackground\mainCourier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControlBackground\mainObserver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControlBackground\mainScribe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ViewAccountData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -377,13 +405,16 @@
     <Resource Include="Images\userIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\flip.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Icons\Edit_Registration.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Icons\Settings.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background\Zakat_Collector.png" />
+    <Resource Include="Images\Background\Zakat_Courier.png" />
+    <Resource Include="Images\Background\Zakat_Observer.png" />
+    <Resource Include="Images\Background\Zakat_Scribe.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

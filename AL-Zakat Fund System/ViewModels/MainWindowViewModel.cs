@@ -9,6 +9,7 @@ using Prism.Mvvm;
 using System.Windows;
 using AL_Zakat_Fund_System.Views;
 using AL_Zakat_Fund_System.Models;
+using AL_Zakat_Fund_System.Views.UserControlBackground;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
@@ -88,18 +89,22 @@ namespace AL_Zakat_Fund_System.ViewModels
             switch (priv)
             {
                 case 1:
+                    Page = new mainCollector();// main page for user
                     Collector = Visibility.Visible;
                     Courier = Scribe = Observer = Visibility.Collapsed;
                     break;
                 case 2:
+                    Page = new mainCourier();
                     Courier = Visibility.Visible;
                     Collector = Scribe = Observer = Visibility.Collapsed;
                     break;
                 case 3:
+                    Page = new mainScribe();
                     Scribe = Visibility.Visible;
                     Courier = Collector = Observer = Visibility.Collapsed;
                     break;
                 case 4:
+                    Page = new mainObserver();
                     Observer = Visibility.Visible;
                     Courier = Scribe = Collector = Visibility.Collapsed;
                     break;
@@ -428,6 +433,8 @@ namespace AL_Zakat_Fund_System.ViewModels
 
             // When close window call OnWindowClosing function
             mWindow.Closing += OnWindowClosing;
+
+            
 
             //Create Commands
             PageOpenAccountPoorCommand = new DelegateCommand(PageOpenAccountPoorExecute);

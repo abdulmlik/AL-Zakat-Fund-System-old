@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AL_Zakat_Fund_System.Models;
+using AL_Zakat_Fund_System.Views.UserControlBackground;
 using Prism.Commands;
 using System.Windows.Controls;
 using System.Data;
@@ -155,7 +156,8 @@ namespace AL_Zakat_Fund_System.ViewModels
         private void CancelExecute()
         {
             mainWindowVM.ZeroThickness();
-            CurrentPage.Content = null;
+            mainWindowVM.Page = new mainScribe();// chang page
+            CurrentPage.Content = null;// delete page
         }
         #endregion
 
