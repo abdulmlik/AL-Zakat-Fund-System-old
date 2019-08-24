@@ -41,7 +41,12 @@
                     </StackPanel>
                     <TextBlock Text=" نوع المساعدة : * "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" >
-                        <TextBox MaxLength="40" Text="{Binding TypeAssistance,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
+                        <ComboBox Text="{Binding TypeAssistance,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox3}" IsEditable="True" >
+                            <ComboBoxItem>علاج</ComboBoxItem>
+                            <ComboBoxItem>إيجار</ComboBoxItem>
+                            <ComboBoxItem>زواج</ComboBoxItem>
+                            <ComboBoxItem>سداد دين</ComboBoxItem>
+                        </ComboBox>
                         <TextBlock Text="انواع المساعدة مثل ( علاج ،ايجار ،زواج سداد دين ،اخرى)" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="قيمة الصرف : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="3"/>
