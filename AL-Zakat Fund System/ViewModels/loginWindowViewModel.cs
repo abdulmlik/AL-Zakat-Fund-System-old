@@ -11,6 +11,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using AL_Zakat_Fund_System.Views;
+using System.Windows.Controls;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
@@ -39,7 +40,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region Delegate Command
-        public DelegateCommand loginCommand { get; set; }
+        public DelegateCommand<PasswordBox> loginCommand { get; set; }
         public DelegateCommand SettingCommand { get; set; }
 
         #endregion
@@ -47,8 +48,9 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region Execute and CanExecute Functions
 
         #region login function
-        private void loginExecute()
+        private void loginExecute(PasswordBox pass)
         {
+            Password = pass.Password;
             bool succ = false;
             try
             {
@@ -107,10 +109,9 @@ namespace AL_Zakat_Fund_System.ViewModels
            
 
 }
-        private bool loginCanExecute()
+        private bool loginCanExecute(PasswordBox pass)
         {
-            if ( string.IsNullOrWhiteSpace(UserName) || string.IsNullOrEmpty(UserName)
-                || string.IsNullOrWhiteSpace(Password) || string.IsNullOrEmpty(Password) )
+            if ( string.IsNullOrWhiteSpace(UserName) || string.IsNullOrEmpty(UserName) )
             { IsEnabled = false; }
             else
             {
@@ -144,7 +145,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             mWindow = window;
 
-            loginCommand = new DelegateCommand(loginExecute, loginCanExecute).ObservesProperty(() => UserName).ObservesProperty(() => Password);
+            loginCommand = new DelegateCommand<PasswordBox>(loginExecute, loginCanExecute).ObservesProperty(() => UserName);
             SettingCommand = new DelegateCommand(SettingExecute);
         }
         #endregion

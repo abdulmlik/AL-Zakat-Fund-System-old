@@ -28,8 +28,8 @@
             <TextBlock Text="اسم المستخدم" Style="{StaticResource filedText}" Margin="0 10 0 5" />
             <TextBox Text="{Binding UserName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource Textbox4}" />
             <TextBlock  Text="كلمة المرور" Style="{StaticResource filedText}" Margin="0 10 0 5" />
-            <!--<PasswordBox Password="{Binding Password,Mode=OneWayToSource,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextboxPassword}" />-->
-            <Button Margin="0 20 0 0" Width="120" Content="تسجيل الدخول" Style="{StaticResource  viewButtonStyle2}" HorizontalAlignment="Right" Command="{Binding loginCommand}"  />
+            <PasswordBox Name="Password" Style="{StaticResource TextboxPassword}" />
+            <Button Margin="0 20 0 0" Width="120" Content="تسجيل الدخول" Style="{StaticResource  viewButtonStyle2}" HorizontalAlignment="Right" Command="{Binding loginCommand}" CommandParameter="{Binding ElementName=Password}" />
         </StackPanel>
         <Button Command="{Binding SettingCommand}" Grid.Column="3" Grid.Row="1" Padding="0" VerticalAlignment="Top" HorizontalAlignment="Right"   Width="30" Height="30">
             <Image Source="/AL-Zakat Fund System;component/Images/Icons/Settings.ico" />

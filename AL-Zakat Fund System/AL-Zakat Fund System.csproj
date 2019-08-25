@@ -105,6 +105,7 @@
     <Compile Include="ViewModels\OpenAccountPoorViewModel.cs" />
     <Compile Include="ViewModels\OpenRecordPoorViewModel.cs" />
     <Compile Include="ViewModels\SettingViewModel.cs" />
+    <Compile Include="ViewModels\TransferZakatViewModel.cs" />
     <Compile Include="ViewModels\ViewAccountDataViewModel.cs" />
     <Compile Include="ViewModels\ViewExchangePermissionDataViewModel.cs" />
     <Compile Include="ViewModels\ViewFollowUpDataObserverViewModel.cs" />
@@ -164,6 +165,9 @@
     </Compile>
     <Compile Include="Views\Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransferZakat.xaml.cs">
+      <DependentUpon>TransferZakat.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControlBackground\mainCollector.xaml.cs">
       <DependentUpon>mainCollector.xaml</DependentUpon>
@@ -303,6 +307,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\TransferZakat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UserControlBackground\mainCollector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -405,9 +413,6 @@
     <Resource Include="Images\userIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Icons\Edit_Registration.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Icons\Settings.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -415,6 +420,12 @@
     <Resource Include="Images\Background\Zakat_Courier.png" />
     <Resource Include="Images\Background\Zakat_Observer.png" />
     <Resource Include="Images\Background\Zakat_Scribe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\Scribe\Business_Building.ico" />
+    <Resource Include="Images\Icons\Delete.ico" />
+    <Resource Include="Images\Icons\Refresh.ico" />
+    <Resource Include="Images\Icons\Scribe\Registration.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -37,6 +37,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         private Thickness _ViewAuthorizeExpenditureBorderThickness;
         private Thickness _ViewFollowUpObserverBorderThickness;
         private Thickness _ViewAlertBorderThickness;
+        private Thickness _TransferZakatBorderThickness;
         #endregion
 
         #region User Priv
@@ -78,6 +79,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         private ViewRecordData PageVRD;
         private ViewZakatData PageVZD;
 
+        private TransferZakat PageTZD;
         #endregion
 
         #endregion
@@ -126,6 +128,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             ViewAuthorizeExpenditureBorderThickness = ZeroBorderThickness;
             ViewFollowUpObserverBorderThickness = ZeroBorderThickness;
             ViewAlertBorderThickness = ZeroBorderThickness;
+            TransferZakatBorderThickness = ZeroBorderThickness;
         }
 
         public void OnWindowClosing(object sender, CancelEventArgs e)
@@ -224,6 +227,11 @@ namespace AL_Zakat_Fund_System.ViewModels
             get { return _ViewAlertBorderThickness; }
             set { SetProperty(ref _ViewAlertBorderThickness, value); }
         }
+        public Thickness TransferZakatBorderThickness
+        {
+            get { return _TransferZakatBorderThickness; }
+            set { SetProperty(ref _TransferZakatBorderThickness, value); }
+        }
         #endregion
 
         #region User Priv
@@ -267,6 +275,8 @@ namespace AL_Zakat_Fund_System.ViewModels
         public DelegateCommand ContactStatusCommand { get; set; }
         public DelegateCommand<string> GetPrivCommand { get; set; }
         public DelegateCommand CloseCommand { get; set; }
+
+        public DelegateCommand PageTransferZakatDataCommand { get; set; }
 
         public DelegateCommand PageViewAccountDataCommand { get; set; }
         public DelegateCommand PageViewExchangePermissionDataCommand { get; set; }
@@ -405,6 +415,14 @@ namespace AL_Zakat_Fund_System.ViewModels
             PageVZD.DataContext = new ViewZakatDataViewModel(PageVZD, mWindow);
             Page = PageVZD;
         }
+        private void PageTransferZakatDataExecute()
+        {
+            ZeroThickness();
+            TransferZakatBorderThickness = LeftBorderThickness;
+            PageTZD = new TransferZakat();
+            PageTZD.DataContext = new TransferZakatViewModel(PageTZD, mWindow);
+            Page = PageTZD;
+        }
         #endregion
 
         #endregion
@@ -449,6 +467,8 @@ namespace AL_Zakat_Fund_System.ViewModels
             PageViewFollowUpDataObserverCommand = new DelegateCommand(PageViewFollowUpDataObserverExecute);
             PageViewRecordDataCommand = new DelegateCommand(PageViewRecordDataExecute);
             PageViewZakatDataCommand = new DelegateCommand(PageViewZakatDataExecute);
+
+            PageTransferZakatDataCommand = new DelegateCommand(PageTransferZakatDataExecute);
 
             LogoutCommand = new DelegateCommand(LogOut);
             ContactStatusCommand = new DelegateCommand(ContactStatus);

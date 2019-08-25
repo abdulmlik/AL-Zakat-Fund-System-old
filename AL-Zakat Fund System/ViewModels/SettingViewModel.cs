@@ -110,10 +110,8 @@ namespace AL_Zakat_Fund_System.ViewModels
             }
             finally
             {
-
+                DBConnection.CloseConnection();
             }
-
-            DBConnection.CloseConnection();
         }
         private void ConnectionStatus()
         {

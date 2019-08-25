@@ -7,6 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="700" FlowDirection="LeftToRight" >
     <UserControl.Background>
-        <ImageBrush ImageSource="/AL-Zakat Fund System;component/Images/Background/Zakat_Courier.png" Opacity="0.8" Stretch="UniformToFill"  />
+        <ImageBrush ImageSource="/AL-Zakat Fund System;component/Images/Background/Zakat_Courier.png" Opacity="0.8" Stretch="Uniform"  />
     </UserControl.Background>
 </UserControl>

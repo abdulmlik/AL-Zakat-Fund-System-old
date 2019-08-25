@@ -102,6 +102,8 @@
                 <MenuItem Command="{Binding PageAddNewZakatCommand}" Header="_إضافة زكاة جديدة" />
                 <MenuItem Command="{Binding PageViewZakatDataCommand}" Header="_إدارة الزكاة" />
                 <Separator />
+                <MenuItem Command="{Binding PageTransferZakatDataCommand}" Header="_تحويل الزكاة الى المصارف" />
+                <Separator />
                 <MenuItem Header="التقارير" >
                     <MenuItem Header=" زكاة" />
                     <MenuItem Header=" زكاة" />
@@ -176,6 +178,9 @@
                 <Button  Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="إدارة الزكاة" Command="{Binding PageViewZakatDataCommand}" 
                        Visibility="{Binding Collector}" BorderThickness="{Binding ViewZakatBorderThickness}" />
+                <Button  Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Content="تحويل الزكاة" Command="{Binding PageTransferZakatDataCommand}" 
+                       Visibility="{Binding Collector}" BorderThickness="{Binding TransferZakatBorderThickness}" />
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="انشاء إذن صرف" Command="{Binding PageCreateExchangePermissionCommand}"
                        Visibility="{Binding Courier}" BorderThickness="{Binding CreateAuthorizeExpenditureBorderThickness}" />
