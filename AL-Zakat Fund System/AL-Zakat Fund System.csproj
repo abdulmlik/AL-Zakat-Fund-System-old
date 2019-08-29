@@ -127,9 +127,11 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ModifyExchangePermissionViewModel.cs" />
     <Compile Include="ViewModels\ModifyZakatViewModel.cs" />
-    <Compile Include="ViewModels\NumberZakatViewModel.cs" />
+    <Compile Include="ViewModels\ReportCollectZakatViewModel.cs" />
+    <Compile Include="ViewModels\ReportNumberZakatViewModel.cs" />
     <Compile Include="ViewModels\OpenAccountPoorViewModel.cs" />
     <Compile Include="ViewModels\OpenRecordPoorViewModel.cs" />
+    <Compile Include="ViewModels\ReportZakatViewModel.cs" />
     <Compile Include="ViewModels\SettingViewModel.cs" />
     <Compile Include="ViewModels\TransferZakatViewModel.cs" />
     <Compile Include="ViewModels\ViewAccountDataViewModel.cs" />
@@ -183,14 +185,20 @@
     <Compile Include="Views\ModifyZakat.xaml.cs">
       <DependentUpon>ModifyZakat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NumberZakat.xaml.cs">
-      <DependentUpon>NumberZakat.xaml</DependentUpon>
+    <Compile Include="Views\ReportNumberZakat.xaml.cs">
+      <DependentUpon>ReportNumberZakat.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\OpenAccountPoor.xaml.cs">
       <DependentUpon>OpenAccountPoor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\OpenRecordPoor.xaml.cs">
       <DependentUpon>OpenRecordPoor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportCollectZakat.xaml.cs">
+      <DependentUpon>ReportCollectZakat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportZakat.xaml.cs">
+      <DependentUpon>ReportZakat.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
@@ -324,7 +332,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NumberZakat.xaml">
+    <Page Include="Views\ReportNumberZakat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -333,6 +341,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\OpenRecordPoor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReportCollectZakat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReportZakat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -18,13 +18,13 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region private Member
 
         private string _EmpName;
-        
+
         private Window mWindow;
         private object _Page;
 
         #region Button SideBar ,When Click
         private Thickness ZeroBorderThickness = new Thickness(0);
-        private Thickness LeftBorderThickness = new Thickness(0,0,10,0);
+        private Thickness LeftBorderThickness = new Thickness(0, 0, 10, 0);
         private Thickness _OpenAccountBorderThickness;
         private Thickness _ViewAccountBorderThickness;
         private Thickness _OpenRecordBorderThickness;
@@ -66,7 +66,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region Page Content
-        
+
         #region add pages 
         private OpenAccountPoor PageOAP;
         private OpenRecordPoor PageORP;
@@ -271,17 +271,23 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region Delegate Command
+
+        #region add page Command
         public DelegateCommand PageOpenAccountPoorCommand { get; set; }
         public DelegateCommand PageOpenRecordPoorCommand { get; set; }
         public DelegateCommand PageAddNewZakatCommand { get; set; }
         public DelegateCommand PageCreateExchangePermissionCommand { get; set; }
         public DelegateCommand PageDeliverRecordCommand { get; set; }
+        #endregion
 
+        #region file meun Command
         public DelegateCommand LogoutCommand { get; set; }
         public DelegateCommand ContactStatusCommand { get; set; }
         public DelegateCommand<string> GetPrivCommand { get; set; }
         public DelegateCommand CloseCommand { get; set; }
+        #endregion
 
+        #region view page Command
         public DelegateCommand PageTransferZakatDataCommand { get; set; }
 
         public DelegateCommand PageViewAccountDataCommand { get; set; }
@@ -290,8 +296,17 @@ namespace AL_Zakat_Fund_System.ViewModels
         public DelegateCommand PageViewFollowUpDataObserverCommand { get; set; }
         public DelegateCommand PageViewRecordDataCommand { get; set; }
         public DelegateCommand PageViewZakatDataCommand { get; set; }
+        #endregion
 
-        public DelegateCommand PageNumberZakatCommand { get; set; }
+        #region Report Window Command
+
+        #region Report Zakat
+        public DelegateCommand ReportZakatCommand { get; set; }
+        public DelegateCommand ReportCollectZakatCommand { get; set; }
+        public DelegateCommand ReportNumberZakatCommand { get; set; }
+        #endregion
+
+        #endregion
 
         #endregion
 
@@ -312,7 +327,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         }
         private void ContactStatus()
         {
-            if(DBConnection.OpenConnection())
+            if (DBConnection.OpenConnection())
             {
                 MessageBox.Show("لا يوجد مشاكل في الاتصال بالخادم", "", MessageBoxButton.OK, MessageBoxImage.None,
                                 MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
@@ -431,15 +446,41 @@ namespace AL_Zakat_Fund_System.ViewModels
             PageTZD.DataContext = new TransferZakatViewModel(PageTZD, mWindow);
             Page = PageTZD;
         }
-        private void PageNumberZakatExecute()
+
+        #endregion
+
+        #region Report Window
+
+        #region Zakat
+        private void ReportZakatExecute()
         {
-            NumberZakat PageNZ = new NumberZakat();
-            PageNZ.DataContext = new NumberZakatViewModel(PageNZ);
-            PageNZ.Owner = mWindow;
-            bool? result = PageNZ.ShowDialog();
+            ReportZakat PageRZ = new ReportZakat();
+            PageRZ.DataContext = new ReportZakatViewModel(PageRZ);
+            PageRZ.Owner = mWindow;
+            bool? result = PageRZ.ShowDialog();
             if (result == true)
             { }
         }
+        private void ReportCollectZakatExecute()
+        {
+            ReportCollectZakat PageRCZ = new ReportCollectZakat();
+            PageRCZ.DataContext = new ReportCollectZakatViewModel(PageRCZ);
+            PageRCZ.Owner = mWindow;
+            bool? result = PageRCZ.ShowDialog();
+            if (result == true)
+            { }
+        }
+        private void ReportNumberZakatExecute()
+        {
+            ReportNumberZakat PageRNZ = new ReportNumberZakat();
+            PageRNZ.DataContext = new ReportNumberZakatViewModel(PageRNZ);
+            PageRNZ.Owner = mWindow;
+            bool? result = PageRNZ.ShowDialog();
+            if (result == true)
+            { }
+        }
+        #endregion
+
         #endregion
 
         #endregion
@@ -470,7 +511,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             // When close window call OnWindowClosing function
             mWindow.Closing += OnWindowClosing;
 
-            
+
 
             //Create Commands
             PageOpenAccountPoorCommand = new DelegateCommand(PageOpenAccountPoorExecute);
@@ -493,7 +534,9 @@ namespace AL_Zakat_Fund_System.ViewModels
             GetPrivCommand = new DelegateCommand<string>(GetPrivExecute);
             CloseCommand = new DelegateCommand(CloseExecute);
 
-            PageNumberZakatCommand = new DelegateCommand(PageNumberZakatExecute);
+            ReportZakatCommand = new DelegateCommand(ReportZakatExecute);
+            ReportCollectZakatCommand = new DelegateCommand(ReportCollectZakatExecute);
+            ReportNumberZakatCommand = new DelegateCommand(ReportNumberZakatExecute);
         }
         #endregion
     }

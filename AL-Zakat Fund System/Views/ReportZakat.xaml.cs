@@ -12,15 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-
 namespace AL_Zakat_Fund_System.Views
 {
     /// <summary>
-    /// Interaction logic for NumberZakat.xaml
+    /// Interaction logic for ReportZakat.xaml
     /// </summary>
-    public partial class NumberZakat : Window
+    public partial class ReportZakat : Window
     {
-        public NumberZakat()
+        public ReportZakat()
         {
             InitializeComponent();
         }

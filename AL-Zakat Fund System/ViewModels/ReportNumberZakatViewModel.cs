@@ -4,23 +4,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Prism.Mvvm;
 using AL_Zakat_Fund_System.Views;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
-    class NumberZakatViewModel
+    class ReportNumberZakatViewModel : BindableBase
     {
-        //    public CrystalDecisions.CrystalReports.Engine.ReportDocument Report { get; set; }
-
         #region private Member
             
         Window CurrentWindow;
 
+        private DateTime _StartDate;
+        private DateTime _EndDate;
+
         public CrystalDecisions.CrystalReports.Engine.ReportDocument MyReportSource { get; set; }
-        
+
+
+        #endregion
+
+        #region private Function
+
+
+
         #endregion
 
         #region public properties
+
+        public DateTime StartDate
+        {
+            get { return _StartDate; }
+            set { SetProperty(ref _StartDate, value); }
+        }
+        public DateTime EndDate
+        {
+            get { return _EndDate; }
+            set { SetProperty(ref _EndDate, value); }
+        }
 
         #endregion
 
@@ -41,7 +61,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region Construct
-        public NumberZakatViewModel(Window CW)
+        public ReportNumberZakatViewModel(Window CW)
         {
             CurrentWindow = CW;
         }
