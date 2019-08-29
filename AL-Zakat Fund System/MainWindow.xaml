@@ -1,4 +1,4 @@
-﻿<Window
+﻿<Window xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer" 
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -105,7 +105,7 @@
                 <MenuItem Command="{Binding PageTransferZakatDataCommand}" Header="_تحويل الزكاة الى المصارف" />
                 <Separator />
                 <MenuItem Header="التقارير" >
-                    <MenuItem Header=" زكاة" />
+                    <MenuItem Command="{Binding PageNumberZakatCommand}" Header="عدد المزكين" />
                     <MenuItem Header=" زكاة" />
                     <MenuItem Header=" زكاة" />
                 </MenuItem>
@@ -148,8 +148,6 @@
                 <RowDefinition Height="120" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-
-
 
             <!-- sidebar buttons -->
 

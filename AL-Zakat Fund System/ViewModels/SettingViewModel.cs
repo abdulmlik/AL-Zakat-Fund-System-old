@@ -216,7 +216,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             {
                 Properties.Settings.Default.Mode = "False";
                 Properties.Settings.Default.UserName = UserName.Trim();
-                Properties.Settings.Default.Password = Password.Trim();
+                Properties.Settings.Default.Password = Password;
             }
             Properties.Settings.Default.Save();
             ConnectionStatus();

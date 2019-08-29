@@ -1,0 +1,36 @@
+﻿<Window x:Class="AL_Zakat_Fund_System.Views.NumberZakat"
+        xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Models="clr-namespace:AL_Zakat_Fund_System.Models"
+        mc:Ignorable="d"
+        FlowDirection="RightToLeft"
+        Title="تقرير عدد المزكين">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <TextBlock Text="تقرير على عدد المزكين خلال فترة معينة" Style="{StaticResource viewHeaderText}" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="بداية الفترة : " Margin="0" Style="{StaticResource filedText}" />
+                <DatePicker Margin="0 0 20 0" SelectedDate="{Binding StartDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource datePicker}"  />
+                <TextBlock Text="نهاية الفترة : " Margin="0" Style="{StaticResource filedText}"/>
+                <DatePicker SelectedDate="{Binding EndDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource datePicker}"  />
+            </StackPanel>
+        </StackPanel>
+        <Viewer:CrystalReportsViewer Style="{StaticResource ViewerStyle}"
+            Models:ReportSourceBehaviour.ReportSource="{Binding Path=MyReportSource,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=FrameworkElement}}" 
+            Grid.Column="1"  Grid.Row="2" />
+    </Grid>
+</Window>

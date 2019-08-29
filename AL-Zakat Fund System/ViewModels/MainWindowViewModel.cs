@@ -66,12 +66,16 @@ namespace AL_Zakat_Fund_System.ViewModels
         #endregion
 
         #region Page Content
+        
+        #region add pages 
         private OpenAccountPoor PageOAP;
         private OpenRecordPoor PageORP;
         private AddNewZakat PageANZ;
         private CreateExchangePermission PageCEP;
         private DeliverRecord PageDR;
+        #endregion
 
+        #region view pages control
         private ViewAccountData PageVAD;
         private ViewExchangePermissionData PageVEPD;
         private ViewFollowUpData PageVFD;
@@ -80,6 +84,8 @@ namespace AL_Zakat_Fund_System.ViewModels
         private ViewZakatData PageVZD;
 
         private TransferZakat PageTZD;
+        #endregion
+
         #endregion
 
         #endregion
@@ -285,6 +291,8 @@ namespace AL_Zakat_Fund_System.ViewModels
         public DelegateCommand PageViewRecordDataCommand { get; set; }
         public DelegateCommand PageViewZakatDataCommand { get; set; }
 
+        public DelegateCommand PageNumberZakatCommand { get; set; }
+
         #endregion
 
         #region Execute and CanExecute Functions
@@ -423,6 +431,15 @@ namespace AL_Zakat_Fund_System.ViewModels
             PageTZD.DataContext = new TransferZakatViewModel(PageTZD, mWindow);
             Page = PageTZD;
         }
+        private void PageNumberZakatExecute()
+        {
+            NumberZakat PageNZ = new NumberZakat();
+            PageNZ.DataContext = new NumberZakatViewModel(PageNZ);
+            PageNZ.Owner = mWindow;
+            bool? result = PageNZ.ShowDialog();
+            if (result == true)
+            { }
+        }
         #endregion
 
         #endregion
@@ -431,7 +448,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         /// <summary>
         /// Default Construct
         /// </summary>
-        /// <param name="window"></param>
+        /// <param name="window">Current Window</param>
         public MainWindowViewModel(Window window)
         {
             mWindow = window;
@@ -439,6 +456,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             // Name Employee
             EmpName = Properties.Settings.Default.EmpName;
 
+            // priv Employee
             if (Properties.Settings.Default.EmpPriv == 10)
             {
                 GetPriv(3);
@@ -474,6 +492,8 @@ namespace AL_Zakat_Fund_System.ViewModels
             ContactStatusCommand = new DelegateCommand(ContactStatus);
             GetPrivCommand = new DelegateCommand<string>(GetPrivExecute);
             CloseCommand = new DelegateCommand(CloseExecute);
+
+            PageNumberZakatCommand = new DelegateCommand(PageNumberZakatExecute);
         }
         #endregion
     }

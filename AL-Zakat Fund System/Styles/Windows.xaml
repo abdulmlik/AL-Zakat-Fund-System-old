@@ -1,9 +1,16 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:AL_Zakat_Fund_System">
-    
+                    xmlns:local="clr-namespace:AL_Zakat_Fund_System"
+                    xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer">
+
     <Style x:Key="ScrollViewerStyle" TargetType="ScrollViewer">
         <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
         <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+    </Style>
+    
+    <Style x:Key="ViewerStyle" TargetType="Viewer:CrystalReportsViewer">
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="InputLanguageManager.InputLanguage" Value="AR-SA" />
     </Style>
 </ResourceDictionary>
