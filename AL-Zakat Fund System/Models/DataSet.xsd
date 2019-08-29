@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet" targetNamespace="http://tempuri.org/DataSet.xsd" xmlns:mstns="http://tempuri.org/DataSet.xsd" xmlns="http://tempuri.org/DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet" msprop:Generator_UserDSName="DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Zakat" msprop:Generator_TableClassName="ZakatDataTable" msprop:Generator_TableVarName="tableZakat" msprop:Generator_TablePropName="Zakat" msprop:Generator_RowDeletingName="ZakatRowDeleting" msprop:Generator_RowChangingName="ZakatRowChanging" msprop:Generator_RowEvHandlerName="ZakatRowChangeEventHandler" msprop:Generator_RowDeletedName="ZakatRowDeleted" msprop:Generator_UserTableName="Zakat" msprop:Generator_RowChangedName="ZakatRowChanged" msprop:Generator_RowEvArgName="ZakatRowChangeEvent" msprop:Generator_RowClassName="ZakatRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NameMonth" msprop:Generator_ColumnVarNameInTable="columnNameMonth" msprop:Generator_ColumnPropNameInRow="NameMonth" msprop:Generator_ColumnPropNameInTable="NameMonthColumn" msprop:Generator_UserColumnName="NameMonth" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalZakat" msprop:Generator_ColumnVarNameInTable="columnTotalZakat" msprop:Generator_ColumnPropNameInRow="TotalZakat" msprop:Generator_ColumnPropNameInTable="TotalZakatColumn" msprop:Generator_UserColumnName="TotalZakat" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalNumberZakat" msprop:Generator_ColumnVarNameInTable="columnTotalNumberZakat" msprop:Generator_ColumnPropNameInRow="TotalNumberZakat" msprop:Generator_ColumnPropNameInTable="TotalNumberZakatColumn" msprop:Generator_UserColumnName="TotalNumberZakat" type="xs:string" minOccurs="0" />
+              <xs:element name="OfficeRevenue" msprop:Generator_ColumnVarNameInTable="columnOfficeRevenue" msprop:Generator_ColumnPropNameInRow="OfficeRevenue" msprop:Generator_ColumnPropNameInTable="OfficeRevenueColumn" msprop:Generator_UserColumnName="OfficeRevenue" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalOfficeZakat" msprop:Generator_ColumnVarNameInTable="columnTotalOfficeZakat" msprop:Generator_ColumnPropNameInRow="TotalOfficeZakat" msprop:Generator_ColumnPropNameInTable="TotalOfficeZakatColumn" msprop:Generator_UserColumnName="TotalOfficeZakat" type="xs:string" minOccurs="0" />
+              <xs:element name="CollectorRevenue" msprop:Generator_ColumnVarNameInTable="columnCollectorRevenue" msprop:Generator_ColumnPropNameInRow="CollectorRevenue" msprop:Generator_ColumnPropNameInTable="CollectorRevenueColumn" msprop:Generator_UserColumnName="CollectorRevenue" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalCollectorZakat" msprop:Generator_ColumnVarNameInTable="columnTotalCollectorZakat" msprop:Generator_ColumnPropNameInRow="TotalCollectorZakat" msprop:Generator_ColumnPropNameInTable="TotalCollectorZakatColumn" msprop:Generator_UserColumnName="TotalCollectorZakat" type="xs:string" minOccurs="0" />
+              <xs:element name="BankRevenue" msprop:Generator_ColumnVarNameInTable="columnBankRevenue" msprop:Generator_ColumnPropNameInRow="BankRevenue" msprop:Generator_ColumnPropNameInTable="BankRevenueColumn" msprop:Generator_UserColumnName="BankRevenue" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalBankZakat" msprop:Generator_ColumnVarNameInTable="columnTotalBankZakat" msprop:Generator_ColumnPropNameInRow="TotalBankZakat" msprop:Generator_ColumnPropNameInTable="TotalBankZakatColumn" msprop:Generator_UserColumnName="TotalBankZakat" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="NumberZakat" msprop:Generator_TableClassName="NumberZakatDataTable" msprop:Generator_TableVarName="tableNumberZakat" msprop:Generator_TablePropName="NumberZakat" msprop:Generator_RowDeletingName="NumberZakatRowDeleting" msprop:Generator_RowChangingName="NumberZakatRowChanging" msprop:Generator_RowEvHandlerName="NumberZakatRowChangeEventHandler" msprop:Generator_RowDeletedName="NumberZakatRowDeleted" msprop:Generator_UserTableName="NumberZakat" msprop:Generator_RowChangedName="NumberZakatRowChanged" msprop:Generator_RowEvArgName="NumberZakatRowChangeEvent" msprop:Generator_RowClassName="NumberZakatRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NameMonth" msprop:Generator_ColumnVarNameInTable="columnNameMonth" msprop:Generator_ColumnPropNameInRow="NameMonth" msprop:Generator_ColumnPropNameInTable="NameMonthColumn" msprop:Generator_UserColumnName="NameMonth" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalNumberZakat" msprop:Generator_ColumnVarNameInTable="columnTotalNumberZakat" msprop:Generator_ColumnPropNameInRow="TotalNumberZakat" msprop:Generator_ColumnPropNameInTable="TotalNumberZakatColumn" msprop:Generator_UserColumnName="TotalNumberZakat" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalOfficeZakat" msprop:Generator_ColumnVarNameInTable="columnTotalOfficeZakat" msprop:Generator_ColumnPropNameInRow="TotalOfficeZakat" msprop:Generator_ColumnPropNameInTable="TotalOfficeZakatColumn" msprop:Generator_UserColumnName="TotalOfficeZakat" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalCollectorZakat" msprop:Generator_ColumnVarNameInTable="columnTotalCollectorZakat" msprop:Generator_ColumnPropNameInRow="TotalCollectorZakat" msprop:Generator_ColumnPropNameInTable="TotalCollectorZakatColumn" msprop:Generator_UserColumnName="TotalCollectorZakat" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalBankZakat" msprop:Generator_ColumnVarNameInTable="columnTotalBankZakat" msprop:Generator_ColumnPropNameInRow="TotalBankZakat" msprop:Generator_ColumnPropNameInTable="TotalBankZakatColumn" msprop:Generator_UserColumnName="TotalBankZakat" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CollectZakat" msprop:Generator_TableClassName="CollectZakatDataTable" msprop:Generator_TableVarName="tableCollectZakat" msprop:Generator_TablePropName="CollectZakat" msprop:Generator_RowDeletingName="CollectZakatRowDeleting" msprop:Generator_RowChangingName="CollectZakatRowChanging" msprop:Generator_RowEvHandlerName="CollectZakatRowChangeEventHandler" msprop:Generator_RowDeletedName="CollectZakatRowDeleted" msprop:Generator_UserTableName="CollectZakat" msprop:Generator_RowChangedName="CollectZakatRowChanged" msprop:Generator_RowEvArgName="CollectZakatRowChangeEvent" msprop:Generator_RowClassName="CollectZakatRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NameMonth" msprop:Generator_ColumnVarNameInTable="columnNameMonth" msprop:Generator_ColumnPropNameInRow="NameMonth" msprop:Generator_ColumnPropNameInTable="NameMonthColumn" msprop:Generator_UserColumnName="NameMonth" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalZakat" msprop:Generator_ColumnVarNameInTable="columnTotalZakat" msprop:Generator_ColumnPropNameInRow="TotalZakat" msprop:Generator_ColumnPropNameInTable="TotalZakatColumn" msprop:Generator_UserColumnName="TotalZakat" type="xs:string" minOccurs="0" />
+              <xs:element name="OfficeRevenue" msprop:Generator_ColumnVarNameInTable="columnOfficeRevenue" msprop:Generator_ColumnPropNameInRow="OfficeRevenue" msprop:Generator_ColumnPropNameInTable="OfficeRevenueColumn" msprop:Generator_UserColumnName="OfficeRevenue" type="xs:string" minOccurs="0" />
+              <xs:element name="CollectorRevenue" msprop:Generator_ColumnVarNameInTable="columnCollectorRevenue" msprop:Generator_ColumnPropNameInRow="CollectorRevenue" msprop:Generator_ColumnPropNameInTable="CollectorRevenueColumn" msprop:Generator_UserColumnName="CollectorRevenue" type="xs:string" minOccurs="0" />
+              <xs:element name="BankRevenue" msprop:Generator_ColumnVarNameInTable="columnBankRevenue" msprop:Generator_ColumnPropNameInRow="BankRevenue" msprop:Generator_ColumnPropNameInTable="BankRevenueColumn" msprop:Generator_UserColumnName="BankRevenue" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
