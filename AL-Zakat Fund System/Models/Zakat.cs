@@ -30,6 +30,7 @@ namespace AL_Zakat_Fund_System.Models
         protected byte _Collector;
         protected bool _Activity;
         protected bool _Migration;
+        protected DateTime? _MigrationDate;
         protected long _Colle_ssn;
         protected int _Office_no;
 
@@ -43,6 +44,7 @@ namespace AL_Zakat_Fund_System.Models
         protected string _Collector2;
         protected string _Activity2;
         protected string _Migration2;
+        protected string _MigrationDate2;
         protected string _Colle_ssn2;
         protected string _Office_no2;
         #endregion
@@ -150,6 +152,11 @@ namespace AL_Zakat_Fund_System.Models
             get { return _Migration; }
             set { SetProperty(ref _Migration, value); }
         }
+        public DateTime? MigrationDate
+        {
+            get { return _MigrationDate; }
+            set { SetProperty(ref _MigrationDate, value); }
+        }
 
         public long Colle_ssn
         {
@@ -208,6 +215,11 @@ namespace AL_Zakat_Fund_System.Models
         {
             get { return _Migration2; }
             set { SetProperty(ref _Migration2, value); }
+        }
+        public string MigrationDate2
+        {
+            get { return _MigrationDate2; }
+            set { SetProperty(ref _MigrationDate2, value); }
         }
         public string Colle_ssn2
         {

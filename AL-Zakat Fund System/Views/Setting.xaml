@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
         mc:Ignorable="d"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         Title="إعدادات البرنامج" 
         Icon="/AL-Zakat Fund System;component/Images/Logo/34.png"
         MinWidth="570" Width="570" MinHeight="370" MaxHeight="450" Height="auto"

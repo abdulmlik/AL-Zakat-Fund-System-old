@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Prism.Mvvm;
+using AL_Zakat_Fund_System.Models;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
@@ -14,8 +15,8 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         Window CurrentWindow;
 
-        private DateTime _StartDate;
-        private DateTime _EndDate;
+        private DateTime? _StartDate;
+        private DateTime? _EndDate;
 
         public CrystalDecisions.CrystalReports.Engine.ReportDocument MyReportSource { get; set; }
 
@@ -24,18 +25,21 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         #region private Function
 
-
+        private void CreateReport()
+        {
+            
+        }
 
         #endregion
 
         #region public properties
 
-        public DateTime StartDate
+        public DateTime? StartDate
         {
             get { return _StartDate; }
             set { SetProperty(ref _StartDate, value); }
         }
-        public DateTime EndDate
+        public DateTime? EndDate
         {
             get { return _EndDate; }
             set { SetProperty(ref _EndDate, value); }

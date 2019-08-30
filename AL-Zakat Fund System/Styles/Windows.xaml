@@ -12,5 +12,7 @@
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="InputLanguageManager.InputLanguage" Value="AR-SA" />
+        <Setter Property="Language" Value="AR-SA" />
     </Style>
+    
 </ResourceDictionary>

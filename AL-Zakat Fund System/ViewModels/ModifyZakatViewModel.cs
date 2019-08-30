@@ -61,8 +61,9 @@ namespace AL_Zakat_Fund_System.ViewModels
                 Collector = DBConnection.reader.GetByte(15);
                 Activity = DBConnection.reader.GetBoolean(16);
                 Migration = DBConnection.reader.GetBoolean(17);
-                Colle_ssn = DBConnection.reader.GetInt64(18);
-                Office_no = DBConnection.reader.GetInt32(19);
+                MigrationDate = DBConnection.reader.GetDateTime(18);
+                Colle_ssn = DBConnection.reader.GetInt64(19);
+                Office_no = DBConnection.reader.GetInt32(20);
                 #endregion
             }
             catch (Exception ex)
@@ -128,6 +129,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Collector", SqlDbType.TinyInt));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Activity", SqlDbType.Bit));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Migration", SqlDbType.Bit));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@MigrationDate", SqlDbType.DateTime));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Colle_ssn", SqlDbType.BigInt));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Office_no", SqlDbType.Int));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
@@ -204,11 +206,22 @@ namespace AL_Zakat_Fund_System.ViewModels
                     //Activity == 1
                     if (Convrsion && Convrsion != ConvrsionTemp)
                     {
-                        DBConnection.cmd.Parameters["@Migration"].Value = (SDate.Year < DateTime.Now.Year || (SDate.Year == DateTime.Now.Year && SDate.Month < DateTime.Now.Month)) ? 1 : 0;
+                        //yare  month
+                        if (SDate.Year < DateTime.Now.Year || (SDate.Year == DateTime.Now.Year && SDate.Month < DateTime.Now.Month))
+                        {
+                            DBConnection.cmd.Parameters["@Migration"].Value = 1;
+                            DBConnection.cmd.Parameters["@MigrationDate"].Value = DateTime.Now;
+                        }
+                        else
+                        {
+                            DBConnection.cmd.Parameters["@Migration"].Value = 0;
+                            DBConnection.cmd.Parameters["@MigrationDate"].Value = DBNull.Value;
+                        }
                     }
                     else
                     {
                         DBConnection.cmd.Parameters["@Migration"].Value = 0;
+                        DBConnection.cmd.Parameters["@MigrationDate"].Value = DBNull.Value;
                     }
                     
 

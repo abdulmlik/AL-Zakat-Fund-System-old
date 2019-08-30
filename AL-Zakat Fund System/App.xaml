@@ -8,7 +8,6 @@
              StartupUri="mainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-           
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/Buttons.xaml"/>
                 <ResourceDictionary Source="Styles/Colors.xaml"/>
