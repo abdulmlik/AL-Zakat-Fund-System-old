@@ -15,11 +15,10 @@
                 <ResourceDictionary Source="Styles/Texts.xaml"/>
                 <ResourceDictionary Source="Styles/Windows.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
+            <m:NullableDateTimeToBooleanConverter x:Key="DateTimeToBoolConverter" />
         </ResourceDictionary>
 
 
-
     </Application.Resources>
-   
-
 </Application>

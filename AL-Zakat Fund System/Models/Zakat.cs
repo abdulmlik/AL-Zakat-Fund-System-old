@@ -286,4 +286,44 @@ namespace AL_Zakat_Fund_System.Models
 
         #endregion
     }
+
+    // class use to get data for report
+    class ZakatTemp : BindableBase
+    {
+
+        #region private Member
+
+        protected DateTime _SDate;
+        protected decimal _Amount;
+        protected byte _Collector;
+        protected DateTime? _MigrationDate;
+
+        #endregion
+
+        #region public properties
+        
+        public DateTime SDate
+        {
+            get { return _SDate; }
+            set { SetProperty(ref _SDate, value); }
+        }
+        public decimal Amount
+        {
+            get { return _Amount; }
+            set { SetProperty(ref _Amount, value); }
+        }
+        public byte Collector
+        {
+            get { return _Collector; }
+            set { SetProperty(ref _Collector, value); }
+        }
+        public DateTime? MigrationDate
+        {
+            get { return _MigrationDate; }
+            set { SetProperty(ref _MigrationDate, value); }
+        }
+        
+        #endregion
+        
+    }
 }

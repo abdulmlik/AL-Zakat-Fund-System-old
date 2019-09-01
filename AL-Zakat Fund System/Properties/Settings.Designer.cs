@@ -140,5 +140,29 @@ namespace AL_Zakat_Fund_System.Properties {
                 this["Office"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int Branch {
+            get {
+                return ((int)(this["Branch"]));
+            }
+            set {
+                this["Branch"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("طرابلس")]
+        public string nameBranch {
+            get {
+                return ((string)(this["nameBranch"]));
+            }
+            set {
+                this["nameBranch"] = value;
+            }
+        }
     }
 }

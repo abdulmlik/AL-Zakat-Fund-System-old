@@ -16,14 +16,14 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalZakat : ReportClass {
+    public class CrystalReport1 : ReportClass {
         
-        public CrystalZakat() {
+        public CrystalReport1() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalZakat.rpt";
+                return "CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
         
         public override string FullResourceName {
             get {
-                return "AL_Zakat_Fund_System.Views.CrystalReport.CrystalZakat.rpt";
+                return "AL_Zakat_Fund_System.Views.CrystalReport.CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -87,28 +87,12 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
                 return this.ReportDefinition.Sections[4];
             }
         }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_nameBranch {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Period {
-            get {
-                return this.DataDefinition.ParameterFields[1];
-            }
-        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalZakat : Component, ICachedReport {
+    public class CachedCrystalReport1 : Component, ICachedReport {
         
-        public CachedCrystalZakat() {
+        public CachedCrystalReport1() {
         }
         
         [Browsable(false)]
@@ -145,7 +129,7 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalZakat rpt = new CrystalZakat();
+            CrystalReport1 rpt = new CrystalReport1();
             rpt.Site = this.Site;
             return rpt;
         }

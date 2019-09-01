@@ -509,7 +509,7 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ZakatRow AddZakatRow(string NameMonth, string TotalZakat, string TotalNumberZakat, string OfficeRevenue, string TotalOfficeZakat, string CollectorRevenue, string TotalCollectorZakat, string BankRevenue, string TotalBankZakat) {
+            public ZakatRow AddZakatRow(string NameMonth, decimal TotalZakat, int TotalNumberZakat, decimal OfficeRevenue, int TotalOfficeZakat, decimal CollectorRevenue, int TotalCollectorZakat, decimal BankRevenue, int TotalBankZakat) {
                 ZakatRow rowZakatRow = ((ZakatRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NameMonth,
@@ -559,21 +559,21 @@ namespace AL_Zakat_Fund_System.Models {
             private void InitClass() {
                 this.columnNameMonth = new global::System.Data.DataColumn("NameMonth", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNameMonth);
-                this.columnTotalZakat = new global::System.Data.DataColumn("TotalZakat", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotalZakat = new global::System.Data.DataColumn("TotalZakat", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalZakat);
-                this.columnTotalNumberZakat = new global::System.Data.DataColumn("TotalNumberZakat", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotalNumberZakat = new global::System.Data.DataColumn("TotalNumberZakat", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalNumberZakat);
-                this.columnOfficeRevenue = new global::System.Data.DataColumn("OfficeRevenue", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnOfficeRevenue = new global::System.Data.DataColumn("OfficeRevenue", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOfficeRevenue);
-                this.columnTotalOfficeZakat = new global::System.Data.DataColumn("TotalOfficeZakat", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotalOfficeZakat = new global::System.Data.DataColumn("TotalOfficeZakat", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalOfficeZakat);
-                this.columnCollectorRevenue = new global::System.Data.DataColumn("CollectorRevenue", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCollectorRevenue = new global::System.Data.DataColumn("CollectorRevenue", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCollectorRevenue);
-                this.columnTotalCollectorZakat = new global::System.Data.DataColumn("TotalCollectorZakat", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotalCollectorZakat = new global::System.Data.DataColumn("TotalCollectorZakat", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalCollectorZakat);
-                this.columnBankRevenue = new global::System.Data.DataColumn("BankRevenue", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnBankRevenue = new global::System.Data.DataColumn("BankRevenue", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBankRevenue);
-                this.columnTotalBankZakat = new global::System.Data.DataColumn("TotalBankZakat", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotalBankZakat = new global::System.Data.DataColumn("TotalBankZakat", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalBankZakat);
             }
             
@@ -828,7 +828,7 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NumberZakatRow AddNumberZakatRow(string NameMonth, string TotalNumberZakat, string TotalOfficeZakat, string TotalCollectorZakat, string TotalBankZakat) {
+            public NumberZakatRow AddNumberZakatRow(string NameMonth, int TotalNumberZakat, int TotalOfficeZakat, int TotalCollectorZakat, int TotalBankZakat) {
                 NumberZakatRow rowNumberZakatRow = ((NumberZakatRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NameMonth,
@@ -870,13 +870,13 @@ namespace AL_Zakat_Fund_System.Models {
             private void InitClass() {
                 this.columnNameMonth = new global::System.Data.DataColumn("NameMonth", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNameMonth);
-                this.columnTotalNumberZakat = new global::System.Data.DataColumn("TotalNumberZakat", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotalNumberZakat = new global::System.Data.DataColumn("TotalNumberZakat", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalNumberZakat);
-                this.columnTotalOfficeZakat = new global::System.Data.DataColumn("TotalOfficeZakat", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotalOfficeZakat = new global::System.Data.DataColumn("TotalOfficeZakat", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalOfficeZakat);
-                this.columnTotalCollectorZakat = new global::System.Data.DataColumn("TotalCollectorZakat", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotalCollectorZakat = new global::System.Data.DataColumn("TotalCollectorZakat", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalCollectorZakat);
-                this.columnTotalBankZakat = new global::System.Data.DataColumn("TotalBankZakat", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotalBankZakat = new global::System.Data.DataColumn("TotalBankZakat", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalBankZakat);
             }
             
@@ -1131,7 +1131,7 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CollectZakatRow AddCollectZakatRow(string NameMonth, string TotalZakat, string OfficeRevenue, string CollectorRevenue, string BankRevenue) {
+            public CollectZakatRow AddCollectZakatRow(string NameMonth, decimal TotalZakat, decimal OfficeRevenue, decimal CollectorRevenue, decimal BankRevenue) {
                 CollectZakatRow rowCollectZakatRow = ((CollectZakatRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NameMonth,
@@ -1173,13 +1173,13 @@ namespace AL_Zakat_Fund_System.Models {
             private void InitClass() {
                 this.columnNameMonth = new global::System.Data.DataColumn("NameMonth", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNameMonth);
-                this.columnTotalZakat = new global::System.Data.DataColumn("TotalZakat", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotalZakat = new global::System.Data.DataColumn("TotalZakat", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalZakat);
-                this.columnOfficeRevenue = new global::System.Data.DataColumn("OfficeRevenue", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnOfficeRevenue = new global::System.Data.DataColumn("OfficeRevenue", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOfficeRevenue);
-                this.columnCollectorRevenue = new global::System.Data.DataColumn("CollectorRevenue", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCollectorRevenue = new global::System.Data.DataColumn("CollectorRevenue", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCollectorRevenue);
-                this.columnBankRevenue = new global::System.Data.DataColumn("BankRevenue", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnBankRevenue = new global::System.Data.DataColumn("BankRevenue", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBankRevenue);
             }
             
@@ -1339,10 +1339,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TotalZakat {
+            public decimal TotalZakat {
                 get {
                     try {
-                        return ((string)(this[this.tableZakat.TotalZakatColumn]));
+                        return ((decimal)(this[this.tableZakat.TotalZakatColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TotalZakat\' in table \'Zakat\' is DBNull.", e);
@@ -1355,10 +1355,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TotalNumberZakat {
+            public int TotalNumberZakat {
                 get {
                     try {
-                        return ((string)(this[this.tableZakat.TotalNumberZakatColumn]));
+                        return ((int)(this[this.tableZakat.TotalNumberZakatColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TotalNumberZakat\' in table \'Zakat\' is DBNull.", e);
@@ -1371,10 +1371,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OfficeRevenue {
+            public decimal OfficeRevenue {
                 get {
                     try {
-                        return ((string)(this[this.tableZakat.OfficeRevenueColumn]));
+                        return ((decimal)(this[this.tableZakat.OfficeRevenueColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'OfficeRevenue\' in table \'Zakat\' is DBNull.", e);
@@ -1387,10 +1387,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TotalOfficeZakat {
+            public int TotalOfficeZakat {
                 get {
                     try {
-                        return ((string)(this[this.tableZakat.TotalOfficeZakatColumn]));
+                        return ((int)(this[this.tableZakat.TotalOfficeZakatColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TotalOfficeZakat\' in table \'Zakat\' is DBNull.", e);
@@ -1403,10 +1403,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CollectorRevenue {
+            public decimal CollectorRevenue {
                 get {
                     try {
-                        return ((string)(this[this.tableZakat.CollectorRevenueColumn]));
+                        return ((decimal)(this[this.tableZakat.CollectorRevenueColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CollectorRevenue\' in table \'Zakat\' is DBNull.", e);
@@ -1419,10 +1419,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TotalCollectorZakat {
+            public int TotalCollectorZakat {
                 get {
                     try {
-                        return ((string)(this[this.tableZakat.TotalCollectorZakatColumn]));
+                        return ((int)(this[this.tableZakat.TotalCollectorZakatColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TotalCollectorZakat\' in table \'Zakat\' is DBNull.", e);
@@ -1435,10 +1435,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string BankRevenue {
+            public decimal BankRevenue {
                 get {
                     try {
-                        return ((string)(this[this.tableZakat.BankRevenueColumn]));
+                        return ((decimal)(this[this.tableZakat.BankRevenueColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'BankRevenue\' in table \'Zakat\' is DBNull.", e);
@@ -1451,10 +1451,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TotalBankZakat {
+            public int TotalBankZakat {
                 get {
                     try {
-                        return ((string)(this[this.tableZakat.TotalBankZakatColumn]));
+                        return ((int)(this[this.tableZakat.TotalBankZakatColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TotalBankZakat\' in table \'Zakat\' is DBNull.", e);
@@ -1606,10 +1606,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TotalNumberZakat {
+            public int TotalNumberZakat {
                 get {
                     try {
-                        return ((string)(this[this.tableNumberZakat.TotalNumberZakatColumn]));
+                        return ((int)(this[this.tableNumberZakat.TotalNumberZakatColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TotalNumberZakat\' in table \'NumberZakat\' is DBNull.", e);
@@ -1622,10 +1622,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TotalOfficeZakat {
+            public int TotalOfficeZakat {
                 get {
                     try {
-                        return ((string)(this[this.tableNumberZakat.TotalOfficeZakatColumn]));
+                        return ((int)(this[this.tableNumberZakat.TotalOfficeZakatColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TotalOfficeZakat\' in table \'NumberZakat\' is DBNull.", e);
@@ -1638,10 +1638,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TotalCollectorZakat {
+            public int TotalCollectorZakat {
                 get {
                     try {
-                        return ((string)(this[this.tableNumberZakat.TotalCollectorZakatColumn]));
+                        return ((int)(this[this.tableNumberZakat.TotalCollectorZakatColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TotalCollectorZakat\' in table \'NumberZakat\' is DBNull.", e);
@@ -1654,10 +1654,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TotalBankZakat {
+            public int TotalBankZakat {
                 get {
                     try {
-                        return ((string)(this[this.tableNumberZakat.TotalBankZakatColumn]));
+                        return ((int)(this[this.tableNumberZakat.TotalBankZakatColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TotalBankZakat\' in table \'NumberZakat\' is DBNull.", e);
@@ -1761,10 +1761,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TotalZakat {
+            public decimal TotalZakat {
                 get {
                     try {
-                        return ((string)(this[this.tableCollectZakat.TotalZakatColumn]));
+                        return ((decimal)(this[this.tableCollectZakat.TotalZakatColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TotalZakat\' in table \'CollectZakat\' is DBNull.", e);
@@ -1777,10 +1777,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OfficeRevenue {
+            public decimal OfficeRevenue {
                 get {
                     try {
-                        return ((string)(this[this.tableCollectZakat.OfficeRevenueColumn]));
+                        return ((decimal)(this[this.tableCollectZakat.OfficeRevenueColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'OfficeRevenue\' in table \'CollectZakat\' is DBNull.", e);
@@ -1793,10 +1793,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CollectorRevenue {
+            public decimal CollectorRevenue {
                 get {
                     try {
-                        return ((string)(this[this.tableCollectZakat.CollectorRevenueColumn]));
+                        return ((decimal)(this[this.tableCollectZakat.CollectorRevenueColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CollectorRevenue\' in table \'CollectZakat\' is DBNull.", e);
@@ -1809,10 +1809,10 @@ namespace AL_Zakat_Fund_System.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string BankRevenue {
+            public decimal BankRevenue {
                 get {
                     try {
-                        return ((string)(this[this.tableCollectZakat.BankRevenueColumn]));
+                        return ((decimal)(this[this.tableCollectZakat.BankRevenueColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'BankRevenue\' in table \'CollectZakat\' is DBNull.", e);

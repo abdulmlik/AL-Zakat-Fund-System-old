@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Models="clr-namespace:AL_Zakat_Fund_System.Models"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         FlowDirection="RightToLeft"
         Title="تقرير عدد المزكين">
@@ -26,8 +27,13 @@
                 <TextBlock Text="بداية الفترة : " Margin="0" Style="{StaticResource filedText}" />
                 <DatePicker Margin="0 0 20 0" SelectedDate="{Binding StartDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource datePicker}"  />
                 <TextBlock Text="نهاية الفترة : " Margin="0" Style="{StaticResource filedText}"/>
-                <DatePicker SelectedDate="{Binding EndDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource datePicker}"  />
+                <DatePicker SelectedDate="{Binding EndDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
+                            DisplayDateStart="{Binding ElementName=StartDate, Path=SelectedDate}"
+                            DisplayDateEnd="{x:Static sys:DateTime.Now}"
+                            IsEnabled="{Binding ElementName=StartDate , Path=SelectedDate, Converter={StaticResource DateTimeToBoolConverter}}" Style="{StaticResource datePicker}"  />
+                <Button Content="عرض التقرير" Command="{Binding ViewReportCommand}" Style="{StaticResource viewReportButton}" />
             </StackPanel>
+            <TextBlock Text="التقرير شهري لا يحسب بالايام" Style="{StaticResource smallText}" />
         </StackPanel>
         <Viewer:CrystalReportsViewer Style="{StaticResource ViewerStyle}"
             Models:ReportSourceBehaviour.ReportSource="{Binding Path=MyReportSource,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=FrameworkElement}}" 

@@ -7,8 +7,9 @@
         <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
         <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
     </Style>
-    
+
     <Style x:Key="ViewerStyle" TargetType="Viewer:CrystalReportsViewer">
+        <Setter Property="FlowDirection" Value="LeftToRight" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="InputLanguageManager.InputLanguage" Value="AR-SA" />
