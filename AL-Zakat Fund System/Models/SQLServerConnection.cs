@@ -123,7 +123,7 @@ namespace AL_Zakat_Fund_System.Models
         {
             try
             {
-                con.ConnectionString = GetConnectionString();
+                con.ConnectionString = GetConnectionString() + "Connect Timeout=4;";
                 con.Open();
                 con.Close();
                 Clear();
