@@ -90,7 +90,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             //DBConnection.cmd.Parameters.Add(new SqlParameter("@nameBranch", SqlDbType.NVarChar,20));
             DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
 
-            DBConnection.cmd.Parameters["@Branch"].Value = Properties.Settings.Default.Branch;
+            DBConnection.cmd.Parameters["@Branch"].Value = Properties.Settings.Default.nameOffice;
             DBConnection.cmd.Parameters["@StartDate"].Value = StartDate;
             DBConnection.cmd.Parameters["@EndDate"].Value = EndDate;
 

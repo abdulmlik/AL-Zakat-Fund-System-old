@@ -37,9 +37,9 @@
             <TextBlock Text="التقرير شهري لا يحسب بالايام" Style="{StaticResource smallText}" />
         </StackPanel>
         <Viewer:CrystalReportsViewer ShowStatusbar="True" ShowToolbar="True"
-           Style="{StaticResource ViewerStyle}" ShowLogo="False"
+           Style="{StaticResource ViewerStyle}" ShowLogo="False" ToggleSidePanel="None"
             Models:ReportSourceBehaviour.ReportSource="{Binding Path=DataContext.MyReportSource,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=FrameworkElement}}" 
-            Grid.Column="0"  Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="3" >
+            Grid.Column="0"  Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="3" EnableToolTips="True" >
             <Viewer:CrystalReportsViewer.Resources>
                 <ResourceDictionary>
                     <Style TargetType="ToolBar" >

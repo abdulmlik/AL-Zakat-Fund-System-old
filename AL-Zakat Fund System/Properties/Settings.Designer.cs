@@ -143,6 +143,18 @@ namespace AL_Zakat_Fund_System.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("سوق الجمعة")]
+        public string nameOffice {
+            get {
+                return ((string)(this["nameOffice"]));
+            }
+            set {
+                this["nameOffice"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public int Branch {
             get {

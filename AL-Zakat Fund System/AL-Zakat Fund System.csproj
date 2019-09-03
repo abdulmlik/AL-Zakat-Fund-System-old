@@ -238,6 +238,7 @@
     <Compile Include="Models\AuthorizeExpenditure.cs" />
     <Compile Include="Models\Follow_up.cs" />
     <Compile Include="Models\Indigent.cs" />
+    <Compile Include="Models\Office.cs" />
     <Compile Include="Models\Record.cs" />
     <Compile Include="Models\ReportSourceBehaviour.cs" />
     <Compile Include="Models\SQLServerConnection.cs" />

@@ -73,16 +73,15 @@
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <TextBlock Text="اسم المكتب : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0"/>
-                <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="0" >
-                    <TextBox  Text="{Binding FilterService2.c}" MaxLength="60"  Style="{StaticResource TextboxToTextBlock}" />
+                <StackPanel Margin="0 10 0 0" Grid.Column="1" Grid.Row="0" >
+                    <TextBox  Text="{Binding office.nameBranch}" Style="{StaticResource TextboxToTextBlock}" />
                     <!--<TextBlock Text="" Style="{StaticResource smallText}" />-->
                 </StackPanel>
                 <TextBlock Text="اسم الوحدة : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="1"/>
                 <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="1">
-                    <ComboBox SelectedValue="{Binding FilterService2, Mode=TwoWay}"
-                            ItemsSource="{Binding UripLengthList}"
-                            SelectedValuePath="a"
-                            DisplayMemberPath="b"
+                    <ComboBox SelectedValue="{Binding office, Mode=TwoWay}"
+                            ItemsSource="{Binding offices}"
+                            DisplayMemberPath="nameOffice"
                               Style="{StaticResource ComboBox3}" >
                     </ComboBox>
                 </StackPanel>
