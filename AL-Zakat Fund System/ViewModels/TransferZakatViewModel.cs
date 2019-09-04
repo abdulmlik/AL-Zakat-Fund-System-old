@@ -31,7 +31,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         private Zakat _SelectItem;
 
         #endregion
-
+        
         #region private function
 
         #region fill Observable Collection list

@@ -259,15 +259,15 @@ namespace AL_Zakat_Fund_System.ViewModels
 
             GetSttingDatabase();
 
-            if (DBConnection.ConnectionStatus())
-            {
-                IsEnabled = true;
-                GetOffice();
-            }
-            else
-            {
-                IsEnabled = false;
-            }
+            //if (DBConnection.ConnectionStatus())
+            //{
+            //    IsEnabled = true;
+            //    GetOffice();
+            //}
+            //else
+            //{
+            //    IsEnabled = false;
+            //}
 
             SaveSettingDBCommand = new DelegateCommand(SaveSettingDBExecute);
             SaveSettingOfficeCommand = new DelegateCommand(SaveSettingOfficeExecute);

@@ -44,7 +44,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         public DelegateCommand SettingCommand { get; set; }
 
         #endregion
-
+        
         #region Execute and CanExecute Functions
 
         #region login function
@@ -58,16 +58,31 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                 DBConnection.cmd.CommandType = CommandType.StoredProcedure;
                 DBConnection.cmd.CommandText = "sp_login";
+
+                #region Create Parameters
+
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@EmpName", SqlDbType.VarChar, 30));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@pass", SqlDbType.VarChar, 30));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@EmpPriv", SqlDbType.Int));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@EmpNo", SqlDbType.BigInt));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Branch", SqlDbType.Int));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@nameBranch", SqlDbType.VarChar, 20));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Office", SqlDbType.Int));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@nameOffice", SqlDbType.VarChar, 20));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Bit));
-                DBConnection.cmd.Parameters["@EmpName"].Value = UserName;
-                DBConnection.cmd.Parameters["@pass"].Value = Password;
+
                 DBConnection.cmd.Parameters["@EmpPriv"].Direction = ParameterDirection.Output;
                 DBConnection.cmd.Parameters["@EmpNo"].Direction = ParameterDirection.Output;
+                DBConnection.cmd.Parameters["@Branch"].Direction = ParameterDirection.Output;
+                DBConnection.cmd.Parameters["@nameBranch"].Direction = ParameterDirection.Output;
+                DBConnection.cmd.Parameters["@Office"].Direction = ParameterDirection.Output;
+                DBConnection.cmd.Parameters["@nameOffice"].Direction = ParameterDirection.Output;
                 DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
+
+                #endregion
+
+                DBConnection.cmd.Parameters["@EmpName"].Value = UserName;
+                DBConnection.cmd.Parameters["@pass"].Value = Password;
 
                 DBConnection.cmd.ExecuteNonQuery();
 
@@ -80,6 +95,10 @@ namespace AL_Zakat_Fund_System.ViewModels
                     Properties.Settings.Default.EmPassword = Password;
                     Properties.Settings.Default.EmpPriv = (int)DBConnection.cmd.Parameters["@EmpPriv"].Value;
                     Properties.Settings.Default.EmpNo = (long)DBConnection.cmd.Parameters["@EmpNo"].Value;
+                    Properties.Settings.Default.Branch = (int)DBConnection.cmd.Parameters["@Branch"].Value; ;
+                    Properties.Settings.Default.nameBranch = (string)DBConnection.cmd.Parameters["@nameBranch"].Value;
+                    Properties.Settings.Default.Office = (int)DBConnection.cmd.Parameters["@Office"].Value; ;
+                    Properties.Settings.Default.nameOffice = (string)DBConnection.cmd.Parameters["@nameOffice"].Value;
                     Properties.Settings.Default.Save();
 
                     //Create the MainWindow should be under Settings

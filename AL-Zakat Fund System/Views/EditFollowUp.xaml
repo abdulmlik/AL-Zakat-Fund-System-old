@@ -38,12 +38,13 @@
                             <TextBox Text="{Binding DecisionNO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                             <TextBlock Text="رقم المحضر الذي سيتم تحويله الى المتابعة" Style="{StaticResource smallText}"/>
                         </StackPanel>
-                        <TextBlock Text="رقم المتابع : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0"/>
+                        <TextBlock Text="المتابع : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0"/>
                     <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2"  >
-                        <ComboBox Text="{Binding Observer_ssn,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox2}" IsEditable="True" >
-                            
-                        </ComboBox>
-                        <TextBlock Text="رقم الوطني الخاص بالمتابع" Style="{StaticResource smallText}"/>
+                        <ComboBox SelectedValue="{Binding employee, Mode=TwoWay}"
+                            ItemsSource="{Binding employees}"
+                            DisplayMemberPath="FullName"
+                              Style="{StaticResource ComboBox3}" />
+                        <TextBlock Text="اسم المتابع الذي يتابع المحضر" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="تاريخ الاستلام : "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
                     <StackPanel Margin="10" Grid.Column="1" Grid.Row="2"  >

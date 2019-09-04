@@ -64,6 +64,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         private void ViewReportExecute()
         {
+            ///hhhhh
             DataTable DTZakat = new DataTable();
             DTZakat.Columns.Add("NameMonth", typeof(string));
             DTZakat.Columns.Add("TotalZakat", typeof(decimal));
@@ -86,7 +87,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             //DBConnection.cmd.Parameters.Add(new SqlParameter("@nameBranch", SqlDbType.NVarChar,20));
             DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
 
-            DBConnection.cmd.Parameters["@Branch"].Value = Properties.Settings.Default.nameOffice;
+            DBConnection.cmd.Parameters["@Branch"].Value = Properties.Settings.Default.Branch;
             DBConnection.cmd.Parameters["@StartDate"].Value = StartDate;
             DBConnection.cmd.Parameters["@EndDate"].Value = EndDate;
 
@@ -201,7 +202,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             CurrentWindow = CW;
 
-            ViewReportCommand = new DelegateCommand(ViewReportExecute, ViewReportCanExecute);
+            ViewReportCommand = new DelegateCommand(ViewReportExecute, ViewReportCanExecute).ObservesProperty(() => StartDate).ObservesProperty(() => EndDate);
         }
 
         #endregion

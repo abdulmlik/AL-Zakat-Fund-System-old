@@ -12,9 +12,10 @@ namespace AL_Zakat_Fund_System.Models
     class Employee : BindableBase
     {
         #region private Member
-        private string _UserName;
+        private long _Ssn;
+        private string _UserName;//EmpName
         private string _Password;
-        private string _Lname;
+        private string _FullName;
         private string _Address;
         private string _Phone;
         private string _Email;
@@ -28,22 +29,26 @@ namespace AL_Zakat_Fund_System.Models
         #endregion
 
         #region public properties
+        public long Ssn
+        {
+            get { return _Ssn; }
+            set { SetProperty(ref _Ssn, value); }
+        }
         public string UserName
         {
             get { return _UserName; }
             set { SetProperty(ref _UserName, value); }
         }
-
         public string Password
         {
             get { return _Password; }
             set { SetProperty(ref _Password, value); }
         }
 
-        public string Lname
+        public string FullName
         {
-            get { return _Lname; }
-            set { SetProperty(ref _Lname, value); }
+            get { return _FullName; }
+            set { SetProperty(ref _FullName, value); }
         }
 
         public string Address

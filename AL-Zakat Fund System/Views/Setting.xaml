@@ -60,7 +60,7 @@
                 </StackPanel>
             </Grid>
         </TabItem>
-        <TabItem Header="المكتب" Height="40" IsEnabled="{Binding IsEnabled}" >
+        <!--<TabItem Header="المكتب" Height="40" IsEnabled="{Binding IsEnabled}" >
             <Grid Margin="20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto" />
@@ -75,7 +75,7 @@
                 <TextBlock Text="اسم المكتب : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0"/>
                 <StackPanel Margin="0 10 0 0" Grid.Column="1" Grid.Row="0" >
                     <TextBox  Text="{Binding office.nameBranch}" Style="{StaticResource TextboxToTextBlock}" />
-                    <!--<TextBlock Text="" Style="{StaticResource smallText}" />-->
+                    --><!--<TextBlock Text="" Style="{StaticResource smallText}" />--><!--
                 </StackPanel>
                 <TextBlock Text="اسم الوحدة : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="1"/>
                 <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="1">
@@ -90,6 +90,6 @@
                     <Button Content="خروج" Command="{Binding CloseCommand}" Style="{StaticResource  viewButtonStyle3}" />
                 </StackPanel>
             </Grid>
-        </TabItem>
+        </TabItem>-->
     </TabControl>
 </Window>

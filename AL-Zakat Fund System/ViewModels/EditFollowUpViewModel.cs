@@ -9,6 +9,7 @@ using AL_Zakat_Fund_System.Models;
 using System.Windows;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.ObjectModel;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
@@ -18,6 +19,10 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         Window CurrentWindow;
         private string DecisionNO2;
+
+
+        private Employee _employee;
+        private ObservableCollection<Employee> _employees = new ObservableCollection<Employee>();
 
         #endregion
 
@@ -67,9 +72,66 @@ namespace AL_Zakat_Fund_System.ViewModels
         }
         #endregion
 
+        #region Get Observer
+        private void GetObserver()
+        {
+            DBConnection.cmd.CommandType = CommandType.StoredProcedure;
+            DBConnection.cmd.CommandText = "sp_getEMPLOYEE";
+
+            DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
+
+            DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
+
+
+            //int succ = 0;
+            try
+            {
+                DBConnection.OpenConnection();
+                DBConnection.reader = DBConnection.cmd.ExecuteReader();
+
+                // succ = 1 Success or succ = 0 fail or succ = 2 not found
+                //succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
+
+                Employee TO;
+                employees.Clear();
+
+                while (DBConnection.reader.Read())
+                {
+                    TO = new Employee();
+                    TO.Ssn = DBConnection.reader.GetInt64(0);
+                    TO.FullName = DBConnection.reader.GetString(2);
+
+                    employees.Add(TO);
+                }
+
+                employee = employees.Where(item => item.Ssn == long.Parse(Observer_ssn)).FirstOrDefault();//default select
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("خطا في جلب البيانات المتابعين" + Environment.NewLine + "الخطا : " + ex.Message.ToString(), "", MessageBoxButton.OK, MessageBoxImage.Error,
+                                    MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+            }
+            finally
+            {
+                DBConnection.CloseConnection();
+            }
+        }
+        #endregion
+
         #endregion
 
         #region public properties
+
+        public Employee employee
+        {
+            get { return _employee; }
+            set { SetProperty(ref _employee, value); }
+        }
+        public ObservableCollection<Employee> employees
+        {
+            get { return _employees; }
+            set { SetProperty(ref _employees, value); }
+        }
 
         #endregion
 
@@ -120,7 +182,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 { DBConnection.cmd.Parameters["@DeliverDate"].Value = DeliverDate; }
                 DBConnection.cmd.Parameters["@Distance"].Value = Distance;
                 DBConnection.cmd.Parameters["@FStatus"].Value = FStatus;
-                DBConnection.cmd.Parameters["@Observer_ssn"].Value = long.Parse(Observer_ssn);
+                DBConnection.cmd.Parameters["@Observer_ssn"].Value = employee.Ssn;
                 DBConnection.cmd.Parameters["@Scribe_ssn"].Value = Scribe_ssn;
 
                 
@@ -201,8 +263,10 @@ namespace AL_Zakat_Fund_System.ViewModels
             CurrentWindow = CW;
             DecisionNO = DN_;
 
+            
+            GetFollowUp();// ues DecisionNO
+            GetObserver();//use Observer_ssn form GetFollowUp
 
-            GetFollowUp();// ues DN
             UpdateDatabaseCommand = new DelegateCommand(updateDatabaseExecute, updateDatabaseCanExecute);
             CancelCommand = new DelegateCommand(CancelExecute);
 

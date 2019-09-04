@@ -228,6 +228,7 @@
     <Compile Include="loginWindow.xaml.cs">
       <DependentUpon>loginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\NumberToWord.cs" />
     <Compile Include="Models\Converter.cs" />
     <Compile Include="Models\DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
