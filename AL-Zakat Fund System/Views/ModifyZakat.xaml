@@ -7,7 +7,7 @@
         mc:Ignorable="d" 
         Title="تعديل في الزكاة"
         Width="730" MinWidth="730" MaxHeight="1000" MinHeight="650"
-        Icon="../Images/Logo/34.png"
+        Icon="/AL-Zakat Fund System;component/Images/Logo/34.png"
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft"
         d:DesignHeight="800" d:DesignWidth="730">
@@ -110,12 +110,12 @@
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="8"  >
                         <ComboBox SelectedIndex="{Binding CaseDeposit,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
                             <ComboBoxItem>إيداع نقدي</ComboBoxItem>
+                            <ComboBoxItem>إيداع صك</ComboBoxItem>
                             <ComboBoxItem>إيداع في الطريق</ComboBoxItem>
                             <ComboBoxItem>إيداع معلق</ComboBoxItem>
                             <ComboBoxItem>صك مرجع</ComboBoxItem>
                         </ComboBox>
-                        <TextBlock Text="-الإيداع النقدي يعني الاموال في " Style="{StaticResource smallText}"/>
-                        <TextBlock Text="الحساب القابض" Style="{StaticResource smallText}"/>
+                        <TextBlock Text="-الإيداع النقدي والصك يعني الزكاة تم التصديق عليها " TextWrapping="Wrap" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="تحويل الزكاة : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="8"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="8"  >

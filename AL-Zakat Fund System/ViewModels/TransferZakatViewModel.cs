@@ -162,6 +162,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         public DelegateCommand ReFreshZakatCommand { get; set; }
         public DelegateCommand EditZakatCommand { get; set; }
+        public DelegateCommand ViewZakatCommand { get; set; }
         public DelegateCommand TransferZakatCommand { get; set; }
         public DelegateCommand TransferAllZakatCommand { get; set; }
 
@@ -207,84 +208,149 @@ namespace AL_Zakat_Fund_System.ViewModels
         }
         #endregion
 
-        #region Transfer Zakat
-        //private void TransferZakatExecute()
-        //{
-        //    DisplayZakat view = new DisplayZakat();
-        //    view.DataContext = new DisplayZakatViewModel(view, SelectItem.Zakat_id);
-        //    view.Owner = mWindow;
-        //    view.Show();
+        #region view Zakat
+        private void ViewZakatExecute()
+        {
+            DisplayZakat view = new DisplayZakat();
+            view.DataContext = new DisplayZakatViewModel(view, SelectItem.Zakat_id);
+            view.Owner = mWindow;
+            view.Show();
 
-        //}
-        //private bool TransferZakatCanExecute()
-        //{
-        //    if (SelectItem == null)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
+        }
+        private bool ViewZakatCanExecute()
+        {
+            if (SelectItem == null)
+            {
+                return false;
+            }
+            return true;
+        }
+        #endregion
+
+        #region Transfer Zakat
+        private void TransferZakatExecute()
+        {
+            MessageBoxResult result = MessageBox.Show("هل انت متأكد من تحويل الزكاة رقم " + SelectItem.Zakat_id.ToString() + " إلى حساب المصارف",
+                                                        "", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+            if (result == MessageBoxResult.Yes)
+            {
+                int succ = 0;
+                try
+                {
+
+                    DBConnection.OpenConnection();
+
+                    DBConnection.cmd.CommandType = CommandType.StoredProcedure;
+                    DBConnection.cmd.CommandText = "sp_TransferZakat";
+
+                    DBConnection.cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int));
+                    DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
+
+                    DBConnection.cmd.Parameters["@Id"].Value = SelectItem.Zakat_id;
+                    DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
+
+                    DBConnection.cmd.ExecuteNonQuery();
+                    succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("لم يتم تحويل الزكاة إلى حساب المصارف الرجاء التاكد من الاتصال بالسيرفر" + Environment.NewLine + ex.Message.ToString(), "", MessageBoxButton.OK, MessageBoxImage.Error,
+                                        MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                }
+                finally
+                {
+                    DBConnection.CloseConnection();
+
+                    if (succ == 1)
+                    {
+                        MessageBox.Show("تم تحويل الزكاة رقم " + SelectItem.Zakat_id.ToString() + " إلى حساب المصارف بنجاح");
+                        FillList();
+                    }
+                    else if (succ == 2)
+                    {
+                        MessageBox.Show("لم يتم العثور على الزكاة رقم : " + SelectItem.Zakat_id.ToString());
+                    }
+                    else if (succ == 3)
+                    {
+                        MessageBox.Show("الزكاة رقم ( " + SelectItem.Zakat_id.ToString() + " ) لم يتم تصديقها بعد");
+                    }
+                    else
+                    {
+                        MessageBox.Show("لم يتم تحويل الزكاة رقم ( " + SelectItem.Zakat_id.ToString() + " ) إلى حساب المصارف");
+                    }
+                }//end finally
+            }
+        }
+        private bool TransferZakatCanExecute()
+        {
+            if (SelectItem == null)
+            {
+                return false;
+            }
+            return true;
+        }
         #endregion
 
         #region Transfer All Zakat
-        //private void TransferAllZakatExecute()
-        //{
-        //    MessageBoxResult result = MessageBox.Show("هل انت متأكد من حذف الزكاة رقم " + SelectItem.Zakat_id.ToString() + Environment.NewLine + "في حال ضغط على نعم سيتم حذف الزكاة نهائيا",
-        //                                                "", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
-        //    if (result == MessageBoxResult.Yes)
-        //    {
-        //        int succ = 0;
-        //        try
-        //        {
+        private void TransferAllZakatExecute()
+        {
+            MessageBoxResult result = MessageBox.Show("هل انت متأكد من تحويل جميع الزكاة المصدق عليها إلى حساب المصارف",
+                                                        "", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+            if (result == MessageBoxResult.Yes)
+            {
+                int succ = 0;
+                try
+                {
 
-        //            DBConnection.OpenConnection();
+                    DBConnection.OpenConnection();
 
-        //            DBConnection.cmd.CommandType = CommandType.StoredProcedure;
-        //            DBConnection.cmd.CommandText = "sp_deleteZakat";
+                    DBConnection.cmd.CommandType = CommandType.StoredProcedure;
+                    DBConnection.cmd.CommandText = "sp_TransferAllZakat";
 
-        //            DBConnection.cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int));
-        //            DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
+                    DBConnection.cmd.Parameters.Add(new SqlParameter("@count", SqlDbType.Int));
+                    DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
 
-        //            DBConnection.cmd.Parameters["@Id"].Value = SelectItem.Zakat_id;
-        //            DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
+                    DBConnection.cmd.Parameters["@count"].Direction = ParameterDirection.Output;
+                    DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
 
-        //            DBConnection.cmd.ExecuteNonQuery();
-        //            succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
+                    DBConnection.cmd.ExecuteNonQuery();
+                    succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
 
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("لم يتم حذف الزكاة الرجاء التاكد من الاتصال بالسيرفر" + Environment.NewLine + ex.Message.ToString(), "", MessageBoxButton.OK, MessageBoxImage.Error,
-        //                                MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
-        //        }
-        //        finally
-        //        {
-        //            DBConnection.CloseConnection();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("لم يتم تحويل الزكاة إلى حساب المصارف الرجاء التاكد من الاتصال بالسيرفر" + Environment.NewLine + ex.Message.ToString(), "", MessageBoxButton.OK, MessageBoxImage.Error,
+                                        MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                }
+                finally
+                {
+                    DBConnection.CloseConnection();
 
-        //            if (succ == 1)
-        //            {
-        //                MessageBox.Show("تم حذف الزكاة رقم " + SelectItem.Zakat_id.ToString() + " بنجاح");
-        //                FillList();
-        //            }
-        //            else if (succ == 2)
-        //            {
-        //                MessageBox.Show("لم يتم العثور على الزكاة رقم : " + SelectItem.Zakat_id.ToString());
-        //            }
-        //            else
-        //            {
-        //                MessageBox.Show("لم يتم حذف الزكاة رقم : " + SelectItem.Zakat_id.ToString());
-        //            }
-        //        }//end finally
-        //    }
-        //}
-        //private bool TransferAllZakatCanExecute()
-        //{
-        //    if (SelectItem == null)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
+                    if (succ == 1)
+                    {
+                        MessageBox.Show("تم تحويل " + (int)DBConnection.cmd.Parameters["@count"].Value + " زكاة إلى حساب المصارف بنجاح");
+                        FillList();
+                    }
+                    else if (succ == 2)
+                    {
+                        MessageBox.Show("لم يتم العثور على زكاة يمكن تحويلها إلى حساب المصارف");
+                    }
+                    else
+                    {
+                        MessageBox.Show("لم يتم تحويل الزكاة إلى حساب المصارف");
+                    }
+                }//end finally
+            }
+        }
+        private bool TransferAllZakatCanExecute()
+        {
+            //if (SelectItem == null)
+            //{
+            //    return false;
+            //}
+            return true;
+        }
         #endregion
 
         #region Cancel
@@ -325,6 +391,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
             ReFreshZakatCommand = new DelegateCommand(ReFreshZakatExecute);
             EditZakatCommand = new DelegateCommand(EditZakatExecute, EditZakatCanExecute).ObservesProperty(() => SelectItem);
+            ViewZakatCommand = new DelegateCommand(ViewZakatExecute, ViewZakatCanExecute).ObservesProperty(() => SelectItem);
             //TransferZakatCommand = new DelegateCommand(TransferZakatExecute, TransferZakatCanExecute).ObservesProperty(() => SelectItem);
             //TransferAllZakatCommand = new DelegateCommand(TransferAllZakatExecute, TransferAllZakatCanExecute).ObservesProperty(() => SelectItem);
 

@@ -10,7 +10,7 @@
              d:DesignHeight="400" d:DesignWidth="700">
     <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
         <StackPanel Margin="10">
-            <GroupBox Header="تحويل المحتاج إلى البحث الاجتماعي" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
+            <GroupBox Header="التحويل إلى البحث الاجتماعي" FontSize="32" FontWeight="Bold"  Width="660" HorizontalAlignment="Center">
                 <Grid Margin="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>

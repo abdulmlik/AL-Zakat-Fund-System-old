@@ -59,7 +59,7 @@
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=DecisionNO}" Width="auto"  Header="رقم المحضر" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=fullname}" Width="auto"  Header="اسم المحتاج" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=fullname}" Width="auto"  Header="اسم طالب الإعانة" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=ReceivedDate, StringFormat=dd/MM/yyyy}" Width="auto"  Header="تاريخ الاستلام" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=VisitDate2}" Width="auto" Header="تاريخ الزيارة" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=DeliverDate2}" Width="auto"  Header="تاريخ التسليم" />

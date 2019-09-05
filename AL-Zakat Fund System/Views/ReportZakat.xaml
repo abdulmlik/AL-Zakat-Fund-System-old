@@ -8,7 +8,9 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         FlowDirection="RightToLeft"
-        Title="تقرير الزكاة">
+        Title="تقرير الزكاة"
+        Icon="/AL-Zakat Fund System;component/Images/Logo/34.png"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />

@@ -59,7 +59,7 @@
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=DecisionNO}" Width="auto"  Header="رقم المحضر" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=fullname}" Width="auto"  Header="اسم المحتاج" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=fullname}" Width="auto"  Header="اسم طالب الإعانة" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Phone}" Width="auto" Header="الهاتف" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Office}" Width="auto"  Header="اسم المكتب" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=LastConnection2}" Width="auto"  Header="اخر اتصال بالمحتاج" />

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
         mc:Ignorable="d" Title="عرض بيانات المحضر"
-        Icon="../Images/Logo/34.png"
+        Icon="/AL-Zakat Fund System;component/Images/Logo/34.png"
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft"
         MaxHeight="450" MinHeight="420" MaxWidth="720" MinWidth="650"

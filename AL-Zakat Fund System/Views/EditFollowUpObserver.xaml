@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="تعديل المتابعة"
         MinWidth="780" MaxWidth="800" MaxHeight="670" MinHeight="580"
-        Icon="../Images/Logo/34.png"
+        Icon="/AL-Zakat Fund System;component/Images/Logo/34.png"
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft"
         d:DesignHeight="550" d:DesignWidth="700" ResizeMode="CanMinimize">
@@ -29,14 +29,16 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="اسم المحتاج : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="0" />
-                    <TextBox Text="{Binding fullname}" Margin="0 10 0 0" FontWeight="Normal" Style="{StaticResource TextboxToTextBlock}" Grid.Column="1" Grid.Row="0" />
-                    <TextBlock Text="رقمه الوطني : " Style="{StaticResource filedText}" Grid.Column="2" Grid.Row="0" />
+                    <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
+                        <TextBlock Text="اسم طالب الإعانة : " Style="{StaticResource filedText}" />
+                        <TextBox Text="{Binding fullname}" Margin="0 10 0 0" FontWeight="Normal" Style="{StaticResource TextboxToTextBlock}" />
+                    </StackPanel>
+                    <TextBlock Text="الرقم الوطني : " Style="{StaticResource filedText}" Grid.Column="2" Grid.Row="0" />
                     <TextBox Text="{Binding Observer_ssn}" Margin="0 10 0 0" FontWeight="Normal" Style="{StaticResource TextboxToTextBlock}" Grid.Column="3" Grid.Row="0" />
                     <TextBlock Text="تاريخ اخر اتصال : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="1" Grid.ColumnSpan="2"/>
                     <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"  >
                         <DatePicker SelectedDate="{Binding LastConnection,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Style="{StaticResource datePicker}"  />
-                        <TextBlock Text="تاريخ اخر اتصال بالمحتاج" Style="{StaticResource smallText}"/>
+                        <TextBlock Text="تاريخ اخر اتصال بطالب الإعانة" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="رقم قرار اللجنة : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="1"/>
                     <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2"  >
@@ -46,7 +48,7 @@
                     <TextBlock Text="قرار اللجنة : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="3"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3"  >
                         <TextBox Text="{Binding Notice,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Style="{StaticResource Textarea}" />
-                        <TextBlock Text="ملاحظة هي قرار اللجنة الاستشارية بخصوص المحتاج" Style="{StaticResource smallText}" />
+                        <TextBlock Text="ملاحظة هي قرار اللجنة الاستشارية بخصوص طالب الإعانة" Style="{StaticResource smallText}" />
                     </StackPanel>
                     <TextBlock Text="وضع المتابعة : " Style="{StaticResource filedText}" Grid.Column="0" Grid.Row="4"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4"  >

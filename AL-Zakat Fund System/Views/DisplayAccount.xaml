@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views"
         mc:Ignorable="d" Title="عرض بيانات المحتاج"
-        Icon="../Images/Logo/34.png"
+        Icon="/AL-Zakat Fund System;component/Images/Logo/34.png"
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft"
         MaxHeight="1150" MinHeight="420" MaxWidth="720" MinWidth="650"
@@ -57,18 +57,18 @@
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="بيانات المحتاج :- " Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="1"  Grid.ColumnSpan="2"/>
+            <TextBlock Text="بيانات طالب الإعانة :- " Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="1"  Grid.ColumnSpan="2"/>
             
-            <TextBlock Text="رقمه الوطني : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="2" />
+            <TextBlock Text="الرقم الوطني : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="2" />
             <TextBox Text="{Binding Ssn}"   Style="{StaticResource TextboxToTextBlock}" Grid.Column="4"  Grid.Row="2" />
          
-            <TextBlock Text="اسم المحتاج : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="2"/>
+            <TextBlock Text="الاسم : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="2"/>
             <TextBox Text="{Binding FullName}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="2"/>
 
             <TextBlock Text="اسم الام: " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="3"/>
             <TextBox Text="{Binding MotherName}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="2" Grid.Row="3" />
 
-            <TextBlock Text="جنسية المحتاج : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="3"/>
+            <TextBlock Text="الجنسية : " Style="{StaticResource filedHederText}" Grid.Column="3"  Grid.Row="3"/>
             <TextBox Text="{Binding Nationality}"   Style="{StaticResource TextboxToTextBlock}"  Grid.Column="4" Grid.Row="3" />
 
             <TextBlock Text="الحالة اللإجتماعية : " Style="{StaticResource filedHederText}" Grid.Column="1"  Grid.Row="4"/>

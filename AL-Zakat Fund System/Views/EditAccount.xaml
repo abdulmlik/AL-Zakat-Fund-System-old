@@ -8,7 +8,7 @@
         mc:Ignorable="d" 
         Title="تعديل في ملف المحتاج"
         Width="730" MaxHeight="1720" MinHeight="600"
-        Icon="../Images/Logo/34.png"
+        Icon="/AL-Zakat Fund System;component/Images/Logo/34.png"
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft"
         d:DesignHeight="1720" d:DesignWidth="720">

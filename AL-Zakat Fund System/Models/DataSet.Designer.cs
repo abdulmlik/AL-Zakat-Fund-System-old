@@ -30,6 +30,8 @@ namespace AL_Zakat_Fund_System.Models {
         
         private CollectZakatDataTable tableCollectZakat;
         
+        private ExpensesDataTable tableExpenses;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -66,6 +68,9 @@ namespace AL_Zakat_Fund_System.Models {
                 }
                 if ((ds.Tables["CollectZakat"] != null)) {
                     base.Tables.Add(new CollectZakatDataTable(ds.Tables["CollectZakat"]));
+                }
+                if ((ds.Tables["Expenses"] != null)) {
+                    base.Tables.Add(new ExpensesDataTable(ds.Tables["Expenses"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -112,6 +117,16 @@ namespace AL_Zakat_Fund_System.Models {
         public CollectZakatDataTable CollectZakat {
             get {
                 return this.tableCollectZakat;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ExpensesDataTable Expenses {
+            get {
+                return this.tableExpenses;
             }
         }
         
@@ -191,6 +206,9 @@ namespace AL_Zakat_Fund_System.Models {
                 if ((ds.Tables["CollectZakat"] != null)) {
                     base.Tables.Add(new CollectZakatDataTable(ds.Tables["CollectZakat"]));
                 }
+                if ((ds.Tables["Expenses"] != null)) {
+                    base.Tables.Add(new ExpensesDataTable(ds.Tables["Expenses"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -242,6 +260,12 @@ namespace AL_Zakat_Fund_System.Models {
                     this.tableCollectZakat.InitVars();
                 }
             }
+            this.tableExpenses = ((ExpensesDataTable)(base.Tables["Expenses"]));
+            if ((initTable == true)) {
+                if ((this.tableExpenses != null)) {
+                    this.tableExpenses.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -258,6 +282,8 @@ namespace AL_Zakat_Fund_System.Models {
             base.Tables.Add(this.tableNumberZakat);
             this.tableCollectZakat = new CollectZakatDataTable();
             base.Tables.Add(this.tableCollectZakat);
+            this.tableExpenses = new ExpensesDataTable();
+            base.Tables.Add(this.tableExpenses);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -275,6 +301,12 @@ namespace AL_Zakat_Fund_System.Models {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeCollectZakat() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeExpenses() {
             return false;
         }
         
@@ -341,6 +373,9 @@ namespace AL_Zakat_Fund_System.Models {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void CollectZakatRowChangeEventHandler(object sender, CollectZakatRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void ExpensesRowChangeEventHandler(object sender, ExpensesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1308,6 +1343,569 @@ namespace AL_Zakat_Fund_System.Models {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ExpensesDataTable : global::System.Data.TypedTableBase<ExpensesRow> {
+            
+            private global::System.Data.DataColumn columnNameMonth;
+            
+            private global::System.Data.DataColumn columnCashAlfuqaraAndAlmasakin;
+            
+            private global::System.Data.DataColumn columnCashAlgharimin;
+            
+            private global::System.Data.DataColumn columnCashAbnAlsabil;
+            
+            private global::System.Data.DataColumn columnCashAlmualafatQulubuhum;
+            
+            private global::System.Data.DataColumn columnCashFiSabilAllah;
+            
+            private global::System.Data.DataColumn columnCashCollectors;
+            
+            private global::System.Data.DataColumn columnCashOffice;
+            
+            private global::System.Data.DataColumn columnInstrumentAlfuqaraAndAlmasakin;
+            
+            private global::System.Data.DataColumn columnInstrumentAlgharimin;
+            
+            private global::System.Data.DataColumn columnInstrumentAbnAlsabil;
+            
+            private global::System.Data.DataColumn columnInstrumentAlmualafatQulubuhum;
+            
+            private global::System.Data.DataColumn columnInstrumentFiSabilAllah;
+            
+            private global::System.Data.DataColumn columnInstrumentCollectors;
+            
+            private global::System.Data.DataColumn columnInstrumentOffice;
+            
+            private global::System.Data.DataColumn columnNumberAlfuqaraAndAlmasakin;
+            
+            private global::System.Data.DataColumn columnNumberAlgharimin;
+            
+            private global::System.Data.DataColumn columnNumberAbnAlsabil;
+            
+            private global::System.Data.DataColumn columnNumberAlmualafatQulubuhum;
+            
+            private global::System.Data.DataColumn columnNumberFiSabilAllah;
+            
+            private global::System.Data.DataColumn columnNumberCollectors;
+            
+            private global::System.Data.DataColumn columnNumberOffice;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExpensesDataTable() {
+                this.TableName = "Expenses";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ExpensesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected ExpensesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NameMonthColumn {
+                get {
+                    return this.columnNameMonth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CashAlfuqaraAndAlmasakinColumn {
+                get {
+                    return this.columnCashAlfuqaraAndAlmasakin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CashAlghariminColumn {
+                get {
+                    return this.columnCashAlgharimin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CashAbnAlsabilColumn {
+                get {
+                    return this.columnCashAbnAlsabil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CashAlmualafatQulubuhumColumn {
+                get {
+                    return this.columnCashAlmualafatQulubuhum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CashFiSabilAllahColumn {
+                get {
+                    return this.columnCashFiSabilAllah;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CashCollectorsColumn {
+                get {
+                    return this.columnCashCollectors;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CashOfficeColumn {
+                get {
+                    return this.columnCashOffice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn InstrumentAlfuqaraAndAlmasakinColumn {
+                get {
+                    return this.columnInstrumentAlfuqaraAndAlmasakin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn InstrumentAlghariminColumn {
+                get {
+                    return this.columnInstrumentAlgharimin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn InstrumentAbnAlsabilColumn {
+                get {
+                    return this.columnInstrumentAbnAlsabil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn InstrumentAlmualafatQulubuhumColumn {
+                get {
+                    return this.columnInstrumentAlmualafatQulubuhum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn InstrumentFiSabilAllahColumn {
+                get {
+                    return this.columnInstrumentFiSabilAllah;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn InstrumentCollectorsColumn {
+                get {
+                    return this.columnInstrumentCollectors;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn InstrumentOfficeColumn {
+                get {
+                    return this.columnInstrumentOffice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumberAlfuqaraAndAlmasakinColumn {
+                get {
+                    return this.columnNumberAlfuqaraAndAlmasakin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumberAlghariminColumn {
+                get {
+                    return this.columnNumberAlgharimin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumberAbnAlsabilColumn {
+                get {
+                    return this.columnNumberAbnAlsabil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumberAlmualafatQulubuhumColumn {
+                get {
+                    return this.columnNumberAlmualafatQulubuhum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumberFiSabilAllahColumn {
+                get {
+                    return this.columnNumberFiSabilAllah;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumberCollectorsColumn {
+                get {
+                    return this.columnNumberCollectors;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumberOfficeColumn {
+                get {
+                    return this.columnNumberOffice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExpensesRow this[int index] {
+                get {
+                    return ((ExpensesRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ExpensesRowChangeEventHandler ExpensesRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ExpensesRowChangeEventHandler ExpensesRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ExpensesRowChangeEventHandler ExpensesRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ExpensesRowChangeEventHandler ExpensesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddExpensesRow(ExpensesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExpensesRow AddExpensesRow(
+                        string NameMonth, 
+                        decimal CashAlfuqaraAndAlmasakin, 
+                        decimal CashAlgharimin, 
+                        decimal CashAbnAlsabil, 
+                        decimal CashAlmualafatQulubuhum, 
+                        decimal CashFiSabilAllah, 
+                        decimal CashCollectors, 
+                        decimal CashOffice, 
+                        decimal InstrumentAlfuqaraAndAlmasakin, 
+                        decimal InstrumentAlgharimin, 
+                        decimal InstrumentAbnAlsabil, 
+                        decimal InstrumentAlmualafatQulubuhum, 
+                        decimal InstrumentFiSabilAllah, 
+                        decimal InstrumentCollectors, 
+                        decimal InstrumentOffice, 
+                        int NumberAlfuqaraAndAlmasakin, 
+                        int NumberAlgharimin, 
+                        int NumberAbnAlsabil, 
+                        int NumberAlmualafatQulubuhum, 
+                        int NumberFiSabilAllah, 
+                        int NumberCollectors, 
+                        int NumberOffice) {
+                ExpensesRow rowExpensesRow = ((ExpensesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        NameMonth,
+                        CashAlfuqaraAndAlmasakin,
+                        CashAlgharimin,
+                        CashAbnAlsabil,
+                        CashAlmualafatQulubuhum,
+                        CashFiSabilAllah,
+                        CashCollectors,
+                        CashOffice,
+                        InstrumentAlfuqaraAndAlmasakin,
+                        InstrumentAlgharimin,
+                        InstrumentAbnAlsabil,
+                        InstrumentAlmualafatQulubuhum,
+                        InstrumentFiSabilAllah,
+                        InstrumentCollectors,
+                        InstrumentOffice,
+                        NumberAlfuqaraAndAlmasakin,
+                        NumberAlgharimin,
+                        NumberAbnAlsabil,
+                        NumberAlmualafatQulubuhum,
+                        NumberFiSabilAllah,
+                        NumberCollectors,
+                        NumberOffice};
+                rowExpensesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowExpensesRow);
+                return rowExpensesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ExpensesDataTable cln = ((ExpensesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ExpensesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnNameMonth = base.Columns["NameMonth"];
+                this.columnCashAlfuqaraAndAlmasakin = base.Columns["CashAlfuqaraAndAlmasakin"];
+                this.columnCashAlgharimin = base.Columns["CashAlgharimin"];
+                this.columnCashAbnAlsabil = base.Columns["CashAbnAlsabil"];
+                this.columnCashAlmualafatQulubuhum = base.Columns["CashAlmualafatQulubuhum"];
+                this.columnCashFiSabilAllah = base.Columns["CashFiSabilAllah"];
+                this.columnCashCollectors = base.Columns["CashCollectors"];
+                this.columnCashOffice = base.Columns["CashOffice"];
+                this.columnInstrumentAlfuqaraAndAlmasakin = base.Columns["InstrumentAlfuqaraAndAlmasakin"];
+                this.columnInstrumentAlgharimin = base.Columns["InstrumentAlgharimin"];
+                this.columnInstrumentAbnAlsabil = base.Columns["InstrumentAbnAlsabil"];
+                this.columnInstrumentAlmualafatQulubuhum = base.Columns["InstrumentAlmualafatQulubuhum"];
+                this.columnInstrumentFiSabilAllah = base.Columns["InstrumentFiSabilAllah"];
+                this.columnInstrumentCollectors = base.Columns["InstrumentCollectors"];
+                this.columnInstrumentOffice = base.Columns["InstrumentOffice"];
+                this.columnNumberAlfuqaraAndAlmasakin = base.Columns["NumberAlfuqaraAndAlmasakin"];
+                this.columnNumberAlgharimin = base.Columns["NumberAlgharimin"];
+                this.columnNumberAbnAlsabil = base.Columns["NumberAbnAlsabil"];
+                this.columnNumberAlmualafatQulubuhum = base.Columns["NumberAlmualafatQulubuhum"];
+                this.columnNumberFiSabilAllah = base.Columns["NumberFiSabilAllah"];
+                this.columnNumberCollectors = base.Columns["NumberCollectors"];
+                this.columnNumberOffice = base.Columns["NumberOffice"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnNameMonth = new global::System.Data.DataColumn("NameMonth", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNameMonth);
+                this.columnCashAlfuqaraAndAlmasakin = new global::System.Data.DataColumn("CashAlfuqaraAndAlmasakin", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCashAlfuqaraAndAlmasakin);
+                this.columnCashAlgharimin = new global::System.Data.DataColumn("CashAlgharimin", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCashAlgharimin);
+                this.columnCashAbnAlsabil = new global::System.Data.DataColumn("CashAbnAlsabil", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCashAbnAlsabil);
+                this.columnCashAlmualafatQulubuhum = new global::System.Data.DataColumn("CashAlmualafatQulubuhum", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCashAlmualafatQulubuhum);
+                this.columnCashFiSabilAllah = new global::System.Data.DataColumn("CashFiSabilAllah", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCashFiSabilAllah);
+                this.columnCashCollectors = new global::System.Data.DataColumn("CashCollectors", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCashCollectors);
+                this.columnCashOffice = new global::System.Data.DataColumn("CashOffice", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCashOffice);
+                this.columnInstrumentAlfuqaraAndAlmasakin = new global::System.Data.DataColumn("InstrumentAlfuqaraAndAlmasakin", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstrumentAlfuqaraAndAlmasakin);
+                this.columnInstrumentAlgharimin = new global::System.Data.DataColumn("InstrumentAlgharimin", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstrumentAlgharimin);
+                this.columnInstrumentAbnAlsabil = new global::System.Data.DataColumn("InstrumentAbnAlsabil", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstrumentAbnAlsabil);
+                this.columnInstrumentAlmualafatQulubuhum = new global::System.Data.DataColumn("InstrumentAlmualafatQulubuhum", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstrumentAlmualafatQulubuhum);
+                this.columnInstrumentFiSabilAllah = new global::System.Data.DataColumn("InstrumentFiSabilAllah", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstrumentFiSabilAllah);
+                this.columnInstrumentCollectors = new global::System.Data.DataColumn("InstrumentCollectors", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstrumentCollectors);
+                this.columnInstrumentOffice = new global::System.Data.DataColumn("InstrumentOffice", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstrumentOffice);
+                this.columnNumberAlfuqaraAndAlmasakin = new global::System.Data.DataColumn("NumberAlfuqaraAndAlmasakin", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumberAlfuqaraAndAlmasakin);
+                this.columnNumberAlgharimin = new global::System.Data.DataColumn("NumberAlgharimin", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumberAlgharimin);
+                this.columnNumberAbnAlsabil = new global::System.Data.DataColumn("NumberAbnAlsabil", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumberAbnAlsabil);
+                this.columnNumberAlmualafatQulubuhum = new global::System.Data.DataColumn("NumberAlmualafatQulubuhum", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumberAlmualafatQulubuhum);
+                this.columnNumberFiSabilAllah = new global::System.Data.DataColumn("NumberFiSabilAllah", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumberFiSabilAllah);
+                this.columnNumberCollectors = new global::System.Data.DataColumn("NumberCollectors", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumberCollectors);
+                this.columnNumberOffice = new global::System.Data.DataColumn("NumberOffice", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumberOffice);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExpensesRow NewExpensesRow() {
+                return ((ExpensesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ExpensesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ExpensesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ExpensesRowChanged != null)) {
+                    this.ExpensesRowChanged(this, new ExpensesRowChangeEvent(((ExpensesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ExpensesRowChanging != null)) {
+                    this.ExpensesRowChanging(this, new ExpensesRowChangeEvent(((ExpensesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ExpensesRowDeleted != null)) {
+                    this.ExpensesRowDeleted(this, new ExpensesRowChangeEvent(((ExpensesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ExpensesRowDeleting != null)) {
+                    this.ExpensesRowDeleting(this, new ExpensesRowChangeEvent(((ExpensesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveExpensesRow(ExpensesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet ds = new DataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ExpensesDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class ZakatRow : global::System.Data.DataRow {
@@ -1885,6 +2483,639 @@ namespace AL_Zakat_Fund_System.Models {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ExpensesRow : global::System.Data.DataRow {
+            
+            private ExpensesDataTable tableExpenses;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ExpensesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableExpenses = ((ExpensesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NameMonth {
+                get {
+                    try {
+                        return ((string)(this[this.tableExpenses.NameMonthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NameMonth\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.NameMonthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CashAlfuqaraAndAlmasakin {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExpenses.CashAlfuqaraAndAlmasakinColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CashAlfuqaraAndAlmasakin\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.CashAlfuqaraAndAlmasakinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CashAlgharimin {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExpenses.CashAlghariminColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CashAlgharimin\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.CashAlghariminColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CashAbnAlsabil {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExpenses.CashAbnAlsabilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CashAbnAlsabil\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.CashAbnAlsabilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CashAlmualafatQulubuhum {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExpenses.CashAlmualafatQulubuhumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CashAlmualafatQulubuhum\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.CashAlmualafatQulubuhumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CashFiSabilAllah {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExpenses.CashFiSabilAllahColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CashFiSabilAllah\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.CashFiSabilAllahColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CashCollectors {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExpenses.CashCollectorsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CashCollectors\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.CashCollectorsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CashOffice {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExpenses.CashOfficeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CashOffice\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.CashOfficeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal InstrumentAlfuqaraAndAlmasakin {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExpenses.InstrumentAlfuqaraAndAlmasakinColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InstrumentAlfuqaraAndAlmasakin\' in table \'Expenses\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.InstrumentAlfuqaraAndAlmasakinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal InstrumentAlgharimin {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExpenses.InstrumentAlghariminColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InstrumentAlgharimin\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.InstrumentAlghariminColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal InstrumentAbnAlsabil {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExpenses.InstrumentAbnAlsabilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InstrumentAbnAlsabil\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.InstrumentAbnAlsabilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal InstrumentAlmualafatQulubuhum {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExpenses.InstrumentAlmualafatQulubuhumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InstrumentAlmualafatQulubuhum\' in table \'Expenses\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.InstrumentAlmualafatQulubuhumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal InstrumentFiSabilAllah {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExpenses.InstrumentFiSabilAllahColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InstrumentFiSabilAllah\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.InstrumentFiSabilAllahColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal InstrumentCollectors {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExpenses.InstrumentCollectorsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InstrumentCollectors\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.InstrumentCollectorsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal InstrumentOffice {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExpenses.InstrumentOfficeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InstrumentOffice\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.InstrumentOfficeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int NumberAlfuqaraAndAlmasakin {
+                get {
+                    try {
+                        return ((int)(this[this.tableExpenses.NumberAlfuqaraAndAlmasakinColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumberAlfuqaraAndAlmasakin\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.NumberAlfuqaraAndAlmasakinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int NumberAlgharimin {
+                get {
+                    try {
+                        return ((int)(this[this.tableExpenses.NumberAlghariminColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumberAlgharimin\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.NumberAlghariminColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int NumberAbnAlsabil {
+                get {
+                    try {
+                        return ((int)(this[this.tableExpenses.NumberAbnAlsabilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumberAbnAlsabil\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.NumberAbnAlsabilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int NumberAlmualafatQulubuhum {
+                get {
+                    try {
+                        return ((int)(this[this.tableExpenses.NumberAlmualafatQulubuhumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumberAlmualafatQulubuhum\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.NumberAlmualafatQulubuhumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int NumberFiSabilAllah {
+                get {
+                    try {
+                        return ((int)(this[this.tableExpenses.NumberFiSabilAllahColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumberFiSabilAllah\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.NumberFiSabilAllahColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int NumberCollectors {
+                get {
+                    try {
+                        return ((int)(this[this.tableExpenses.NumberCollectorsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumberCollectors\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.NumberCollectorsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int NumberOffice {
+                get {
+                    try {
+                        return ((int)(this[this.tableExpenses.NumberOfficeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumberOffice\' in table \'Expenses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExpenses.NumberOfficeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNameMonthNull() {
+                return this.IsNull(this.tableExpenses.NameMonthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNameMonthNull() {
+                this[this.tableExpenses.NameMonthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCashAlfuqaraAndAlmasakinNull() {
+                return this.IsNull(this.tableExpenses.CashAlfuqaraAndAlmasakinColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCashAlfuqaraAndAlmasakinNull() {
+                this[this.tableExpenses.CashAlfuqaraAndAlmasakinColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCashAlghariminNull() {
+                return this.IsNull(this.tableExpenses.CashAlghariminColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCashAlghariminNull() {
+                this[this.tableExpenses.CashAlghariminColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCashAbnAlsabilNull() {
+                return this.IsNull(this.tableExpenses.CashAbnAlsabilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCashAbnAlsabilNull() {
+                this[this.tableExpenses.CashAbnAlsabilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCashAlmualafatQulubuhumNull() {
+                return this.IsNull(this.tableExpenses.CashAlmualafatQulubuhumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCashAlmualafatQulubuhumNull() {
+                this[this.tableExpenses.CashAlmualafatQulubuhumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCashFiSabilAllahNull() {
+                return this.IsNull(this.tableExpenses.CashFiSabilAllahColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCashFiSabilAllahNull() {
+                this[this.tableExpenses.CashFiSabilAllahColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCashCollectorsNull() {
+                return this.IsNull(this.tableExpenses.CashCollectorsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCashCollectorsNull() {
+                this[this.tableExpenses.CashCollectorsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCashOfficeNull() {
+                return this.IsNull(this.tableExpenses.CashOfficeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCashOfficeNull() {
+                this[this.tableExpenses.CashOfficeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstrumentAlfuqaraAndAlmasakinNull() {
+                return this.IsNull(this.tableExpenses.InstrumentAlfuqaraAndAlmasakinColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstrumentAlfuqaraAndAlmasakinNull() {
+                this[this.tableExpenses.InstrumentAlfuqaraAndAlmasakinColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstrumentAlghariminNull() {
+                return this.IsNull(this.tableExpenses.InstrumentAlghariminColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstrumentAlghariminNull() {
+                this[this.tableExpenses.InstrumentAlghariminColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstrumentAbnAlsabilNull() {
+                return this.IsNull(this.tableExpenses.InstrumentAbnAlsabilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstrumentAbnAlsabilNull() {
+                this[this.tableExpenses.InstrumentAbnAlsabilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstrumentAlmualafatQulubuhumNull() {
+                return this.IsNull(this.tableExpenses.InstrumentAlmualafatQulubuhumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstrumentAlmualafatQulubuhumNull() {
+                this[this.tableExpenses.InstrumentAlmualafatQulubuhumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstrumentFiSabilAllahNull() {
+                return this.IsNull(this.tableExpenses.InstrumentFiSabilAllahColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstrumentFiSabilAllahNull() {
+                this[this.tableExpenses.InstrumentFiSabilAllahColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstrumentCollectorsNull() {
+                return this.IsNull(this.tableExpenses.InstrumentCollectorsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstrumentCollectorsNull() {
+                this[this.tableExpenses.InstrumentCollectorsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstrumentOfficeNull() {
+                return this.IsNull(this.tableExpenses.InstrumentOfficeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstrumentOfficeNull() {
+                this[this.tableExpenses.InstrumentOfficeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumberAlfuqaraAndAlmasakinNull() {
+                return this.IsNull(this.tableExpenses.NumberAlfuqaraAndAlmasakinColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumberAlfuqaraAndAlmasakinNull() {
+                this[this.tableExpenses.NumberAlfuqaraAndAlmasakinColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumberAlghariminNull() {
+                return this.IsNull(this.tableExpenses.NumberAlghariminColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumberAlghariminNull() {
+                this[this.tableExpenses.NumberAlghariminColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumberAbnAlsabilNull() {
+                return this.IsNull(this.tableExpenses.NumberAbnAlsabilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumberAbnAlsabilNull() {
+                this[this.tableExpenses.NumberAbnAlsabilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumberAlmualafatQulubuhumNull() {
+                return this.IsNull(this.tableExpenses.NumberAlmualafatQulubuhumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumberAlmualafatQulubuhumNull() {
+                this[this.tableExpenses.NumberAlmualafatQulubuhumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumberFiSabilAllahNull() {
+                return this.IsNull(this.tableExpenses.NumberFiSabilAllahColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumberFiSabilAllahNull() {
+                this[this.tableExpenses.NumberFiSabilAllahColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumberCollectorsNull() {
+                return this.IsNull(this.tableExpenses.NumberCollectorsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumberCollectorsNull() {
+                this[this.tableExpenses.NumberCollectorsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumberOfficeNull() {
+                return this.IsNull(this.tableExpenses.NumberOfficeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumberOfficeNull() {
+                this[this.tableExpenses.NumberOfficeColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1972,6 +3203,40 @@ namespace AL_Zakat_Fund_System.Models {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CollectZakatRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class ExpensesRowChangeEvent : global::System.EventArgs {
+            
+            private ExpensesRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExpensesRowChangeEvent(ExpensesRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExpensesRow Row {
                 get {
                     return this.eventRow;
                 }

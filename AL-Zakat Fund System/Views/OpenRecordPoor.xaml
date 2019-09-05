@@ -30,10 +30,10 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="الرقم الوطني للمحتاج : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="2"/>
+                    <TextBlock Text="الرقم الوطني : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="2"/>
                     <StackPanel Margin="10 5 0 5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"  >
                         <TextBox MaxLength="12" Text="{Binding Indigent_ssn,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
-                        <TextBlock Text="الرقم الوطني للمحتاج الذي يريد فتح محضر" Style="{StaticResource smallText}"/>
+                        <TextBlock Text="الرقم الوطني لطالب الإعانة الذي يريد فتح محضر" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="رقم قرار اللجنة الاستشارية : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0" Grid.ColumnSpan="2" />
                     <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" >

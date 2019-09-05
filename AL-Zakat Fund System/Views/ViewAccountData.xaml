@@ -29,7 +29,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="إدارة المحتاجين : " Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <TextBlock Text="إدارة طالبي الإعانة : " Style="{StaticResource viewHeaderText}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
         <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="2">
             <TextBlock Text="بحث" Style="{StaticResource filedTextS}" />
             <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="0 10" MinWidth="180" Style="{StaticResource smallTextbox}" />
@@ -69,14 +69,14 @@
                             </Style.Triggers>
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Ssn}" Header="رقم الوطني" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=FullName}" Header="اسم المحتاج" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Ssn}" Header="الرقم الوطني" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=FullName}" Header="الاسم" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=MotherName}" Header="اسم والدته" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=RequestStatus2}" Header="حالة الطلب" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=SDate, StringFormat=dd/MM/yyyy}" Header="تاريخ التسجيل" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=TypeAssistance}" Header="نوع المساعدة" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=SocialStatus2}" Header="حالة الاجتماعية" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Nationality}" Header="جنسية المحتاج" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Nationality}" Header="الجنسية" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Gender2}" Header="الجنس" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=PersonalCardNO}" Header="رقم البطاقة" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=PassportNO}" Header="رقم الجواز" />

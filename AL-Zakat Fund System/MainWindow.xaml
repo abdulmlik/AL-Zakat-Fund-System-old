@@ -122,8 +122,8 @@
             </MenuItem>
             <MenuItem Header="_المتابعات" Visibility="{Binding Observer}" HorizontalAlignment="Left" >
                 <MenuItem Command="{Binding PageViewFollowUpDataObserverCommand}" Header="_متابعاتي" />
-                <Separator />
-                <MenuItem Header="المراجعات" />
+                <!--<Separator />
+                <MenuItem Header="المراجعات" />-->
             </MenuItem>
             <MenuItem Header="المساعدة" HorizontalAlignment="Left">
                 <MenuItem Header="_مساعدة" />
@@ -188,9 +188,9 @@
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="متابعاتي" Command="{Binding PageViewFollowUpDataObserverCommand}"
                        Visibility="{Binding Observer}" BorderThickness="{Binding ViewFollowUpObserverBorderThickness}" />
-                <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                <!--<Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="المراجعات" Command="{Binding PageViewFollowUpDataObserverCommand}"
-                       Visibility="{Binding Observer}" />
+                       Visibility="{Binding Observer}" />-->
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="خروج" Command="{Binding CloseCommand}"/>
             </StackPanel>

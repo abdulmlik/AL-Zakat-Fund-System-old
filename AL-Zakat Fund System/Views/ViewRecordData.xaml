@@ -61,7 +61,7 @@
                     </GridView.ColumnHeaderContainerStyle>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=ID}" Header="رقم المحضر" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=RDate, StringFormat=dd/MM/yyyy}" Header="تاريخ فتح المحضر" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Indigent_ssn}" Header="اسم المحتاج" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Indigent_ssn}" Header="اسم طالب الإعانة" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=RStatus2}" Header="حالة المحضر" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Name1}" Header="رئيس اللجنة الاستشارية" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Name2}" Header="عضو اللجنة الاستشارية" />

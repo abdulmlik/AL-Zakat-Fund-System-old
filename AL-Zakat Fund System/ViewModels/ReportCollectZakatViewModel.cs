@@ -169,7 +169,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             string nameBranch = Properties.Settings.Default.nameBranch;
 
             CrystalCollectZakat cr = new CrystalCollectZakat();
-            cr.Database.Tables["Zakat"].SetDataSource(DTZakat);
+            cr.Database.Tables["CollectZakat"].SetDataSource(DTZakat);
 
             cr.SetParameterValue("nameBranch", nameBranch);
             cr.SetParameterValue("Period", PeriodReport);

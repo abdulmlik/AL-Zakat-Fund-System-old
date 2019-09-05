@@ -37,6 +37,7 @@
         <StackPanel Grid.Column="1" Grid.Row="3" Grid.RowSpan="5">
             <Button Width="100" Command="{Binding ReFreshZakatCommand}" Content="تحديث" Style="{StaticResource viewButtonStyleSearch}" />
             <Button Width="100" Command="{Binding EditZakatCommand}" Content="تعديل" Style="{StaticResource viewButtonStyleSearch}" />
+            <Button Width="100" Command="{Binding ViewZakatCommand}" Content="عرض" Style="{StaticResource viewButtonStyleSearch}" />
             <Button Width="100" Command="{Binding TransferZakatCommand}" Content="تحويل" Style="{StaticResource viewButtonStyleSearch}" />
             <Button Width="100" Command="{Binding TransferAllZakatCommand}" Content="تحويل الكل" Style="{StaticResource viewButtonStyleSearch}"/>
         </StackPanel>

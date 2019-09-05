@@ -39,7 +39,7 @@
                     <TextBox Text="{Binding DataBase,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MaxLength="60"  Style="{StaticResource Textbox4}" />
                     <!--<TextBlock Text="" Style="{StaticResource smallText}" />-->
                 </StackPanel>
-                <TextBlock Text="طريقة الولوج : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
+                <TextBlock Text="طريقة الدخول : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
                 <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="2" >
                     <RadioButton IsChecked="{Binding OptionAuthentication1}" Content="Windows Authentication" Margin="0,5" />
                     <RadioButton IsChecked="{Binding OptionAuthentication2}" Content="SQL Server Authentication" Margin="0,5" />

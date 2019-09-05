@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="تعديل إذن الصرف"
         MinWidth="730" MaxWidth="730" MaxHeight="620" MinHeight="650"
-        Icon="../Images/Logo/34.png"
+        Icon="/AL-Zakat Fund System;component/Images/Logo/34.png"
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft"
         d:DesignHeight="620" d:DesignWidth="700" ResizeMode="CanMinimize">
@@ -40,7 +40,7 @@
                         <TextBlock Text="رقم المحضر : * " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="0" Grid.ColumnSpan="2"/>
                         <StackPanel Margin="10 5 0 5" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2"  >
                             <TextBox MaxLength="11" Text="{Binding Record_id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource smallTextbox}" />
-                            <TextBlock Text="رقم المحضر الذي سيتم صرف الزكاة عليه" Style="{StaticResource smallText}"/>
+                            <TextBlock Text="رقم المحضر الذي سيتم صرف الزكاة عليه يكتب بالسنة" Style="{StaticResource smallText}"/>
                         </StackPanel>
                         <TextBlock Text=" نوع المساعدة : * "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
                         <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" >
