@@ -392,8 +392,8 @@ namespace AL_Zakat_Fund_System.ViewModels
             ReFreshZakatCommand = new DelegateCommand(ReFreshZakatExecute);
             EditZakatCommand = new DelegateCommand(EditZakatExecute, EditZakatCanExecute).ObservesProperty(() => SelectItem);
             ViewZakatCommand = new DelegateCommand(ViewZakatExecute, ViewZakatCanExecute).ObservesProperty(() => SelectItem);
-            //TransferZakatCommand = new DelegateCommand(TransferZakatExecute, TransferZakatCanExecute).ObservesProperty(() => SelectItem);
-            //TransferAllZakatCommand = new DelegateCommand(TransferAllZakatExecute, TransferAllZakatCanExecute).ObservesProperty(() => SelectItem);
+            TransferZakatCommand = new DelegateCommand(TransferZakatExecute, TransferZakatCanExecute).ObservesProperty(() => SelectItem);
+            TransferAllZakatCommand = new DelegateCommand(TransferAllZakatExecute, TransferAllZakatCanExecute).ObservesProperty(() => SelectItem);
 
             CancelCommand = new DelegateCommand(CancelExecute);
 

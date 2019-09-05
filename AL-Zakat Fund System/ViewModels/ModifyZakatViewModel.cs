@@ -61,7 +61,14 @@ namespace AL_Zakat_Fund_System.ViewModels
                 Collector = DBConnection.reader.GetByte(15);
                 Activity = DBConnection.reader.GetBoolean(16);
                 Migration = DBConnection.reader.GetBoolean(17);
-                MigrationDate = DBConnection.reader.GetDateTime(18);
+                if (DBConnection.reader.IsDBNull(18))
+                {
+                    MigrationDate = null;
+                }
+                else
+                {
+                    MigrationDate = DBConnection.reader.GetDateTime(18);
+                }
                 Colle_ssn = DBConnection.reader.GetInt64(19);
                 Office_no = DBConnection.reader.GetInt32(20);
                 #endregion
@@ -217,6 +224,11 @@ namespace AL_Zakat_Fund_System.ViewModels
                             DBConnection.cmd.Parameters["@Migration"].Value = 0;
                             DBConnection.cmd.Parameters["@MigrationDate"].Value = DBNull.Value;
                         }
+                    }
+                    else if (Migration)
+                    {
+                        DBConnection.cmd.Parameters["@Migration"].Value = 1;
+                        DBConnection.cmd.Parameters["@MigrationDate"].Value = MigrationDate;
                     }
                     else
                     {
