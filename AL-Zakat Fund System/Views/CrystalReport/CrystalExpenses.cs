@@ -16,14 +16,14 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalNumberZakat : ReportClass {
+    public class CrystalExpenses : ReportClass {
         
-        public CrystalNumberZakat() {
+        public CrystalExpenses() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalNumberZakat.rpt";
+                return "CrystalExpenses.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
         
         public override string FullResourceName {
             get {
-                return "AL_Zakat_Fund_System.Views.CrystalReport.CrystalNumberZakat.rpt";
+                return "AL_Zakat_Fund_System.Views.CrystalReport.CrystalExpenses.rpt";
             }
             set {
                 // Do nothing
@@ -114,9 +114,9 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalNumberZakat : Component, ICachedReport {
+    public class CachedCrystalExpenses : Component, ICachedReport {
         
-        public CachedCrystalNumberZakat() {
+        public CachedCrystalExpenses() {
         }
         
         [Browsable(false)]
@@ -153,7 +153,7 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalNumberZakat rpt = new CrystalNumberZakat();
+            CrystalExpenses rpt = new CrystalExpenses();
             rpt.Site = this.Site;
             return rpt;
         }

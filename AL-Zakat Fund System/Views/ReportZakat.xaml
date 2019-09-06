@@ -27,8 +27,8 @@
             <TextBlock Text="تقرير على الزكاة خلال فترة معينة" Style="{StaticResource viewHeaderText}" />
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="بداية الفترة : " Margin="0" Style="{StaticResource filedText}" />
-                <DatePicker 
-                    Margin="0 0 20 0" SelectedDate="{Binding StartDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" x:Name="StartDate" Style="{StaticResource datePicker}"  />
+                <DatePicker Margin="0 0 20 0" SelectedDate="{Binding StartDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" x:Name="StartDate" 
+                            DisplayDateEnd="{x:Static sys:DateTime.Now}" Style="{StaticResource datePicker}"  />
                 <TextBlock Text="نهاية الفترة : " Margin="0" Style="{StaticResource filedText}"/>
                 <DatePicker SelectedDate="{Binding EndDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
                             DisplayDateStart="{Binding ElementName=StartDate, Path=SelectedDate}"
@@ -53,6 +53,9 @@
                         <Setter Property="Margin" Value="0" />
                         <Setter Property="Padding" Value="10 0" />
                         <Setter Property="Height" Value="40"/>
+                    </Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="Black" />
                     </Style>
                 </ResourceDictionary>
             </Viewer:CrystalReportsViewer.Resources>

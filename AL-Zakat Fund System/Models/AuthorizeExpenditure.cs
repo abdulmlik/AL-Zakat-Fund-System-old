@@ -137,4 +137,47 @@ namespace AL_Zakat_Fund_System.Models
 
         #endregion
     }
+
+    // class use to get data for report
+    class AuthorizeExpenditureTemp : BindableBase
+    {
+        #region private Member
+
+        private byte _CategoryPoor;
+        private decimal _Amount;
+        private DateTime _SDate;
+        private bool _InstrumentNO;
+        private long? _Record_id;
+
+        #endregion
+
+        #region public properties
+        public byte CategoryPoor
+        {
+            get { return _CategoryPoor; }
+            set { SetProperty(ref _CategoryPoor, value); }
+        }
+        public decimal Amount
+        {
+            get { return _Amount; }
+            set { SetProperty(ref _Amount, value); }
+        }
+        public DateTime SDate
+        {
+            get { return _SDate; }
+            set { SetProperty(ref _SDate, value); }
+        }
+        public bool InstrumentNO
+        {
+            get { return _InstrumentNO; }
+            set { SetProperty(ref _InstrumentNO, value); }
+        }
+        public long? Record_id
+        {
+            get { return _Record_id; }
+            set { SetProperty(ref _Record_id, value); }
+        }
+
+        #endregion
+    }
 }

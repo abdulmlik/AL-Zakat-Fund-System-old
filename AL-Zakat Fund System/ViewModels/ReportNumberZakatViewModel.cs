@@ -79,19 +79,33 @@ namespace AL_Zakat_Fund_System.ViewModels
 
             #region Get Data From DataBase
             DBConnection.cmd.CommandType = CommandType.StoredProcedure;
-            DBConnection.cmd.CommandText = "sp_ZakatReportBranch";
 
-            DBConnection.cmd.Parameters.Add(new SqlParameter("@Branch", SqlDbType.Int));
+            if (Properties.Settings.Default.nameBranch == Properties.Settings.Default.nameOffice)
+            {
+                DBConnection.cmd.CommandText = "sp_ZakatReportBranch";
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Branch", SqlDbType.Int));
+            }
+            else
+            {
+                DBConnection.cmd.CommandText = "sp_ZakatReportOffice";
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Office", SqlDbType.Int));
+            }
+
             DBConnection.cmd.Parameters.Add(new SqlParameter("@StartDate", SqlDbType.DateTime));
             DBConnection.cmd.Parameters.Add(new SqlParameter("@EndDate", SqlDbType.DateTime));
-            //DBConnection.cmd.Parameters.Add(new SqlParameter("@nameBranch", SqlDbType.NVarChar,20));
             DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
 
-            DBConnection.cmd.Parameters["@Branch"].Value = Properties.Settings.Default.Branch;
+            if (Properties.Settings.Default.nameBranch == Properties.Settings.Default.nameOffice)
+            {
+                DBConnection.cmd.Parameters["@Branch"].Value = Properties.Settings.Default.Branch;
+            }
+            else
+            {
+                DBConnection.cmd.Parameters["@Office"].Value = Properties.Settings.Default.Office;
+            }
             DBConnection.cmd.Parameters["@StartDate"].Value = StartDate;
             DBConnection.cmd.Parameters["@EndDate"].Value = EndDate;
 
-            //DBConnection.cmd.Parameters["@nameBranch"].Direction = ParameterDirection.Output;
             DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
 
 
@@ -165,13 +179,17 @@ namespace AL_Zakat_Fund_System.ViewModels
             // Parameter for crystal report
             string PeriodReport = "خلال الفترة من " + StartDate.Value.ToString("yyyy-MM") + "   إلى " + EndDate.Value.ToString("yyyy-MM");
             // Parameter for crystal report
-            string nameBranch = Properties.Settings.Default.nameBranch;
+            string nameOffice = Properties.Settings.Default.nameOffice;
 
             CrystalNumberZakat cr = new CrystalNumberZakat();
             cr.Database.Tables["NumberZakat"].SetDataSource(DTZakat);
 
-            cr.SetParameterValue("nameBranch", nameBranch);
+            cr.SetParameterValue("namePlace", nameOffice);
             cr.SetParameterValue("Period", PeriodReport);
+            if (Properties.Settings.Default.nameBranch == nameOffice)
+            { cr.SetParameterValue("Place", "مكتب"); }
+            else
+            { cr.SetParameterValue("Place", "وحدة"); }
 
             MyReportSource = cr;
         }

@@ -90,7 +90,7 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_nameBranch {
+        public CrystalDecisions.Shared.IParameterField Parameter_namePlace {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -101,6 +101,14 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
         public CrystalDecisions.Shared.IParameterField Parameter_Period {
             get {
                 return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Place {
+            get {
+                return this.DataDefinition.ParameterFields[2];
             }
         }
     }

@@ -262,6 +262,7 @@
     <Compile Include="ViewModels\ModifyExchangePermissionViewModel.cs" />
     <Compile Include="ViewModels\ModifyZakatViewModel.cs" />
     <Compile Include="ViewModels\ReportCollectZakatViewModel.cs" />
+    <Compile Include="ViewModels\ReportExpensesViewModel.cs" />
     <Compile Include="ViewModels\ReportNumberZakatViewModel.cs" />
     <Compile Include="ViewModels\OpenAccountPoorViewModel.cs" />
     <Compile Include="ViewModels\OpenRecordPoorViewModel.cs" />
@@ -279,6 +280,12 @@
     </Compile>
     <Compile Include="Views\CreateExchangePermission.xaml.cs">
       <DependentUpon>CreateExchangePermission.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CrystalReport\CrystalExpenses.cs">
+      <DependentUpon>CrystalExpenses.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\CrystalReport\CrystalCollectZakat.cs">
       <AutoGen>True</AutoGen>
@@ -336,6 +343,9 @@
     </Compile>
     <Compile Include="Views\ModifyZakat.xaml.cs">
       <DependentUpon>ModifyZakat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportExpenses.xaml.cs">
+      <DependentUpon>ReportExpenses.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReportNumberZakat.xaml.cs">
       <DependentUpon>ReportNumberZakat.xaml</DependentUpon>
@@ -484,6 +494,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ReportExpenses.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ReportNumberZakat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -570,6 +584,10 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CrystalReport\CrystalExpenses.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalExpenses.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CrystalReport\CrystalCollectZakat.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

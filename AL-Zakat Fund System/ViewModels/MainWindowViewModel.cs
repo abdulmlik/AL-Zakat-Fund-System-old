@@ -306,6 +306,10 @@ namespace AL_Zakat_Fund_System.ViewModels
         public DelegateCommand ReportNumberZakatCommand { get; set; }
         #endregion
 
+        #region Report Expenses
+        public DelegateCommand ReportExpensesCommand { get; set; }
+        #endregion
+
         #endregion
 
         #endregion
@@ -481,6 +485,18 @@ namespace AL_Zakat_Fund_System.ViewModels
         }
         #endregion
 
+        #region Expenses 
+        private void ReportExpensesExecute()
+        {
+            ReportExpenses PageRE = new ReportExpenses();
+            PageRE.DataContext = new ReportExpensesViewModel(PageRE);
+            PageRE.Owner = mWindow;
+            bool? result = PageRE.ShowDialog();
+            if (result == true)
+            { }
+        }
+        #endregion
+
         #endregion
 
         #endregion
@@ -537,6 +553,9 @@ namespace AL_Zakat_Fund_System.ViewModels
             ReportZakatCommand = new DelegateCommand(ReportZakatExecute);
             ReportCollectZakatCommand = new DelegateCommand(ReportCollectZakatExecute);
             ReportNumberZakatCommand = new DelegateCommand(ReportNumberZakatExecute);
+
+            ReportExpensesCommand = new DelegateCommand(ReportExpensesExecute);
+
         }
         #endregion
     }

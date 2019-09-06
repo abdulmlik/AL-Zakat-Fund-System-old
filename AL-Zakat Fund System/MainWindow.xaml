@@ -115,9 +115,7 @@
                 <MenuItem Command="{Binding PageViewExchangePermissionDataCommand}" Header="_إدارة المصروفات" />
                 <Separator />
                 <MenuItem Header="التقارير" >
-                    <MenuItem Header=" مصارف" />
-                    <MenuItem Header=" مصارف" />
-                    <MenuItem Header=" مصارف" />
+                    <MenuItem Command="{Binding ReportExpensesCommand}" Header="المصروفات" />
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_المتابعات" Visibility="{Binding Observer}" HorizontalAlignment="Left" >

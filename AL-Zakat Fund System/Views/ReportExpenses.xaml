@@ -1,4 +1,4 @@
-﻿<Window x:Class="AL_Zakat_Fund_System.Views.ReportCollectZakat"
+﻿<Window x:Class="AL_Zakat_Fund_System.Views.ReportExpenses"
         xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,7 +8,7 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         FlowDirection="RightToLeft"
-        Title="تقرير جباية الزكاة"
+        Title="تقرير المصروفات"
         Icon="/AL-Zakat Fund System;component/Images/Logo/34.png"
         WindowStartupLocation="CenterScreen">
     <Grid>
@@ -24,7 +24,7 @@
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="1" Grid.Row="1">
-            <TextBlock Text="تقرير على جباية الزكاة خلال فترة معينة" Style="{StaticResource viewHeaderText}" />
+            <TextBlock Text="تقرير على المصروفات خلال فترة معينة" Style="{StaticResource viewHeaderText}" />
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="بداية الفترة : " Margin="0" Style="{StaticResource filedText}" />
                 <DatePicker Margin="0 0 20 0" SelectedDate="{Binding StartDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" x:Name="StartDate" 
