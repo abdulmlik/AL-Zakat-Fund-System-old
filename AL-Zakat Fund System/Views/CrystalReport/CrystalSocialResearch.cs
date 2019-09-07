@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AL_Zakat_Fund_System.Views {
+namespace AL_Zakat_Fund_System.Views.CrystalReport {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace AL_Zakat_Fund_System.Views {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class CrystalSocialResearch : ReportClass {
         
-        public CrystalReport1() {
+        public CrystalSocialResearch() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "CrystalSocialResearch.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace AL_Zakat_Fund_System.Views {
         
         public override string FullResourceName {
             get {
-                return "AL_Zakat_Fund_System.Views.CrystalReport1.rpt";
+                return "AL_Zakat_Fund_System.Views.CrystalReport.CrystalSocialResearch.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +87,36 @@ namespace AL_Zakat_Fund_System.Views {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Period {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_namePlace {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Place {
+            get {
+                return this.DataDefinition.ParameterFields[2];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class CachedCrystalSocialResearch : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public CachedCrystalSocialResearch() {
         }
         
         [Browsable(false)]
@@ -129,7 +153,7 @@ namespace AL_Zakat_Fund_System.Views {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            CrystalSocialResearch rpt = new CrystalSocialResearch();
             rpt.Site = this.Site;
             return rpt;
         }

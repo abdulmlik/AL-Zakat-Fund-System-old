@@ -182,4 +182,43 @@ namespace AL_Zakat_Fund_System.Models
 
         #endregion
     }
+
+
+    // class use to get data for report
+    class Follow_upTemp : BindableBase
+    {
+        #region private Member
+
+        protected byte _Distance;
+        protected byte _FStatus;
+        protected string _FullName;
+        protected byte _Degree;
+
+        #endregion
+
+        #region public properties
+        
+        public byte Distance
+        {
+            get { return _Distance; }
+            set { SetProperty(ref _Distance, value); }
+        }
+        public byte FStatus
+        {
+            get { return _FStatus; }
+            set { SetProperty(ref _FStatus, value); }
+        }
+        public string FullName
+        {
+            get { return _FullName; }
+            set { SetProperty(ref _FullName, value); }
+        }
+        public byte Degree
+        {
+            get { return _Degree; }
+            set { SetProperty(ref _Degree, value); }
+        }
+
+        #endregion
+    }
 }

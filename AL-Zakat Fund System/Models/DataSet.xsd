@@ -77,6 +77,18 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="SocialResearch" msprop:Generator_TableClassName="SocialResearchDataTable" msprop:Generator_TableVarName="tableSocialResearch" msprop:Generator_RowChangedName="SocialResearchRowChanged" msprop:Generator_TablePropName="SocialResearch" msprop:Generator_RowDeletingName="SocialResearchRowDeleting" msprop:Generator_RowChangingName="SocialResearchRowChanging" msprop:Generator_RowEvHandlerName="SocialResearchRowChangeEventHandler" msprop:Generator_RowDeletedName="SocialResearchRowDeleted" msprop:Generator_RowClassName="SocialResearchRow" msprop:Generator_UserTableName="SocialResearch" msprop:Generator_RowEvArgName="SocialResearchRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmpType" msprop:Generator_ColumnVarNameInTable="columnEmpType" msprop:Generator_ColumnPropNameInRow="EmpType" msprop:Generator_ColumnPropNameInTable="EmpTypeColumn" msprop:Generator_UserColumnName="EmpType" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="NearCompletedFiles" msprop:Generator_ColumnVarNameInTable="columnNearCompletedFiles" msprop:Generator_ColumnPropNameInRow="NearCompletedFiles" msprop:Generator_ColumnPropNameInTable="NearCompletedFilesColumn" msprop:Generator_UserColumnName="NearCompletedFiles" type="xs:int" minOccurs="0" />
+              <xs:element name="FarCompletedFiles" msprop:Generator_ColumnVarNameInTable="columnFarCompletedFiles" msprop:Generator_ColumnPropNameInRow="FarCompletedFiles" msprop:Generator_ColumnPropNameInTable="FarCompletedFilesColumn" msprop:Generator_UserColumnName="FarCompletedFiles" type="xs:int" minOccurs="0" />
+              <xs:element name="FileRefNotCompletedFiles" msprop:Generator_ColumnVarNameInTable="columnFileRefNotCompletedFiles" msprop:Generator_ColumnPropNameInRow="FileRefNotCompletedFiles" msprop:Generator_ColumnPropNameInTable="FileRefNotCompletedFilesColumn" msprop:Generator_UserColumnName="FileRefNotCompletedFiles" type="xs:int" minOccurs="0" />
+              <xs:element name="InProcedureNotCompletedFiles" msprop:Generator_ColumnVarNameInTable="columnInProcedureNotCompletedFiles" msprop:Generator_ColumnPropNameInRow="InProcedureNotCompletedFiles" msprop:Generator_ColumnPropNameInTable="InProcedureNotCompletedFilesColumn" msprop:Generator_UserColumnName="InProcedureNotCompletedFiles" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

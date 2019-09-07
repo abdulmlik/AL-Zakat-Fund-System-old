@@ -74,28 +74,24 @@
                 <Separator />
                 <MenuItem Header="التقارير" >
                     <MenuItem Header=" محتاج" />
-                    <MenuItem Header=" محتاج" />
-                    <MenuItem Header=" محتاج" />
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_المحاضر" Visibility="{Binding Scribe}" HorizontalAlignment="Left" >
                 <MenuItem Command="{Binding PageOpenRecordPoorCommand}" Header="_فتح محضر لمحتاج" />
                 <MenuItem Command="{Binding PageViewRecordDataCommand}" Header="_إدارة المحاضر" />
-                <Separator />
+                <!--<Separator />
                 <MenuItem Header="التقارير" >
                     <MenuItem Header=" محضر" />
                     <MenuItem Header=" محضر" />
                     <MenuItem Header=" محضر" />
-                </MenuItem>
+                </MenuItem>-->
             </MenuItem>
             <MenuItem Header="_المتابعات" Visibility="{Binding Scribe}" HorizontalAlignment="Left" >
                 <MenuItem Command="{Binding PageDeliverRecordCommand}" Header="تحويل المحتاج إلى المتابعة" />
                 <MenuItem Command="{Binding PageViewFollowUpDataCommand}" Header="إدارة المتابعات" />
                 <Separator />
                 <MenuItem Header="التقارير" >
-                    <MenuItem Header=" المتابعة" />
-                    <MenuItem Header=" المتابعة" />
-                    <MenuItem Header=" المتابعة" />
+                    <MenuItem Command="{Binding ReportSocialResearchCommand}" Header="عدد الملفات البحاث" />
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_الزكاة" Visibility="{Binding Collector}" HorizontalAlignment="Left" >

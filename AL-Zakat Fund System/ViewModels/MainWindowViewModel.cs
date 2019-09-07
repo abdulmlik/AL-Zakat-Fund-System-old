@@ -310,6 +310,10 @@ namespace AL_Zakat_Fund_System.ViewModels
         public DelegateCommand ReportExpensesCommand { get; set; }
         #endregion
 
+        #region Report Social Research
+        public DelegateCommand ReportSocialResearchCommand { get; set; }
+        #endregion
+
         #endregion
 
         #endregion
@@ -497,6 +501,18 @@ namespace AL_Zakat_Fund_System.ViewModels
         }
         #endregion
 
+        #region Social Research
+        private void ReportSocialResearchExecute()
+        {
+            ReportSocialResearch PageRSR = new ReportSocialResearch();
+            PageRSR.DataContext = new ReportSocialResearchViewModel(PageRSR);
+            PageRSR.Owner = mWindow;
+            bool? result = PageRSR.ShowDialog();
+            if (result == true)
+            { }
+        }
+        #endregion
+
         #endregion
 
         #endregion
@@ -553,8 +569,9 @@ namespace AL_Zakat_Fund_System.ViewModels
             ReportZakatCommand = new DelegateCommand(ReportZakatExecute);
             ReportCollectZakatCommand = new DelegateCommand(ReportCollectZakatExecute);
             ReportNumberZakatCommand = new DelegateCommand(ReportNumberZakatExecute);
-
+            
             ReportExpensesCommand = new DelegateCommand(ReportExpensesExecute);
+            ReportSocialResearchCommand = new DelegateCommand(ReportSocialResearchExecute);
 
         }
         #endregion
