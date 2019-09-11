@@ -314,6 +314,10 @@ namespace AL_Zakat_Fund_System.ViewModels
         public DelegateCommand ReportSocialResearchCommand { get; set; }
         #endregion
 
+        #region Report Applicant
+        public DelegateCommand ReportApplicantCommand { get; set; }
+        #endregion
+
         #endregion
 
         #endregion
@@ -513,6 +517,18 @@ namespace AL_Zakat_Fund_System.ViewModels
         }
         #endregion
 
+        #region Applicant
+        private void ReportApplicantExecute()
+        {
+            ReportApplicant PageRA = new ReportApplicant();
+            PageRA.DataContext = new ReportApplicantViewModel(PageRA);
+            PageRA.Owner = mWindow;
+            bool? result = PageRA.ShowDialog();
+            if (result == true)
+            { }
+        }
+        #endregion
+
         #endregion
 
         #endregion
@@ -572,6 +588,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             
             ReportExpensesCommand = new DelegateCommand(ReportExpensesExecute);
             ReportSocialResearchCommand = new DelegateCommand(ReportSocialResearchExecute);
+            ReportApplicantCommand = new DelegateCommand(ReportApplicantExecute);
 
         }
         #endregion

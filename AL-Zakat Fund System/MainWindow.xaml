@@ -73,7 +73,7 @@
                 <MenuItem Command="{Binding PageViewAccountDataCommand}" Header="_إدارة المحتاجين" />
                 <Separator />
                 <MenuItem Header="التقارير" >
-                    <MenuItem Header="طالب الإعانة" />
+                    <MenuItem Command="{Binding ReportApplicantCommand}" Header="طالب الإعانة" />
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_المحاضر" Visibility="{Binding Scribe}" HorizontalAlignment="Left" >
