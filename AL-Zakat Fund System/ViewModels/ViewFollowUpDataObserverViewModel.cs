@@ -38,7 +38,19 @@ namespace AL_Zakat_Fund_System.ViewModels
         private void FillList()
         {
             DBConnection.cmd.CommandType = CommandType.StoredProcedure;
-            DBConnection.cmd.CommandText = "sp_displayFollowUPObserver";
+
+            if (Properties.Settings.Default.nameBranch == Properties.Settings.Default.nameOffice)
+            {
+                DBConnection.cmd.CommandText = "sp_displayFollowUPObserverBranch";
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Branch", SqlDbType.Int));
+                DBConnection.cmd.Parameters["@Branch"].Value = Properties.Settings.Default.Branch;
+            }
+            else
+            {
+                DBConnection.cmd.CommandText = "sp_displayFollowUPObserverOffice";
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Office", SqlDbType.Int));
+                DBConnection.cmd.Parameters["@Office"].Value = Properties.Settings.Default.Office;
+            }
 
             DBConnection.cmd.Parameters.Add(new SqlParameter("@Observer_ssn", SqlDbType.BigInt));
             DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));

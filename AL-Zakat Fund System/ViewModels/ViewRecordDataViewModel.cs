@@ -39,7 +39,19 @@ namespace AL_Zakat_Fund_System.ViewModels
         private void FillList()
         {
             DBConnection.cmd.CommandType = CommandType.StoredProcedure;
-            DBConnection.cmd.CommandText = "sp_displayRecord";
+
+            if (Properties.Settings.Default.nameBranch == Properties.Settings.Default.nameOffice)
+            {
+                DBConnection.cmd.CommandText = "sp_displayRecordBranch";
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Branch", SqlDbType.Int));
+                DBConnection.cmd.Parameters["@Branch"].Value = Properties.Settings.Default.Branch;
+            }
+            else
+            {
+                DBConnection.cmd.CommandText = "sp_displayRecordOffice";
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Office", SqlDbType.Int));
+                DBConnection.cmd.Parameters["@Office"].Value = Properties.Settings.Default.Office;
+            }
 
             DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
 

@@ -82,14 +82,14 @@ namespace AL_Zakat_Fund_System.ViewModels
 
 
                 Decimal Amount_Filter;
+                if(string.IsNullOrWhiteSpace(InstrumentNo) || string.IsNullOrEmpty(InstrumentNo))
+                {
+                    InstrumentNo = null;
+                }
                 int ReceiptNO_Filter, InstrumentNo_Filter;
                 if (Decimal.TryParse(Amount, out Amount_Filter) && int.TryParse(ReceiptNO, out ReceiptNO_Filter) 
                     && (int.TryParse(InstrumentNo, out InstrumentNo_Filter) || InstrumentNo == null))
                 {
-                    if (InstrumentNo == null)
-                    {
-                        InstrumentNo_Filter = -1;
-                    }
 
                     #region set value to Parameters
                     DBConnection.cmd.Parameters["@Name"].IsNullable = true;

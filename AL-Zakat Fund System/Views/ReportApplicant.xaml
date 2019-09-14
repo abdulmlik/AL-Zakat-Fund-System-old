@@ -24,7 +24,7 @@
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="1" Grid.Row="1" Margin="0 0 0 10">
-            <TextBlock Text="تقرير على طالب الإعانة والمحاضر الخاصة به و الإعنات المصروفة عليه " Style="{StaticResource viewHeaderText}" />
+            <TextBlock Text="تقرير على طالب الإعانة والمحاضر الخاصة به و الإعانات المصروفة عليه " Style="{StaticResource viewHeaderText}" />
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="الرقم الوطني لطالب الاعانة : " Style="{StaticResource  filedText}"/>
                 <TextBox Text="{Binding Ssn,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MaxLength="20"  Style="{StaticResource smallTextbox}" />

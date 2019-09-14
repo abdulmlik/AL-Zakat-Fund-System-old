@@ -146,6 +146,12 @@ namespace AL_Zakat_Fund_System.ViewModels
         private void updateDatabaseExecute()
         {
             int succ = 0;
+
+            if(FStatus == 2 && DeliverDate == null)
+            {
+                DeliverDate = DateTime.Now;
+            }
+
             try
             {
                 DBConnection.OpenConnection();

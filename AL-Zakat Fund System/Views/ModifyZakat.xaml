@@ -47,7 +47,7 @@
                             <TextBox Margin="0 0 9 0" MinWidth="160"  Text="{Binding Municipality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MaxLength="20" Style="{StaticResource smallTextbox}" />
                             <TextBox MinWidth="160"  Text="{Binding Locality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MaxLength="20" Style="{StaticResource smallTextbox}" />
                         </StackPanel>
-                        <TextBlock Text="عنوان المزكي ويكتب هكذا(المدينة ،البلدية ،المحلة) مثل (طرابلس ،سوق الجمعة ،الجلاء)" Style="{StaticResource smallText}"/>
+                        <TextBlock Text="عنوان المزكي ويكتب هكذا ( المدينة ،البلدية ،المحلة )." Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="نشاط المزكي :* " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="2"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="2"  >
@@ -64,7 +64,7 @@
                     <TextBlock Text="قيمة الزكاة : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="3"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="3"  >
                         <TextBox Text="{Binding Amount,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
-                        <TextBlock Text="قيمة الاموال المجباة من المزكي" Style="{StaticResource smallText}"/>
+                        <TextBlock Text="قيمة الاموال المجباة بالدينار" Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="رقم الصك : " Margin="10 10 0 0" Style="{StaticResource filedText}" Grid.Column="2"  Grid.Row="3"/>
                     <StackPanel Margin="0 5" Grid.Column="3" Grid.Row="3"  >
@@ -89,7 +89,7 @@
                         <ComboBox SelectedIndex="{Binding Collector,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
                             <ComboBoxItem>الجابي</ComboBoxItem>
                             <ComboBoxItem>المكتب</ComboBoxItem>
-                            <ComboBoxItem>لمصرف</ComboBoxItem>
+                            <ComboBoxItem>المصرف</ComboBoxItem>
                         </ComboBox>
                         <TextBlock Text="مكان جباية الزكاة" Style="{StaticResource smallText}"/>
                     </StackPanel>

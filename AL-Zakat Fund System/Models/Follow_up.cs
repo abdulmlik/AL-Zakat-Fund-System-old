@@ -31,6 +31,7 @@ namespace AL_Zakat_Fund_System.Models
         private string _fullname;
         private string _Scribe_ssn2;
         private string _Phone;
+        private string _Email;
         private string _Office; 
         #endregion
 
@@ -132,6 +133,11 @@ namespace AL_Zakat_Fund_System.Models
         {
             get { return _Phone; }
             set { SetProperty(ref _Phone, value); }
+        }
+        public string Email
+        {
+            get { return _Email; }
+            set { SetProperty(ref _Email, value); }
         }
         public string Office
         {

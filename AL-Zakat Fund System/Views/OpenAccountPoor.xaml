@@ -168,7 +168,7 @@
                             <TextBox Margin="0 0 10 0" MinWidth="154"  Text="{Binding Municipality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                             <TextBox MinWidth="154"  Text="{Binding Locality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource smallTextbox}" />
                         </StackPanel>
-                        <TextBlock Text="عنوان صاحب الطلب ويكتب هكذا(المدينة ،البلدية ،المحلة)" Style="{StaticResource smallText}"/>
+                        <TextBlock Text="عنوان صاحب الطلب ويكتب هكذا (المدينة ،البلدية ،المحلة )." Style="{StaticResource smallText}"/>
                     </StackPanel>
                     <TextBlock Text="الشارع : " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="13"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="13"  >

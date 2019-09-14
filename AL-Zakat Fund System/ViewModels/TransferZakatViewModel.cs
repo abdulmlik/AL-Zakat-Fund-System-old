@@ -38,7 +38,19 @@ namespace AL_Zakat_Fund_System.ViewModels
         private void FillList()
         {
             DBConnection.cmd.CommandType = CommandType.StoredProcedure;
-            DBConnection.cmd.CommandText = "sp_displayZakat4";
+
+            if (Properties.Settings.Default.nameBranch == Properties.Settings.Default.nameOffice)
+            {
+                DBConnection.cmd.CommandText = "sp_displayTransferZakatBranch";
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Branch", SqlDbType.Int));
+                DBConnection.cmd.Parameters["@Branch"].Value = Properties.Settings.Default.Branch;
+            }
+            else
+            {
+                DBConnection.cmd.CommandText = "sp_displayTransferZakatOffice";
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@Office", SqlDbType.Int));
+                DBConnection.cmd.Parameters["@Office"].Value = Properties.Settings.Default.Office;
+            }
 
             DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
 
@@ -300,6 +312,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             if (result == MessageBoxResult.Yes)
             {
                 int succ = 0;
+                int Count = 0;
                 try
                 {
 
@@ -315,7 +328,9 @@ namespace AL_Zakat_Fund_System.ViewModels
                     DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
 
                     DBConnection.cmd.ExecuteNonQuery();
+
                     succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
+                    Count = (int)DBConnection.cmd.Parameters["@count"].Value;
 
                 }
                 catch (Exception ex)
@@ -329,7 +344,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                     if (succ == 1)
                     {
-                        MessageBox.Show("تم تحويل " + (int)DBConnection.cmd.Parameters["@count"].Value + " زكاة إلى حساب المصارف بنجاح");
+                        MessageBox.Show("تم تحويل " + Count + " زكاة إلى حساب المصارف بنجاح");
                         FillList();
                     }
                     else if (succ == 2)

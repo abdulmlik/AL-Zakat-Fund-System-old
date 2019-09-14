@@ -52,7 +52,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                 ReceiptNO = DBConnection.reader.GetInt32(7).ToString();
                 ZType = DBConnection.reader.GetByte(8);
                 ZCalss = DBConnection.reader.GetString(9);
-                InstrumentNo = DBConnection.reader.IsDBNull(10) ? null : DBConnection.reader.GetString(10);
+                InstrumentNo = DBConnection.reader.IsDBNull(10) ? null : DBConnection.reader.GetInt32(10).ToString();
                 GloblNoPhone = DBConnection.reader.IsDBNull(11) ? null : DBConnection.reader.GetString(11).Substring(0, 3);
                 Phone = DBConnection.reader.IsDBNull(11) ? null : DBConnection.reader.GetString(11).Substring(3);
                 Email = DBConnection.reader.IsDBNull(12) ? null : DBConnection.reader.GetString(12);

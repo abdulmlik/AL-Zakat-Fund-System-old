@@ -55,7 +55,7 @@
                         <TextBlock Text="قيمة الصرف : * " Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="3"/>
                         <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="3" >
                             <TextBox MaxLength="20" Text="{Binding Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource smallTextbox}" />
-                            <TextBlock Text="قيمة الاموال التي تم صرفها" Style="{StaticResource smallText}"/>
+                            <TextBlock Text="قيمة الاموال التي تم صرفها بالدينار والقروش بعد النقطة" TextWrapping="Wrap" Style="{StaticResource smallText}"/>
                         </StackPanel>
 
                         <StackPanel Margin="10 10 0 0" Grid.Column="2"  Grid.Row="3" >
@@ -64,6 +64,7 @@
                         </StackPanel>
                         <StackPanel  VerticalAlignment="Center" Grid.Column="3" Grid.Row="3"  >
                             <ComboBox SelectedIndex="{Binding CategoryPoor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ComboBox1}" >
+                                <ComboBoxItem>الفقراء والمسكين</ComboBoxItem>
                                 <ComboBoxItem>المؤلفة قلوبهم</ComboBoxItem>
                                 <ComboBoxItem>في الرقاب</ComboBoxItem>
                                 <ComboBoxItem>الغارمين</ComboBoxItem>

@@ -50,6 +50,9 @@ namespace AL_Zakat_Fund_System.ViewModels
                 Comment = DBConnection.reader.IsDBNull(3) ? null : DBConnection.reader.GetString(3);
                 fullname = DBConnection.reader.GetString(4);
                 Observer_ssn = DBConnection.reader.GetInt64(5).ToString();
+                Phone = DBConnection.reader.GetString(6);
+                Email = DBConnection.reader.GetString(7);
+
             }
             catch (Exception ex)
             {
