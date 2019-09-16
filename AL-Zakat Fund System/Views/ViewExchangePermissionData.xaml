@@ -14,6 +14,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -34,11 +35,31 @@
             <TextBlock Text="بحث" Style="{StaticResource filedTextS}" />
             <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="0 10" MinWidth="180" Style="{StaticResource smallTextbox}" />
         </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="3" Grid.RowSpan="5">
-            <Button Command="{Binding ReFreshCommand}" Content="تحديث" Style="{StaticResource viewButtonStyleSearch}" />
-            <Button Command="{Binding EditCommand}" Content="تعديل" Style="{StaticResource viewButtonStyleSearch}" />
-            <Button Command="{Binding ViewCommand}" Content="عرض" Style="{StaticResource viewButtonStyleSearch}" />
-            <Button Command="{Binding DeleteCommand}" Content="حذف" Style="{StaticResource viewButtonStyleSearch}"/>
+        <StackPanel Grid.Column="5" Grid.Row="3" Grid.RowSpan="5">
+            <Button Command="{Binding ReFreshCommand}" Style="{StaticResource viewButtonStyleSearch}" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xf0e2;" Margin="0 3 0 0" FontSize="18" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    <TextBlock Text="تحديث" Margin="10 0 0 0" />
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding EditCommand}" Style="{StaticResource viewButtonStyleSearch}"  >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xf873;" Margin="0 3 0 0" FontSize="18" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    <TextBlock Text="تعديل" Margin="7 0 0 0" />
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding ViewCommand}" Style="{StaticResource viewButtonStyleSearch}" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xf38a;" Margin="0 3 0 0" FontSize="18" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    <TextBlock Text="عرض" Margin="5 0 0 0" />
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding DeleteCommand}" Style="{StaticResource viewButtonStyleSearch}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xf2ed;" Margin="0 1 0 0" FontSize="22" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    <TextBlock Text="حذف" Margin="5 0 0 0" />
+                </StackPanel>
+            </Button>
         </StackPanel>
         <ListView ItemsSource="{Binding list}" FontSize="18" Foreground="Black" 
                   IsSynchronizedWithCurrentItem="True"  SelectedItem="{Binding SelectItem}"

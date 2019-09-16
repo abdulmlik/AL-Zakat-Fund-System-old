@@ -85,9 +85,24 @@
                         <TextBox Text="{Binding Comment,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource Textarea}" />
                         <TextBlock Text="ملاحظة على حالة الصرف" Style="{StaticResource smallText}" />
                     </StackPanel>
-                    <Button Command="{Binding CreateAuthorizeExpenditureDatabaseCommand}" Content="حفظ" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="6"  />
-                    <Button Command="{Binding ResetCommand}" Content="اعادة الادخال" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="6"  />
-                    <Button Command="{Binding CancelCommand}" Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="3" Grid.Row="6"  />
+                    <Button Command="{Binding CreateAuthorizeExpenditureDatabaseCommand}" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="6" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xf0c7;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                            <TextBlock Text="حفظ" Margin="7 1 0 0" />
+                        </StackPanel>
+                    </Button>
+                    <Button MaxWidth="150" Command="{Binding ResetCommand}" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="6" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xf01e;" Margin="0 0 0 0" FontSize="20" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                            <TextBlock Text="اعادة الادخال" Margin="7 1 0 0" />
+                        </StackPanel>
+                    </Button>
+                    <Button Command="{Binding CancelCommand}" Style="{StaticResource viewButtonStyle}" Grid.Column="3" Grid.Row="6" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xf057;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                            <TextBlock Text="الغاء" Margin="7 1 0 0" />
+                        </StackPanel>
+                    </Button>
                 </Grid>
             </GroupBox>
         </StackPanel>

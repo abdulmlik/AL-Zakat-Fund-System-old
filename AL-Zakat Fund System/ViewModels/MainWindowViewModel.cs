@@ -14,6 +14,7 @@ using AL_Zakat_Fund_System.Views.UserControlBackground;
 using System.Data.SqlClient;
 using System.Data;
 using System.IO;
+using System.Windows.Input;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
@@ -25,6 +26,8 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         private Window mWindow;
         private object _Page;
+
+        private Cursor _Cursor;
 
         #region Button SideBar ,When Click
         private Thickness ZeroBorderThickness = new Thickness(0);
@@ -173,6 +176,11 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             get { return _Page; }
             set { SetProperty(ref _Page, value); }
+        }
+        public Cursor Cursor
+        {
+            get { return _Cursor; }
+            set { SetProperty(ref _Cursor, value); }
         }
 
 
@@ -335,6 +343,10 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region LogOut
         private void LogOut()
         {
+            Cursor saveCursor = Cursor;
+            //Cursor = Cursors.Wait;
+            Mouse.OverrideCursor = Cursors.Wait;
+
             //Properties.Settings.Default.EmpName = "";
             //Properties.Settings.Default.EmPassword = "";
             //Properties.Settings.Default.EmpNo = 0;
@@ -343,6 +355,10 @@ namespace AL_Zakat_Fund_System.ViewModels
 
             loginWindow LWindow = new loginWindow();
             mWindow.Close();
+
+            //Cursor = saveCursor;
+            Mouse.OverrideCursor = saveCursor;
+
             LWindow.ShowDialog();
         }
         #endregion
@@ -350,12 +366,18 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region Contact Status
         private void ContactStatus()
         {
+            Cursor saveCursor = Cursor;
+            //Cursor = Cursors.Wait;
+            Mouse.OverrideCursor = Cursors.Wait;
+
             if (DBConnection.ConnectionStatus())
             {
                 MessageBox.Show("لا يوجد مشاكل في الاتصال بالخادم", "", MessageBoxButton.OK, MessageBoxImage.None,
                                 MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
             }
 
+            //Cursor = saveCursor;
+            Mouse.OverrideCursor = saveCursor;
         }
         #endregion
 
@@ -387,6 +409,9 @@ namespace AL_Zakat_Fund_System.ViewModels
             bool? result = FilePath.ShowDialog();
             if (result == true)
             {
+                Cursor saveCursor = Cursor;
+                //Cursor = Cursors.Wait;
+                Mouse.OverrideCursor = Cursors.Wait;
                 int succ = 0;
                 try
                 {
@@ -425,6 +450,8 @@ namespace AL_Zakat_Fund_System.ViewModels
                 {
                     DBConnection.CloseConnection();
                 }
+                //Cursor = saveCursor;
+                Mouse.OverrideCursor = saveCursor;
             }
         }
         private bool DatabaseBackupCanExecute()
@@ -447,8 +474,10 @@ namespace AL_Zakat_Fund_System.ViewModels
                 bool? result = FilePath.ShowDialog();
                 if (result == true)
                 {
-                    System.Windows.Input.Cursor saveCursor = mWindow.Cursor;
-                    mWindow.Cursor = System.Windows.Input.Cursors.Wait;
+                    Cursor saveCursor = Cursor;
+                    //Cursor = Cursors.Wait;
+                    Mouse.OverrideCursor = Cursors.Wait;
+
                     int succ = 0;
                     try
                     {
@@ -486,7 +515,8 @@ namespace AL_Zakat_Fund_System.ViewModels
                     {
                         DBConnection.CloseConnection();
                     }
-                    mWindow.Cursor = saveCursor;
+                    //Cursor = saveCursor;
+                    Mouse.OverrideCursor = saveCursor;
                 }
             }
         }
@@ -501,100 +531,160 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region functions change content of pages
         private void PageOpenAccountPoorExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ZeroThickness();
             OpenAccountBorderThickness = LeftBorderThickness;
             //true if first opening program or when you press a Close
             if (PageOAP == null || PageOAP.Content == null) { PageOAP = new OpenAccountPoor(); }
             PageOAP.DataContext = new OpenAccountPoorViewModel(PageOAP, this);
             Page = PageOAP;
+
+            Cursor = saveCursor;
         }
         private void PageOpenRecordPoorExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ZeroThickness();
             OpenRecordBorderThickness = LeftBorderThickness;
             if (PageORP == null || PageORP.Content == null) { PageORP = new OpenRecordPoor(); }
             PageORP.DataContext = new OpenRecordPoorViewModel(PageORP, this);
             Page = PageORP;
+
+            Cursor = saveCursor;
         }
         private void PageAddNewZakatExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ZeroThickness();
             AddNewZakatBorderThickness = LeftBorderThickness;
             if (PageANZ == null || PageANZ.Content == null) { PageANZ = new AddNewZakat(); }
             PageANZ.DataContext = new AddNewZakatViewModel(PageANZ, this);
             Page = PageANZ;
+
+            Cursor = saveCursor;
         }
         private void PageCreateExchangePermissionExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ZeroThickness();
             CreateAuthorizeExpenditureBorderThickness = LeftBorderThickness;
             if (PageCEP == null || PageCEP.Content == null) { PageCEP = new CreateExchangePermission(); }
             PageCEP.DataContext = new CreateExchangePermissionViewModel(PageCEP, this);
             Page = PageCEP;
+
+            Cursor = saveCursor;
         }
         private void PageDeliverRecordExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ZeroThickness();
             DeliverRecordBorderThickness = LeftBorderThickness;
             if (PageDR == null || PageDR.Content == null) { PageDR = new DeliverRecord(); }
             PageDR.DataContext = new DeliverRecordViewModel(PageDR, this);
             Page = PageDR;
+
+            Cursor = saveCursor;
         }
         private void PageViewAccountDataExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ZeroThickness();
             ViewAccountBorderThickness = LeftBorderThickness;
             PageVAD = new ViewAccountData();
             PageVAD.DataContext = new ViewAccountDataViewModel(PageVAD, mWindow);
             Page = PageVAD;
+
+            Cursor = saveCursor;
         }
         private void PageViewExchangePermissionDataExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ZeroThickness();
             ViewAuthorizeExpenditureBorderThickness = LeftBorderThickness;
             PageVEPD = new ViewExchangePermissionData();
             PageVEPD.DataContext = new ViewExchangePermissionDataViewModel(PageVEPD, mWindow);
             Page = PageVEPD;
+
+            Cursor = saveCursor;
         }
         private void PageViewFollowUpDataExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ZeroThickness();
             ViewFollowUpBorderThickness = LeftBorderThickness;
             PageVFD = new ViewFollowUpData();
             PageVFD.DataContext = new ViewFollowUpDataViewModel(PageVFD, mWindow);
             Page = PageVFD;
+
+            Cursor = saveCursor;
         }
         private void PageViewFollowUpDataObserverExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ZeroThickness();
             ViewFollowUpObserverBorderThickness = LeftBorderThickness;
             PageVFDO = new ViewFollowUpDataObserver();
             PageVFDO.DataContext = new ViewFollowUpDataObserverViewModel(PageVFDO, mWindow);
             Page = PageVFDO;
+
+            Cursor = saveCursor;
         }
         private void PageViewRecordDataExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ZeroThickness();
             ViewRecordBorderThickness = LeftBorderThickness;
             PageVRD = new ViewRecordData();
             PageVRD.DataContext = new ViewRecordDataViewModel(PageVRD, mWindow);
             Page = PageVRD;
+
+            Cursor = saveCursor;
         }
         private void PageViewZakatDataExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ZeroThickness();
             ViewZakatBorderThickness = LeftBorderThickness;
             PageVZD = new ViewZakatData();
             PageVZD.DataContext = new ViewZakatDataViewModel(PageVZD, mWindow);
             Page = PageVZD;
+
+            Cursor = saveCursor;
         }
         private void PageTransferZakatDataExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ZeroThickness();
             TransferZakatBorderThickness = LeftBorderThickness;
             PageTZD = new TransferZakat();
             PageTZD.DataContext = new TransferZakatViewModel(PageTZD, mWindow);
             Page = PageTZD;
+
+            Cursor = saveCursor;
         }
 
         #endregion
@@ -604,66 +694,96 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region Zakat
         private void ReportZakatExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ReportZakat PageRZ = new ReportZakat();
             PageRZ.DataContext = new ReportZakatViewModel(PageRZ);
             PageRZ.Owner = mWindow;
             bool? result = PageRZ.ShowDialog();
             if (result == true)
             { }
+
+            Cursor = saveCursor;
         }
         private void ReportCollectZakatExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ReportCollectZakat PageRCZ = new ReportCollectZakat();
             PageRCZ.DataContext = new ReportCollectZakatViewModel(PageRCZ);
             PageRCZ.Owner = mWindow;
             bool? result = PageRCZ.ShowDialog();
             if (result == true)
             { }
+
+            Cursor = saveCursor;
         }
         private void ReportNumberZakatExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ReportNumberZakat PageRNZ = new ReportNumberZakat();
             PageRNZ.DataContext = new ReportNumberZakatViewModel(PageRNZ);
             PageRNZ.Owner = mWindow;
             bool? result = PageRNZ.ShowDialog();
             if (result == true)
             { }
+
+            Cursor = saveCursor;
         }
         #endregion
 
         #region Expenses 
         private void ReportExpensesExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ReportExpenses PageRE = new ReportExpenses();
             PageRE.DataContext = new ReportExpensesViewModel(PageRE);
             PageRE.Owner = mWindow;
             bool? result = PageRE.ShowDialog();
             if (result == true)
             { }
+
+            Cursor = saveCursor;
         }
         #endregion
 
         #region Social Research
         private void ReportSocialResearchExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ReportSocialResearch PageRSR = new ReportSocialResearch();
             PageRSR.DataContext = new ReportSocialResearchViewModel(PageRSR);
             PageRSR.Owner = mWindow;
             bool? result = PageRSR.ShowDialog();
             if (result == true)
             { }
+
+            Cursor = saveCursor;
         }
         #endregion
 
         #region Applicant
         private void ReportApplicantExecute()
         {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
             ReportApplicant PageRA = new ReportApplicant();
             PageRA.DataContext = new ReportApplicantViewModel(PageRA);
             PageRA.Owner = mWindow;
             bool? result = PageRA.ShowDialog();
             if (result == true)
             { }
+
+            Cursor = saveCursor;
         }
         #endregion
 
@@ -679,6 +799,8 @@ namespace AL_Zakat_Fund_System.ViewModels
         public MainWindowViewModel(Window window)
         {
             mWindow = window;
+
+            Cursor = Cursors.Arrow;
 
             // Name Employee
             EmpName = Properties.Settings.Default.EmpName;

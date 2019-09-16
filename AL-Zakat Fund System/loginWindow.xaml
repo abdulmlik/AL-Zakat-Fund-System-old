@@ -29,10 +29,20 @@
             <TextBox Text="{Binding UserName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource Textbox4}" />
             <TextBlock  Text="كلمة المرور" Style="{StaticResource filedText}" Margin="0 10 0 5" />
             <PasswordBox Name="Password" Style="{StaticResource TextboxPassword}" />
-            <Button Margin="0 20 0 0" Width="120" Content="تسجيل الدخول" Style="{StaticResource  viewButtonStyle2}" HorizontalAlignment="Right" Command="{Binding loginCommand}" CommandParameter="{Binding ElementName=Password}" />
+            <Button Margin="0 20 0 0" Width="140" Style="{StaticResource  viewButtonStyle2}" HorizontalAlignment="Right" Command="{Binding loginCommand}" CommandParameter="{Binding ElementName=Password}" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xF090;"   Margin="0 3 0 0" FontSize="18" FontFamily="{StaticResource FontAwesome5ProLight}" >
+                        <TextBlock.LayoutTransform>
+                            <RotateTransform Angle="180"/>
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+                    <TextBlock Text="تسجيل الدخول" Margin="10 0 0 0" />
+                </StackPanel>
+            </Button>
         </StackPanel>
         <Button Command="{Binding SettingCommand}" Grid.Column="3" Grid.Row="1" Padding="0" VerticalAlignment="Top" HorizontalAlignment="Right"   Width="30" Height="30">
-            <Image Source="/AL-Zakat Fund System;component/Images/Icons/Settings.ico" />
+            <TextBlock Text="&#xf013;" Padding="2" FontSize="22" FontFamily="{StaticResource FontAwesome5ProLight}" />
+            <!--<Image Source="/AL-Zakat Fund System;component/Images/Icons/Settings.ico" />-->
         </Button>
     </Grid>
 </Window>

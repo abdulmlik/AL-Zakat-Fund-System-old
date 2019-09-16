@@ -133,14 +133,6 @@
       <HintPath>..\packages\CrystalReports.FlashControlV71.13.0.3501\lib\net20\FlashControlV71.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
-      <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="LibExcel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Stimulsoft.Reports.Engine.2019.3.4\lib\net45\LibExcel.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
       <Private>True</Private>
@@ -166,34 +158,6 @@
     <Reference Include="ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\packages\CrystalReports.FlashControlV71.13.0.3501\lib\net20\ShockwaveFlashObjects.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Stimulsoft.Base, Version=2019.3.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Stimulsoft.Reports.Engine.2019.3.4\lib\net45\Stimulsoft.Base.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Stimulsoft.Data, Version=2019.3.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Stimulsoft.Reports.Engine.2019.3.4\lib\net45\Stimulsoft.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Stimulsoft.Map, Version=2019.3.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Stimulsoft.Reports.Engine.2019.3.4\lib\net45\Stimulsoft.Map.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Stimulsoft.Report, Version=2019.3.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Stimulsoft.Reports.Engine.2019.3.4\lib\net45\Stimulsoft.Report.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Stimulsoft.Report.Check, Version=2019.3.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Stimulsoft.Reports.Engine.2019.3.4\lib\net45\Stimulsoft.Report.Check.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Stimulsoft.Report.Helper, Version=2019.3.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Stimulsoft.Reports.Engine.2019.3.4\lib\net45\Stimulsoft.Report.Helper.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Svg, Version=2.4.3.29446, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
-      <HintPath>..\packages\Stimulsoft.Reports.Engine.2019.3.4\lib\net45\Svg.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -655,7 +619,11 @@
     <Resource Include="Fonts\Lato-SemiboldItalic.ttf" />
     <Resource Include="Fonts\Lato-Thin.ttf" />
     <Resource Include="Fonts\Lato-ThinItalic.ttf" />
-    <Resource Include="Fonts\fontawesome-webfont.ttf" />
+    <Resource Include="Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+    <Resource Include="Fonts\Font Awesome 5 Duotone-900.otf" />
+    <Resource Include="Fonts\Font Awesome 5 Pro-Light-300.otf" />
+    <Resource Include="Fonts\Font Awesome 5 Pro-Regular-400.otf" />
+    <Resource Include="Fonts\Font Awesome 5 Pro-Solid-900.otf" />
     <None Include="Models\DataSet.xsc">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
@@ -720,15 +688,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Localization\en.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Localization\en-GB.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Localization\ar.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -130,8 +130,18 @@
                         <TextBox Text="{Binding Email,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource Textbox4}" />
                         <TextBlock Text="البريد الالكتروني للمزكي ويكتب بهذا النمط (xxxx@xxx.xxx) ،الحقل اختياري" Style="{StaticResource smallText}"/>
                     </StackPanel>
-                    <Button Command="{Binding ModifyZakatDatabaseCommand}" Content="تحديث" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="10"  />
-                    <Button Command="{Binding CancelCommand}" Content="الغاء" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="10"  />
+                    <Button Command="{Binding ModifyZakatDatabaseCommand}" Style="{StaticResource viewButtonStyle}" Grid.Column="1" Grid.Row="10"  >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xf0c7;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                            <TextBlock Text="تحديث" Margin="7 1 0 0" />
+                        </StackPanel>
+                    </Button>
+                    <Button Command="{Binding CancelCommand}" Style="{StaticResource viewButtonStyle}" Grid.Column="2" Grid.Row="10"  >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xf057;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                            <TextBlock Text="الغاء" Margin="7 1 0 0" />
+                        </StackPanel>
+                    </Button>
                 </Grid>
             </GroupBox>
         </StackPanel>

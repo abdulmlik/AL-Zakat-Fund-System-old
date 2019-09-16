@@ -14,6 +14,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -34,21 +35,31 @@
             <TextBlock Text="بحث" Style="{StaticResource filedTextS}" />
             <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="0 10" MinWidth="180" Style="{StaticResource smallTextbox}" />
         </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="3" Grid.RowSpan="6">
+        <StackPanel Grid.Column="5" Grid.Row="3" Grid.RowSpan="6">
             <Button Command="{Binding ReFreshAccountCommand}" Style="{StaticResource viewButtonStyleSearch}" >
                 <StackPanel Orientation="Horizontal">
-                    <!--<Image Source="/AL-Zakat Fund System;component/Images/Icons/Refresh.ico" Width="20" Height="20"/>-->
-                    <TextBlock Text="تحديث" VerticalAlignment="Center" />
+                    <TextBlock Text="&#xf0e2;" Margin="0 3 0 0" FontSize="18" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    <TextBlock Text="تحديث" Margin="10 0 0 0" />
                 </StackPanel>
             </Button>
             <Button Command="{Binding EditAccountCommand}" Style="{StaticResource viewButtonStyleSearch}" >
                 <StackPanel Orientation="Horizontal">
-                    <!--<Image Source="/AL-Zakat Fund System;component/Images/Icons/Scribe/Registration.ico" Width="20" Height="20" />-->
-                    <TextBlock Text=" تعديل" VerticalAlignment="Center" />
+                    <TextBlock Text="&#xf4ff;" Margin="0 3 0 0" FontSize="20" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    <TextBlock Text="تعديل" Margin="7 0 0 0" />
                 </StackPanel>
             </Button>
-            <Button Command="{Binding ViewAccountCommand}" Content="عرض" Style="{StaticResource viewButtonStyleSearch}" />
-            <Button Command="{Binding DeleteAccountCommand}" Content="حذف" Style="{StaticResource viewButtonStyleSearch}"/>
+            <Button Command="{Binding ViewAccountCommand}" Style="{StaticResource viewButtonStyleSearch}" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xf65c;" Margin="0 0 0 0" FontSize="22" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    <TextBlock Text="عرض" Margin="7 0 0 0" />
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding DeleteAccountCommand}" Style="{StaticResource viewButtonStyleSearch}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xf235;" Margin="0 0 0 0" FontSize="20" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    <TextBlock Text="حذف" Margin="7 0 0 0" />
+                </StackPanel>
+            </Button>
         </StackPanel>
         <ListView ItemsSource="{Binding list}" FontSize="18" Foreground="Black" VerticalAlignment="Stretch"
                   IsSynchronizedWithCurrentItem="True"  SelectedItem="{Binding SelectItem}"

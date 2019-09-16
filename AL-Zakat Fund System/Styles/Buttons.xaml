@@ -14,14 +14,14 @@
            Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="Padding" Value="10 5"/>
         <Setter Property="Height" Value="60"/>
-        <Setter Property="Width" Value="150"/>
+        <Setter Property="Width" Value="160"/>
         <Setter Property="BorderThickness" Value="0 0 0 0"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="{StaticResource ForegroundYellow2Brush}"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -118,7 +118,7 @@
     <Style TargetType="Control" x:Key="viewButtonStyleSearch">
         <Setter Property="Padding" Value="6"/>
         <Setter Property="Margin" Value="10"/>
-        <Setter Property="Width" Value="80" />
+        <Setter Property="Width" Value="100" />
         <Setter Property="FontFamily" Value="Adobe Arabic"/>
         <Setter Property="FontSize" Value="24"/>
         <Setter Property="FontWeight" Value="Normal"/>

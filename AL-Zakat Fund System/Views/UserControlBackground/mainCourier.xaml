@@ -6,7 +6,17 @@
              xmlns:local="clr-namespace:AL_Zakat_Fund_System.Views.UserControlBackground"
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="700" FlowDirection="LeftToRight" >
-    <UserControl.Background>
-        <ImageBrush ImageSource="/AL-Zakat Fund System;component/Images/Background/Zakat_Courier.png" Opacity="0.8" Stretch="Uniform"  />
-    </UserControl.Background>
+    <Image Source="/AL-Zakat Fund System;component/Images/Background/Zakat_Courier.png"  Stretch="Uniform">
+        <Image.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <BeginStoryboard Name="MyBeginStoryboard">
+                    <Storyboard BeginTime="00:00:00.000" Duration="00:00:10.000">
+                        <DoubleAnimation
+                             Storyboard.TargetProperty="Opacity" 
+                             From="0" To="0.8" Duration="00:00:1.500" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Image.Triggers>
+    </Image>
 </UserControl>

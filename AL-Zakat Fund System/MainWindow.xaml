@@ -6,17 +6,17 @@
         xmlns:local="clr-namespace:AL_Zakat_Fund_System"
         xmlns:vm="clr-namespace:AL_Zakat_Fund_System.ViewModels"
         xmlns:v="clr-namespace:AL_Zakat_Fund_System.Views"
-        xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" 
         x:Class="AL_Zakat_Fund_System.MainWindow"
         mc:Ignorable="d"
         Title="صندوق الزكاة الليبي" 
         Icon="Images/Logo/34.png"
-        Height="600" Width="950" 
-        MinHeight="610" MinWidth="920"
+        Height="600" Width="960" 
+        MinHeight="610" MinWidth="930"
         WindowStartupLocation="CenterScreen"
         FontFamily="Adobe Arabic"
         FontSize="20"
-        FlowDirection="RightToLeft">
+        FlowDirection="RightToLeft"
+        Cursor="{Binding Cursor}">
 
     <Window.Resources>
     </Window.Resources>
@@ -28,7 +28,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="160" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <!-- sidebar user photo and name -->
@@ -47,7 +47,7 @@
                 </Border.Background>
             </Border>
             <!-- user name -->
-            <TextBlock Margin="5" Text="{Binding EmpName}"  TextAlignment="Center" Foreground="#FFEEEEEE"/>
+            <TextBlock Margin="5" Text="{Binding EmpName}"  TextAlignment="Center" Foreground="{StaticResource ForegroundLavenderGrayBrush}"/>
         </StackPanel>
 
         <!-- main Mueu -->
@@ -59,26 +59,69 @@
             </Menu.ItemsPanel>
 
             <MenuItem Header="_ملف" HorizontalAlignment="Left">
-                <MenuItem Header="_تسجيل الخروج" Command="{Binding LogoutCommand}"  />
+                <MenuItem Header="_تسجيل الخروج" Command="{Binding LogoutCommand}"  >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf2f5;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator />
-                <MenuItem Header="_إنشاء نسخة احتياطية" Command="{Binding DatabaseBackupCommand}" />
-                <MenuItem Header="_إستعادة نسخة محفوظة" Command="{Binding DatabaseRestoreCommand}" />
+                <MenuItem Header="_إنشاء نسخة احتياطية" Command="{Binding DatabaseBackupCommand}" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf56e;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_إستعادة نسخة محفوظة" Command="{Binding DatabaseRestoreCommand}" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf56f;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator />
-                <MenuItem Header="_فحص حالة الاتصال بالخادم" Command="{Binding ContactStatusCommand}" />
+                <MenuItem Header="_فحص حالة الاتصال بالخادم" Command="{Binding ContactStatusCommand}" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf233;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator />
-                <MenuItem Header="_خروج" Command="{Binding CloseCommand}" />
+                <MenuItem Header="_خروج" Command="{Binding CloseCommand}" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf011;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="_المحتاجين" Visibility="{Binding Scribe}" HorizontalAlignment="Left" >
-                <MenuItem Command="{Binding PageOpenAccountPoorCommand}" Header="_فتح ملف لمحتاج" />
-                <MenuItem Command="{Binding PageViewAccountDataCommand}" Header="_إدارة المحتاجين" />
+                <MenuItem Command="{Binding PageOpenAccountPoorCommand}" Header="_فتح ملف لمحتاج"  >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf234;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Command="{Binding PageViewAccountDataCommand}" Header="_إدارة المحتاجين"  >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf64b;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator />
                 <MenuItem Header="التقارير" >
-                    <MenuItem Command="{Binding ReportApplicantCommand}" Header="طالب الإعانة" />
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf659;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                    <MenuItem Command="{Binding ReportApplicantCommand}" Header="طالب الإعانة"  >
+                        <MenuItem.Icon>
+                            <TextBlock Text="&#xf2bb;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_المحاضر" Visibility="{Binding Scribe}" HorizontalAlignment="Left" >
-                <MenuItem Command="{Binding PageOpenRecordPoorCommand}" Header="_فتح محضر لمحتاج" />
-                <MenuItem Command="{Binding PageViewRecordDataCommand}" Header="_إدارة المحاضر" />
+                <MenuItem Command="{Binding PageOpenRecordPoorCommand}" Header="_فتح محضر لمحتاج" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf2b9;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Command="{Binding PageViewRecordDataCommand}" Header="_إدارة المحاضر" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf64b;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <!--<Separator />
                 <MenuItem Header="التقارير" >
                     <MenuItem Header=" محضر" />
@@ -87,43 +130,120 @@
                 </MenuItem>-->
             </MenuItem>
             <MenuItem Header="_المتابعات" Visibility="{Binding Scribe}" HorizontalAlignment="Left" >
-                <MenuItem Command="{Binding PageDeliverRecordCommand}" Header="تحويل المحتاج إلى المتابعة" />
-                <MenuItem Command="{Binding PageViewFollowUpDataCommand}" Header="إدارة المتابعات" />
+                <MenuItem Command="{Binding PageDeliverRecordCommand}" Header="تحويل المحتاج إلى المتابعة" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf067;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Command="{Binding PageViewFollowUpDataCommand}" Header="إدارة المتابعات" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf0ae;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator />
                 <MenuItem Header="التقارير" >
-                    <MenuItem Command="{Binding ReportSocialResearchCommand}" Header="عدد الملفات البحاث" />
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf65a;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                    <MenuItem Command="{Binding ReportSocialResearchCommand}" Header="عدد الملفات البحاث" >
+                        <MenuItem.Icon>
+                            <TextBlock Text="&#xf65b;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_الزكاة" Visibility="{Binding Collector}" HorizontalAlignment="Left" >
-                <MenuItem Command="{Binding PageAddNewZakatCommand}" Header="_إضافة زكاة جديدة" />
-                <MenuItem Command="{Binding PageViewZakatDataCommand}" Header="_إدارة الزكاة" />
+                <MenuItem Command="{Binding PageAddNewZakatCommand}" Header="_إضافة زكاة جديدة" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf53d;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Command="{Binding PageViewZakatDataCommand}" Header="_إدارة الزكاة" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf723;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator />
-                <MenuItem Command="{Binding PageTransferZakatDataCommand}" Header="_تحويل الزكاة الى المصارف" />
+                <MenuItem Command="{Binding PageTransferZakatDataCommand}" Header="_تحويل الزكاة الى المصارف" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf66f;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator />
                 <MenuItem Header="التقارير" >
-                    <MenuItem Command="{Binding ReportNumberZakatCommand}" Header="عدد المزكين" />
-                    <MenuItem Command="{Binding ReportCollectZakatCommand}" Header="جباية الزكاة" />
-                    <MenuItem Command="{Binding ReportZakatCommand}" Header="الزكاة" />
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf65a;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                    <MenuItem Command="{Binding ReportNumberZakatCommand}" Header="عدد المزكين" >
+                        <MenuItem.Icon>
+                            <TextBlock Text="&#xf65b;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Command="{Binding ReportCollectZakatCommand}" Header="جباية الزكاة" >
+                        <MenuItem.Icon>
+                            <TextBlock Text="&#xf571;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Command="{Binding ReportZakatCommand}" Header="الزكاة" >
+                        <MenuItem.Icon>
+                            <TextBlock Text="&#xf659;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_المصروفات" Visibility="{Binding Courier}" HorizontalAlignment="Left" >
-                <MenuItem Command="{Binding PageCreateExchangePermissionCommand}" Header="_إذن صرف جديد" />
-                <MenuItem Command="{Binding PageViewExchangePermissionDataCommand}" Header="_إدارة المصروفات" />
+                <MenuItem Command="{Binding PageCreateExchangePermissionCommand}" Header="_إذن صرف جديد">
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf53c;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Command="{Binding PageViewExchangePermissionDataCommand}" Header="_إدارة المصروفات" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf723;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator />
                 <MenuItem Header="التقارير" >
-                    <MenuItem Command="{Binding ReportExpensesCommand}" Header="المصروفات" />
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf65a;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                    <MenuItem Command="{Binding ReportExpensesCommand}" Header="المصروفات" >
+                        <MenuItem.Icon>
+                            <TextBlock Text="&#xf571;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_المتابعات" Visibility="{Binding Observer}" HorizontalAlignment="Left" >
-                <MenuItem Command="{Binding PageViewFollowUpDataObserverCommand}" Header="_متابعاتي" />
+                <MenuItem Command="{Binding PageViewFollowUpDataObserverCommand}" Header="_متابعاتي" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf0ae;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <!--<Separator />
-                <MenuItem Header="المراجعات" />-->
+                <MenuItem Header="المراجعات">
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#x;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>-->
             </MenuItem>
             <MenuItem Header="المساعدة" HorizontalAlignment="Left">
-                <MenuItem Header="_مساعدة" />
-                <MenuItem Header="_الصفحة الرئيسية" />
+                <MenuItem Header="_مساعدة" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf059;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_الصفحة الرئيسية" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf282;" FontFamily="{StaticResource FontAwesome5BrandsRegular}" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator />
-                <MenuItem Header="_حول نظام صندوق الزكاة" />
+                <MenuItem Header="_حول نظام صندوق الزكاة" >
+                    <MenuItem.Icon>
+                        <TextBlock Text="&#xf05a;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="_الواجهة" Width="55" HorizontalAlignment="Right" Visibility="{Binding Supervisor}" >
                 <MenuItem Header="_الجابي" Command="{Binding GetPrivCommand}" CommandParameter="1" />
@@ -147,46 +267,111 @@
 
             <StackPanel   Grid.Row="1" Grid.Column="0" Opacity="0.8" Grid.ColumnSpan="2" >
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="فتح ملف لمحتاج" Command="{Binding PageOpenAccountPoorCommand}"
-                       Visibility="{Binding Scribe}" BorderThickness="{Binding OpenAccountBorderThickness}" />
+                    Command="{Binding PageOpenAccountPoorCommand}"
+                       Visibility="{Binding Scribe}" BorderThickness="{Binding OpenAccountBorderThickness}" >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xf234;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        <TextBlock Text="فتح ملف لمحتاج" Margin="10 2 0 0" />
+                    </StackPanel>
+                </Button>
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="إدارة المحتاجين" Command="{Binding PageViewAccountDataCommand}"
-                       Visibility="{Binding Scribe}" BorderThickness="{Binding ViewAccountBorderThickness}" />
+                   Command="{Binding PageViewAccountDataCommand}"
+                       Visibility="{Binding Scribe}" BorderThickness="{Binding ViewAccountBorderThickness}"  >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xf509;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        <TextBlock Text="إدارة المحتاجين" Margin="10 2 0 0" />
+                    </StackPanel>
+                </Button>
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="فتح محضر لمحتاج"  Command="{Binding PageOpenRecordPoorCommand}" 
-                       Visibility="{Binding Scribe}" BorderThickness="{Binding OpenRecordBorderThickness}" />
+                     Command="{Binding PageOpenRecordPoorCommand}" 
+                       Visibility="{Binding Scribe}" BorderThickness="{Binding OpenRecordBorderThickness}"  >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xf2b9;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        <TextBlock Text="فتح محضر لمحتاج" Margin="10 2 0 0" />
+                    </StackPanel>
+                </Button>
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="إدارة المحاضر"  Command="{Binding PageViewRecordDataCommand}" 
-                       Visibility="{Binding Scribe}" BorderThickness="{Binding ViewRecordBorderThickness}" />
+                    Command="{Binding PageViewRecordDataCommand}" 
+                       Visibility="{Binding Scribe}" BorderThickness="{Binding ViewRecordBorderThickness}"  >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xf64b;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        <TextBlock Text="إدارة المحاضر" Margin="10 2 0 0" />
+                    </StackPanel>
+                </Button>
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="تسليم المحضر للمتابع" Command="{Binding PageDeliverRecordCommand}" 
-                       Visibility="{Binding Scribe}" BorderThickness="{Binding DeliverRecordBorderThickness}" />
+                   Command="{Binding PageDeliverRecordCommand}" 
+                       Visibility="{Binding Scribe}" BorderThickness="{Binding DeliverRecordBorderThickness}"  >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xf067;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        <TextBlock Text="تحويل إلى المتابعة" TextWrapping="Wrap" Margin="10 2 0 0" />
+                    </StackPanel>
+                </Button>
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="إدارة المتابعات" Command="{Binding PageViewFollowUpDataCommand}" 
-                       Visibility="{Binding Scribe}" BorderThickness="{Binding ViewFollowUpBorderThickness}" />
+                   Command="{Binding PageViewFollowUpDataCommand}" 
+                       Visibility="{Binding Scribe}" BorderThickness="{Binding ViewFollowUpBorderThickness}"  >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xf0ae;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        <TextBlock Text="إدارة المتابعات" Margin="10 2 0 0" />
+                    </StackPanel>
+                </Button>
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="إضافة زكاة جديدة" Command="{Binding PageAddNewZakatCommand}" 
-                       Visibility="{Binding Collector}" BorderThickness="{Binding AddNewZakatBorderThickness}" />
+                   Command="{Binding PageAddNewZakatCommand}" 
+                       Visibility="{Binding Collector}" BorderThickness="{Binding AddNewZakatBorderThickness}"  >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xf53d;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        <TextBlock Text="إضافة زكاة جديدة" Margin="10 2 0 0" />
+                    </StackPanel>
+                </Button>
                 <Button  Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="إدارة الزكاة" Command="{Binding PageViewZakatDataCommand}" 
-                       Visibility="{Binding Collector}" BorderThickness="{Binding ViewZakatBorderThickness}" />
+                    Command="{Binding PageViewZakatDataCommand}" 
+                       Visibility="{Binding Collector}" BorderThickness="{Binding ViewZakatBorderThickness}"  >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xf723;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        <TextBlock Text="إدارة الزكاة" Margin="10 2 0 0" />
+                    </StackPanel>
+                </Button>
                 <Button  Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="تحويل الزكاة" Command="{Binding PageTransferZakatDataCommand}" 
-                       Visibility="{Binding Collector}" BorderThickness="{Binding TransferZakatBorderThickness}" />
+                    Command="{Binding PageTransferZakatDataCommand}" 
+                       Visibility="{Binding Collector}" BorderThickness="{Binding TransferZakatBorderThickness}"  >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xf66f;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        <TextBlock Text="تحويل الزكاة" Margin="10 2 0 0" />
+                    </StackPanel>
+                </Button>
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="انشاء إذن صرف" Command="{Binding PageCreateExchangePermissionCommand}"
-                       Visibility="{Binding Courier}" BorderThickness="{Binding CreateAuthorizeExpenditureBorderThickness}" />
+                    Command="{Binding PageCreateExchangePermissionCommand}"
+                       Visibility="{Binding Courier}" BorderThickness="{Binding CreateAuthorizeExpenditureBorderThickness}"  >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xf53c;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        <TextBlock Text="انشاء إذن صرف" Margin="10 2 0 0" />
+                    </StackPanel>
+                </Button>
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="إدارة المصروفات" Command="{Binding PageViewExchangePermissionDataCommand}"
-                       Visibility="{Binding Courier}" BorderThickness="{Binding ViewAuthorizeExpenditureBorderThickness}" />
+                    Command="{Binding PageViewExchangePermissionDataCommand}"
+                       Visibility="{Binding Courier}" BorderThickness="{Binding ViewAuthorizeExpenditureBorderThickness}"  >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xf723;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        <TextBlock Text="إدارة المصروفات" Margin="10 2 0 0" />
+                    </StackPanel>
+                </Button>
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="متابعاتي" Command="{Binding PageViewFollowUpDataObserverCommand}"
-                       Visibility="{Binding Observer}" BorderThickness="{Binding ViewFollowUpObserverBorderThickness}" />
+                   Command="{Binding PageViewFollowUpDataObserverCommand}"
+                       Visibility="{Binding Observer}" BorderThickness="{Binding ViewFollowUpObserverBorderThickness}"  >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xf0ae;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        <TextBlock Text="متابعاتي" Margin="10 2 0 0" />
+                    </StackPanel>
+                </Button>
                 <!--<Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                    Content="المراجعات" Command="{Binding PageViewFollowUpDataObserverCommand}"
                        Visibility="{Binding Observer}" />-->
                 <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                   Content="خروج" Command="{Binding CloseCommand}"/>
+                    Command="{Binding CloseCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xf011;" Margin="0 0 0 0" FontSize="24" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        <TextBlock Text="خروج" Margin="10 2 0 0" />
+                    </StackPanel>
+                </Button>
             </StackPanel>
 
         </Grid>
