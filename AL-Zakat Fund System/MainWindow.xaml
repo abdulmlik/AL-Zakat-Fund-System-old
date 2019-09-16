@@ -61,8 +61,8 @@
             <MenuItem Header="_ملف" HorizontalAlignment="Left">
                 <MenuItem Header="_تسجيل الخروج" Command="{Binding LogoutCommand}"  />
                 <Separator />
-                <MenuItem Header="_إنشاء نسخة احطياطية" />
-                <MenuItem Header="_إستعادة نسخة محفوظة" />
+                <MenuItem Header="_إنشاء نسخة احتياطية" Command="{Binding DatabaseBackupCommand}" />
+                <MenuItem Header="_إستعادة نسخة محفوظة" Command="{Binding DatabaseRestoreCommand}" />
                 <Separator />
                 <MenuItem Header="_فحص حالة الاتصال بالخادم" Command="{Binding ContactStatusCommand}" />
                 <Separator />

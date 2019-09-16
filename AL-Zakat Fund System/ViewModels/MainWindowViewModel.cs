@@ -7,9 +7,13 @@ using System.ComponentModel;
 using Prism.Commands;
 using Prism.Mvvm;
 using System.Windows;
+using Microsoft.Win32;
 using AL_Zakat_Fund_System.Views;
 using AL_Zakat_Fund_System.Models;
 using AL_Zakat_Fund_System.Views.UserControlBackground;
+using System.Data.SqlClient;
+using System.Data;
+using System.IO;
 
 namespace AL_Zakat_Fund_System.ViewModels
 {
@@ -285,6 +289,8 @@ namespace AL_Zakat_Fund_System.ViewModels
         public DelegateCommand ContactStatusCommand { get; set; }
         public DelegateCommand<string> GetPrivCommand { get; set; }
         public DelegateCommand CloseCommand { get; set; }
+        public DelegateCommand DatabaseBackupCommand { get; set; }
+        public DelegateCommand DatabaseRestoreCommand { get; set; }
         #endregion
 
         #region view page Command
@@ -325,6 +331,8 @@ namespace AL_Zakat_Fund_System.ViewModels
         #region Execute and CanExecute Functions
 
         #region functions file meun
+
+        #region LogOut
         private void LogOut()
         {
             //Properties.Settings.Default.EmpName = "";
@@ -337,27 +345,157 @@ namespace AL_Zakat_Fund_System.ViewModels
             mWindow.Close();
             LWindow.ShowDialog();
         }
+        #endregion
+
+        #region Contact Status
         private void ContactStatus()
         {
-            if (DBConnection.OpenConnection())
+            if (DBConnection.ConnectionStatus())
             {
                 MessageBox.Show("لا يوجد مشاكل في الاتصال بالخادم", "", MessageBoxButton.OK, MessageBoxImage.None,
                                 MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
-                DBConnection.CloseConnection();
             }
 
         }
+        #endregion
 
-        void GetPrivExecute(string sender)
+        #region Get Priv
+        private void GetPrivExecute(string sender)
         {
             Page = null;
             ZeroThickness();
             GetPriv(int.Parse(sender));
         }
-        void CloseExecute()
+        #endregion
+
+        #region Close
+        private void CloseExecute()
         {
             mWindow.Close();
         }
+        #endregion
+
+        #region Database Backup
+        private void DatabaseBackupExecute()
+        {
+            SaveFileDialog FilePath = new SaveFileDialog();
+            FilePath.InitialDirectory = @"D:\";
+            FilePath.FileName = "ZakatDB_" + DateTime.Now.ToShortDateString().Replace('/', '-') + "_"
+                                 + DateTime.Now.ToLongTimeString().Replace(':', '-').Replace("PM", "").Replace("AM", "").Trim();
+            FilePath.Filter = "Text Files (*.bak)|*.bak|All Files|*.*";
+
+            bool? result = FilePath.ShowDialog();
+            if (result == true)
+            {
+                int succ = 0;
+                try
+                {
+                    DBConnection.OpenConnection();
+
+                    DBConnection.cmd.CommandType = CommandType.StoredProcedure;
+                    DBConnection.cmd.CommandText = "sp_Backup";
+
+                    DBConnection.cmd.Parameters.Add(new SqlParameter("@FilePath", SqlDbType.NVarChar,500));
+                    DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
+                    
+                    DBConnection.cmd.Parameters["@FilePath"].Value = FilePath.FileName;
+
+                    DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
+
+                    DBConnection.cmd.ExecuteNonQuery();
+
+                    succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
+
+
+                    if (succ == 1)
+                    {
+                        MessageBox.Show("تم أخد النسخة الإحتياطية بنجاح");
+                    }
+                    else if (succ == 0)
+                    {
+                        throw new Exception("مشكلة في تنفيذ الاجراء المخزن الرجاء التأكد من اختيار قرص غير قرص C");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("لم يتم أخد النسخة الإحتياطية " + Environment.NewLine + "الخطا :" + ex.Message.ToString(), "", MessageBoxButton.OK, MessageBoxImage.Error,
+                                    MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                }
+                finally
+                {
+                    DBConnection.CloseConnection();
+                }
+            }
+        }
+        private bool DatabaseBackupCanExecute()
+        {
+            return DBConnection.ConnectionStatus();
+        }
+        #endregion
+
+        #region Database Restore
+        private void DatabaseRestoreExecute()
+        {
+            OpenFileDialog FilePath = new OpenFileDialog();
+            FilePath.InitialDirectory = @"D:\";
+            FilePath.Filter = "Text Files (*.bak)|*.bak|All Files|*.*";
+
+            MessageBoxResult result1 = MessageBox.Show("لإسترجاع النسخة الإحتياطية الرجاء التأكد من إغلاق جميع الإتصالات بالسيرفر", "", MessageBoxButton.YesNo, MessageBoxImage.Question
+                                                            , MessageBoxResult.No, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+            if (result1 == MessageBoxResult.Yes)
+            {
+                bool? result = FilePath.ShowDialog();
+                if (result == true)
+                {
+                    System.Windows.Input.Cursor saveCursor = mWindow.Cursor;
+                    mWindow.Cursor = System.Windows.Input.Cursors.Wait;
+                    int succ = 0;
+                    try
+                    {
+                        DBConnection.OpenConnection();
+
+                        DBConnection.cmd.CommandType = CommandType.StoredProcedure;
+                        DBConnection.cmd.CommandText = "sp_Restore";
+
+                        DBConnection.cmd.Parameters.Add(new SqlParameter("@FilePath", SqlDbType.NVarChar, 255));
+                        DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
+
+                        DBConnection.cmd.Parameters["@FilePath"].Value = FilePath.FileName;
+
+                        DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
+
+                        DBConnection.cmd.ExecuteNonQuery();
+
+                        succ = (int)DBConnection.cmd.Parameters["@Success"].Value;
+
+                        if (succ == 1)
+                        {
+                            MessageBox.Show("تم إسترجاع النسخة الإحتياطية بنجاح");
+                        }
+                        else if (succ == 0)
+                        {
+                            throw new Exception("مشكلة في تنفيذ الاجراء المخزن تأكد من إغلاق جميع الإتصالات بالسيرفر");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("لم يتم إسترجاع النسخة الإحتياطية" + Environment.NewLine + "الخطا :" + ex.Message.ToString(), "", MessageBoxButton.OK, MessageBoxImage.Error,
+                                        MessageBoxResult.OK, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                    }
+                    finally
+                    {
+                        DBConnection.CloseConnection();
+                    }
+                    mWindow.Cursor = saveCursor;
+                }
+            }
+        }
+        private bool DatabaseRestoreCanExecute()
+        {
+            return DBConnection.ConnectionStatus() && Properties.Settings.Default.EmpPriv == 10;
+        }
+        #endregion
+
         #endregion
 
         #region functions change content of pages
@@ -581,6 +719,8 @@ namespace AL_Zakat_Fund_System.ViewModels
             ContactStatusCommand = new DelegateCommand(ContactStatus);
             GetPrivCommand = new DelegateCommand<string>(GetPrivExecute);
             CloseCommand = new DelegateCommand(CloseExecute);
+            DatabaseBackupCommand = new DelegateCommand(DatabaseBackupExecute,DatabaseBackupCanExecute);
+            DatabaseRestoreCommand = new DelegateCommand(DatabaseRestoreExecute, DatabaseRestoreCanExecute);
 
             ReportZakatCommand = new DelegateCommand(ReportZakatExecute);
             ReportCollectZakatCommand = new DelegateCommand(ReportCollectZakatExecute);

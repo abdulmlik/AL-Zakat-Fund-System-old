@@ -126,11 +126,14 @@ namespace AL_Zakat_Fund_System.Models
                 con.ConnectionString = GetConnectionString() + "Connect Timeout=4;";
                 con.Open();
                 con.Close();
-                Clear();
             }
             catch
             {
                 return false;
+            }
+            finally
+            {
+                Clear();
             }
             return true;
         }//end open connection
