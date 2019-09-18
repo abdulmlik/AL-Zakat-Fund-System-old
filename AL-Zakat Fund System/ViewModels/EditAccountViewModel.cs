@@ -372,7 +372,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                 DBConnection.cmd.Parameters["@Street"].IsNullable = true;
                 if (Street != null)
-                { DBConnection.cmd.Parameters["@Street"].Value = HSComment; }
+                { DBConnection.cmd.Parameters["@Street"].Value = Street; }
                 else
                 { DBConnection.cmd.Parameters["@Street"].Value = DBNull.Value; }
 

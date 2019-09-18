@@ -146,11 +146,11 @@ namespace AL_Zakat_Fund_System.ViewModels
             foreach (var item in listTemp)//var = ObservableCollection<Follow_upTemp>
             {
                 string Degree;
-                if ((int)item.First().Degree == -1)
+                if ((int)item.First().Degree == 101)
                 {
                     Degree = "عقد";
                 }
-                else if ((int)item.First().Degree == -2)
+                else if ((int)item.First().Degree == 102)
                 {
                     Degree = "متعاون";
                 }
