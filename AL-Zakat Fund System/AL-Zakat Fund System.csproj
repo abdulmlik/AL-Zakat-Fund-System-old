@@ -227,6 +227,7 @@
     <Compile Include="ViewModels\ModifyZakatViewModel.cs" />
     <Compile Include="ViewModels\ReportCollectZakatViewModel.cs" />
     <Compile Include="ViewModels\ReportApplicantViewModel.cs" />
+    <Compile Include="ViewModels\ReportAssistanceViewModel.cs" />
     <Compile Include="ViewModels\ReportSocialResearchViewModel.cs" />
     <Compile Include="ViewModels\ReportExpensesViewModel.cs" />
     <Compile Include="ViewModels\ReportNumberZakatViewModel.cs" />
@@ -249,6 +250,12 @@
     </Compile>
     <Compile Include="Views\CrystalReport\CrystalApplicant.cs">
       <DependentUpon>CrystalApplicant.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\CrystalReport\ReportAssistance.cs">
+      <DependentUpon>ReportAssistance.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -324,6 +331,9 @@
     </Compile>
     <Compile Include="Views\ReportApplicant.xaml.cs">
       <DependentUpon>ReportApplicant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportAssistance.xaml.cs">
+      <DependentUpon>ReportAssistance.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReportSocialResearch.xaml.cs">
       <DependentUpon>ReportSocialResearch.xaml</DependentUpon>
@@ -482,6 +492,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\ReportAssistance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ReportSocialResearch.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -580,6 +594,10 @@
     <EmbeddedResource Include="Views\CrystalReport\CrystalApplicant.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalApplicant.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CrystalReport\ReportAssistance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportAssistance.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CrystalReport\CrystalSocialResearch.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

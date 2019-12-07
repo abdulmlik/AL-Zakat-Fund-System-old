@@ -143,6 +143,7 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                 #region Create Parameters
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Ssn", SqlDbType.BigInt));
+                DBConnection.cmd.Parameters.Add(new SqlParameter("@TSsn", SqlDbType.BigInt));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@SDate", SqlDbType.DateTime));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@RequestStatus", SqlDbType.TinyInt));
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@FName", SqlDbType.NVarChar, 20));
@@ -197,7 +198,8 @@ namespace AL_Zakat_Fund_System.ViewModels
                 #endregion
 
                 #region parameters indigent
-                DBConnection.cmd.Parameters["@Ssn"].Value = Ssn;
+                DBConnection.cmd.Parameters["@Ssn"].Value = long.Parse(Ssn);
+                DBConnection.cmd.Parameters["@TSsn"].Value = long.Parse(TSsn);
                 DBConnection.cmd.Parameters["@SDate"].Value = SDate;
                 DBConnection.cmd.Parameters["@RequestStatus"].Value = RequestStatus;
                 DBConnection.cmd.Parameters["@FName"].Value = FName;
@@ -464,6 +466,7 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             CurrentWindow = CW;
             Ssn = ssn;
+            TSsn = ssn;
 
             GetAccount();// ues Ssn
 

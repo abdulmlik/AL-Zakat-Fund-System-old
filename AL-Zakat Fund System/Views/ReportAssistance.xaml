@@ -1,0 +1,66 @@
+﻿<Window x:Class="AL_Zakat_Fund_System.Views.ReportAssistance"
+        xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Models="clr-namespace:AL_Zakat_Fund_System.Models"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        FlowDirection="RightToLeft"
+        Title="تقرير المصروفات"
+        Icon="/AL-Zakat Fund System;component/Images/Logo/34.png"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <TextBlock Text="تقرير على المصروفات خلال فترة معينة" Style="{StaticResource viewHeaderText}" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="بداية الفترة : " Margin="0" Style="{StaticResource filedText}" />
+                <DatePicker Margin="0 0 20 0" SelectedDate="{Binding StartDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" x:Name="StartDate" 
+                            DisplayDateEnd="{x:Static sys:DateTime.Now}" Style="{StaticResource datePicker}"  />
+                <TextBlock Text="نهاية الفترة : " Margin="0" Style="{StaticResource filedText}"/>
+                <DatePicker SelectedDate="{Binding EndDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
+                            DisplayDateStart="{Binding ElementName=StartDate, Path=SelectedDate}"
+                            DisplayDateEnd="{x:Static sys:DateTime.Now}"
+                            IsEnabled="{Binding ElementName=StartDate , Path=SelectedDate, Converter={StaticResource DateTimeToBoolConverter}}" Style="{StaticResource datePicker}"  />
+                <Button Content="عرض التقرير" Command="{Binding ViewReportCommand}" Style="{StaticResource viewReportButton}" />
+            </StackPanel>
+            <TextBlock Text="التقرير شهري لا يحسب بالايام" Style="{StaticResource smallText}" />
+        </StackPanel>
+        <Viewer:CrystalReportsViewer ShowStatusbar="True" ShowToolbar="True"
+           Style="{StaticResource ViewerStyle}" ShowLogo="False" ToggleSidePanel="None"
+            Models:ReportSourceBehaviour.ReportSource="{Binding Path=DataContext.MyReportSource,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=FrameworkElement}}" 
+            Grid.Column="0"  Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="3" EnableToolTips="True" >
+            <Viewer:CrystalReportsViewer.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="ToolBar" >
+                        <Setter Property="Margin" Value="0" />
+                        <Setter Property="Padding" Value="10 0 0 0" />
+                        <Setter Property="Height" Value="40" />
+                        <Setter Property="Foreground" Value="Black" />
+                    </Style>
+                    <Style TargetType="StatusBarItem">
+                        <Setter Property="Margin" Value="0" />
+                        <Setter Property="Padding" Value="10 0" />
+                        <Setter Property="Height" Value="40"/>
+                        <Setter Property="Foreground" Value="Black" />
+                    </Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="Black" />
+                    </Style>
+                </ResourceDictionary>
+            </Viewer:CrystalReportsViewer.Resources>
+        </Viewer:CrystalReportsViewer>
+    </Grid>
+</Window>

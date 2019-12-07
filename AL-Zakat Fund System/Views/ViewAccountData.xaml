@@ -80,6 +80,7 @@
                             </Style.Triggers>
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=IND_ID}" Header="*" Width="auto" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Ssn}" Header="الرقم الوطني" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=FullName}" Header="الاسم" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=MotherName}" Header="اسم والدته" />

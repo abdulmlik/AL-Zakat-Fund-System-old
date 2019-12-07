@@ -110,10 +110,11 @@
                     <TextBlock Text=" نوع المساعدة : "  Style="{StaticResource filedText}" Grid.Column="0"  Grid.Row="6"/>
                     <StackPanel Margin="0 5" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3" >
                         <ComboBox Text="{Binding TypeAssistance,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox3}" IsEditable="True" >
+                            <ComboBoxItem>شهرية</ComboBoxItem>
                             <ComboBoxItem>علاج</ComboBoxItem>
-                            <ComboBoxItem>إيجار</ComboBoxItem>
                             <ComboBoxItem>زواج</ComboBoxItem>
-                            <ComboBoxItem>سداد دين</ComboBoxItem>
+                            <ComboBoxItem>بناء</ComboBoxItem>
+                            <ComboBoxItem>سداد ديون</ComboBoxItem>
                         </ComboBox>
                         <TextBlock Text="انواع المساعدة مثل ( علاج ،ايجار ،زواج سداد دين ،اخرى)" Style="{StaticResource smallText}"/>
                     </StackPanel>

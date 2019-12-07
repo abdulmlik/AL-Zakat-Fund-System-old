@@ -149,11 +149,11 @@ namespace AL_Zakat_Fund_System.ViewModels
             // Handle closing logic, set e.Cancel as needed
             try
             {
-                //Properties.Settings.Default.EmpName = "";
-                //Properties.Settings.Default.EmPassword = "";
-                //Properties.Settings.Default.EmpNo = 0;
-                //Properties.Settings.Default.EmpPriv = 0;
-                //Properties.Settings.Default.Save();
+                Properties.Settings.Default.EmpName = "";
+                Properties.Settings.Default.EmPassword = "";
+                Properties.Settings.Default.EmpNo = 0;
+                Properties.Settings.Default.EmpPriv = 0;
+                Properties.Settings.Default.Save();
             }
             catch
             {
@@ -347,11 +347,11 @@ namespace AL_Zakat_Fund_System.ViewModels
             //Cursor = Cursors.Wait;
             Mouse.OverrideCursor = Cursors.Wait;
 
-            //Properties.Settings.Default.EmpName = "";
-            //Properties.Settings.Default.EmPassword = "";
-            //Properties.Settings.Default.EmpNo = 0;
-            //Properties.Settings.Default.EmpPriv = 0;
-            //Properties.Settings.Default.Save();
+            Properties.Settings.Default.EmpName = "";
+            Properties.Settings.Default.EmPassword = "";
+            Properties.Settings.Default.EmpNo = 0;
+            Properties.Settings.Default.EmpPriv = 0;
+            Properties.Settings.Default.Save();
 
             loginWindow LWindow = new loginWindow();
             mWindow.Close();

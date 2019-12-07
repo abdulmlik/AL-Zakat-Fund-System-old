@@ -53,6 +53,7 @@ namespace AL_Zakat_Fund_System.Models
         private bool _Gender;
         private long _Scribe_ssn;
         private int _Office_no;
+        private int _IND_ID;
 
 
         //display
@@ -66,6 +67,8 @@ namespace AL_Zakat_Fund_System.Models
         private string _Gender2;
         private string _Scribe_ssn2;
         private string _Office_no2;
+
+        private string _TSsn;
         #endregion
 
         #region public properties
@@ -291,6 +294,11 @@ namespace AL_Zakat_Fund_System.Models
             get { return _Office_no; }
             set { SetProperty(ref _Office_no, value); }
         }
+        public int IND_ID
+        {
+            get { return _IND_ID; }
+            set { SetProperty(ref _IND_ID, value); }
+        }
 
 
         // dsplay
@@ -353,7 +361,11 @@ namespace AL_Zakat_Fund_System.Models
             get { return _Office_no2; }
             set { SetProperty(ref _Office_no2, value); }
         }
-
+        public string TSsn
+        {
+            get { return _TSsn; }
+            set { SetProperty(ref _TSsn, value); }
+        }
         #endregion
 
         #region Construct

@@ -88,6 +88,7 @@ namespace AL_Zakat_Fund_System.ViewModels
                     TI.Gender2 = DBConnection.reader.GetString(16);
                     TI.Scribe_ssn2 = DBConnection.reader.GetString(17);
                     TI.Office_no2 = DBConnection.reader.GetString(18);
+                    TI.IND_ID = DBConnection.reader.GetInt32(19);
 
                     list.Add(TI);
                 }

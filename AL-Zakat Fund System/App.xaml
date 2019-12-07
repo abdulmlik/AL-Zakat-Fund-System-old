@@ -5,7 +5,7 @@
              xmlns:m="clr-namespace:AL_Zakat_Fund_System.Models"
              xmlns:vm="clr-namespace:AL_Zakat_Fund_System.ViewModels"
              xmlns:v="clr-namespace:AL_Zakat_Fund_System.Views"
-             StartupUri="mainWindow.xaml">
+             StartupUri="loginWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
