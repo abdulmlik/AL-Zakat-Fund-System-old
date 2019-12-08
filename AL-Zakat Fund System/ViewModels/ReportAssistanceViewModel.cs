@@ -24,6 +24,8 @@ namespace AL_Zakat_Fund_System.ViewModels
         private DateTime? _StartDate;
         private DateTime? _EndDate;
 
+        private string _TypeAssistance;
+
         private CrystalDecisions.CrystalReports.Engine.ReportDocument _MyReportSource;
 
         #endregion
@@ -43,6 +45,11 @@ namespace AL_Zakat_Fund_System.ViewModels
         {
             get { return _EndDate; }
             set { SetProperty(ref _EndDate, value); }
+        }
+        public string TypeAssistance
+        {
+            get { return _TypeAssistance; }
+            set { SetProperty(ref _TypeAssistance, value); }
         }
         public CrystalDecisions.CrystalReports.Engine.ReportDocument MyReportSource
         {
@@ -65,52 +72,29 @@ namespace AL_Zakat_Fund_System.ViewModels
 
         private void ViewReportExecute()
         {
-            DataTable DTExpenses = new DataTable();
-            DTExpenses.Columns.Add("NameMonth", typeof(string));
-            //
-            DTExpenses.Columns.Add("CashAlfuqaraAndAlmasakin", typeof(decimal));
-            DTExpenses.Columns.Add("CashAlgharimin", typeof(decimal));
-            DTExpenses.Columns.Add("CashAbnAlsabil", typeof(decimal));
-            DTExpenses.Columns.Add("CashAlmualafatQulubuhum", typeof(decimal));
-            DTExpenses.Columns.Add("CashFiSabilAllah", typeof(decimal));
-            DTExpenses.Columns.Add("CashCollectors", typeof(decimal));
-            DTExpenses.Columns.Add("CashOffice", typeof(decimal));
-            //
-            DTExpenses.Columns.Add("InstrumentAlfuqaraAndAlmasakin", typeof(decimal));
-            DTExpenses.Columns.Add("InstrumentAlgharimin", typeof(decimal));
-            DTExpenses.Columns.Add("InstrumentAbnAlsabil", typeof(decimal));
-            DTExpenses.Columns.Add("InstrumentAlmualafatQulubuhum", typeof(decimal));
-            DTExpenses.Columns.Add("InstrumentFiSabilAllah", typeof(decimal));
-            DTExpenses.Columns.Add("InstrumentCollectors", typeof(decimal));
-            DTExpenses.Columns.Add("InstrumentOffice", typeof(decimal));
-            //
-            DTExpenses.Columns.Add("NumberAlfuqaraAndAlmasakin", typeof(int));
-            DTExpenses.Columns.Add("NumberAlgharimin", typeof(int));
-            DTExpenses.Columns.Add("NumberAbnAlsabil", typeof(int));
-            DTExpenses.Columns.Add("NumberAlmualafatQulubuhum", typeof(int));
-            DTExpenses.Columns.Add("NumberFiSabilAllah", typeof(int));
-            DTExpenses.Columns.Add("NumberCollectors", typeof(int));
-            DTExpenses.Columns.Add("NumberOffice", typeof(int));
+            DataTable DTAssistance = new DataTable();
+            DTAssistance.Columns.Add("FileNumber", typeof(Int32));
+            DTAssistance.Columns.Add("Name", typeof(string));
+            DTAssistance.Columns.Add("Ssn", typeof(string));
+            DTAssistance.Columns.Add("NumberOfFamily", typeof(Int32));
+            DTAssistance.Columns.Add("Phone", typeof(string));
 
-
-            //Set First Day of Month and Last Day of Month
-            StartDate = new DateTime(StartDate.Value.Year, StartDate.Value.Month, 1);
-            EndDate = new DateTime(EndDate.Value.Year, EndDate.Value.Month, DateTime.DaysInMonth(EndDate.Value.Year, EndDate.Value.Month));
+            string typeAssistance = "";//use in name report
 
             #region Get Data From DataBase
             DBConnection.cmd.CommandType = CommandType.StoredProcedure;
             if(Properties.Settings.Default.nameBranch == Properties.Settings.Default.nameOffice)
             {
-                DBConnection.cmd.CommandText = "sp_ExpensesReportBranch";
+                DBConnection.cmd.CommandText = "sp_AssistanceReportBranch";
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Branch", SqlDbType.Int));
             }
             else
             {
-                DBConnection.cmd.CommandText = "sp_ExpensesReportOffice";
+                DBConnection.cmd.CommandText = "sp_AssistanceReportOffice";
                 DBConnection.cmd.Parameters.Add(new SqlParameter("@Office", SqlDbType.Int));
             }
 
-            
+            DBConnection.cmd.Parameters.Add(new SqlParameter("@Assistance", SqlDbType.NVarChar,40));
             DBConnection.cmd.Parameters.Add(new SqlParameter("@StartDate", SqlDbType.DateTime));
             DBConnection.cmd.Parameters.Add(new SqlParameter("@EndDate", SqlDbType.DateTime));
             DBConnection.cmd.Parameters.Add(new SqlParameter("@Success", SqlDbType.Int));
@@ -123,14 +107,43 @@ namespace AL_Zakat_Fund_System.ViewModels
             {
                 DBConnection.cmd.Parameters["@Office"].Value = Properties.Settings.Default.Office;
             }
+            //string nameAssistance;
+            
+            switch (TypeAssistance)
+            {
+                case "شهرية":
+                    DBConnection.cmd.Parameters["@Assistance"].Value = "شهرية";
+                    typeAssistance = "تقرير الإعانات الشهرية";
+                    break;
+                case "علاج":
+                    DBConnection.cmd.Parameters["@Assistance"].Value = "علاج";
+                    typeAssistance = "تقرير إعانات العلاج";
+                    break;
+                case "زواج":
+                    DBConnection.cmd.Parameters["@Assistance"].Value = "زواج";
+                    typeAssistance = "تقرير إعانات الزواج";
+                    break;
+                case "بناء":
+                    DBConnection.cmd.Parameters["@Assistance"].Value = "بناء";
+                    typeAssistance = "تقرير إعانات البناء";
+                    break;
+                case "سداد ديون":
+                    DBConnection.cmd.Parameters["@Assistance"].Value = "سداد ديون";
+                    typeAssistance = "تقرير إعانات سداد الديون";
+                    break;
+                default:
+                    DBConnection.cmd.Parameters["@Assistance"].Value = "null";
+                    typeAssistance = "تقرير إعانات اخرى";
+                    break;
+            }
+            //DBConnection.cmd.Parameters["@Assistance"].Value = nameAssistance;
             DBConnection.cmd.Parameters["@StartDate"].Value = StartDate;
             DBConnection.cmd.Parameters["@EndDate"].Value = EndDate;
-            
+           
             DBConnection.cmd.Parameters["@Success"].Direction = ParameterDirection.Output;
 
 
-            ObservableCollection<AuthorizeExpenditureTemp> list = new ObservableCollection<AuthorizeExpenditureTemp>();
-            AuthorizeExpenditureTemp TE;
+            ObservableCollection<Assistance> list = new ObservableCollection<Assistance>();
 
             try
             {
@@ -141,17 +154,13 @@ namespace AL_Zakat_Fund_System.ViewModels
 
                 while (DBConnection.reader.Read())
                 {
-                    TE = new AuthorizeExpenditureTemp();
-                    TE.CategoryPoor = DBConnection.reader.GetByte(0);
-                    TE.SDate = DBConnection.reader.GetDateTime(1);
-                    TE.Amount = DBConnection.reader.GetDecimal(2);
-                    TE.InstrumentNO = DBConnection.reader.GetBoolean(3);
-                    if (DBConnection.reader.IsDBNull(4))
-                    { TE.Record_id = null; }
-                    else
-                    { TE.Record_id = DBConnection.reader.GetInt64(4); }
-                    
-                    list.Add(TE);
+                    // add to DataSet to send to crystal report
+                    DTAssistance.Rows.Add(DBConnection.reader.GetInt32(0)
+                                        , DBConnection.reader.GetString(1)
+                                        , DBConnection.reader.GetInt64(2).ToString()
+                                        , Int32.Parse(DBConnection.reader.GetString(3))
+                                        , DBConnection.reader.GetString(4)
+                                        );
                 }
             }
             catch (Exception ex)
@@ -167,64 +176,21 @@ namespace AL_Zakat_Fund_System.ViewModels
             #endregion
 
             #region Data Analysis
-            // for start StartDate end EndDate increases 1 month
-            for (DateTime? TStartDate = StartDate; TStartDate <= EndDate; TStartDate = TStartDate.Value.AddMonths(1))
-            {
-                //listTemp use instead of the list
-                ObservableCollection<AuthorizeExpenditureTemp> listTemp = new ObservableCollection<AuthorizeExpenditureTemp>();
-                //use to save the search result
-                ObservableCollection<AuthorizeExpenditureTemp> list2;
-                listTemp.AddRange(list);
-
-                // Name Month and year first col in report
-                string NameMonth = "شهر " + TStartDate.Value.Month.ToString() + " سنة " + TStartDate.Value.Year.ToString();
-
-                // new list and search <= is there zakat in this month, return zakat if true
-                list2 = new ObservableCollection<AuthorizeExpenditureTemp>(
-                                        listTemp.Where(item => (item.SDate.Year == TStartDate.Value.Year && item.SDate.Month == TStartDate.Value.Month)
-                                                            ).ToList<AuthorizeExpenditureTemp>());
-
-                // calculate the 
-                // add to DataSet to send to crystal report
-                DTExpenses.Rows.Add(NameMonth
-                                    //InstrumentNO when true => Cash
-                                    , list2.Where(item2 => item2.InstrumentNO && item2.CategoryPoor == 0).Sum(item2 => item2.Amount)
-                                    , list2.Where(item2 => item2.InstrumentNO && item2.CategoryPoor == 3).Sum(item2 => item2.Amount)
-                                    , list2.Where(item2 => item2.InstrumentNO && item2.CategoryPoor == 5).Sum(item2 => item2.Amount)
-                                    , list2.Where(item2 => item2.InstrumentNO && item2.CategoryPoor == 1).Sum(item2 => item2.Amount)
-                                    , list2.Where(item2 => item2.InstrumentNO && item2.CategoryPoor == 4).Sum(item2 => item2.Amount)
-                                    , list2.Where(item2 => item2.InstrumentNO && item2.CategoryPoor == 7).Sum(item2 => item2.Amount)
-                                    , list2.Where(item2 => item2.InstrumentNO && item2.CategoryPoor == 6).Sum(item2 => item2.Amount)
-                                    //InstrumentNO when false => Instrument
-                                    , list2.Where(item2 => !item2.InstrumentNO && item2.CategoryPoor == 0).Sum(item2 => item2.Amount)
-                                    , list2.Where(item2 => !item2.InstrumentNO && item2.CategoryPoor == 3).Sum(item2 => item2.Amount)
-                                    , list2.Where(item2 => !item2.InstrumentNO && item2.CategoryPoor == 5).Sum(item2 => item2.Amount)
-                                    , list2.Where(item2 => !item2.InstrumentNO && item2.CategoryPoor == 1).Sum(item2 => item2.Amount)
-                                    , list2.Where(item2 => !item2.InstrumentNO && item2.CategoryPoor == 4).Sum(item2 => item2.Amount)
-                                    , list2.Where(item2 => !item2.InstrumentNO && item2.CategoryPoor == 7).Sum(item2 => item2.Amount)
-                                    , list2.Where(item2 => !item2.InstrumentNO && item2.CategoryPoor == 6).Sum(item2 => item2.Amount)
-                                    //The number of beneficiaries  ,if beneficiary is null  generate new Record_id , 10000 The smallest number of Record_id in the DataBase
-                                    , list2.Where(item2 => item2.CategoryPoor == 0).GroupBy(item => item.Record_id == null ? new Random().Next(0, 9999) : item.Record_id).Count()
-                                    , list2.Where(item2 => item2.CategoryPoor == 3).GroupBy(item => item.Record_id == null ? new Random().Next(0, 9999) : item.Record_id).Count()
-                                    , list2.Where(item2 => item2.CategoryPoor == 5).GroupBy(item => item.Record_id == null ? new Random().Next(0, 9999) : item.Record_id).Count()
-                                    , list2.Where(item2 => item2.CategoryPoor == 1).GroupBy(item => item.Record_id == null ? new Random().Next(0, 9999) : item.Record_id).Count()
-                                    , list2.Where(item2 => item2.CategoryPoor == 4).GroupBy(item => item.Record_id == null ? new Random().Next(0, 9999) : item.Record_id).Count()
-                                    , list2.Where(item2 => item2.CategoryPoor == 7).GroupBy(item => item.Record_id == null ? new Random().Next(0, 9999) : item.Record_id).Count()
-                                    , list2.Where(item2 => item2.CategoryPoor == 6).GroupBy(item => item.Record_id == null ? new Random().Next(0, 9999) : item.Record_id).Count()
-                                    );
-            }
             #endregion
 
             // Parameter for crystal report
-            string PeriodReport = "خلال الفترة من " + StartDate.Value.ToString("yyyy-MM") + "   إلى " + EndDate.Value.ToString("yyyy-MM");
+            string PeriodReport = "خلال الفترة من " + StartDate.Value.ToString("yyyy-MM-dd") + "   إلى " + EndDate.Value.ToString("yyyy-MM-dd");
             // Parameter for crystal report
             string nameOffice = Properties.Settings.Default.nameOffice;
 
-            CrystalExpenses cr = new CrystalExpenses();
-            cr.Database.Tables["Expenses"].SetDataSource(DTExpenses);
+            
+
+            CrystalAssistance cr = new CrystalAssistance();
+            cr.Database.Tables["Assistance"].SetDataSource(DTAssistance);
 
             cr.SetParameterValue("namePlace", nameOffice);
             cr.SetParameterValue("Period", PeriodReport);
+            cr.SetParameterValue("typeAssistance", typeAssistance);///////////////////
             if (Properties.Settings.Default.nameBranch == nameOffice)
             { cr.SetParameterValue("Place", "مكتب");  }
             else
@@ -257,6 +223,8 @@ namespace AL_Zakat_Fund_System.ViewModels
         public ReportAssistanceViewModel(Window CW)
         {
             CurrentWindow = CW;
+            
+            TypeAssistance = "شهرية";// default شهرية
 
             ViewReportCommand = new DelegateCommand(ViewReportExecute, ViewReportCanExecute).ObservesProperty(() => StartDate).ObservesProperty(() => EndDate);
         }

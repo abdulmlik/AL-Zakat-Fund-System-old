@@ -18,9 +18,9 @@ namespace AL_Zakat_Fund_System.Views
     /// <summary>
     /// Interaction logic for NumberZakat.xaml
     /// </summary>
-    public partial class ReportExpenses : Window
+    public partial class ReportAssistance : Window
     {
-        public ReportExpenses()
+        public ReportAssistance()
         {
             InitializeComponent();
         }

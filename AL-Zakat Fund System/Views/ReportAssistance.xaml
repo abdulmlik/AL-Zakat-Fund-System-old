@@ -24,7 +24,18 @@
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="1" Grid.Row="1">
-            <TextBlock Text="تقرير على المصروفات خلال فترة معينة" Style="{StaticResource viewHeaderText}" />
+            <TextBlock Text="تقرير على الاعانات خلال فترة معينة" Style="{StaticResource viewHeaderText}" />
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10" >
+                <TextBlock Text="نوع الإعانة : "  Style="{StaticResource filedText}"/>
+                <ComboBox Text="{Binding TypeAssistance,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Style="{StaticResource ComboBox1}" >
+                    <ComboBoxItem>شهرية</ComboBoxItem>
+                    <ComboBoxItem>علاج</ComboBoxItem>
+                    <ComboBoxItem>زواج</ComboBoxItem>
+                    <ComboBoxItem>بناء</ComboBoxItem>
+                    <ComboBoxItem>سداد ديون</ComboBoxItem>
+                    <ComboBoxItem>اخري</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="بداية الفترة : " Margin="0" Style="{StaticResource filedText}" />
                 <DatePicker Margin="0 0 20 0" SelectedDate="{Binding StartDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" x:Name="StartDate" 
@@ -36,7 +47,6 @@
                             IsEnabled="{Binding ElementName=StartDate , Path=SelectedDate, Converter={StaticResource DateTimeToBoolConverter}}" Style="{StaticResource datePicker}"  />
                 <Button Content="عرض التقرير" Command="{Binding ViewReportCommand}" Style="{StaticResource viewReportButton}" />
             </StackPanel>
-            <TextBlock Text="التقرير شهري لا يحسب بالايام" Style="{StaticResource smallText}" />
         </StackPanel>
         <Viewer:CrystalReportsViewer ShowStatusbar="True" ShowToolbar="True"
            Style="{StaticResource ViewerStyle}" ShowLogo="False" ToggleSidePanel="None"

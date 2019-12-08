@@ -109,6 +109,11 @@
                             <TextBlock Text="&#xf2bb;" FontFamily="{StaticResource FontAwesome5ProLight}" />
                         </MenuItem.Icon>
                     </MenuItem>
+                    <MenuItem Command="{Binding ReportAssistanceCommand}" Header="الإعانات الشهرية"  >
+                        <MenuItem.Icon>
+                            <TextBlock Text="&#xf65a;" FontFamily="{StaticResource FontAwesome5ProLight}" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_المحاضر" Visibility="{Binding Scribe}" HorizontalAlignment="Left" >

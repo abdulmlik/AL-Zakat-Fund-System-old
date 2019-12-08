@@ -332,6 +332,10 @@ namespace AL_Zakat_Fund_System.ViewModels
         public DelegateCommand ReportApplicantCommand { get; set; }
         #endregion
 
+        #region Report Assistance
+        public DelegateCommand ReportAssistanceCommand { get; set; }
+        #endregion
+        
         #endregion
 
         #endregion
@@ -787,6 +791,23 @@ namespace AL_Zakat_Fund_System.ViewModels
         }
         #endregion
 
+        #region Assistance
+        private void ReportAssistanceExecute()
+        {
+            Cursor saveCursor = Cursor;
+            Cursor = Cursors.Wait;
+
+            ReportAssistance PageRA = new ReportAssistance();
+            PageRA.DataContext = new ReportAssistanceViewModel(PageRA);
+            PageRA.Owner = mWindow;
+            bool? result = PageRA.ShowDialog();
+            if (result == true)
+            { }
+
+            Cursor = saveCursor;
+        }
+        #endregion
+
         #endregion
 
         #endregion
@@ -851,6 +872,7 @@ namespace AL_Zakat_Fund_System.ViewModels
             ReportExpensesCommand = new DelegateCommand(ReportExpensesExecute);
             ReportSocialResearchCommand = new DelegateCommand(ReportSocialResearchExecute);
             ReportApplicantCommand = new DelegateCommand(ReportApplicantExecute);
+            ReportAssistanceCommand = new DelegateCommand(ReportAssistanceExecute);
 
         }
         #endregion

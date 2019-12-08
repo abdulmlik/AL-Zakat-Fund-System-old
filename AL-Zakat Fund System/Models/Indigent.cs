@@ -472,4 +472,48 @@ namespace AL_Zakat_Fund_System.Models
         #endregion
 
     }
+
+    // class use to get data for report
+    class Assistance : BindableBase
+    {
+        #region private Member
+
+        protected int _FileNumber;
+        protected string _Name;
+        protected string _Ssn;
+        protected int _NumberOfFamily;
+        protected string _Phone;
+
+        #endregion
+
+        #region public properties
+
+        public int FileNumber
+        {
+            get { return _FileNumber; }
+            set { SetProperty(ref _FileNumber, value); }
+        }
+        public string Name
+        {
+            get { return _Name; }
+            set { SetProperty(ref _Name, value); }
+        }
+        public string Ssn
+        {
+            get { return _Ssn; }
+            set { SetProperty(ref _Ssn, value); }
+        }
+        public int NumberOfFamily
+        {
+            get { return _NumberOfFamily; }
+            set { SetProperty(ref _NumberOfFamily, value); }
+        }
+        public string Phone
+        {
+            get { return _Phone; }
+            set { SetProperty(ref _Phone, value); }
+        }
+
+        #endregion
+    }
 }

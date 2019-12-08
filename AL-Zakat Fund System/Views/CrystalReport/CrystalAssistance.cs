@@ -16,14 +16,14 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ReportAssistance : ReportClass {
+    public class CrystalAssistance : ReportClass {
         
-        public ReportAssistance() {
+        public CrystalAssistance() {
         }
         
         public override string ResourceName {
             get {
-                return "ReportAssistance.rpt";
+                return "CrystalAssistance.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
         
         public override string FullResourceName {
             get {
-                return "AL_Zakat_Fund_System.Views.CrystalReport.ReportAssistance.rpt";
+                return "AL_Zakat_Fund_System.Views.CrystalReport.CrystalAssistance.rpt";
             }
             set {
                 // Do nothing
@@ -98,7 +98,7 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_namePlace {
+        public CrystalDecisions.Shared.IParameterField Parameter_typeAssistance {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -106,17 +106,25 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Place {
+        public CrystalDecisions.Shared.IParameterField Parameter_namePlace {
             get {
                 return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Place {
+            get {
+                return this.DataDefinition.ParameterFields[3];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedReportAssistance : Component, ICachedReport {
+    public class CachedCrystalAssistance : Component, ICachedReport {
         
-        public CachedReportAssistance() {
+        public CachedCrystalAssistance() {
         }
         
         [Browsable(false)]
@@ -153,7 +161,7 @@ namespace AL_Zakat_Fund_System.Views.CrystalReport {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ReportAssistance rpt = new ReportAssistance();
+            CrystalAssistance rpt = new CrystalAssistance();
             rpt.Site = this.Site;
             return rpt;
         }
